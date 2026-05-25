@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plantillas de SMS - Ayuda de Slate Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .sms-card { background: #fafbfc; border-left: 3px solid #ee7000; border-radius: 8px; padding: 1rem 1.25rem; margin: 0.75rem 0; font-family: ui-monospace, "SF Mono", Menlo, Monaco, monospace; font-size: 0.9rem; line-height: 1.6; white-space: pre-wrap; }
+    .sms-meta { font-size: 0.78rem; color: #64748b; margin-bottom: 0.4rem; font-family: "Inter", sans-serif; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+    .disclaimer-banner { background: #fff7ed; border-left: 4px solid #ee7000; padding: 1rem 1.25rem; border-radius: 8px; margin: 1rem 0 2rem; }
+    .disclaimer-banner strong { color: #c2410c; }
+    .english-note { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 0.85rem 1.1rem; border-radius: 8px; margin: 1rem 0 2rem; font-size: 0.92rem; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
+        <span>Slate Systems</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="getting-started.html">Empezar</a></li>
+        <li><a href="your-website.html">Tu Sitio Web</a></li>
+        <li><a href="leads.html">Leads</a></li>
+        <li><a href="reviews.html">Reseñas</a></li>
+        <li><a href="sms-templates.html" class="active">Plantillas SMS</a></li>
+        <li><a href="chat.html">Chat</a></li>
+        <li><a href="my-links.html">Mis Links</a></li>
+        <li><a href="referrals.html">Referidos</a></li>
+        <li><a href="grow.html">Crece</a></li>
+        <li><a href="estafas.html">Estafas</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+      <div class="lang-picker"><a href="https://help.slatesystems.io/sms-templates.html">EN</a><a href="sms-templates.html" class="lang-active">ES</a></div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Plantillas de SMS</h1>
+      <p>Los mensajes exactos que Slate manda a TUS clientes — para que sepas qué reciben.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Inicio</a> / Plantillas SMS
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="english-note">
+        <strong>📌 Importante:</strong> Los SMS van en INGLÉS porque tus clientes (los que reciben el mensaje) típicamente son angloparlantes en USA. La aplicación de Slate y todas las notificaciones internas para TI sí están en español. Solo los SMS forward-facing (al cliente final) son en inglés.
+      </div>
+
+      <div class="disclaimer-banner">
+        <strong>Estas son las plantillas por defecto.</strong> Si personalizaste tus mensajes en tu cuenta de Slate, lo que reciben tus clientes puede ser diferente de lo que ves abajo. Para ver tus versiones actuales, revisa tu app o mándanos un texto.
+      </div>
+
+      <div class="content-section">
+        <h2>1. Texto Automático por Llamada Perdida</h2>
+        <p>Cuando alguien te llama y no contestas, el sistema dispara esta secuencia automática. El cliente recibe un texto en segundos.</p>
+
+        <div class="sms-card">
+          <div class="sms-meta">SMS 1 — sale en segundos de la llamada perdida</div>
+Hey, sorry I missed your call! What project can I help you with? Just text me back here and I'll get you a quote. -[Tu Nombre] from [Tu Negocio]
+        </div>
+
+        <div class="sms-card">
+          <div class="sms-meta">SMS 2 — 5 minutos después</div>
+By the way, I do free estimates, just describe what you need and I'll give you a ballpark 👍
+        </div>
+
+        <div class="sms-card">
+          <div class="sms-meta">SMS 3 — 24 horas después (si no respondieron)</div>
+Hey, just making sure my texts came through, still need help with a project? Just say the word and I'll get you a free estimate 👍 -[Tu Nombre]
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>2. Respuesta al Formulario de Cotización</h2>
+        <p>Cuando alguien llena el formulario de cotización en tu sitio web, esto dispara en segundos.</p>
+
+        <div class="sms-card">
+          <div class="sms-meta">Respuesta automática</div>
+Hey [Customer Name], thanks for reaching out! Got your message about [Service]. Let me get you a quote — what's the best time to talk for 5 min? -[Tu Nombre] from [Tu Negocio]
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>3. Widget de Chat</h2>
+        <p>Cuando un visitante abre el chat en tu sitio, la IA lo saluda, le pregunta del proyecto y captura nombre + teléfono. Tú recibes un SMS de notificación cuando dejan un mensaje.</p>
+
+        <div class="sms-card">
+          <div class="sms-meta">Saludo IA (en el chat)</div>
+Hi! 👋 Thanks for visiting. What project can I help you with today?
+        </div>
+
+        <div class="sms-card">
+          <div class="sms-meta">SMS interno para TI (cuando se captura mensaje, EN ESPAÑOL si tu app está en español)</div>
+🔔 Mensaje nuevo del chat de tu sitio web de [Nombre del Cliente] sobre [Servicio]. Teléfono: [número]. Contesta desde tu app.
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>4. Solicitud de Reseña (4 mensajes en ~4 semanas)</h2>
+        <p>Después de que agregas un cliente vía el Marketing Form (en tu app), el sistema le pide una reseña en Google. <strong>Si el cliente toca el link de reseña en cualquier mensaje, los mensajes restantes se detienen automáticamente.</strong></p>
+
+        <div class="sms-card">
+          <div class="sms-meta">SMS 1 — Semana 1 (inmediato tras Marketing Form submit)</div>
+Hey [Customer Name] — it's been about a month since we wrapped up. Hope everything's holding up great!
+
+If you have a minute, a quick Google review would help us out a ton:
+
+[Tu Link de Reseña de Google]
+        </div>
+
+        <div class="sms-card">
+          <div class="sms-meta">SMS 2 — Semana 2 (si no hizo clic)</div>
+Hey [Customer Name] — just checking in. If you had a minute to share a quick Google review, it really helps small businesses like ours grow:
+
+[Tu Link de Reseña de Google]
+        </div>
+
+        <div class="sms-card">
+          <div class="sms-meta">SMS 3 — Semana 3</div>
+Hey [Customer Name] — last couple of asks on this. An honest Google review (good or bad) really helps us improve and helps other people find us:
+
+[Tu Link de Reseña de Google]
+        </div>
+
+        <div class="sms-card">
+          <div class="sms-meta">SMS 4 — Semana 4 (último intento)</div>
+Hey [Customer Name] — final ask, promise. If you can spare 60 seconds for a Google review, here's the link:
+
+[Tu Link de Reseña de Google]
+
+Either way, thanks for your business!
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>5. Seguimiento de 1 Año (5 mensajes espaciados en el año)</h2>
+        <p>Después de que un cliente recibe tu SMS de reseña, entra a la secuencia de 1 año. Estos mensajes ofrecen descuento por referido y son conversacionales, no presionan.</p>
+
+        <div class="sms-card">
+          <div class="sms-meta">SMS 1 — Día 23</div>
+Hey [Customer], it's [Tu Nombre] from [Tu Negocio]. Hope everything's still looking great! Just wanted to let you know we're offering [Descuento] off your next job (or for anyone you send our way). Claim it here: [Tu Link de Funnel] Feel free to share that link with friends and family too! -[Tu Nombre]
+        </div>
+
+        <div class="sms-card">
+          <div class="sms-meta">SMS 2 — Mes 3</div>
+Hey [Customer], [Tu Nombre] here from [Tu Negocio]. We're booking up for the next few weeks and wanted to reach out. If you or anyone you know needs work done, that [Descuento] off offer is still good: [Tu Link de Funnel] -[Tu Nombre]
+        </div>
+
+        <div class="sms-card">
+          <div class="sms-meta">SMS 3 — Mes 6</div>
+Hey [Customer], it's [Tu Nombre] with [Tu Negocio]. We've been getting a lot of referrals from happy customers lately, and we really appreciate it. That [Descuento] off offer applies to you too if you ever need anything done again: [Tu Link de Funnel] Same goes for friends and family. -[Tu Nombre]
+        </div>
+
+        <div class="sms-card">
+          <div class="sms-meta">SMS 4 — Mes 9</div>
+Hey [Customer], just checking in one more time. If you've got a neighbor, friend, or family member who could use some help with a project, we'd love the referral. They'll get [Descuento] off: [Tu Link de Funnel] Thanks as always! -[Tu Nombre] with [Tu Negocio]
+        </div>
+
+        <div class="sms-card">
+          <div class="sms-meta">SMS 5 — Mes 12 (final)</div>
+Hey [Customer], can't believe it's been about a year! Thanks for trusting [Tu Negocio] with your project. If you ever need us again, or want to send someone our way, that [Descuento] off is always there: [Tu Link de Funnel] We appreciate you. -[Tu Nombre]
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>6. Campaña de Reactivación (3 mensajes en 5 días)</h2>
+        <p>Para clientes pasados que no han vuelto en meses. El sistema intenta reactivarlos con 3 mensajes espaciados en 5 días.</p>
+
+        <div class="sms-card">
+          <div class="sms-meta">SMS 1 — Día 0 (check-in suave)</div>
+Hey [Customer], this is [Tu Nombre] from [Tu Negocio]. We worked together a while back, hope everything's holding up! If you have a minute, would love a quick Google review: really helps us out. 🙏
+        </div>
+
+        <div class="sms-card">
+          <div class="sms-meta">SMS 2 — Día 2 (oferta especial)</div>
+Hey [Customer], this is [Tu Nombre] again. Quick heads up — we're running a special on [Servicio] this month. Limited spots since my schedule fills up. Want me to save you one?
+        </div>
+
+        <div class="sms-card">
+          <div class="sms-meta">SMS 3 — Día 5 (último intento)</div>
+Hey [Customer], last time I'll bug you! Got a couple spots left this month. Want me to save you one? Just reply "yes" or "no" so I know. Have a great day! 👍
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>7. Opt-Out (STOP) — Cumplimiento Legal</h2>
+        <p>La ley federal (TCPA / A2P) requiere que cada canal de texto automatizado honre los opt-outs. Si tu cliente responde <strong>STOP</strong> en cualquier momento, la compañía de teléfono automáticamente lo saca de todos los mensajes futuros. Esto NO es algo que Slate decide — es la regla de la compañía de teléfono.</p>
+
+        <div class="sms-card">
+          <div class="sms-meta">Lo que el cliente escribe</div>
+STOP
+        </div>
+
+        <div class="sms-card">
+          <div class="sms-meta">Lo que pasa después</div>
+El cliente nunca vuelve a recibir un mensaje automatizado de tu número de negocio — jamás. No hay respuesta de IA, no hay seguimiento. Es silencio por diseño. Esto protege tu reputación de remitente y mantiene tu número libre de bloqueos.
+        </div>
+      </div>
+
+      <div class="content-section" style="background:#f0fdf4; border-left:3px solid #16a34a; padding: 1rem 1.25rem; border-radius:8px; margin-top: 2rem;">
+        <h3 style="color:#15803d; margin-top:0;">¿Quieres cambiar alguna de estas?</h3>
+        <p>La mayoría de estas plantillas se pueden personalizar a tu tono, voz de marca u ofertas específicas. Mándanos un texto al <a href="sms:+18312267831">+1 (831) 226-7831</a> con lo que quieres cambiar y nosotros lo hacemos.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Slate Systems. ¿Preguntas? <a href="contact.html">Contáctanos</a>.</p>
+    </div>
+  </footer>
+
+  <script src="js/chat-widget.js"></script>
+  <script>function toggleMenu(){document.getElementById("navLinks").classList.toggle("active");}</script>
+</body>
+</html>
