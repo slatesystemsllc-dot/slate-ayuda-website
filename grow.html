@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consigue Más Trabajo - Ayuda de Slate Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
+        <span>Slate Systems</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="getting-started.html">Empezar</a></li>
+        <li><a href="your-website.html">Tu Sitio Web</a></li>
+        <li><a href="leads.html">Clientes</a></li>
+        <li><a href="reviews.html">Reseñas</a></li>
+        <li><a href="chat.html">Chat</a></li>
+        <li><a href="my-links.html">Mis Links</a></li>
+        <li><a href="referrals.html">Referidos</a></li>
+        <li><a href="grow.html" class="active">Crecer</a></li>
+        <li><a href="estafas.html">Estafas</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+      <div class="lang-picker"><a href="https://help.slatesystems.io/grow.html">EN</a><a href="grow.html" class="lang-active">ES</a></div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Consigue Más Trabajo</h1>
+      <p>¿Tienes contactos viejos? Danos la lista y nos encargamos de contactarlos, para conseguirte reseñas Y nuevos trabajos de gente que ya te conoce.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Inicio</a> / Consigue Más Trabajo</div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="content-section">
+        <h2>La Campaña de Reactivación</h2>
+        <p>Seguramente tienes clientes viejos y contactos en tu teléfono. Gente con la que has trabajado antes, o gente que pidio cotización pero nunca le dieron seguimiento. Esos contactos son oro.</p>
+        <div class="highlight-box">
+          <h3>Esto Es Lo Que Hacemos</h3>
+          <p style="margin: 0.5rem 0;">Tu nos das una lista de nombres y teléfonos. Los cargamos en tu sistema y automáticamente contactamos a cada uno, primero pidiendo una reseña, luego ofreciendo tus servicios unos días después.</p>
+        </div>
+        <div class="benefit-box">
+          <p><strong>¿Por qué contactos viejos?</strong> Estas personas ya te conocen. Tienen 10 veces más probabilidad de responder que un contacto frio de un anuncio. Y si tuvieron buena experiencia, te dejaran una reseña también.</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Cómo Funciona</h2>
+        <p>La campaña corre durante 5 días. Esto es lo que recibe cada contacto:</p>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Día</th><th>Qué Pasa</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Día 1</strong></td><td>Texto amable + email preguntando cómo quedó el trabajo, con link para dejar reseña</td></tr>
+              <tr><td><strong>Día 3</strong></td><td>Si no respondieron, reciben texto sobre tu disponibilidad o promoción actual</td></tr>
+              <tr><td><strong>Día 5</strong></td><td>Último mensaje amable: "¿Última vez que te molesto, todavía tengo espacio?"</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem; margin: 1.5rem 0;">
+          <pre class="mermaid">
+flowchart LR
+    A("Tú nos mandas\ntu lista de contactos"):::blueNode --> B["Los cargamos\nen tu sistema"]:::blueNode
+    B --> C["Día 1\nSaludo +\nlink de reseña"]:::greenNode
+    C -->|"No responde"| D["Día 3\nOferta de\nservicios"]:::orangeNode
+    D -->|"No responde"| E["Día 5\nÚltimo mensaje\namable"]:::orangeNode
+    C -->|"Responden!"| F("Recibes un texto\nde notificación"):::notifyNode
+    D -->|"Responden!"| F
+    E -->|"Responden!"| F
+
+    classDef blueNode fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,color:#152a45
+    classDef greenNode fill:#f0fdf4,stroke:#22c55e,stroke-width:2px,color:#14532d
+    classDef orangeNode fill:#fff7ed,stroke:#f97316,stroke-width:2px,color:#7c2d12
+    classDef notifyNode fill:#fefce8,stroke:#eab308,stroke-width:2px,color:#713f12
+          </pre>
+        </div>
+        <p><strong>Te notificamos cada vez que alguien responde.</strong> Cuando un cliente anterior responde, recibes un texto de inmediato para que puedas darle seguimiento y cerrar el trato.</p>
+      </div>
+
+      <div class="content-section">
+        <h2>Qué Obtienes</h2>
+        <div class="two-col">
+          <div>
+            <div class="highlight-box" style="background: #e8f5e9; border-left: 4px solid #4caf50; color: #1a1a1a;">
+              <h4 style="color: #2e7d32; margin-top: 0;">Reseñas en Google</h4>
+              <p style="margin: 0; color: #1a1a1a;">El primer mensaje pide una reseña. Clientes anteriores que tuvieron buena experiencia muchas veces la dejan, lo que sube tu posición en Google y te trae más clientes.</p>
+            </div>
+          </div>
+          <div>
+            <div class="highlight-box" style="background: #fff3e0; border-left: 4px solid #ff9800; color: #1a1a1a;">
+              <h4 style="color: #e65100; margin-top: 0;">Nuevos Trabajos</h4>
+              <p style="margin: 0; color: #1a1a1a;">Los mensajes de seguimiento ofrecen tus servicios. Clientes anteriores que necesitan más trabajo responderan, dandote clientes que son fáciles de cerrar.</p>
+            </div>
+          </div>
+        </div>
+        <div class="benefit-box" style="margin-top: 2rem;">
+          <p><strong>Una campaña, dos resultados.</strong> Reseñas construyen tu reputación. Trabajo repetido llena tu agenda. Todo de contactos que ya tienes.</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Cómo Empezar</h2>
+        <p>Es simple, solo danos tu lista:</p>
+        <ol class="steps">
+          <li>Revisa tus contactos del teléfono, mensajes viejos, o facturas</li>
+          <li>Haz una lista de clientes anteriores y contactos: <strong>nombre + teléfono</strong></li>
+          <li>Mándanos la lista (texto, email, hoja de calculo, lo que sea más fácil)</li>
+          <li>Los cargamos en tu sistema y empezamos la campaña</li>
+          <li>Te notificamos cada vez que alguien responde</li>
+        </ol>
+        <div class="alert alert-info">
+          <strong>Tip:</strong> Entre más contactos, mejor. Hasta 20-30 clientes anteriores pueden traerte varias reseñas y algunos trabajos nuevos. ¿Tienes 100+? Todavía mejor.
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Preguntas Comunes</h2>
+        <div class="highlight-box">
+          <h4 style="margin-top: 0;">¿Van a saber qué es automático?</h4>
+          <p style="margin: 0;">No. Los mensajes salen de tu número de negocio y suenan como si los escribieras tú. Amables, personales, y profesionales.</p>
+        </div>
+        <div class="highlight-box">
+          <h4 style="margin-top: 0;">¿Qué pasa si alguien no quiere textos?</h4>
+          <p style="margin: 0;">Pueden escribir "STOP" en cualquier momento y se eliminan automáticamente. Nosotros manejamos todo el cumplimiento por ti.</p>
+        </div>
+        <div class="highlight-box">
+          <h4 style="margin-top: 0;">¿Puedo hacer esto más de una vez?</h4>
+          <p style="margin: 0;">Cada contacto solo recibe la campaña una vez. Pero si encuentras nuevos contactos después (facturas viejas, nuevos clientes anteriores), mándanos los nombres nuevos y los agregamos.</p>
+        </div>
+        <div class="highlight-box">
+          <h4 style="margin-top: 0;">¿Esto es diferente al Formulario de Marketing?</h4>
+          <p style="margin: 0;">Sí. El <strong>Formulario de Marketing</strong> es para clientes que acabas de terminar un trabajo. Lo usas después de cada trabajo. La <strong>Campaña de Reactivación</strong> es para contactos viejos del pasado. Tu nos das una lista y nosotros hacemos el resto.</p>
+        </div>
+      </div>
+
+      <div class="content-section" style="text-align: center; padding-top: 2rem; border-top: 1px solid #e9ecef;">
+        <h3>¿Listo para crecer?</h3>
+        <p style="margin-bottom: 1.5rem;">Mándanos tu lista y empezamos. O checa cómo funciona tu programa de referidos.</p>
+        <a href="contact.html" class="btn btn-primary" style="margin-right: 1rem;">Contáctanos →</a>
+        <a href="referrals.html" class="btn btn-outline">Programa de Referidos →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
+          <span>Slate Systems</span>
+        </div>
+        <div class="footer-links">
+          <a href="getting-started.html">Empezar</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contactar Soporte</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>¿Necesitas ayuda? Escríbenos al <strong>+1 (831) 226-7831</strong> o email hello@slatesystems.io</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#eff6ff',
+      primaryTextColor: '#152a45',
+      primaryBorderColor: '#3b82f6',
+      lineColor: '#64748b',
+      secondaryColor: '#f0fdf4',
+      tertiaryColor: '#fdf4ff',
+      fontFamily: 'Inter, sans-serif',
+      fontSize: '13px'
+    },
+    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
+  });
+</script>
+<script src="/js/chat-widget.js" defer></script>
+</body>
+</html>
