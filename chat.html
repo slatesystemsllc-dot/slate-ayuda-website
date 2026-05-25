@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat y Mensajes - Ayuda de Slate Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
+        <span>Slate Systems</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="getting-started.html">Empezar</a></li>
+        <li><a href="your-website.html">Tu Sitio Web</a></li>
+        <li><a href="leads.html">Clientes</a></li>
+        <li><a href="reviews.html">Reseñas</a></li>
+        <li><a href="chat.html" class="active">Chat</a></li>
+        <li><a href="my-links.html">Mis Links</a></li>
+        <li><a href="referrals.html">Referidos</a></li>
+        <li><a href="grow.html">Crecer</a></li>
+        <li><a href="estafas.html">Estafas</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+      <div class="lang-picker"><a href="https://help.slatesystems.io/chat.html">EN</a><a href="chat.html" class="lang-active">ES</a></div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Chat y Mensajes</h1>
+      <p>Como funciona el chat de tu sitio y por que todos tus mensajes están en un solo lugar.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Inicio</a> / Chat y Mensajes</div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="content-section">
+        <h2>El Chat de Tu Sitio</h2>
+        <p>¿Esa burbujita en la esquina de tu sitio web? Es una máquina de clientes.</p>
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem; margin: 1.5rem 0;">
+          <pre class="mermaid">
+flowchart TD
+    A(["Cliente visita\ntu sitio web"]):::blueNode --> B["Ve el chat:\n'Hola! Como te podemos ayudar?'"]:::blueNode
+    B --> C[/"Escribe su pregunta\no lo que necesita"/]:::blueNode
+    C --> D[\"El mensaje llega directo\na tu app"\]:::orangeNode
+    D --> E("Tu respondes\ndesde la app"):::orangeNode
+    E --> F["La conversacion continua\npor texto"]:::greenNode
+
+    classDef blueNode fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,color:#152a45
+    classDef orangeNode fill:#fff7ed,stroke:#f97316,stroke-width:2px,color:#7c2d12
+    classDef greenNode fill:#f0fdf4,stroke:#22c55e,stroke-width:2px,color:#14532d
+          </pre>
+        </div>
+        <div class="benefit-box">
+          <p><strong>Por que importa:</strong> Algunos clientes no quieren llamar. Prefieren escribir. El chat captura a esos clientes que de otra forma se irian de tu sitio sin contactarte.</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Cómo Funciona</h2>
+        <ol class="steps">
+          <li>El cliente ve la burbuja de chat en tu sitio</li>
+          <li>La tocan y escriben un mensaje</li>
+          <li>Tu recibes una notificación en tu app</li>
+          <li>Respondes desde la app</li>
+          <li>Ellos reciben tu respuesta como texto</li>
+          <li>La conversación continua por texto (no en el sitio web)</li>
+        </ol>
+        <div class="alert alert-info">
+          <strong>Nota:</strong> Después del primer mensaje, la conversación se pasa a texto/SMS. Así puedes responder cuando sea, y ellos no tienen que quedarse en tu sitio web.
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Bandeja Unificada</h2>
+        <p>Todos tus mensajes, de todos lados, llegan a un solo lugar:</p>
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+          <div class="card" style="text-align: center; padding: 1.5rem 1rem;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">💬</div>
+            <p style="margin: 0; font-weight: 600;">Chat del Sitio</p>
+          </div>
+          <div class="card" style="text-align: center; padding: 1.5rem 1rem;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+            <p style="margin: 0; font-weight: 600;">Texto/SMS</p>
+          </div>
+          <div class="card" style="text-align: center; padding: 1.5rem 1rem;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📧</div>
+            <p style="margin: 0; font-weight: 600;">Email</p>
+          </div>
+          <div class="card" style="text-align: center; padding: 1.5rem 1rem;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📘</div>
+            <p style="margin: 0; font-weight: 600;">Facebook</p>
+          </div>
+          <div class="card" style="text-align: center; padding: 1.5rem 1rem;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📸</div>
+            <p style="margin: 0; font-weight: 600;">Instagram</p>
+          </div>
+        </div>
+        <div class="benefit-box" style="margin-top: 2rem;">
+          <p><strong>No más revisar 5 apps diferentes.</strong> No importa si te escriben por texto, Facebook, el chat, o email, todo aparece en la misma bandeja en tu app.</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Manejo de Conversaciones</h2>
+        <p>En la pestaña Conversations de tu app, puedes:</p>
+        <ul class="icon-list">
+          <li><strong>Ver todos los mensajes</strong> : organizados por contacto</li>
+          <li><strong>Ver historial completo</strong> : todo lo que has hablado con cada cliente</li>
+          <li><strong>Responder directo</strong> : solo escribe y envía</li>
+          <li><strong>Marcar importantes</strong> : marca conversaciones para dar seguimiento</li>
+          <li><strong>Buscar</strong> : encuentra conversaciones viejas por nombre o palabra</li>
+        </ul>
+      </div>
+
+      <div class="content-section">
+        <h2>Tips para Responder</h2>
+        <p>Una buena comunicación gana trabajos. Así haces que cada conversación cuente:</p>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr><th>Haz Esto</th><th>Por Que Funciona</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Responde en 5 minutos</td><td>El más rápido usualmente gana el trabajo</td></tr>
+              <tr><td>Se amable y profesional</td><td>Las primeras impresiones importan, hasta por texto</td></tr>
+              <tr><td>Contesta su pregunta directo</td><td>No los hagas preguntar dos veces</td></tr>
+              <tr><td>Da pasos claros a seguir</td><td>"Puedo ir a dar cotización mañana a las 2pm"</td></tr>
+              <tr><td>Dale seguimiento si no responden</td><td>Un mensaje amable puede salvar el trabajo</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="alert alert-warning">
+          <strong>No los dejes esperando.</strong> Si alguien te escribe y no respondes, piensan que no te interesa. Siempre responde, aunque sea "Gracias por contactarme, te mando cotización para mañana."
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>No Te Pierdas Mensajes</h2>
+        <p>Asegúrate de tener las notificaciones activadas para nunca perder un mensaje:</p>
+        <ol class="steps">
+          <li>Abre la app</li>
+          <li>Ve a Settings (icono de engranaje)</li>
+          <li>Toca Notifications</li>
+          <li>Activa All Notifications</li>
+          <li>Revisa los ajustes de tu teléfono también, permite notificaciones de la app</li>
+        </ol>
+        <p style="margin-top: 1.5rem;">Con las notificaciones activadas, sabrás en segundos cuando alguien quiere contratarte.</p>
+      </div>
+
+      <div class="content-section" style="text-align: center; padding-top: 2rem; border-top: 1px solid #e9ecef;">
+        <h3>¿Tienes Preguntas?</h3>
+        <p style="margin-bottom: 1.5rem;">Revisa las FAQ para respuestas rápidas a preguntas comunes.</p>
+        <a href="faq.html" class="btn btn-primary">Ver FAQ →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
+          <span>Slate Systems</span>
+        </div>
+        <div class="footer-links">
+          <a href="getting-started.html">Empezar</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contactar Soporte</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>¿Necesitas ayuda? Escríbenos al <strong>+1 (831) 226-7831</strong> o email hello@slatesystems.io</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#eff6ff',
+      primaryTextColor: '#152a45',
+      primaryBorderColor: '#3b82f6',
+      lineColor: '#64748b',
+      secondaryColor: '#f0fdf4',
+      tertiaryColor: '#fdf4ff',
+      fontFamily: 'Inter, sans-serif',
+      fontSize: '13px'
+    },
+    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
+  });
+</script>
+<script src="/js/chat-widget.js" defer></script>
+</body>
+</html>
