@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Referidos - Centro de Ayuda Slate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    :root { --rblue: #152a45; --rblue-light: #1e3a5f; --rorange: #ee7000; --rorange-light: #fff3e8; --rgreen: #16a34a; --rgreen-light: #dcfce7; --rgray-text: #525c69; --rdark-text: #1a1a2e; }
+    .ref-hero { background: linear-gradient(135deg, var(--rblue) 0%, var(--rblue-light) 50%, var(--rblue) 100%); color: #fff; text-align: center; padding: 3rem 1.5rem 2.5rem; }
+    .ref-hero .label { display: inline-block; background: rgba(34,197,94,0.15); color: #22c55e; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 1rem; }
+    .ref-hero h1 { font-size: 2.25rem; font-weight: 900; line-height: 1.15; margin-bottom: 0.5rem; color: #fff; }
+    .ref-hero h1 .green { color: #22c55e; }
+    .ref-hero .sub { color: rgba(255,255,255,0.65); font-size: 0.95rem; max-width: 480px; margin: 0 auto 0.4rem; line-height: 1.55; }
+    .ref-hero .tag { color: var(--rorange); font-size: 1.05rem; font-weight: 700; margin-top: 0.65rem; }
+    .math-section { padding: 2.5rem 0; background: #f8f9fa; }
+    .math-box { max-width: 720px; margin: 0 auto; padding: 1.75rem 1.5rem; background: #fff; border: 2px solid var(--rgreen-light); border-radius: 16px; }
+    .math-box-head { text-align: center; margin-bottom: 1.5rem; }
+    .math-box-head h2 { color: var(--rgreen); font-size: 1.4rem; font-weight: 800; margin-bottom: 0.4rem; }
+    .math-box-head p { color: var(--rgray-text); font-size: 0.9rem; margin: 0; }
+    .milestone-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem; }
+    .milestone { background: #f8f9fa; border-radius: 12px; padding: 1.25rem 0.75rem; text-align: center; position: relative; border: 1px solid #e9ecef; }
+    .milestone.star { background: var(--rgreen-light); border-color: var(--rgreen); }
+    .milestone-badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--rgreen); color: #fff; font-size: 0.62rem; font-weight: 800; padding: 0.18rem 0.7rem; border-radius: 12px; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px; }
+    .milestone .refs { color: var(--rgray-text); font-size: 0.78rem; font-weight: 600; }
+    .milestone .amount { font-size: 1.85rem; font-weight: 900; color: var(--rorange); line-height: 1.05; margin-top: 0.3rem; }
+    .milestone.star .amount { color: var(--rgreen); }
+    .milestone .per { font-size: 0.7rem; color: var(--rgray-text); }
+    .milestone .meaning { font-size: 0.74rem; color: var(--rdark-text); font-weight: 600; margin-top: 0.6rem; padding-top: 0.5rem; border-top: 1px solid rgba(0,0,0,0.06); }
+    .math-fine { text-align: center; color: var(--rgray-text); font-size: 0.78rem; margin-top: 1rem; line-height: 1.55; }
+    .grow-section { padding: 2.5rem 0; background: linear-gradient(135deg, #fff7ed 0%, #fff 100%); }
+    .grow-box { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; background: #fff; border: 2px solid var(--rorange); border-radius: 16px; text-align: center; }
+    .grow-box h2 { color: var(--rorange); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.4rem; }
+    .grow-box p.intro { color: var(--rgray-text); font-size: 0.92rem; margin-bottom: 1.5rem; line-height: 1.55; }
+    .grow-nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1rem; }
+    .grow-num { padding: 1.25rem 0.75rem; background: #fff7ed; border-radius: 12px; }
+    .grow-num .big { font-size: 1.5rem; font-weight: 900; color: var(--rorange); line-height: 1.1; }
+    .grow-num .lab { font-size: 0.72rem; color: var(--rgray-text); margin-top: 0.4rem; font-weight: 600; }
+    .grow-fine { font-size: 0.78rem; color: var(--rgray-text); line-height: 1.55; margin-top: 0.85rem; }
+    .partner-link-section { padding: 2.5rem 0; background: #f8f9fa; }
+    .partner-link-card { max-width: 720px; margin: 0 auto; background: #fff; border: 2px solid var(--rorange); border-radius: 16px; padding: 2rem 1.75rem; }
+    .partner-link-card h2 { color: var(--rdark-text); font-size: 1.2rem; font-weight: 800; margin-bottom: 0.4rem; text-align: center; }
+    .partner-link-card .sub { color: var(--rgray-text); font-size: 0.88rem; text-align: center; margin-bottom: 1.5rem; }
+    .your-link-row { display: flex; gap: 0.5rem; align-items: stretch; margin-bottom: 1.25rem; flex-wrap: wrap; }
+    .your-link-input { flex: 1; min-width: 220px; padding: 0.85rem 1rem; border: 1px solid #e9ecef; border-radius: 8px; font-family: ui-monospace, monospace; font-size: 0.9rem; background: #f8f9fa; color: var(--rdark-text); }
+    .copy-btn { background: var(--rorange); color: #fff; border: none; padding: 0.85rem 1.5rem; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.9rem; }
+    .copy-btn:hover { background: #d46300; }
+    .copy-btn.copied { background: var(--rgreen); }
+    .qr-block { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center; padding: 1.25rem; background: #f8f9fa; border-radius: 12px; }
+    .qr-block img { width: 180px; height: 180px; padding: 0.75rem; background: #fff; border-radius: 12px; border: 1px solid #e9ecef; }
+    .qr-text { color: var(--rgray-text); font-size: 0.88rem; line-height: 1.55; }
+    .qr-text strong { color: var(--rdark-text); display: block; margin-bottom: 0.4rem; font-size: 1rem; }
+    .qr-text a { display: inline-block; margin-top: 0.6rem; padding: 0.5rem 1rem; background: #fff; border: 1px solid var(--rorange); color: var(--rorange); border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 700; }
+    .qr-text a:hover { background: var(--rorange-light); }
+    .no-id-card { max-width: 720px; margin: 0 auto; background: var(--rorange-light); border: 2px solid var(--rorange); border-radius: 16px; padding: 1.5rem; text-align: center; }
+    .no-id-card h3 { color: var(--rdark-text); font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .no-id-card p { color: var(--rgray-text); font-size: 0.88rem; margin-bottom: 0; line-height: 1.55; }
+    .how-section { padding: 2.5rem 0; }
+    .how-section h2 { text-align: center; font-size: 1.4rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--rdark-text); }
+    .how-section h2 span { color: var(--rorange); }
+    .how-section .sub { text-align: center; color: var(--rgray-text); font-size: 0.9rem; margin-bottom: 1.75rem; }
+    .step-grid-rich { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .step-card { background: #fff; border: 1px solid #e9ecef; border-radius: 12px; padding: 1.5rem 1.25rem; text-align: center; transition: all 0.2s; }
+    .step-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); border-color: var(--rorange); }
+    .step-num { width: 36px; height: 36px; background: var(--rorange); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.95rem; margin: 0 auto 0.85rem; }
+    .step-card .title { font-weight: 800; font-size: 1rem; margin-bottom: 0.35rem; color: var(--rdark-text); }
+    .step-card .desc { color: var(--rgray-text); font-size: 0.85rem; line-height: 1.55; }
+    .step-card strong { color: var(--rorange); }
+    .why-wait-box { max-width: 720px; margin: 1.5rem auto 0; background: var(--rgreen-light); border-left: 4px solid var(--rgreen); border-radius: 0 12px 12px 0; padding: 1rem 1.25rem; }
+    .why-wait-box strong { color: var(--rgreen); }
+    .why-wait-box p { color: var(--rdark-text); font-size: 0.88rem; margin: 0.25rem 0 0; line-height: 1.55; }
+    .share-section { padding: 2.5rem 0; background: #f8f9fa; }
+    .share-section h2 { text-align: center; font-size: 1.4rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--rdark-text); }
+    .share-section h2 span { color: var(--rorange); }
+    .share-section .sub { text-align: center; color: var(--rgray-text); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .share-cards { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .share-card { background: #fff; border: 1px solid #e9ecef; border-radius: 12px; padding: 1.25rem; }
+    .share-card .label { display: inline-block; background: var(--rorange-light); color: var(--rorange); font-size: 0.68rem; font-weight: 800; padding: 0.2rem 0.7rem; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 0.6rem; }
+    .share-card .msg { background: #f8f9fa; border-radius: 8px; padding: 0.85rem 1rem; font-size: 0.86rem; color: var(--rdark-text); line-height: 1.55; margin-bottom: 0.7rem; white-space: pre-wrap; min-height: 4em; }
+    .share-card .copy-share { background: #fff; color: var(--rorange); border: 1.5px solid var(--rorange); padding: 0.45rem 0.95rem; border-radius: 6px; font-size: 0.82rem; cursor: pointer; font-weight: 700; }
+    .share-card .copy-share:hover { background: var(--rorange-light); }
+    .share-card .copy-share.copied { background: var(--rgreen); color: #fff; border-color: var(--rgreen); }
+    .cmds-section { padding: 2.5rem 0; }
+    .cmds-section h2 { text-align: center; font-size: 1.4rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--rdark-text); }
+    .cmds-section h2 span { color: var(--rorange); }
+    .cmds-section .sub { text-align: center; color: var(--rgray-text); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .cmd-grid { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem; }
+    .cmd-card { background: #fff; border: 1px solid #e9ecef; border-radius: 12px; padding: 1.25rem 0.75rem; text-align: center; }
+    .cmd-card .cmd { font-weight: 900; color: var(--rorange); font-size: 1.15rem; margin-bottom: 0.3rem; letter-spacing: 0.5px; }
+    .cmd-card .desc { font-size: 0.82rem; color: var(--rgray-text); line-height: 1.45; }
+    .faq-section { padding: 2.5rem 0; background: #f8f9fa; }
+    .faq-section h2 { text-align: center; font-size: 1.4rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--rdark-text); }
+    .faq-section h2 span { color: var(--rorange); }
+    .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.6rem; }
+    .faq-card { background: #fff; border: 1px solid #e9ecef; border-radius: 12px; overflow: hidden; transition: border-color 0.15s; }
+    .faq-card:hover { border-color: var(--rorange); }
+    .faq-q-rich { padding: 1rem 1.25rem; font-weight: 700; font-size: 0.95rem; color: var(--rdark-text); cursor: pointer; position: relative; padding-right: 2.75rem; }
+    .faq-q-rich::after { content: '+'; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: var(--rorange); font-weight: 700; line-height: 1; }
+    .faq-card.open .faq-q-rich::after { content: '\2212'; }
+    .faq-a-rich { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; padding: 0 1.25rem; }
+    .faq-card.open .faq-a-rich { max-height: 320px; padding: 0 1.25rem 1rem; }
+    .faq-a-rich p { color: var(--rgray-text); font-size: 0.88rem; line-height: 1.65; margin: 0; }
+    .ftc-section { padding: 2rem 0; }
+    .ftc-block, .recruit-block { max-width: 720px; margin: 0 auto 1rem; padding: 1.25rem 1.5rem; border-radius: 12px; }
+    .ftc-block { background: var(--rorange-light); border-left: 4px solid var(--rorange); }
+    .ftc-block strong { color: var(--rorange); display: block; margin-bottom: 0.4rem; font-size: 1rem; }
+    .ftc-block p { margin: 0; color: var(--rdark-text); font-size: 0.88rem; line-height: 1.6; }
+    .recruit-block { background: var(--rgreen-light); border-left: 4px solid var(--rgreen); }
+    .recruit-block strong { color: var(--rgreen); display: block; margin-bottom: 0.4rem; font-size: 1rem; }
+    .recruit-block p { margin: 0; color: var(--rdark-text); font-size: 0.88rem; line-height: 1.6; }
+    .recruit-block a { color: var(--rgreen); font-weight: 700; }
+    .final-section { padding: 2.5rem 1.5rem; }
+    .final-card { max-width: 680px; margin: 0 auto; background: linear-gradient(135deg, var(--rblue) 0%, var(--rblue-light) 100%); color: #fff; border-radius: 16px; padding: 2.5rem 2rem; text-align: center; }
+    .final-card h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.4rem; color: #fff; }
+    .final-card p { color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .final-cta-btn { display: inline-block; background: #22c55e; color: #fff; padding: 0.9rem 2.25rem; border-radius: 8px; font-weight: 800; font-size: 0.95rem; text-decoration: none; transition: background 0.2s; }
+    .final-cta-btn:hover { background: #16a34a; }
+    .terms-line { text-align: center; padding: 0 1.5rem 1.5rem; font-size: 0.82rem; color: var(--rgray-text); }
+    .terms-line a { color: var(--rorange); }
+    @media (max-width: 720px) {
+      .ref-hero h1 { font-size: 1.7rem; }
+      .milestone-row, .step-grid-rich, .grow-nums, .cmd-grid, .share-cards { grid-template-columns: 1fr; }
+      .share-cards { max-width: 380px; margin: 0 auto; }
+      .qr-block { grid-template-columns: 1fr; text-align: center; }
+      .qr-block img { margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
+        <span>Slate Systems</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="getting-started.html">Empezar</a></li>
+        <li><a href="your-website.html">Tu Sitio Web</a></li>
+        <li><a href="leads.html">Llamadas</a></li>
+        <li><a href="reviews.html">Rese&ntilde;as</a></li>
+        <li><a href="chat.html">Chat</a></li>
+        <li><a href="my-links.html">Mis Links</a></li>
+        <li><a href="referrals.html" class="active">Referidos</a></li>
+        <li><a href="grow.html">Crecer</a></li>
+        <li><a href="estafas.html">Estafas</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+      <div class="lang-picker"><a href="https://help.slatesystems.io/referrals.html">EN</a><a href="referrals.html" class="lang-active">ES</a></div>
+    </div>
+  </nav>
+
+  <div class="ref-hero">
+    <div class="label">Para Socios de Slate</div>
+    <h1>3 Referidos = <span class="green">Slate Es Gratis</span></h1>
+    <p class="sub">Ganas $97 cada mes por cada contratista que refieras. Para siempre, mientras sigan como cliente. Sin trabajo despu&eacute;s de la presentaci&oacute;n.</p>
+    <div class="tag">M&aacute;s Llamadas. M&aacute;s Rese&ntilde;as. M&aacute;s Trabajos.</div>
+  </div>
+
+  <div class="math-section">
+    <div class="math-box">
+      <div class="math-box-head">
+        <h2>Las Cuentas</h2>
+        <p>$97/mes por cada referido activo. Sin niveles. Sin l&iacute;mites.</p>
+      </div>
+      <div class="milestone-row">
+        <div class="milestone star">
+          <div class="milestone-badge">Slate es gratis</div>
+          <div class="refs">3 referidos</div>
+          <div class="amount">$291</div>
+          <div class="per">/mes</div>
+          <div class="meaning">Cubre tu pago</div>
+        </div>
+        <div class="milestone">
+          <div class="refs">5 referidos</div>
+          <div class="amount">$485</div>
+          <div class="per">/mes</div>
+          <div class="meaning">Pago de carro</div>
+        </div>
+        <div class="milestone">
+          <div class="refs">10 referidos</div>
+          <div class="amount">$970</div>
+          <div class="per">/mes</div>
+          <div class="meaning">Pago de hipoteca</div>
+        </div>
+      </div>
+      <p class="math-fine">Recurrente. Cada mes que sigan como clientes. Sin l&iacute;mite de referidos.<br>El 85% de los clientes de Slate se quedan m&aacute;s de 12 meses.</p>
+    </div>
+  </div>
+
+  <div class="grow-section">
+    <div class="grow-box">
+      <h2>Se Acumula</h2>
+      <p class="intro">Refiere s&oacute;lo 1 contratista al mes. Mira lo que pasa con tu ingreso mensual a lo largo de 3 a&ntilde;os (con 85% de retenci&oacute;n incluido).</p>
+      <div class="grow-nums">
+        <div class="grow-num">
+          <div class="big">$1,096/mes</div>
+          <div class="lab">A&ntilde;o 1 (12 referidos)</div>
+        </div>
+        <div class="grow-num">
+          <div class="big">$2,095/mes</div>
+          <div class="lab">A&ntilde;o 2 (24 referidos)</div>
+        </div>
+        <div class="grow-num">
+          <div class="big">$2,939/mes</div>
+          <div class="lab">A&ntilde;o 3 (36 referidos)</div>
+        </div>
+      </div>
+      <p class="grow-fine">$35,268 en ingreso pasivo para el a&ntilde;o 3. Refiriendo s&oacute;lo un contratista al mes.</p>
+    </div>
+  </div>
+
+  <div class="partner-link-section">
+    <div id="partner-block" style="display:none;">
+      <div class="partner-link-card">
+        <h2>Tu Link Personal</h2>
+        <p class="sub">C&oacute;pialo. Comp&aacute;rtelo. Cualquiera que se registre con &eacute;l = $97/mes para ti.</p>
+        <div class="your-link-row">
+          <input type="text" class="your-link-input" id="your-link" readonly>
+          <button class="copy-btn" id="copy-link-btn">Copiar</button>
+        </div>
+        <div class="qr-block">
+          <img id="qr-image" src="" alt="Tu c&oacute;digo QR">
+          <div class="qr-text">
+            <strong>Tu c&oacute;digo QR</strong>
+            Mu&eacute;stralo en tu tel&eacute;fono. Imprimelo en una tarjeta. P&eacute;galo en tu camioneta. Quien lo escanee llega a tu p&aacute;gina de referidos.
+            <br><a id="qr-download" href="" download="mi-slate-qr.png">Descargar QR (PNG)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="no-id-block" style="display:none;">
+      <div class="no-id-card">
+        <h3>Abre esta p&aacute;gina desde tu SMS de bienvenida</h3>
+        <p>Tu SMS de bienvenida tiene un link que abre esta p&aacute;gina con tu link y QR cargados. &iquest;Lo perdiste? Env&iacute;a <strong>REFERIR</strong> al <strong>+1 (831) 226-7831</strong> y te lo mandamos otra vez.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="how-section">
+    <div class="container">
+      <h2>&iquest;C&oacute;mo <span>Funciona?</span></h2>
+      <p class="sub">Sin tablero. Sin c&oacute;digos. Sin trabajo despu&eacute;s de la presentaci&oacute;n.</p>
+      <div class="step-grid-rich">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="title">Ya Est&aacute;s Inscrito</div>
+          <div class="desc">Los clientes de Slate quedan inscritos autom&aacute;ticamente. Tu link carga aqu&iacute; cuando llegas desde tu SMS de bienvenida. Sin configurar nada.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="title">Comp&aacute;rtelo</div>
+          <div class="desc">Mandale a cualquier contratista. Texto, email, redes, en persona. T&uacute; eliges.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="title">Te Pagamos</div>
+          <div class="desc"><strong>$97/mes</strong> por cada referido activo. Dep&oacute;sito directo v&iacute;a Stripe. Env&iacute;a <strong>ESTADO</strong> para revisar.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="share-section">
+    <div class="container">
+      <h2>&iquest;Qu&eacute; <span>Decir?</span></h2>
+      <p class="sub">No le pienses tanto. Escoge uno y mand&aacute;lo.</p>
+      <div class="share-cards">
+        <div class="share-card">
+          <span class="label">Texto directo</span>
+          <div class="msg" id="share1">Carnal, estoy usando Slate para mis llamadas y rese&ntilde;as. Manejan todo por $297/mes. Mi tel&eacute;fono no para de sonar y mis rese&ntilde;as de Google se est&aacute;n acumulando. Vale la pena: [TU LINK]</div>
+          <button class="copy-share" data-target="share1">Copiar</button>
+        </div>
+        <div class="share-card">
+          <span class="label">Texto casual</span>
+          <div class="msg" id="share2">Esto es lo que uso para mi presencia online. La mejor decisi&oacute;n del a&ntilde;o. [TU LINK]</div>
+          <button class="copy-share" data-target="share2">Copiar</button>
+        </div>
+        <div class="share-card">
+          <span class="label">Post social</span>
+          <div class="msg" id="share3">Si eres contratista y s&oacute;lo dependes de boca a boca, est&aacute;s dejando dinero en la mesa. Slate maneja tu p&aacute;gina web, llamadas, rese&ntilde;as, mensajes perdidos, seguimiento, todo por $297/mes. Mand&aacute;me DM por mi link.</div>
+          <button class="copy-share" data-target="share3">Copiar</button>
+        </div>
+        <div class="share-card">
+          <span class="label">En persona</span>
+          <div class="msg" id="share4">"T&uacute; haces el trabajo, ellos hacen todo lo dem&aacute;s. $297 al mes. Sin contratos. &iquest;Te mando el link?"</div>
+          <button class="copy-share" data-target="share4">Copiar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cmds-section">
+    <div class="container">
+      <h2>Comandos R&aacute;pidos por <span>Texto</span></h2>
+      <p class="sub">Env&iacute;a esto al <strong>+1 (831) 226-7831</strong> cuando quieras.</p>
+      <div class="cmd-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="cmd-card">
+          <div class="cmd">BALANCE</div>
+          <div class="desc">Ver tus ganancias actuales</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd">ESTADO</div>
+          <div class="desc">Ver lista completa de referidos</div>
+        </div>
+      </div>
+      <div style="max-width: 720px; margin: 1rem auto 0; background: #f8f9fa; border-left: 4px solid #ee7000; padding: 0.95rem 1.25rem; border-radius: 0 8px 8px 0; font-size: 0.88rem; color: #1a1a2e; line-height: 1.55;">
+        <strong style="color: #ee7000;">&iquest;Perdiste tu link?</strong> Env&iacute;a <strong>REFERIR</strong> al <strong>+1 (831) 226-7831</strong> y te lo enviamos otra vez. Tu link nunca cambia.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-section">
+    <div class="container">
+      <h2>Preguntas <span>Comunes</span></h2>
+      <div class="faq-list">
+        <div class="faq-card"><div class="faq-q-rich">&iquest;Cu&aacute;ndo configuro mi cuenta de banco?</div><div class="faq-a-rich"><p>S&oacute;lo despu&eacute;s de ganar tu primer referido. Te mandamos un link de Stripe en ese momento. Toma 2 minutos. No necesitas dar datos bancarios al inscribirte.</p></div></div>
+        <div class="faq-card"><div class="faq-q-rich">&iquest;Cu&aacute;ndo me pagan?</div><div class="faq-a-rich"><p>Mensual el 1ro. Dep&oacute;sito directo v&iacute;a Stripe. Los pagos empiezan 30 d&iacute;as despu&eacute;s del primer pago de tu referido.</p></div></div>
+        <div class="faq-card"><div class="faq-q-rich">&iquest;Y si mi referido cancela?</div><div class="faq-a-rich"><p>Dejas de ganar por ese referido. Los dem&aacute;s siguen pagando. Te avisamos por mensaje.</p></div></div>
+        <div class="faq-card"><div class="faq-q-rich">&iquest;Hay l&iacute;mite de ganancias?</div><div class="faq-a-rich"><p>Sin l&iacute;mite. 1 referido o 100. $97 al mes, por cada referido activo.</p></div></div>
+        <div class="faq-card"><div class="faq-q-rich">&iquest;Puedo referir contratistas de otros oficios?</div><div class="faq-a-rich"><p>S&iacute;. Slate sirve para TODOS los oficios: techos, HVAC, plomer&iacute;a, electricidad, pintura, jardiner&iacute;a, m&aacute;s.</p></div></div>
+        <div class="faq-card"><div class="faq-q-rich">&iquest;C&oacute;mo sabe Slate qui&eacute;n refiri&oacute; a qui&eacute;n?</div><div class="faq-a-rich"><p>Tu link tiene tu ID integrado. Cuando hacen clic y agendan, te llevas el cr&eacute;dito. Si dos socios comparten con la misma persona, gana el primer clic.</p></div></div>
+        <div class="faq-card"><div class="faq-q-rich">&iquest;Y los impuestos?</div><div class="faq-a-rich"><p>Eres contratista independiente. Stripe recoge tu informaci&oacute;n W-9 durante el onboarding (despu&eacute;s de tu primer referido ganado) y emite un 1099-K si ganas $600+ al a&ntilde;o. Slate no retiene impuestos. T&uacute; manejas tu propio reporte.</p></div></div>
+        <div class="faq-card"><div class="faq-q-rich">&iquest;No estoy ayudando a mi competencia?</div><div class="faq-a-rich"><p>No. Slate limita cu&aacute;ntos contratistas tomamos en cada mercado. Adem&aacute;s puedes referir entre oficios. Tu ventaja se queda contigo.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ftc-section">
+    <div class="container">
+      <div class="recruit-block">
+        <strong>&iquest;Conoces a alguien que no es cliente de Slate pero quiere ganar?</strong>
+        <p>Cualquiera puede ser socio, no s&oacute;lo clientes de Slate. M&aacute;ndalo aqu&iacute;: <a href="https://socios.slatesystems.io">socios.slatesystems.io</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="final-section">
+    <div class="final-card">
+      <h2>&iquest;Necesitas Ayuda?</h2>
+      <p>Escr&iacute;benos al +1 (831) 226-7831 con cualquier pregunta. Contestamos r&aacute;pido.</p>
+      <a href="sms:+18312267831" class="final-cta-btn">Escribirnos</a>
+    </div>
+  </div>
+
+  <p class="terms-line">T&eacute;rminos completos: <a href="https://refiere.slatesystems.io/terminos">T&eacute;rminos del Programa de Referidos</a></p>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
+          <span>Slate Systems</span>
+        </div>
+        <div class="footer-links">
+          <a href="getting-started.html">Empezar</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contactar Soporte</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&iquest;Necesitas ayuda? Escr&iacute;benos al <strong>+1 (831) 226-7831</strong> o env&iacute;a un correo a hello@slatesystems.io</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+    (function(){
+      var params = new URLSearchParams(window.location.search);
+      var id = params.get('id') || params.get('partner_id') || params.get('ref');
+      if (id) {
+        var link = 'https://refiere.slatesystems.io/?ref=' + encodeURIComponent(id);
+        var qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=10&data=' + encodeURIComponent(link);
+        document.getElementById('your-link').value = link;
+        document.getElementById('qr-image').src = qrUrl;
+        document.getElementById('qr-download').href = qrUrl + '&download=1';
+        document.getElementById('partner-block').style.display = 'block';
+        document.querySelectorAll('.share-card .msg').forEach(function(el){
+          el.textContent = el.textContent.replace(/\[TU LINK\]/g, link);
+        });
+      } else {
+        document.getElementById('no-id-block').style.display = 'block';
+      }
+    })();
+    var copyBtn = document.getElementById('copy-link-btn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function(){
+        navigator.clipboard.writeText(document.getElementById('your-link').value);
+        copyBtn.textContent = '\u00a1Copiado!';
+        copyBtn.classList.add('copied');
+        setTimeout(function(){ copyBtn.textContent = 'Copiar'; copyBtn.classList.remove('copied'); }, 1500);
+      });
+    }
+    document.querySelectorAll('.copy-share').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var t = document.getElementById(btn.dataset.target);
+        navigator.clipboard.writeText(t.textContent);
+        btn.textContent = '\u00a1Copiado!';
+        btn.classList.add('copied');
+        setTimeout(function(){ btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 1500);
+      });
+    });
+    document.querySelectorAll('.faq-card').forEach(function(card){
+      card.querySelector('.faq-q-rich').addEventListener('click', function(){ card.classList.toggle('open'); });
+    });
+  </script>
+<script src="/js/chat-widget.js" defer></script>
+</body>
+</html>
