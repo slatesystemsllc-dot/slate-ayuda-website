@@ -1,4 +1,4 @@
-// Slate Systems Help Chat API - v3.0 (Bilingual EN/ES)
+// Slate Systems Help Chat API - v3.1 (Bilingual EN/ES, x-slate-auth fix 2026-07-14)
 // 2026-06-10: Rerouted from OpenRouter -> Slate Claude VPS Proxy (n8n -> claude -p, Sonnet) on Dan's plan.
 // Mirrors the dashboard/wiki Atlas pattern: this function handles rate limit + sanitize + relay,
 // then wraps the single JSON answer as one SSE chunk so the existing chat-widget.js frontend
