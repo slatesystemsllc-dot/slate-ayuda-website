@@ -1,39 +1,38 @@
-# Spanish clean-URLs serve the (English-named) page files. Rewrite = 200.
-/empezar         /getting-started.html   200
-/tu-app          /your-app.html          200
-/tu-sitio-web    /your-website.html      200
-/clientes        /leads.html             200
-/resenas         /reviews.html           200
-/mis-enlaces     /my-links.html          200
-/referidos       /referrals.html         200
-/contacto        /contact.html           200
-/crecer          /grow.html              200
-/kit             /share-kit.html         200
+# Old English URLs -> Spanish (one-way 301). Files are now Spanish-named, so each Spanish URL serves directly.
+/getting-started       /empezar        301
+/getting-started.html  /empezar        301
+/your-app              /tu-app         301
+/your-app.html         /tu-app         301
+/your-website          /tu-sitio-web   301
+/your-website.html     /tu-sitio-web   301
+/leads                 /clientes       301
+/leads.html            /clientes       301
+/reviews               /resenas        301
+/reviews.html          /resenas        301
+/my-links              /mis-enlaces    301
+/my-links.html         /mis-enlaces    301
+/referrals             /referidos      301
+/referrals.html        /referidos      301
+/contact               /contacto       301
+/contact.html          /contacto       301
+/grow                  /crecer         301
+/grow.html             /crecer         301
+/share-kit             /kit            301
+/share-kit.html        /kit            301
 
-# Old English clean-URLs redirect to the Spanish ones (bookmarks, bot, SOP links). 301.
-/getting-started /empezar        301
-/your-app        /tu-app         301
-/your-website    /tu-sitio-web   301
-/leads           /clientes       301
-/reviews         /resenas        301
-/my-links        /mis-enlaces    301
-/referrals       /referidos      301
-/contact         /contacto       301
-/grow            /crecer         301
-
-# Old /es/ prefixed links (from the bot KB) -> Spanish clean-URLs. 301.
-/es/getting-started.html  /empezar        301
-/es/your-app.html         /tu-app         301
-/es/your-website.html     /tu-sitio-web   301
-/es/leads.html            /clientes       301
-/es/reviews.html          /resenas        301
-/es/my-links.html         /mis-enlaces    301
-/es/referrals.html        /referidos      301
-/es/referral-terms.html   /referidos      301
-/es/share-kit.html        /kit            301
-/es/grow.html             /crecer         301
-/es/faq.html              /faq            301
-/es/contact.html          /contacto       301
-/es/chat.html             /chat           301
-/es/estafas.html          /estafas        301
-/es/                      /               301
+# Old /es/ prefixed links (from earlier bot KB and external references)
+/es/getting-started.html   /empezar        301
+/es/your-app.html          /tu-app         301
+/es/your-website.html      /tu-sitio-web   301
+/es/leads.html             /clientes       301
+/es/reviews.html           /resenas        301
+/es/my-links.html          /mis-enlaces    301
+/es/referrals.html         /referidos      301
+/es/referral-terms.html    /referidos      301
+/es/share-kit.html         /kit            301
+/es/grow.html              /crecer         301
+/es/faq.html               /faq            301
+/es/contact.html           /contacto       301
+/es/chat.html              /chat           301
+/es/estafas.html           /estafas        301
+/es/                       /               301
