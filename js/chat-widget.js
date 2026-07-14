@@ -4,7 +4,7 @@
   var STORAGE_KEY = 'slate_chat';
   var MAX_TURNS = 10;
   var WELCOME_MSG = "Hey! I'm Sophie, your Slate support assistant. Ask me anything about your website, calls, reviews, referrals, or how to use the app. What can I help with?";
-  var WELCOME_MSG_ES = "\u00a1Hola! Soy Sophie, tu asistente de soporte de Slate. Preg\u00fantame lo que quieras sobre tu p\u00e1gina web, llamadas, rese\u00f1as, referidos, o c\u00f3mo usar la app. \u00bfEn qu\u00e9 te puedo ayudar?";
+  var WELCOME_MSG_ES = "\u00a1Hola! Soy Sofía, tu asistente de soporte de Slate. Preg\u00fantame lo que quieras sobre tu p\u00e1gina web, llamadas, rese\u00f1as, referidos, o c\u00f3mo usar la app. \u00bfEn qu\u00e9 te puedo ayudar?";
 
   var IS_SPANISH = (document.documentElement.getAttribute('lang') || '').toLowerCase().indexOf('es') === 0
     || window.location.hostname.indexOf('ayuda') !== -1
