@@ -48,13 +48,6 @@
     </div>
   </section>
 
-  <!-- Breadcrumb -->
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="index.html">Inicio</a> / Manejo de Clientes
-    </div>
-  </div>
-
   <!-- Content -->
   <section class="section">
     <div class="container">
@@ -193,28 +186,6 @@
 
         <p>Cada vez que llega un nuevo cliente, ya sea llamada perdida, formulario, chat, o redes sociales, recibes un texto con su info. Sabras su nombre, número de teléfono, y como te contacto.</p>
 
-        <p style="color: #475569; font-style: italic; margin-bottom: 1rem;">Esto es lo que pasa cuando alguien te contacta y no puedes responder de inmediato:</p>
-
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem; margin: 1.5rem 0;">
-          <pre class="mermaid">
-flowchart TD
-    A("Cliente llama\no te escribe"):::blueNode --> B{"Contestaste?"}:::decisionNode
-    B -->|"Si"| C["Tu lo atiendes\ndirecto"]:::greenNode
-    B -->|"No / Perdida"| D["El sistema le escribe\nautomaticamente\nen segundos"]:::blueNode
-    D --> E["Tu recibes un texto\ncon su info"]:::notifyNode
-    D --> F{"Respondio?"}:::decisionNode
-    F -->|"Si"| G["Lo ves en tu app\nresponde y cierra\nel trato"]:::greenNode
-    F -->|"No respondio"| H["El sistema le escribe\nal dia siguiente"]:::orangeNode
-    H --> I["Recibes recordatorios\npara agregarlos al\nFormulario de Marketing"]:::notifyNode
-
-    classDef blueNode fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,color:#152a45
-    classDef greenNode fill:#f0fdf4,stroke:#22c55e,stroke-width:2px,color:#14532d
-    classDef orangeNode fill:#fff7ed,stroke:#f97316,stroke-width:2px,color:#7c2d12
-    classDef decisionNode fill:#fefce8,stroke:#eab308,stroke-width:2px,color:#713f12
-    classDef notifyNode fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#78350f
-          </pre>
-        </div>
-
         <div class="benefit-box">
           <p><strong>Aunque no contestes:</strong> Cuando pierdes una llamada, el sistema le escribe automáticamente Y te avisa a ti. No pierdes el cliente, y puedes darle seguimiento cuando estes libre.</p>
         </div>
@@ -315,24 +286,6 @@ flowchart TD
       document.getElementById('navLinks').classList.toggle('active');
     }
   </script>
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-<script>
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'base',
-    themeVariables: {
-      primaryColor: '#eff6ff',
-      primaryTextColor: '#152a45',
-      primaryBorderColor: '#3b82f6',
-      lineColor: '#64748b',
-      secondaryColor: '#f0fdf4',
-      tertiaryColor: '#fdf4ff',
-      fontFamily: 'Inter, sans-serif',
-      fontSize: '13px'
-    },
-    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
-  });
-</script>
 <script src="/js/chat-widget.js" defer></script>
 </body>
 </html>
