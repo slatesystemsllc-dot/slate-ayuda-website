@@ -13,17 +13,18 @@
     .app-shot{max-width:300px;width:100%;border-radius:16px;box-shadow:0 6px 24px rgba(15,30,52,.14);border:1px solid #e2e8f0;display:block;margin:1rem auto;}
     .shot-row{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:flex-start;justify-content:center;}
     .shot-row .txt{flex:1;min-width:240px;}
+    .shot-pair{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+    .shot-pair .app-shot{margin:.5rem;}
   </style>
 </head>
 <body>
-  <!-- Navigation -->
   <nav class="nav">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
         <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
         <span>Slate Systems</span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+      <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
@@ -49,9 +50,7 @@
   </section>
 
   <div class="container">
-    <div class="breadcrumb">
-      <a href="index.html">Inicio</a> / Usar Tu App
-    </div>
+    <div class="breadcrumb"><a href="index.html">Inicio</a> / Usar Tu App</div>
   </div>
 
   <section class="section">
@@ -62,7 +61,7 @@
         <h2>Tus Mensajes: donde vive cada texto</h2>
         <p>Toca <strong>Conversaciones</strong> en el menú de abajo (el ícono de la burbuja, el segundo desde la izquierda). Cada texto, cliente y respuesta de reseña llega aquí. Esta es en serio la única pantalla que necesitas día a día.</p>
         <div class="shot-row">
-          <img src="assets/app/messages.jpg" alt="La pantalla de Conversaciones, con la pestaña de Conversaciones y el botón de nuevo mensaje marcados" class="app-shot">
+          <img src="assets/app/messages.jpg" alt="La pantalla de Conversaciones con la pestaña de Conversaciones y el botón de nuevo mensaje marcados" class="app-shot">
           <div class="txt">
             <ul class="icon-list">
               <li><strong>Dónde está:</strong> el menú de abajo, el ícono de la burbuja. Ese es tu buzón.</li>
@@ -76,7 +75,14 @@
       <!-- Empezar un texto nuevo -->
       <div class="content-section">
         <h2>Empezar un texto nuevo</h2>
-        <p>En la pantalla de Conversaciones, toca el botón <strong>+</strong> (abajo a la derecha), y elige <strong>Nuevo Mensaje</strong>. Escribe el número de la persona o elige un contacto, y textéale como siempre. Todo lo que mandas muestra el número de negocio, y su respuesta regresa a este mismo buzón.</p>
+        <p>En la pantalla de Conversaciones, toca el botón <strong>+</strong> (abajo a la derecha, marcado en verde arriba), y elige <strong>Nuevo Mensaje</strong>. Escribe el número de la persona o elige un contacto y textéale como siempre. Todo lo que mandas muestra tu número de negocio, y su respuesta regresa a este mismo buzón.</p>
+      </div>
+
+      <!-- Acciones rapidas -->
+      <div class="content-section">
+        <h2>Haz una llamada o un texto, rápido</h2>
+        <p>Desde la pantalla de inicio de la app puedes <strong>Hacer una Llamada</strong> o empezar un <strong>Nuevo Mensaje</strong> con un toque.</p>
+        <img src="assets/app/quick-actions.jpg" alt="La pantalla de inicio de la app con Hacer una Llamada y Nuevo Mensaje marcados" class="app-shot">
       </div>
 
       <!-- Llamadas + numero -->
@@ -93,20 +99,44 @@
             <p><strong>Dos formas de llamar a un cliente, las dos sirven:</strong></p>
             <ul class="icon-list">
               <li><strong>Tu teléfono normal.</strong> Lo más fácil, funciona como siempre. El cliente ve tu número personal.</li>
-              <li><strong>El marcador de la app</strong> (aquí). El cliente ve tu <strong>número de negocio</strong>, y la llamada queda registrada. Úsalo si quieres mantener todo bajo la línea de negocio. Opcional, la mayoría solo usa su teléfono normal.</li>
+              <li><strong>El marcador de la app</strong> (aquí). El cliente ve tu <strong>número de negocio</strong> y la llamada queda registrada. Opcional, la mayoría solo usa su teléfono normal.</li>
             </ul>
             <p style="margin-top:1rem;"><strong>Pero da el NUEVO número de negocio en todos lados</strong> (Google, tarjetas, un imán en la troca, letreros, tus redes). Aquí está por qué importa:</p>
             <div class="alert alert-info" style="margin-top:.5rem;">
-              El texto de regreso por llamada perdida solo funciona cuando un cliente llama a tu <strong>nuevo número de negocio</strong>. Si llaman a tu número personal viejo, el sistema no puede ver la llamada perdida, así que no sale ningún texto automático. Pon el número nuevo en todos lados para que el sistema de verdad trabaje por ti.</div>
+              El texto de regreso por llamada perdida solo funciona cuando un cliente llama a tu <strong>nuevo número de negocio</strong>. Si llaman a tu número personal viejo, el sistema no puede ver la llamada perdida, así que no sale ningún texto automático. Pon el número nuevo en todos lados para que el sistema trabaje por ti.
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Acciones rapidas -->
+      <!-- Apps -->
       <div class="content-section">
-        <h2>Acciones rápidas desde tu pantalla de inicio</h2>
-        <p>Desde la pantalla de inicio de la app puedes <strong>Hacer una Llamada</strong> o empezar un <strong>Nuevo Mensaje</strong> con un toque.</p>
-        <img src="assets/app/quick-actions.jpg" alt="La pantalla de inicio de la app con Hacer una Llamada y Nuevo Mensaje marcados" class="app-shot">
+        <h2>Tus otras herramientas están en "Apps"</h2>
+        <p>Toca <strong>Apps</strong> (abajo a la derecha del menú) para encontrar tu <strong>Marcador</strong>, <strong>Contactos</strong> y <strong>Notificaciones</strong> todo en un solo lugar.</p>
+        <img src="assets/app/apps.jpg" alt="El menú de Apps con Marcador, Contactos y Notificaciones marcados" class="app-shot">
+      </div>
+
+      <!-- Agregar contacto + escanear -->
+      <div class="content-section">
+        <h2>Agrega un cliente</h2>
+        <p>Dos formas fáciles de agregar a alguien a tus contactos:</p>
+        <div class="shot-pair">
+          <div style="max-width:300px;">
+            <img src="assets/app/add-contact.jpg" alt="El formulario de Nuevo Contacto" class="app-shot">
+            <p style="text-align:center;"><strong>A mano:</strong> escribe su nombre y número.</p>
+          </div>
+          <div style="max-width:300px;">
+            <img src="assets/app/scan-card.jpg" alt="La pantalla para escanear una tarjeta de presentación" class="app-shot">
+            <p style="text-align:center;"><strong>Escanea una tarjeta:</strong> apunta tu cámara y se llenan los datos.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Idioma -->
+      <div class="content-section">
+        <h2>Cambia tu idioma</h2>
+        <p>¿Quieres la app en español o inglés? Toca el <strong>engrane</strong> (arriba a la derecha), luego <strong>Language</strong> (Idioma), y elige el que quieras.</p>
+        <img src="assets/app/language.jpg" alt="La pantalla de Ajustes con la opción de Idioma marcada" class="app-shot">
       </div>
 
       <!-- Lo que manejamos -->
@@ -168,9 +198,7 @@
   </footer>
 
   <script>
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('active');
-    }
+    function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
   </script>
 <script src="/js/chat-widget.js" defer></script>
 </body>
