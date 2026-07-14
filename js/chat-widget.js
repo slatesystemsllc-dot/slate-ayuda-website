@@ -8,7 +8,7 @@
 
   var IS_SPANISH = (document.documentElement.getAttribute('lang') || '').toLowerCase().indexOf('es') === 0
     || window.location.hostname.indexOf('ayuda') !== -1
-    || window.location.pathname.indexOf('/es/') === 0
+    || window.location.pathname.indexOf('/') === 0
     || window.location.pathname === '/es';
 
   var style = document.createElement('style');
@@ -211,7 +211,7 @@
     var smsLabel = IS_SPANISH ? 'Escr\u00edbenos' : 'Text us';
     var moreHelp = IS_SPANISH ? '\u00bfNecesitas m\u00e1s ayuda?' : 'Need more help?';
     var contactLabel = IS_SPANISH ? 'Contactar Soporte' : 'Contact Support';
-    var contactHref = IS_SPANISH ? '/es/contact.html' : '/contact.html';
+    var contactHref = IS_SPANISH ? '/contacto' : '/contact.html';
     var orWord = IS_SPANISH ? 'o visita' : 'or visit';
     esc.innerHTML = moreHelp + ' <a href="sms:' + smsNum + '">' + smsLabel + '</a> ' + orWord + ' <a href="' + contactHref + '">' + contactLabel + '</a>';
     panel.querySelector('.sc-input-area').before(esc);
