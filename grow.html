@@ -44,10 +44,6 @@
     </div>
   </section>
 
-  <div class="container">
-    <div class="breadcrumb"><a href="index.html">Inicio</a> / Consigue Más Trabajo</div>
-  </div>
-
   <section class="section">
     <div class="container">
 
@@ -75,24 +71,6 @@
               <tr><td><strong>Día 5</strong></td><td>Último mensaje amable: "¿Última vez que te molesto, todavía tengo espacio?"</td></tr>
             </tbody>
           </table>
-        </div>
-
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem; margin: 1.5rem 0;">
-          <pre class="mermaid">
-flowchart LR
-    A("Tú nos mandas\ntu lista de contactos"):::blueNode --> B["Los cargamos\nen tu sistema"]:::blueNode
-    B --> C["Día 1\nSaludo +\nlink de reseña"]:::greenNode
-    C -->|"No responde"| D["Día 3\nOferta de\nservicios"]:::orangeNode
-    D -->|"No responde"| E["Día 5\nÚltimo mensaje\namable"]:::orangeNode
-    C -->|"Responden!"| F("Recibes un texto\nde notificación"):::notifyNode
-    D -->|"Responden!"| F
-    E -->|"Responden!"| F
-
-    classDef blueNode fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,color:#152a45
-    classDef greenNode fill:#f0fdf4,stroke:#22c55e,stroke-width:2px,color:#14532d
-    classDef orangeNode fill:#fff7ed,stroke:#f97316,stroke-width:2px,color:#7c2d12
-    classDef notifyNode fill:#fefce8,stroke:#eab308,stroke-width:2px,color:#713f12
-          </pre>
         </div>
         <p><strong>Te notificamos cada vez que alguien responde.</strong> Cuando un cliente anterior responde, recibes un texto de inmediato para que puedas darle seguimiento y cerrar el trato.</p>
       </div>
@@ -187,24 +165,6 @@ flowchart LR
       document.getElementById('navLinks').classList.toggle('active');
     }
   </script>
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-<script>
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'base',
-    themeVariables: {
-      primaryColor: '#eff6ff',
-      primaryTextColor: '#152a45',
-      primaryBorderColor: '#3b82f6',
-      lineColor: '#64748b',
-      secondaryColor: '#f0fdf4',
-      tertiaryColor: '#fdf4ff',
-      fontFamily: 'Inter, sans-serif',
-      fontSize: '13px'
-    },
-    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
-  });
-</script>
 <script src="/js/chat-widget.js" defer></script>
 </body>
 </html>
