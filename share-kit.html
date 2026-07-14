@@ -111,23 +111,23 @@
 
       <div class="content-section">
         <h2>Publicaciones para Redes: Copia y Publica</h2>
-        <p class="section-intro">Publica esto en Facebook, Instagram, o donde esten los contratistas. Agrega tu link en los comentarios cuando pregunten.</p>
+        <p class="section-intro">Publica esto en Facebook, Instagram, o donde estén los contratistas. Agrega tu link en los comentarios cuando pregunten.</p>
 
         <div class="share-card">
           <h3>Publicación 1: Llamar Atención</h3>
-          <div class="message-text" id="social1">Si eres contratista y todavía dependes solo del boca en boca, estas dejando dinero en la mesa. Empece a usar Slate Systems hace unos meses y mi teléfono no ha parado de sonar. Ellos se encargan de clientes, reseñas, sitio web, todo por $297/mes. Mandame mensaje para mi link de referido.</div>
+          <div class="message-text" id="social1">Si eres contratista y todavía dependes solo del boca en boca, estás dejando dinero en la mesa. Empecé a usar Slate Systems hace unos meses y mi teléfono no ha parado de sonar. Ellos se encargan de clientes, reseñas, sitio web, todo por $297/mes. Mándame mensaje para mi link de referido.</div>
           <button class="copy-btn" onclick="copyText('social1', this)">Copiar Publicación</button>
         </div>
 
         <div class="share-card">
           <h3>Publicación 2: Sincero</h3>
-          <div class="message-text" id="social2">La neta, estaba incredulo. Otras empresas me dejaron mal antes. Pero Slate es diferente. Ellos si cumplen. Mis reseñas en Google pasaron de 12 a 40+ y los clientes llegan diario. Si algun contratista amigo quiere verlo, tengo un link.</div>
+          <div class="message-text" id="social2">La neta, estaba incrédulo. Otras empresas me dejaron mal antes. Pero Slate es diferente. Ellos sí cumplen. Mis reseñas en Google pasaron de 12 a 40+ y los clientes llegan diario. Si algún contratista amigo quiere verlo, tengo un link.</div>
           <button class="copy-btn" onclick="copyText('social2', this)">Copiar Publicación</button>
         </div>
 
         <div class="share-card">
           <h3>Publicación 3: Resultados</h3>
-          <div class="message-text" id="social3">La mejor decisión de negocio que hice este año: dejar que Slate se encargue de mi presencia en línea. Más clientes, más reseñas, más trabajos. También tienen un programa de referidos, $97/mes por cada referido. Preguntame.</div>
+          <div class="message-text" id="social3">La mejor decisión de negocio que hice este año: dejar que Slate se encargue de mi presencia en línea. Más clientes, más reseñas, más trabajos. También tienen un programa de referidos, $97/mes por cada referido. Pregúntame.</div>
           <button class="copy-btn" onclick="copyText('social3', this)">Copiar Publicación</button>
         </div>
       </div>
@@ -136,7 +136,7 @@
         <h2>Email: Copia y Envía</h2>
         <p class="section-intro">¿Conoces un contratista con email? Copia todo este email y mándalo. Cambia <strong>[TU LINK]</strong> y <strong>[TU NOMBRE]</strong> por tu info.</p>
         <div class="email-block">
-          <div class="email-field"><strong>Asunto</strong><p>Esto me ayudo en mi negocio, pense en ti</p></div>
+          <div class="email-field"><strong>Asunto</strong><p>Esto me ayudó en mi negocio, pensé en ti</p></div>
           <div class="email-body" id="email1">Oye,
 
 Te quiero compartir algo que me ha funcionado muy bien en mi negocio.
@@ -232,7 +232,7 @@ Sin presión. Solo pensé que te gustaría saber.
       var text = el.innerText || el.textContent;
       navigator.clipboard.writeText(text).then(function() {
         var original = btn.textContent;
-        btn.textContent = 'Copiado!';
+        btn.textContent = '¡Copiado!';
         btn.classList.add('copied');
         setTimeout(function() { btn.textContent = original; btn.classList.remove('copied'); }, 2000);
       }).catch(function() {
