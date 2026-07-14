@@ -314,7 +314,7 @@ export async function onRequestPost(context) {
     try {
       proxyResponse = await fetch(N8N_WEBHOOK, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'X-Slate-Auth': (context.env && context.env.SLATE_WEBHOOK_AUTH) || '' },
         body: JSON.stringify({
           messages: [{ role: 'system', content: systemPrompt }].concat(sanitized),
           max_tokens: MAX_TOKENS,
