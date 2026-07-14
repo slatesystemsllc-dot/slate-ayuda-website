@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <title>Usar Tu App - Slate Systems Ayuda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .app-shot{max-width:300px;width:100%;border-radius:16px;box-shadow:0 6px 24px rgba(15,30,52,.14);border:1px solid #e2e8f0;display:block;margin:1rem auto;}
+    .shot-row{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:flex-start;justify-content:center;}
+    .shot-row .txt{flex:1;min-width:240px;}
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
+        <span>Slate Systems</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="getting-started.html">Empezar</a></li>
+        <li><a href="your-app.html" class="active">Tu App</a></li>
+        <li><a href="your-website.html">Tu Sitio Web</a></li>
+        <li><a href="leads.html">Clientes</a></li>
+        <li><a href="reviews.html">Reseñas</a></li>
+        <li><a href="my-links.html">Mis Links</a></li>
+        <li><a href="referrals.html">Referidos</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Usar Tu App</h1>
+      <p>Todo tu negocio corre desde una app y un formulario. Aquí está lo que hace cada parte, con fotos. Vuelve cuando quieras.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Inicio</a> / Usar Tu App
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Mensajes -->
+      <div class="content-section">
+        <h2>Tus Mensajes: donde vive cada texto</h2>
+        <p>Toca el ícono de <strong>Conversaciones</strong> abajo (la burbuja, al lado de la campana). Cada texto, cliente y respuesta de reseña llega aquí. Esta es en serio la única pantalla que necesitas día a día.</p>
+        <div class="shot-row">
+          <img src="assets/app/messages.jpg" alt="La pantalla de Conversaciones, con la pestaña de Conversaciones y el botón de nuevo mensaje marcados" class="app-shot">
+          <div class="txt">
+            <ul class="icon-list">
+              <li><strong>La campana no es.</strong> Usa el ícono de la burbuja justo al lado.</li>
+              <li><strong>Empieza un texto nuevo</strong> con el botón <strong>+</strong> (marcado en verde).</li>
+              <li>Cuando un cliente responde, aparece aquí para que le contestes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Llamadas + numero -->
+      <div class="content-section">
+        <h2>Tus llamadas y tu nuevo número</h2>
+        <p>Tienes un nuevo número de negocio. Aquí está exactamente cómo funciona para que nada te confunda.</p>
+        <div class="highlight-box">
+          <h3>Tu teléfono suena como siempre</h3>
+          <p style="margin:.5rem 0 0;">El número nuevo solo apunta a tu celular normal. Cuando alguien lo marca, <strong>tu teléfono suena como hoy</strong>. Contestas normal. Sin segundo teléfono. Si pierdes la llamada, el sistema le manda un texto de regreso a esa persona por ti para que no la pierdas.</p>
+        </div>
+        <div class="shot-row" style="margin-top:1rem;">
+          <img src="assets/app/dialer.jpg" alt="La pantalla del marcador de la app" class="app-shot">
+          <div class="txt">
+            <ul class="icon-list">
+              <li><strong>Para llamar:</strong> solo usa tu teléfono normal como siempre. Funciona bien.</li>
+              <li><strong>¿Quieres que salga el número de negocio?</strong> Haz la llamada desde el marcador de la app (aquí). Es opcional, la mayoría no lo hace.</li>
+              <li><strong>La app es más que nada para tus textos.</strong> Las llamadas funcionan en tu teléfono normal.</li>
+              <li><strong>Pon el número nuevo en todos lados:</strong> Google, tarjetas, un imán en la troca, letreros, tus redes. Entre más lugares tenga, más llamadas regresan a ti.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Acciones rapidas -->
+      <div class="content-section">
+        <h2>Acciones rápidas desde tu pantalla de inicio</h2>
+        <p>Desde la pantalla de inicio de la app puedes <strong>Hacer una Llamada</strong> o empezar un <strong>Nuevo Mensaje</strong> con un toque.</p>
+        <img src="assets/app/quick-actions.jpg" alt="La pantalla de inicio de la app con Hacer una Llamada y Nuevo Mensaje marcados" class="app-shot">
+      </div>
+
+      <!-- Lo que manejamos -->
+      <div class="content-section">
+        <h2>Lo que manejamos por ti (tú nunca lo tocas)</h2>
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+          <div class="card">
+            <h4>Respondemos tus reseñas</h4>
+            <p>Cada reseña, buena o mala, recibe una respuesta cálida y profesional con tu voz, sola. Tú nunca escribes una palabra.</p>
+          </div>
+          <div class="card">
+            <h4>Publicamos tus mejores reseñas</h4>
+            <p>Tus reseñas de 5 estrellas se convierten en gráficas y se publican en tu Facebook, Instagram y Google por ti.</p>
+          </div>
+          <div class="card">
+            <h4>Damos seguimiento por ti</h4>
+            <p>Si un cliente no deja reseña, el sistema le recuerda amablemente durante unas semanas, y luego para.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Que no tocar -->
+      <div class="content-section">
+        <h2>Qué dejar en paz (nosotros lo tenemos)</h2>
+        <p>Algunas cosas están hechas para correr solas. Si quieres un cambio, solo mándanos un texto y lo hacemos, así nada se rompe.</p>
+        <div class="alert alert-info">
+          <ul class="icon-list" style="margin:0;">
+            <li><strong>Tu sitio web:</strong> tiene código a la medida ajustado para Google. ¿Quieres un cambio? Mándanos un texto, lo mantenemos rápido y bien posicionado.</li>
+            <li><strong>Las automatizaciones:</strong> déjanoslas a nosotros. Son las que mandan tus reseñas y textos de regreso.</li>
+            <li><strong>"Inbound Call Settings" en la app:</strong> es un ajuste para agencias grandes con muchas cuentas. Déjalo en "Active Sub-account" e ignóralo.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="alert alert-success" style="margin-top:1.5rem;">
+        <strong>Tu única tarea:</strong> después de cada cliente contento, abre tu página <a href="my-links.html">Mis Links</a>, escribe su nombre y número, y dale enviar. Ese es todo el sistema. <a href="reviews.html">Mira cómo funcionan las reseñas &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
+          <span>Slate Systems</span>
+        </div>
+        <div class="footer-links">
+          <a href="getting-started.html">Empezar</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contactar Soporte</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>¿Necesitas ayuda? Escríbenos al <strong>+1 (831) 226-7831</strong> o email hello@slatesystems.io</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+<script src="/js/chat-widget.js" defer></script>
+</body>
+</html>
