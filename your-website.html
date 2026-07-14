@@ -135,29 +135,14 @@
       <div class="content-section">
         <h2>Como Te Trae Clientes</h2>
 
-        <p>Este es el camino que toma un cliente:</p>
+        <p>Este es el camino simple que toma un cliente:</p>
 
-        <p style="color: #475569; font-style: italic; margin-bottom: 1rem;">Este diagrama muestra el camino de un cliente, desde buscar en Google hasta ser un contacto en tu app.</p>
-
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem; margin: 1.5rem 0;">
-          <pre class="mermaid">
-flowchart TD
-    A(["Cliente busca en Google\n'plomero cerca de mi'"]):::blueNode --> B["Tu sitio aparece\ngracias al SEO + paginas de area"]:::blueNode
-    B --> C["Hacen clic y llegan\na tu pagina de inicio"]:::blueNode
-    C --> D["Ven que eres profesional\ny tienes buenas resenas"]:::blueNode
-    D --> E[/"Llamada\nTocan para llamarte"/]:::orangeNode
-    D --> F[/"Formulario\nPiden una cotizacion"/]:::orangeNode
-    D --> G[/"Chat\nTe escriben desde el sitio"/]:::orangeNode
-    E --> H[("Cliente aparece\nen tu app")]:::greenNode
-    F --> H
-    G --> H
-    H --> I("Tu respondes\ny cierras el trato"):::greenNode
-
-    classDef blueNode fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,color:#152a45
-    classDef orangeNode fill:#fff7ed,stroke:#f97316,stroke-width:2px,color:#7c2d12
-    classDef greenNode fill:#f0fdf4,stroke:#22c55e,stroke-width:2px,color:#14532d
-          </pre>
-        </div>
+        <ol class="steps">
+          <li>Buscan en Google a alguien de tu oficio cerca.</li>
+          <li>Tu sitio aparece, y se ve profesional con buenas reseñas.</li>
+          <li>Te llaman, llenan un formulario de cotización, o te escriben por el chat.</li>
+          <li>Ese cliente llega a tu app, y tú respondes y cierras el trato.</li>
+        </ol>
 
         <div class="benefit-box">
           <p><strong>El resultado:</strong> Tu sitio web es un vendedor que trabaja 24/7. Mientras duermes, trabajas, o estas con tu familia, esta allá afuera capturando clientes para ti.</p>
@@ -269,24 +254,6 @@ flowchart TD
       document.getElementById('navLinks').classList.toggle('active');
     }
   </script>
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-<script>
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'base',
-    themeVariables: {
-      primaryColor: '#eff6ff',
-      primaryTextColor: '#152a45',
-      primaryBorderColor: '#3b82f6',
-      lineColor: '#64748b',
-      secondaryColor: '#f0fdf4',
-      tertiaryColor: '#fdf4ff',
-      fontFamily: 'Inter, sans-serif',
-      fontSize: '13px'
-    },
-    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
-  });
-</script>
 <script src="/js/chat-widget.js" defer></script>
 </body>
 </html>
