@@ -16,6 +16,16 @@
     .job-step .num{flex:none;width:34px;height:34px;border-radius:50%;background:#ea6a02;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;}
     .job-step .t{font-size:1.05rem;}
     .job-step .t b{color:#0f1e34;}
+    .mock-wrap{display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;align-items:center;margin:1.4rem 0;}
+    .phone{width:265px;background:#fff;border:9px solid #0f1e34;border-radius:34px;padding:.9rem .8rem 1.3rem;box-shadow:0 10px 30px rgba(15,30,52,.18);}
+    .phone .bar{text-align:center;font-size:.68rem;color:#94a3b8;margin-bottom:.55rem;border-bottom:1px solid #f1f5f9;padding-bottom:.45rem;}
+    .bubble{background:#e9edf2;border-radius:18px;padding:.7rem .9rem;font-size:.8rem;line-height:1.45;color:#0f1e34;}
+    .bubble .lnk{color:#2563eb;word-break:break-all;}
+    .mock-arrow{font-size:1.8rem;color:#ea6a02;font-weight:800;}
+    .greview{width:255px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:1.2rem;box-shadow:0 6px 20px rgba(15,30,52,.1);text-align:center;}
+    .greview .g{font-weight:700;color:#0f1e34;font-size:1.05rem;}
+    .greview .stars{font-size:1.9rem;color:#fbbc04;letter-spacing:.15rem;margin:.55rem 0;}
+    .greview .btn-g{display:inline-block;background:#1a73e8;color:#fff;border-radius:8px;padding:.5rem 1.1rem;font-size:.85rem;font-weight:700;}
   </style>
 </head>
 <body>
@@ -93,6 +103,25 @@
           <li><strong>Si es de 1 a 3 estrellas,</strong> tú recibes un texto para llamarle y arreglarlo.</li>
           <li><strong>Todo el año,</strong> le mandamos unos 5 mensajes amistosos: le recuerdan que existes y le piden que te recomiende. Así vuelve y te manda clientes nuevos.</li>
         </ul>
+      </div>
+
+      <!-- VISUAL: what the customer sees -->
+      <div class="content-section">
+        <h2>Así Se Ve Para Tu Cliente</h2>
+        <p>Le llega un texto, toca el enlace, y deja sus 5 estrellas en Google. Sin pasos raros.</p>
+        <div class="mock-wrap">
+          <div class="phone">
+            <div class="bar">Mensajes · tu número de negocio</div>
+            <div class="bubble">Hey Juan, it's been about a month since we wrapped up. Hope everything's holding up great!<br><br>If you have a minute, a quick Google review would help us out a ton:<br><br><span class="lnk">g.page/tu-negocio/review</span></div>
+          </div>
+          <div class="mock-arrow">&rarr;</div>
+          <div class="greview">
+            <div class="g">Tu Negocio</div>
+            <div class="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+            <div class="btn-g">Escribir reseña</div>
+          </div>
+        </div>
+        <p style="text-align:center;color:#64748b;font-size:.9rem;margin-top:.3rem;">Los textos a tus clientes van en inglés (así llegan mejor a todos). Tú los agregas en español desde tu app.</p>
       </div>
 
       <!-- WHY IT MATTERS -->
