@@ -17,8 +17,10 @@
 /contact.html          /contacto       301
 /grow                  /crecer         301
 /grow.html             /crecer         301
-/share-kit             /kit            301
-/share-kit.html        /kit            301
+/kit                   /referidos      301
+/kit.html              /referidos      301
+/share-kit             /referidos      301
+/share-kit.html        /referidos      301
 
 # Old /es/ prefixed links (from earlier bot KB and external references)
 /es/getting-started.html   /empezar        301
@@ -29,7 +31,7 @@
 /es/my-links.html          /mis-enlaces    301
 /es/referrals.html         /referidos      301
 /es/referral-terms.html    /referidos      301
-/es/share-kit.html         /kit            301
+/es/share-kit.html    /referidos            301
 /es/grow.html              /crecer         301
 /es/faq.html               /faq            301
 /es/contact.html           /contacto       301
