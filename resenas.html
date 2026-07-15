@@ -9,6 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .job-card{border:2px solid #ea6a02;border-radius:16px;padding:1.4rem 1.2rem;margin:1.2rem 0;background:#fff;}
+    .job-step{display:flex;gap:1rem;align-items:flex-start;padding:.8rem 0;border-top:1px solid #f1f5f9;}
+    .job-step:first-child{border-top:none;}
+    .job-step .num{flex:none;width:34px;height:34px;border-radius:50%;background:#ea6a02;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;}
+    .job-step .t{font-size:1.05rem;}
+    .job-step .t b{color:#0f1e34;}
+  </style>
 </head>
 <body>
   <nav class="nav">
@@ -33,193 +41,98 @@
         <li><a href="faq">FAQ</a></li>
         <li><a href="contacto">Contacto</a></li>
       </ul>
-      
     </div>
   </nav>
-<section class="page-header">
+
+  <section class="page-header">
     <div class="container">
       <h1>Conseguir Reseñas</h1>
-      <p>El sistema automatizado que le pide una reseña en Google a cada cliente, acumula reseñas mientras trabajas, y responde a cada una con IA.</p>
+      <p>Tu única tarea. Después de cada cliente feliz, lo agregas al formulario. El sistema le pide una reseña de 5 estrellas en Google. Solo.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
 
+      <!-- THE ONE JOB -->
       <div class="content-section">
-        <h2>¿Por Qué Importan las Reseñas?</h2>
-        <p>Las reseñas son tu reputación en línea. Esta es la realidad:</p>
-        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-          <div class="card" style="text-align: center;">
-            <h3 style="font-size: 2.5rem; color: #ea6a02; margin-bottom: 0.5rem;">97%</h3>
-            <p style="margin: 0;">de la gente lee reseñas antes de contactar un negocio</p>
-          </div>
-          <div class="card" style="text-align: center;">
-            <h3 style="font-size: 2.5rem; color: #ea6a02; margin-bottom: 0.5rem;">94%</h3>
-            <p style="margin: 0;">dicen que UNA mala reseña es suficiente para buscar a otro</p>
-          </div>
-          <div class="card" style="text-align: center;">
-            <h3 style="font-size: 2.5rem; color: #ea6a02; margin-bottom: 0.5rem;">#1</h3>
-            <p style="margin: 0;">factor que Google usa para posicionar negocios locales</p>
-          </div>
-        </div>
-        <div class="benefit-box" style="margin-top: 2rem;">
-          <p><strong>La conclusión:</strong> Más reseñas de 5 estrellas = mejor posición en Google = más gente te encuentra = más llamadas = más dinero.</p>
-        </div>
-      </div>
+        <h2>Tu Única Tarea: 3 Pasos</h2>
+        <p>Después de cada trabajo, haz esto. Toma 10 segundos.</p>
 
-      <div class="content-section">
-        <h2>El Sistema de Reseñas de 5 Estrellas en Google</h2>
-        <p>Así es como funciona el sistema, paso a paso:</p>
-        <p style="color: #475569; font-style: italic; margin-bottom: 1rem;">Cada cliente va directo a tu perfil de Google. Nuestra IA responde a cada reseña automáticamente. Te avisamos cuando alguien deja una reseña difícil para que puedas contactar al cliente rápido.</p>
-
-        <ol style="font-size: 1rem; line-height: 1.9; padding-left: 1.5rem;">
-          <li><strong>Agregas al cliente.</strong> Abre tu página Mis Enlaces, toca <strong>Pedir una Reseña</strong>, y escribe el nombre y teléfono del cliente.</li>
-          <li><strong>El sistema le manda texto.</strong> Le pide una reseña en Google con un enlace directo a tu perfil.</li>
-          <li><strong>El sistema le recuerda.</strong> 4 veces en 4 semanas si no responde.</li>
-          <li><strong>El cliente deja la reseña.</strong> En tu Perfil de Negocio en Google, sin pasos extra.</li>
-          <li><strong>La IA responde automáticamente.</strong> Publica una respuesta profesional en pocas horas.</li>
-          <li><strong>Si es 1-3 estrellas,</strong> recibes una alerta por texto para que llames al cliente y trates de arreglarlo.</li>
-        </ol>
-
-        <div class="highlight-box" style="margin-top:1.5rem;">
-          <h3 style="margin-top:0;">Qué pasa con cada cliente que agregas (exacto, y automático)</h3>
-          <ul class="icon-list" style="margin-bottom:0;">
-            <li><strong>Día 0:</strong> agregas al cliente. Le sale un texto pidiéndole una reseña de 5 estrellas en Google, con el enlace directo a tu perfil.</li>
-            <li><strong>Semanas 1 a 4:</strong> si no deja reseña, el sistema le recuerda con amabilidad hasta 4 veces. En cuanto deja una reseña, los recordatorios <strong>paran solos</strong>.</li>
-            <li><strong>Cuando deja la reseña:</strong> nuestra IA le responde en pocas horas, con tu voz. Si es de 1 a 3 estrellas, <strong>tú</strong> recibes un texto de alerta para llamarle y arreglarlo.</li>
-            <li><strong>Durante el siguiente año:</strong> ese mismo cliente recibe unos <strong>5 mensajes amistosos</strong>, repartidos en el año. Cada uno le recuerda que existes, le ofrece un descuento de cliente frecuente, y le pide que te recomiende. Así vuelve a contratarte Y te manda clientes nuevos.</li>
-          </ul>
-        </div>
-
-        <h3 style="margin-top: 2rem;">Cómo Funciona</h3>
-        <div class="two-col">
-          <div>
-            <div class="highlight-box" style="background: #e8f5e9; border-left: 4px solid #4caf50; color: #1a1a1a;">
-              <h4 style="color: #2e7d32; margin-top: 0;">Cada cliente va a Google</h4>
-              <p style="margin: 0; color: #1a1a1a;">Mismo link, cada vez. El sistema le manda al cliente un texto con un link directo a tu Perfil de Negocio en Google. Dejan la reseña que quieran. Sin pasos intermedios. Cada cliente va directo a Google.</p>
-            </div>
+        <div class="job-card">
+          <div class="job-step">
+            <div class="num">1</div>
+            <div class="t">Abre tu página <b>Mis Enlaces</b> (<code>tusitio.com/mis-enlaces</code>).</div>
           </div>
-          <div>
-            <div class="highlight-box" style="background: #fff3e0; border-left: 4px solid #ff9800; color: #1a1a1a;">
-              <h4 style="color: #e65100; margin-top: 0;">Si recibes una reseña difícil</h4>
-              <p style="margin: 0; color: #1a1a1a;">Te avisamos por texto en unas horas. Nuestra IA publica una respuesta profesional pública automáticamente. Tú puedes llamar al cliente directamente para entender qué pasó y ofrecer arreglarlo. La mayoría de los clientes insatisfechos actualiza su reseña después de una llamada de recuperación.</p>
-            </div>
+          <div class="job-step">
+            <div class="num">2</div>
+            <div class="t">Toca <b>Pedir una Reseña</b>.</div>
+          </div>
+          <div class="job-step">
+            <div class="num">3</div>
+            <div class="t">Escribe el <b>nombre y el número</b> del cliente. Toca <b>enviar</b>.</div>
           </div>
         </div>
-        <div class="benefit-box" style="margin-top: 2rem;">
-          <p><strong>Por qué esto funciona mejor que filtrar.</strong> Los perfiles con algunas reseñas mixtas y respuestas pensadas suben más alto en Google que los perfiles "5.0 perfecto" que parecen falsos. Nuestra IA responde a cada reseña, así tu perfil se ve activo y atento. Y te avisamos cuando necesitas contactar personalmente.</p>
-        </div>
-      </div>
 
-      <div class="content-section">
-        <h2>Cómo Conseguir Reseñas</h2>
-        <p>Después de cada cliente (cada trabajo, sin importar cómo salió), agrégalos por el <strong>Formulario de Marketing</strong> en tu página Mis Enlaces. El sistema automáticamente envía solicitudes de reseña, da seguimiento con recordatorios durante 4 semanas, y los agrega a una secuencia de referidos de 1 año.</p>
-        <div class="highlight-box">
-          <h3>Cómo Agregar un Cliente</h3>
-          <p style="margin-top: 0;">Dos formas de llegar al formulario:</p>
-          <div class="two-col" style="gap: 1rem; margin-bottom: 1rem;">
-            <div>
-              <div class="highlight-box" style="background: #e8f5e9; border-left: 4px solid #4caf50; color: #1a1a1a; margin: 0;">
-                <h4 style="color: #2e7d32; margin-top: 0;">Opción A: Página Mis Enlaces</h4>
-                <ol style="margin: 0; padding-left: 1.2rem;">
-                  <li>Ve a <strong>tusitio.com/mis-enlaces</strong></li>
-                  <li>Toca <strong>Pedir una Reseña</strong></li>
-                  <li>Escribe nombre + teléfono del cliente</li>
-                  <li>Toca Enviar</li>
-                </ol>
-                <p style="margin: 0.5rem 0 0; font-size: 0.9em;">También puedes tocar <strong>Copiar Enlace</strong> para guardarlo.</p>
-              </div>
-            </div>
-            <div>
-              <div class="highlight-box" style="background: #eff6ff; border-left: 4px solid #3b82f6; color: #1a1a1a; margin: 0;">
-                <h4 style="color: #1d4ed8; margin-top: 0;">Opción B: Enlace Directo</h4>
-                <ol style="margin: 0; padding-left: 1.2rem;">
-                  <li>Ve a <strong>tusitio.com/formulario-marketing</strong></li>
-                  <li>Escribe nombre + teléfono del cliente</li>
-                  <li>Toca Enviar</li>
-                </ol>
-                <p style="margin: 0.5rem 0 0; font-size: 0.9em;">Guarda esto en favoritos para acceso con un toque.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="alert alert-success" style="margin-top: 1.5rem;">
-          <strong>Consejo:</strong> Mantén la consistencia. Agrega cada cliente al Formulario de Marketing justo después del trabajo. Volumen constante en el tiempo es lo que mejora tu posición en Google.
+        <div class="alert alert-warning">
+          <strong>Escribe bien el número de celular.</strong> Si está mal, o si es un teléfono de casa, el texto no llega. Si eso pasa te avisamos al instante para que lo vuelvas a mandar con el número correcto.
         </div>
 
-        <div class="highlight-box" style="margin-top: 1.5rem;">
-          <h3 style="margin-top:0;">¿Lo quieres totalmente automático?</h3>
-          <p style="margin:0;">Si manejas tus trabajos con software como <strong>Jobber, Housecall Pro o ServiceTitan</strong>, lo podemos conectar para que la solicitud de reseña salga sola en el momento en que cierras un trabajo. Ni siquiera abres el formulario. Solo mándanos un texto con el nombre del software que usas, y lo configuramos por ti. ¿No usas software? No hay problema, el formulario de arriba toma diez segundos.</p>
-        </div>
-      </div>
-
-      <div class="content-section">
-        <h2>Publicación Automática de Reseñas</h2>
-        <p>Esta es una función extra que corre automáticamente:</p>
-        <div class="highlight-box">
-          <h3>Social Planner</h3>
-          <p style="margin: 0;">Dos veces por semana, el sistema toma tus mejores reseñas de Google y las publica como "Google Posts" en tu perfil de negocio.</p>
-        </div>
-        <p style="margin-top: 1.5rem;"><strong>Qué hace por ti:</strong></p>
-        <ul class="icon-list">
-          <li><strong>Muestra tus reseñas de 5 estrellas</strong>: justo en tu perfil de Google</li>
-          <li><strong>Mantiene tu perfil activo</strong>: Google premia a negocios que publican seguido</li>
-          <li><strong>Genera confianza</strong>: los clientes potenciales ven tus reseñas antes de hacer clic</li>
-          <li><strong>Cero trabajo de tu parte</strong>: es totalmente automático</li>
-        </ul>
         <div class="benefit-box">
-          <p><strong>Piénsalo así:</strong> Tus mejores reseñas se convierten en mini anuncios en Google, publicados automáticamente dos veces por semana, gratis.</p>
+          <p><strong>Eso es todo.</strong> El sistema le manda el texto, le pide la reseña, y le recuerda por ti. Tú sigue trabajando.</p>
         </div>
       </div>
 
+      <!-- WHAT HAPPENS AFTER -->
       <div class="content-section">
-        <h2>Respuestas Automáticas a Reseñas</h2>
-        <p>Cuando los clientes dejan reseñas (cualquier calificación, 1 a 5 estrellas), nuestro sistema automáticamente responde por ti:</p>
+        <h2>Qué Pasa Después (Automático)</h2>
         <ul class="icon-list">
-          <li><strong>Tono profesional</strong>: suena como tú, pero pulido</li>
-          <li><strong>Personalizado</strong>: hace referencia a lo que dijo el cliente</li>
-          <li><strong>Rápido</strong>: responde en horas, no días</li>
-          <li><strong>Agradecido</strong>: les agradece por su negocio</li>
+          <li><strong>Le llega un texto</strong> pidiéndole una reseña de 5 estrellas en Google, con el enlace directo a tu perfil.</li>
+          <li><strong>Le recordamos hasta 4 veces</strong> en un mes si no la deja. Para solo cuando deja la reseña.</li>
+          <li><strong>La IA le responde</strong> en pocas horas, con tu voz.</li>
+          <li><strong>Si es de 1 a 3 estrellas,</strong> tú recibes un texto para llamarle y arreglarlo.</li>
+          <li><strong>Todo el año,</strong> le mandamos unos 5 mensajes amistosos: le recuerdan que existes y le piden que te recomiende. Así vuelve y te manda clientes nuevos.</li>
         </ul>
-        <p>No tienes que hacer nada. Las reseñas llegan, las respuestas salen. Tu perfil se ve activo y profesional.</p>
       </div>
 
+      <!-- WHY IT MATTERS -->
       <div class="content-section">
-        <h2>Si un Cliente No Quiere Reseñas</h2>
-        <p>Si un cliente responde <strong>"no reviews"</strong> después de recibir una solicitud de reseña, el sistema deja de enviarle recordatorios de reseñas automáticamente. Seguirán recibiendo tus ofertas de referidos durante el año, solo no más solicitudes de reseñas.</p>
-        <div class="alert alert-info">
-          <strong>Nota:</strong> "No reviews" solo detiene mensajes de reseñas. Si un cliente escribe "STOP", eso detiene TODOS los textos de tu número: reseñas y todo lo demás. Son dos cosas diferentes.
+        <h2>¿Por Qué Importa?</h2>
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+          <div class="card" style="text-align:center;">
+            <h3 style="font-size:2.5rem;color:#ea6a02;margin-bottom:.5rem;">97%</h3>
+            <p style="margin:0;">de la gente lee reseñas antes de llamar a un negocio</p>
+          </div>
+          <div class="card" style="text-align:center;">
+            <h3 style="font-size:2.5rem;color:#ea6a02;margin-bottom:.5rem;">#1</h3>
+            <p style="margin:0;">factor que Google usa para posicionar negocios locales</p>
+          </div>
+        </div>
+        <div class="benefit-box" style="margin-top:1.5rem;">
+          <p>Más reseñas de 5 estrellas = mejor posición en Google = más gente te encuentra = más llamadas. Google se vuelve tu vendedor.</p>
         </div>
       </div>
 
+      <!-- WHAT WE DO FOR YOU -->
       <div class="content-section">
-        <h2>Tips para Más Reseñas</h2>
-        <p>¿Quieres acumular reseñas más rápido? Aquí van unos tips:</p>
+        <h2>Lo Que Hacemos Por Ti (tú no tocas nada)</h2>
         <ul class="icon-list">
-          <li><strong>Pide justo después del trabajo</strong>: cuando están más contentos</li>
-          <li><strong>Manda el link, no solo lo menciones</strong>: "Te mando un link" y luego mándalo de verdad</li>
-          <li><strong>A cada cliente</strong>: no solo a los que se ven entusiasmados</li>
-          <li><strong>Da seguimiento si no lo hicieron</strong>: el sistema hace esto automáticamente</li>
+          <li><strong>Respondemos cada reseña,</strong> buena o mala, con tu voz.</li>
+          <li><strong>Publicamos tus mejores reseñas</strong> en tu perfil de Google dos veces por semana.</li>
+          <li><strong>Si un cliente escribe "no reviews",</strong> dejamos de pedirle reseñas (pero sigue en el seguimiento del año).</li>
         </ul>
-        <div class="alert alert-info">
-          <strong>Consejo pro:</strong> Justo después de terminar un trabajo, mientras todavía estás en el lugar, abre tu página Mis Enlaces y toca Pedir una Reseña. Toma 10 segundos. Hazlo un hábito.
-        </div>
       </div>
 
-      <div class="content-section">
-        <h2>Tu Página Mis Enlaces</h2>
-        <p>Todo lo que necesitas está en tu página Mis Enlaces, incluyendo el Formulario de Marketing para agregar clientes:</p>
-        <div class="quick-links-cta">
-          <p><strong>Encuéntrala en:</strong> <code>tusitio.com/mis-enlaces</code></p>
-          <p style="margin-bottom: 0; font-size: 0.9rem;">Guarda esta página en la pantalla de inicio de tu teléfono. Un toque para agregar clientes, revisar mensajes, o compartir tu sitio web.</p>
-        </div>
+      <!-- CRM (short) -->
+      <div class="highlight-box">
+        <h3 style="margin-top:0;">¿Lo quieres totalmente automático?</h3>
+        <p style="margin:0;">¿Usas <strong>Jobber, Housecall Pro o ServiceTitan</strong>? Lo conectamos para que la solicitud de reseña salga sola al cerrar un trabajo. Ni abres el formulario. Mándanos un texto con el software que usas y lo configuramos.</p>
       </div>
 
-      <div class="content-section" style="text-align: center; padding-top: 2rem; border-top: 1px solid #e9ecef;">
-        <h3>Siguiente: Chat y Mensajes</h3>
-        <p style="margin-bottom: 1.5rem;">Aprende cómo funciona el chat de tu sitio y por qué todos tus mensajes están en un solo lugar.</p>
-        <a href="chat" class="btn btn-primary">Chat y Mensajes →</a>
+      <!-- Mis Enlaces -->
+      <div class="content-section" style="text-align:center;padding-top:2rem;border-top:1px solid #e9ecef;">
+        <p style="margin-bottom:1.2rem;">Todo está en tu página <strong>Mis Enlaces</strong>: <code>tusitio.com/mis-enlaces</code>. Guárdala en la pantalla de inicio de tu teléfono.</p>
+        <a href="mis-enlaces" class="btn btn-primary">Ver Mis Enlaces →</a>
       </div>
 
     </div>
