@@ -33,6 +33,10 @@
 /es/grow.html              /crecer         301
 /es/faq.html               /faq            301
 /es/contact.html           /contacto       301
-/es/chat.html              /chat           301
+/es/chat.html              /clientes       301
 /es/estafas.html           /estafas        301
 /es/                       /               301
+
+# Chat folded into Clientes
+/chat      /clientes   301
+/chat.html /clientes   301
