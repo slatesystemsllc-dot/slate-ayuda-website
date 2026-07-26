@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu Perfil de Google - Ayuda de Slate Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .g-quote{background:#0f1e34;color:#fff;border-radius:16px;padding:1.5rem 1.4rem;font-size:1.15rem;line-height:1.6;margin:1.4rem 0;}
+    .g-row{display:flex;gap:1rem;align-items:flex-start;padding:.9rem 0;border-top:1px solid #f1f5f9;}
+    .g-row:first-child{border-top:none;}
+    .g-ic{flex:none;width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.05rem;}
+    .g-yes{background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;}
+    .g-no{background:#fff1f2;color:#b91c1c;border:1px solid #fecaca;}
+    .g-t{font-weight:700;color:#0f1e34;}
+    .g-w{color:#5b6675;font-size:.96rem;margin-top:.15rem;}
+    .g-card{border-radius:16px;padding:1.3rem 1.2rem;margin:1.2rem 0;}
+    .g-ok{background:#f0fdf4;border:2px solid #bbf7d0;}
+    .g-bad{background:#fff1f2;border:2px solid #fecaca;}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
+        <span>Slate Systems</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="empezar">Empezar</a></li>
+        <li><a href="resenas">Reseñas</a></li>
+        <li><a href="google" class="active">Google</a></li>
+        <li><a href="mis-enlaces">Mis Enlaces</a></li>
+        <li><a href="tu-app">Tu App</a></li>
+        <li><a href="clientes">Clientes</a></li>
+        <li><a href="tu-sitio-web">Tu Sitio Web</a></li>
+        <li><a href="referidos">Referidos</a></li>
+        <li><a href="estafas">Estafas</a></li>
+        <li><a href="faq">FAQ</a></li>
+        <li><a href="contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Tu Perfil de Google</h1>
+      <p>Qué puedes hacer tú, y qué preferimos hacer nosotros para no arriesgar tu perfil.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="g-quote">
+        Sube fotos y contesta reseñas cuanto quieras. Todo lo demás nos lo dices y nosotros lo hacemos.
+      </div>
+
+      <div class="content-section">
+        <h2>Por Qué Te Pedimos Esto</h2>
+        <p>Tu perfil de Google es lo que hace que la gente te encuentre y te llame. Cuando está bien, trabaja solo.</p>
+        <p>Pero Google es estricto con ciertos datos. Si uno de esos cambia de golpe, puede <strong>suspender el perfil</strong>: desaparece del mapa, se dejan de ver tus reseñas, y recuperarlo puede tomar semanas.</p>
+        <p>No es para amarrarte las manos. Es que hay cosas que <strong>suman</strong> y cosas que <strong>pueden tumbar</strong> todo. Aquí te decimos claramente cuáles son cuáles.</p>
+      </div>
+
+      <div class="content-section">
+        <h2>Lo Que Sí Puedes Hacer</h2>
+        <p>Y ojalá lo hagas. Estas cuatro cosas solo ayudan.</p>
+        <div class="g-row"><div class="g-ic g-yes">&#10003;</div><div>
+          <div class="g-t">Subir fotos de tus trabajos</div>
+          <div class="g-w">Es lo que más ayuda de todo, y no tiene ningún riesgo. Antes y después, desde tu teléfono. Si quieres, nos las mandas por mensaje a tu número de Slate y nosotros las subimos. <strong>Ideal: una vez por semana.</strong></div>
+        </div></div>
+        <div class="g-row"><div class="g-ic g-yes">&#10003;</div><div>
+          <div class="g-t">Contestar tus reseñas</div>
+          <div class="g-w">Google lo premia cuando respondes, y tú lo haces mejor que nosotros porque conoces al cliente. Contesta todas, también las malas. Si no sabes qué escribir en una difícil, nos dices y te pasamos una respuesta lista.</div>
+        </div></div>
+        <div class="g-row"><div class="g-ic g-yes">&#10003;</div><div>
+          <div class="g-t">Publicar en Google</div>
+          <div class="g-w">Nosotros ya publicamos por ti automáticamente, pero si quieres subir algo tuyo, adelante. Suma.</div>
+        </div></div>
+        <div class="g-row"><div class="g-ic g-yes">&#10003;</div><div>
+          <div class="g-t">Contestar las preguntas que hace la gente</div>
+          <div class="g-w">Aparecen en tu perfil y las puedes contestar tú mismo. Suma y es tuyo.</div>
+        </div></div>
+      </div>
+
+      <div class="content-section">
+        <h2>Lo Que Preferimos Hacer Nosotros</h2>
+        <p>No es que no puedas. Es que si se hace mal o en mal momento, se cae el perfil. Nos avisas y lo hacemos ordenado, el mismo día.</p>
+        <div class="g-row"><div class="g-ic g-no">&#10005;</div><div>
+          <div class="g-t">Cambiar el nombre del negocio</div>
+          <div class="g-w">Es la causa número uno de suspensión. Nos pasó con nuestro propio perfil de Slate y todavía lo estamos recuperando.</div>
+        </div></div>
+        <div class="g-row"><div class="g-ic g-no">&#10005;</div><div>
+          <div class="g-t">Cambiar la categoría del negocio</div>
+          <div class="g-w">Google lo lee como que cambiaste de negocio y pide volver a verificar todo.</div>
+        </div></div>
+        <div class="g-row"><div class="g-ic g-no">&#10005;</div><div>
+          <div class="g-t">Cambiar el teléfono</div>
+          <div class="g-w">Tu número de Slate es el que cuenta las llamadas y dispara el mensaje automático cuando no alcanzas a contestar. Si se cambia, eso deja de funcionar y ya no podemos mostrarte cuántas llamadas entraron.</div>
+        </div></div>
+        <div class="g-row"><div class="g-ic g-no">&#10005;</div><div>
+          <div class="g-t">Cambiar el sitio web</div>
+          <div class="g-w">Igual: se pierde la cuenta de dónde vienen tus clientes.</div>
+        </div></div>
+        <div class="g-row"><div class="g-ic g-no">&#10005;</div><div>
+          <div class="g-t">Cambiar la dirección o la zona donde trabajas</div>
+          <div class="g-w">La otra causa grande de suspensión. Si de verdad cambiaste de zona, nos avisas y lo hacemos con cuidado.</div>
+        </div></div>
+        <div class="g-row"><div class="g-ic g-no">&#10005;</div><div>
+          <div class="g-t">Agregar o quitar personas del perfil</div>
+          <div class="g-w">Es fácil quedarte afuera de tu propio perfil sin querer. Si necesitas darle acceso a alguien, nosotros lo hacemos.</div>
+        </div></div>
+        <div class="g-row"><div class="g-ic g-no">&#10005;</div><div>
+          <div class="g-t">Borrar el perfil o marcarlo como cerrado</div>
+          <div class="g-w">Esto sí es definitivo: se pierden los años de antigüedad y todas las reseñas, y eso no se recupera. Por ningún motivo.</div>
+        </div></div>
+      </div>
+
+      <div class="g-card g-bad">
+        <h3 style="margin-top:0;color:#7f1d1d;">Si alguien te llama diciendo que es de Google</h3>
+        <p style="margin-bottom:0;">Y te pide tu contraseña, un código que te llegó por mensaje, o que le des acceso al perfil: <strong>cuelga</strong>. Google no llama a pedir eso. Avísanos y nosotros revisamos. Más sobre esto en <a href="estafas">Estafas</a>.</p>
+      </div>
+
+      <div class="g-card g-ok">
+        <h3 style="margin-top:0;color:#14532d;">Si ves algo raro en tu perfil</h3>
+        <p style="margin-bottom:0;">Si desapareció del mapa, cambió un dato que tú no cambiaste, o te llegó un correo de Google que no entiendes: mándanos una foto de la pantalla. Entre más rápido lo veamos, más rápido se arregla.</p>
+      </div>
+
+      <div class="content-section">
+        <h2>En Resumen</h2>
+        <ul class="icon-list">
+          <li><strong>Fotos y reseñas:</strong> tuyas, cuanto quieras, nunca hacen daño.</li>
+          <li><strong>Nombre, categoría, teléfono, sitio, dirección y accesos:</strong> nos avisas y lo hacemos nosotros.</li>
+          <li><strong>Cualquier duda:</strong> pregunta antes de tocar. Siempre es más rápido preguntar que recuperar.</li>
+        </ul>
+      </div>
+
+      <div class="content-section" style="text-align:center;padding-top:2rem;border-top:1px solid #e9ecef;">
+        <p style="margin-bottom:1.2rem;">¿Tienes una duda que no está aquí?</p>
+        <a href="contacto" class="btn btn-primary">Escríbenos →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
+          <span>Slate Systems</span>
+        </div>
+        <div class="footer-links">
+          <a href="empezar">Empezar</a>
+          <a href="faq">FAQ</a>
+          <a href="contacto">Contactar Soporte</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>¿Necesitas ayuda? Escríbenos al <strong>+1 (831) 226-7831</strong> o email hello@slatesystems.io</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+<script src="/js/chat-widget.js" defer></script>
+</body>
+</html>
