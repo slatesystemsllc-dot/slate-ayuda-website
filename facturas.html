@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <title>Facturas - Slate Systems Ayuda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .faq-list { max-width: 760px; margin: 0 auto; display: grid; gap: 0.75rem; }
+    .faq-card { background: #fff; border: 1px solid var(--medium-gray); border-radius: 12px; overflow: hidden; transition: border-color 0.15s; }
+    .faq-card:hover { border-color: var(--orange); }
+    .faq-q-rich { padding: 1rem 1.25rem; font-weight: 700; font-size: 1rem; color: var(--text-dark); cursor: pointer; position: relative; padding-right: 2.75rem; }
+    .faq-q-rich::after { content: '+'; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: var(--orange); font-weight: 700; line-height: 1; }
+    .faq-card.open .faq-q-rich::after { content: '\2212'; }
+    .faq-a-rich { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; padding: 0 1.25rem; }
+    .faq-card.open .faq-a-rich { max-height: 1200px; padding: 0 1.25rem 1rem; }
+    .faq-a-rich p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin: 0 0 0.75rem; }
+    .faq-a-rich p:last-child { margin-bottom: 0; }
+    .faq-a-rich a { color: var(--orange); font-weight: 600; }
+    .three-lines { display: grid; gap: 0.75rem; margin: 1rem 0; }
+    .three-lines .line { display: flex; gap: 0.9rem; align-items: flex-start; background: var(--light-gray); border: 1px solid var(--medium-gray); border-radius: var(--radius-md); padding: 0.9rem 1rem; }
+    .three-lines .num { flex: 0 0 2rem; height: 2rem; border-radius: 50%; background: var(--orange); color: var(--white); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .three-lines p { margin: 0; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
+        <span>Slate Systems</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="empezar">Empezar</a></li>
+        <li><a href="resenas">Reseñas</a></li>
+        <li><a href="google">Google</a></li>
+        <li><a href="mis-enlaces">Mis Enlaces</a></li>
+        <li><a href="tu-app">Tu App</a></li>
+        <li><a href="facturas" class="active">Facturas</a></li>
+        <li><a href="clientes">Clientes</a></li>
+        <li><a href="tu-sitio-web">Tu Sitio Web</a></li>
+        <li><a href="referidos">Referidos</a></li>
+        <li><a href="estafas">Estafas</a></li>
+        <li><a href="faq">FAQ</a></li>
+        <li><a href="contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Facturas</h1>
+      <p>Envía una factura profesional desde tu app, por texto o por correo. Lleva el nombre de tu negocio, tu logo, tu teléfono y tu dirección. El cliente abre un enlace, la ve y la puede descargar. Incluida en tu plan, sin costo extra.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Todo en 3 líneas -->
+      <div class="content-section">
+        <h2>Cómo funciona, en 3 líneas</h2>
+        <div class="three-lines">
+          <div class="line"><div class="num">1</div><p><strong>Tú haces la factura en tu app.</strong> Unos 2 minutos: eliges al cliente, eliges el servicio, escribes el precio.</p></div>
+          <div class="line"><div class="num">2</div><p><strong>El cliente recibe un texto o un correo con un enlace.</strong> Lo abre, ve la factura y la puede descargar. No necesita ninguna app.</p></div>
+          <div class="line"><div class="num">3</div><p><strong>Te paga como siempre te ha pagado.</strong> Efectivo, cheque, Zelle, lo que uses hoy. Luego marcas la factura como pagada en la app.</p></div>
+        </div>
+        <div class="benefit-box">
+          <p><strong>Bueno saberlo:</strong> este complemento no cobra con tarjeta. No cambia nada en cómo te pagan. Solo hace que la parte del papel sea rápida y profesional.</p>
+        </div>
+      </div>
+
+      <!-- Paso a paso -->
+      <div class="content-section" id="enviar">
+        <h2>Enviar una factura: paso a paso</h2>
+        <p>Funciona igual en la app del teléfono y en la computadora.</p>
+        <ol class="steps">
+          <li>Abre tu app. En el menú, toca <strong>Pagos</strong> (Payments) y luego <strong>Facturas</strong> (Invoices).</li>
+          <li>Toca <strong>Nueva factura</strong> (el botón <strong>+</strong>).</li>
+          <li><strong>Elige al cliente.</strong> ¿Todavía no está en tus contactos? Agrégalo primero: nombre y teléfono (el correo es opcional). Luego elígelo.</li>
+          <li><strong>Agrega un artículo.</strong> Elige uno de tus servicios de la lista (ya están cargados para ti). Luego <strong>escribe el precio de este trabajo</strong>. La mayoría de los precios cambian de trabajo en trabajo, así que escribes el monto cada vez. Un servicio con precio fijo aparece ya lleno.</li>
+          <li>Opcional: escribe la dirección del trabajo o los detalles en el título o en las notas, y pon una fecha de vencimiento.</li>
+          <li>Toca <strong>Enviar</strong>. Elige texto, correo o los dos. Listo: el cliente recibe el enlace.</li>
+        </ol>
+        <div class="benefit-box">
+          <p><strong>Consejo:</strong> una factura por trabajo. Envíala el mismo día que termina el trabajo, mientras el cliente está contento y el trabajo está fresco.</p>
+        </div>
+      </div>
+
+      <!-- Marcar como pagada -->
+      <div class="content-section" id="pagada">
+        <h2>Cuando te pagan: márcala como pagada</h2>
+        <ol class="steps">
+          <li>Abre la factura en tu app.</li>
+          <li>Toca <strong>Registrar pago</strong> (Record Payment).</li>
+          <li>Elige cómo te pagaron: efectivo, cheque, transferencia u otro. Agrega una nota si quieres.</li>
+          <li>Guarda. La factura ahora dice <strong>Pagada</strong>, y tu lista queda limpia.</li>
+        </ol>
+      </div>
+
+      <!-- Presupuestos -->
+      <div class="content-section" id="presupuestos">
+        <h2>Presupuestos (cotizaciones)</h2>
+        <p>Misma pantalla, pestaña <strong>Presupuestos</strong> (Estimates). Envía primero la cotización, igual que una factura. Cuando el cliente dice que sí, abre el presupuesto y conviértelo en factura con un solo toque. Sin volver a escribir nada.</p>
+      </div>
+
+      <!-- Consejos -->
+      <div class="content-section" id="consejos">
+        <h2>Consejos que te ahorran tiempo</h2>
+        <ul class="icon-list">
+          <li><strong>Envíala el mismo día</strong> que termina el trabajo. Las facturas rápidas se pagan rápido.</li>
+          <li><strong>Pon una fecha de vencimiento.</strong> El cliente la ve en la factura.</li>
+          <li><strong>Una factura por trabajo.</strong> Más fácil para ti, más claro para ellos.</li>
+          <li><strong>Para enviarla por texto, el teléfono del cliente tiene que ser un celular.</strong> Por correo funciona con cualquier dirección.</li>
+          <li><strong>¿Quieres un servicio nuevo en tu lista, o cambiar un precio fijo?</strong> Escríbenos y nosotros lo agregamos. Tú no tocas nada.</li>
+        </ul>
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section" id="faq">
+        <h2>Preguntas que nos hacen</h2>
+        <div class="faq-list">
+          <div class="faq-card open">
+            <div class="faq-q-rich">¿El cliente necesita una app?</div>
+            <div class="faq-a-rich"><p>No. Recibe un enlace por texto o por correo. Se abre en su navegador, y puede descargar la factura como archivo.</p></div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q-rich">¿Puede pagar con tarjeta desde la factura?</div>
+            <div class="faq-a-rich"><p>Con este complemento no. Te pagan como hoy (efectivo, cheque, Zelle, transferencia) y luego marcas la factura como pagada. Si más adelante quieres cobrar con tarjeta, escríbenos y lo platicamos.</p></div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q-rich">¿Puedo agregar un descuento o impuestos?</div>
+            <div class="faq-a-rich"><p>Sí. Las dos opciones están dentro de la factura antes de enviarla. Si necesitas las tasas de impuesto de tu estado, escríbenos y nosotros las configuramos por ti.</p></div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q-rich">La envié al número equivocado. ¿Y ahora?</div>
+            <div class="faq-a-rich"><p>Abre la factura, toca el menú y elige <strong>Anular</strong> (Void). Luego haz una nueva para el cliente correcto. ¿Te atoras? Escríbenos y lo arreglamos contigo.</p></div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q-rich">¿De dónde sale el logo de la factura?</div>
+            <div class="faq-a-rich"><p>Del perfil de tu negocio en la app: el mismo nombre, logo, teléfono y dirección que tus clientes ya ven. ¿Quieres cambiarlo? Escríbenos.</p></div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q-rich">¿Esto cuesta extra?</div>
+            <div class="faq-a-rich"><p>No. Está incluido en tu plan.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-success" style="margin-top:1.5rem;">
+        <strong>¿Necesitas una mano?</strong> Escríbenos y te acompañamos en tu primera factura. <a href="contacto">Contactar soporte &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Recordatorio de la única tarea -->
+  <section class="section section-alt">
+    <div class="container" style="text-align: center;">
+      <p style="margin: 0 0 1rem; font-weight: 600; font-size: 1.05rem;">Tu única tarea: después de cada cliente feliz, <strong>Pedir una Reseña</strong>.</p>
+      <a href="resenas" class="btn btn-primary">Pedir una Reseña &rarr;</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
+          <span>Slate Systems</span>
+        </div>
+        <div class="footer-links">
+          <a href="empezar">Empezar</a>
+          <a href="faq">FAQ</a>
+          <a href="contacto">Contactar Soporte</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>¿Necesitas ayuda? Escríbenos al <strong>+1 (831) 226-7831</strong> o email hello@slatesystems.io</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+    document.querySelectorAll('.faq-card').forEach(function(card){
+      card.querySelector('.faq-q-rich').addEventListener('click', function(){ card.classList.toggle('open'); });
+    });
+  </script>
+<script src="/js/chat-widget.js" defer></script>
+</body>
+</html>
