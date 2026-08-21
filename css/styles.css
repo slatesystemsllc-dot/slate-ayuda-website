@@ -782,3 +782,11 @@ tr:nth-child(even) {
     page-break-inside: avoid;
   }
 }
+
+/* Menú de escritorio con 12 entradas (2026-08-21, al agregar Facturas): el contenedor mide 1100px y
+   .nav-links no envuelve, así que "Contacto" se cortaba ("Conta") en cualquier ancho de escritorio.
+   Un punto menos de letra y de relleno, solo arriba del menú móvil. Sin cambiar etiquetas. */
+@media (min-width: 1101px) {
+  .nav-links { gap: 0.05rem; }
+  .nav-links a { font-size: 0.74rem; padding: 0.35rem 0.38rem; }
+}
