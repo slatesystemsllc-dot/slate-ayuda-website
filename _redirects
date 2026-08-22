@@ -42,3 +42,7 @@
 # Chat folded into Clientes
 /chat      /clientes   301
 /chat.html /clientes   301
+
+# Facturas renamed to Presupuestos (2026-08-22, estimates only)
+/facturas        /presupuestos   301
+/facturas.html   /presupuestos   301
