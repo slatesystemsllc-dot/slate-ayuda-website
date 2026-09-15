@@ -1,0 +1,23 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Volante colgante</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#152a45;--orange:#ee7000;--ink:#1a1f2b}
+body{font-family:Inter,-apple-system,sans-serif;color:var(--ink);margin:0;background:#f4f6f9}
+.bar{background:var(--navy);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.bar a{color:#fff;font-weight:800;text-decoration:none}
+.bar button{background:var(--orange);color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:900;font-size:16px}
+.hint{max-width:760px;margin:14px auto;padding:0 16px;font-size:15px;color:#5b6472}
+.sheet{background:#fff;margin:14px auto;max-width:760px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.b{font-weight:900} .fill{border-bottom:2px solid #cfd6e0;min-width:120px;display:inline-block}
+@media print{.bar,.hint{display:none}.sheet{box-shadow:none;margin:0;max-width:none;padding:0}@page{margin:12mm}}
+.dh{width:340px;margin:0 auto;border:2px dashed #cfd6e0;padding:22px;text-align:center}.dh .hole{width:70px;height:70px;border:2px solid #cfd6e0;border-radius:50%;margin:0 auto 18px}.dh .n{font-size:26px;font-weight:900;color:var(--navy)}.dh .l{font-size:16px;margin:14px 0;line-height:1.4}.dh .t{font-size:28px;font-weight:900;color:var(--orange)}.dh .foto{border:2px solid #cfd6e0;height:150px;display:flex;align-items:center;justify-content:center;color:#9aa3b2;margin:14px 0}
+</style></head><body>
+<div class="bar"><a href="../4.html">← Volver a la jugada</a><button onclick="window.print()">Imprimir o guardar PDF</button></div>
+<div class="hint">Volante de perilla (door hanger), un lado. 500 impresos cuestan de 75 a 125 dólares. Cuélgalos el mismo día en las 100 a 200 puertas alrededor del trabajo, con la camioneta todavía ahí. Nunca en el buzón.</div>
+<div class="sheet"><div class="dh"><div class="hole"></div><div class="n"><span data-k="negocio" class="fill">[Nombre del negocio]</span></div><div class="foto">[Foto del trabajo terminado]</div><div class="l">Acabamos de terminar <span class="fill">[el trabajo]</span> en el <span class="fill">[número]</span> de esta calle.<br><b>Revisión gratis del suyo esta semana.</b></div><div class="t"><span data-k="tel" class="fill">[Tu teléfono]</span></div><div style="font-size:13px;margin-top:10px">Licensed &amp; Insured · <span data-k="web" class="fill">[tu página]</span></div></div></div>
+<script>
+(function(){var q=new URLSearchParams(location.search);['oficio','negocio','tel','web'].forEach(function(k){var v=q.get(k);if(v){try{localStorage.setItem(k,v)}catch(e){}}});
+function g(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}
+var m={negocio:g('negocio'),tel:g('tel'),web:g('web'),oficio:g('oficio')};
+document.querySelectorAll('[data-k]').forEach(function(el){var v=m[el.getAttribute('data-k')];if(v){el.textContent=v;el.classList.remove('fill');}});})();
+</script></body></html>

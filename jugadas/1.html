@@ -143,11 +143,22 @@
   .oficio select{font-size:16px;padding:8px 10px;border-radius:8px;border:2px solid #cfd6e0}
   .jsrc{font-size:13px;color:#5b6472}
   .jsrc summary{cursor:pointer;font-weight:800;color:var(--ink)}
+  .ruta{background:var(--navy);color:#fff;border-radius:14px;padding:18px 18px 8px;margin:18px 0}
+  .ruta h3{color:var(--gold);margin:0 0 6px;font-size:14px;letter-spacing:.12em;text-transform:uppercase}
+  .ruta .rt{font-size:20px;font-weight:900;margin:0 0 10px}
+  .ruta ol{margin:0 0 10px;padding-left:22px}
+  .ruta li{margin:6px 0}
+  .ruta a{color:#fff;font-weight:800}
+  .ruta .esp{background:rgba(255,255,255,.08);border-left:4px solid var(--orange);padding:10px 12px;border-radius:8px;margin:8px 0 12px;font-size:15px}
+  .ruta .esp b{color:var(--gold)}
+  .oficio-note{margin:14px 0 0;font-size:14px;color:#5b6472}
+  .imprimir{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 18px}
+  .imprimir a{flex:1 1 160px;text-align:center;padding:12px;border:2px solid var(--orange);border-radius:10px;color:var(--ink);font-weight:800;text-decoration:none;background:#fff}
 </style>
 </head>
 <body>
 <div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada 1 de 14</span><a href="../mas-clientes">Leer todo</a></div></div>
-<main><div class="wrap"><h2 class="cap" id="base"><span class="capnum">1</span> La base lo decide todo</h2>
+<main><div class="wrap"><p class="oficio-note" id="oficio-note" hidden></p><h2 class="cap" id="base"><span class="capnum">1</span> La base lo decide todo</h2>
 <p class="h2sub">Por qué el sistema que ya tienes es el motor, y cada idea de esta guía es la gasolina.</p>
 
 <div class="accion"><div class="ar"><div class="al">Qué haces</div><div class="av"><b>Contesta. Y cuando no puedas, que el texto salga solo.</b></div></div><div class="ar"><div class="al">Qué trae</div><div class="av">Casi la mitad de las llamadas a negocios de servicio nunca las contesta una persona (48%). De las que sí, 38% son clientes reales y casi la mitad de esos agendan en esa misma llamada.<span class="asrc">Fuente: Invoca 2026, 70 millones de llamadas</span></div></div><div class="ar"><div class="al">Te toma</div><div class="av">Cero minutos. Tu sistema ya lo hace: el texto de llamada perdida sale en segundos.</div></div><div class="ar"><div class="al">Hoy</div><div class="av">Llama a tu propio número desde otro teléfono y no contestes. Mira llegar el texto. Así sabes qué recibe tu cliente.</div></div></div>
@@ -186,9 +197,33 @@ function ok(btn){
   var old = btn.innerText; btn.innerText = '¡Copiado!';
   setTimeout(function(){ btn.innerText = old; }, 1600);
 }
-</script>
+</script><script>window.POR_OFICIO={"default": {"orden": ["google", "warm", "job", "regresan", "facebook", "feeders", "partners", "nextdoor", "comunidad", "referral", "presence", "paid"]}, "pintura": {"orden": ["job", "google", "warm", "partners", "feeders", "regresan", "facebook"], "especial": "La caminata antes del listado: la pintura es el único oficio que cabe completo entre que la casa se vacía y sale a la venta. Pídele a cada agente que te deje caminar sus listados nuevos."}, "poda de árboles": {"orden": ["job", "google", "nextdoor", "warm", "regresan", "feeders", "facebook"], "especial": "Después de cada tormenta, la misma tarde: las 10 puertas de la calle con ramas caídas, con tu tarjeta. Nadie más pasa ese día."}, "acarreo": {"orden": ["feeders", "facebook", "google", "warm", "job", "regresan"], "especial": "Los inversionistas y flippers: cada casa que compran necesita vaciado completo, con prisa, y compran varias al año. La lista de permisos y los grupos de inversionistas son tu puerta."}, "limpieza de basura": {"orden": ["feeders", "facebook", "google", "warm", "job", "regresan"], "especial": "Los inversionistas y flippers: cada casa que compran necesita vaciado completo, con prisa, y compran varias al año."}, "plomería": {"orden": ["google", "regresan", "feeders", "warm", "job", "partners"], "especial": "La cámara de drenaje para agentes: tú ya tienes la cámara y nadie más ve dentro de la línea. Revisión gratis antes de cada venta, y el reporte lleva tu nombre."}, "techos": {"orden": ["job", "google", "feeders", "partners", "warm", "regresan"], "especial": "La carta del techo antes del listado: el tuyo es el único producto con vida restante que los bancos exigen por escrito. Ofrécela gratis a cada agente."}, "jardinería y paisajismo": {"orden": ["job", "regresan", "google", "nextdoor", "warm", "facebook"], "especial": "La estrella en tu propia ruta: eres el único oficio estacionado en la misma calle cada semana. Cada pasto terminado es un letrero que se mueve."}, "limpieza": {"orden": ["feeders", "regresan", "google", "warm", "facebook", "partners"], "especial": "El regalo de cierre: el agente regala una limpieza de entrada al comprador, cortesía tuya. Eres el único oficio que cabe en ese regalo."}, "climas y calefacción": {"orden": ["regresan", "google", "feeders", "warm", "job", "partners"], "especial": "La calcomanía de la placa: en cada servicio, lee la fecha de fábrica del equipo y pega tu calcomanía con tu teléfono. El próximo servicio te llama a ti."}, "instalaciones eléctricas": {"orden": ["feeders", "google", "regresan", "warm", "job", "partners"], "especial": "La cotización del reporte de inspección: los inspectores publican defectos eléctricos con fotos. Cotiza el PDF completo en 24 horas, precio cerrado."}, "handyman": {"orden": ["feeders", "google", "warm", "regresan", "job", "facebook"], "especial": "La lista de inspección por paquete: «todo lo marcado, en una visita, precio cerrado». Los oficios grandes no quieren esos trabajos chicos; tú sí."}, "pisos": {"orden": ["partners", "google", "job", "feeders", "warm", "regresan"], "especial": "El par pintor-pisero: véndanse juntos a los agentes como «casa lista en una semana». Dos oficios, una sola llamada."}, "concreto": {"orden": ["job", "google", "warm", "feeders", "partners", "regresan"], "especial": "La losa lleva al patio completo: en cada cochera o banqueta, deja cotizado el patio antes de irte."}, "cercas": {"orden": ["feeders", "job", "google", "warm", "partners", "regresan"], "especial": "La lista de permisos de alberca: son públicos, y cada permiso nuevo es una cerca obligada por ley en 60 a 120 días."}, "control de plagas": {"orden": ["feeders", "regresan", "google", "warm", "partners", "facebook"], "especial": "El contrato mensual con administradores de propiedades: decenas de unidades con servicio fijo. Una firma, ingreso todos los meses."}, "remodelación": {"orden": ["feeders", "partners", "google", "warm", "job", "regresan"], "especial": "El paquete «antes de vender»: baño y cocina superficial con fecha fija, vendido por agentes. El agente gana precio; tú ganas el trabajo sin cotizar contra tres."}, "construcción general": {"orden": ["partners", "feeders", "google", "job", "warm", "regresan"], "especial": "Cobra tu red en referidos: pídele a cada sub que uses una presentación al año con un cliente suyo. Eres el centro de la rueda."}, "aislamiento": {"orden": ["feeders", "partners", "google", "regresan", "warm", "job"], "especial": "La red Trade Ally de tu compañía de luz: gratis, te publica en su lista y en el nivel alto te manda sus clientes. Ningún otro oficio tiene una agencia pública reclutándole clientes."}};window.ID2N={"base": 1, "google": 2, "warm": 3, "job": 4, "regresan": 5, "comunidad": 6, "facebook": 7, "nextdoor": 8, "feeders": 9, "partners": 10, "paid": 11, "presence": 12, "referral": 13, "rhythm": 14};window.ID2T={"base": "La base lo decide todo", "google": "Tu perfil de Google: nosotros lo armamos, tú lo alimentas", "warm": "Tus primeros 20 trabajos ya están en tu teléfono", "job": "Cada trabajo es un anuncio gratis", "regresan": "Los clientes que ya te pagaron: el año dos vive en tu teléfono", "comunidad": "Iglesia, escuela y tus grupos de WhatsApp", "facebook": "Grupos de Facebook: gana el hilo", "nextdoor": "Nextdoor: que el vecino diga tu nombre", "feeders": "La gente que reparte trabajos todo el día", "partners": "Oficios socios: intercambia clientes, no los compres", "paid": "Cuando quieras pagar por clientes", "presence": "Paga con presencia, no con anuncios", "referral": "Gana $97 al mes por recomendarnos", "rhythm": "El ritmo semanal, completo"};</script>
 <script>
 (function(){
+  // PERSONAL-2026-09-15: the link brings the trade (?oficio=pintura). Nothing to click. No trade = the general guide.
+  var q=new URLSearchParams(location.search);
+  var of=(q.get('oficio')||'').trim().toLowerCase();
+  if(of){ try{localStorage.setItem('oficio',of);}catch(e){} } else { try{of=localStorage.getItem('oficio')||'';}catch(e){} }
+  ['negocio','tel','web'].forEach(function(k){ var v=q.get(k); if(v){ try{localStorage.setItem(k,v);}catch(e){} } });
+  function get(k){ try{return localStorage.getItem(k)||'';}catch(e){return '';} }
+  var PO=window.POR_OFICIO||{}, key='';
+  if(of){ Object.keys(PO).forEach(function(k){ if(!key && k!=='default' && (of.indexOf(k)>=0 || k.indexOf(of)>=0)) key=k; }); }
+  var conf = key ? PO[key] : null;
+  // fill the blanks that we know
+  var fills={'[tu oficio]': key||'', '[Negocio]': get('negocio'), '[tu teléfono]': get('tel'), '[tu página]': get('web')};
+  var main=document.querySelector('main'); 
+  if(main){ var h=main.innerHTML, changed=false; Object.keys(fills).forEach(function(k){ if(fills[k]){ h=h.split(k).join(fills[k]); changed=true; } }); if(changed) main.innerHTML=h; }
+  // the trade path on the landing
+  var slot=document.getElementById('ruta'); 
+  if(slot && conf){
+    var ids=(conf.orden||[]).slice(0,5), n=window.ID2N||{}, t=window.ID2T||{};
+    var html='<h3>Tu ruta</h3><div class="rt">Las jugadas de '+key+', en orden</div>';
+    if(conf.especial){ html+='<div class="esp"><b>Solo tu oficio puede hacer esto:</b> '+conf.especial+'</div>'; }
+    html+='<ol>'+ids.map(function(id){ return '<li><a href="'+n[id]+'.html">'+t[id]+'</a></li>'; }).join('')+'</ol>';
+    html+='<p style="font-size:13px;opacity:.85">Después de estas cinco, sigue con las demás. Todas están abajo.</p>';
+    slot.innerHTML=html; slot.hidden=false;
+  }
+  var nt=document.getElementById('oficio-note'); if(nt && key){ nt.textContent='Esta guía está en modo '+key+'.'; nt.hidden=false; }
 })();
 </script>
 </body></html>

@@ -1,0 +1,23 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tu hoja de papeles</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#152a45;--orange:#ee7000;--ink:#1a1f2b}
+body{font-family:Inter,-apple-system,sans-serif;color:var(--ink);margin:0;background:#f4f6f9}
+.bar{background:var(--navy);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.bar a{color:#fff;font-weight:800;text-decoration:none}
+.bar button{background:var(--orange);color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:900;font-size:16px}
+.hint{max-width:760px;margin:14px auto;padding:0 16px;font-size:15px;color:#5b6472}
+.sheet{background:#fff;margin:14px auto;max-width:760px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.b{font-weight:900} .fill{border-bottom:2px solid #cfd6e0;min-width:120px;display:inline-block}
+@media print{.bar,.hint{display:none}.sheet{box-shadow:none;margin:0;max-width:none;padding:0}@page{margin:12mm}}
+.pp h2{color:var(--navy);margin:0}.pp .row{display:grid;grid-template-columns:180px 1fr;gap:8px 12px;padding:10px 0;border-bottom:1px solid #e6e9ef}.pp .k{font-weight:800;color:var(--orange);font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+</style></head><body>
+<div class="bar"><a href="../9.html">← Volver a la jugada</a><button onclick="window.print()">Imprimir o guardar PDF</button></div>
+<div class="hint">Una sola página para administradores de propiedades, asociaciones (HOA) y contratistas generales. Junta con esta hoja el seguro (con el endoso de asegurado adicional), la licencia y la W-9 en un solo PDF.</div>
+<div class="sheet"><div class="pp"><h2><span data-k="negocio" class="fill">[Nombre del negocio]</span></h2><p style="margin:4px 0 14px"><span data-k="oficio" class="fill">[tu oficio]</span> · <span data-k="tel" class="fill">[tu teléfono]</span> · <span data-k="web" class="fill">[tu página]</span></p><div class="row"><div class="k">Licencia</div><div><span class="fill">[número y estado]</span></div></div><div class="row"><div class="k">Seguro</div><div><span class="fill">[aseguradora y póliza]</span> · endoso de asegurado adicional: sí</div></div><div class="row"><div class="k">W-9</div><div>adjunta</div></div><div class="row"><div class="k">Zona</div><div><span class="fill">[ciudades o códigos postales]</span></div></div><div class="row"><div class="k">Precios</div><div><span class="fill">[tus 5 servicios más comunes con precio]</span></div></div><div class="row"><div class="k">Mi promesa</div><div>Usted me textea una salida de inquilino y yo la camino en 24 horas con precio por escrito. Foto al final de cada día.</div></div><div class="row"><div class="k">Referencias</div><div><span class="fill">[dos clientes que den la cara]</span></div></div></div></div>
+<script>
+(function(){var q=new URLSearchParams(location.search);['oficio','negocio','tel','web'].forEach(function(k){var v=q.get(k);if(v){try{localStorage.setItem(k,v)}catch(e){}}});
+function g(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}
+var m={negocio:g('negocio'),tel:g('tel'),web:g('web'),oficio:g('oficio')};
+document.querySelectorAll('[data-k]').forEach(function(el){var v=m[el.getAttribute('data-k')];if(v){el.textContent=v;el.classList.remove('fill');}});})();
+</script></body></html>

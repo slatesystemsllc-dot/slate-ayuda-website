@@ -1,0 +1,23 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Letrero de jardín</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#152a45;--orange:#ee7000;--ink:#1a1f2b}
+body{font-family:Inter,-apple-system,sans-serif;color:var(--ink);margin:0;background:#f4f6f9}
+.bar{background:var(--navy);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.bar a{color:#fff;font-weight:800;text-decoration:none}
+.bar button{background:var(--orange);color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:900;font-size:16px}
+.hint{max-width:760px;margin:14px auto;padding:0 16px;font-size:15px;color:#5b6472}
+.sheet{background:#fff;margin:14px auto;max-width:760px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.b{font-weight:900} .fill{border-bottom:2px solid #cfd6e0;min-width:120px;display:inline-block}
+@media print{.bar,.hint{display:none}.sheet{box-shadow:none;margin:0;max-width:none;padding:0}@page{margin:12mm}}
+.sign{border:6px solid var(--navy);border-radius:10px;padding:34px 22px;text-align:center}.sign .n{font-size:44px;font-weight:900;color:var(--navy);line-height:1.05}.sign .s{font-size:26px;font-weight:700;margin:14px 0}.sign .t{font-size:40px;font-weight:900;color:var(--orange);margin:10px 0}.sign .li{font-size:18px;font-weight:700;margin-top:14px}
+</style></head><body>
+<div class="bar"><a href="../4.html">← Volver a la jugada</a><button onclick="window.print()">Imprimir o guardar PDF</button></div>
+<div class="hint">Lleva esta hoja a la imprenta o a la papelería: letrero de 18 x 24 pulgadas con estaca, de 2 a 4 dólares cada uno. Pide 20. Lo que no sepas, lo escribes a mano en el lugar.</div>
+<div class="sheet"><div class="sign"><div class="n"><span data-k="negocio" class="fill">[Nombre del negocio]</span></div><div class="s"><span data-k="oficio" class="fill">[Tu oficio en 5 palabras]</span></div><div class="t"><span data-k="tel" class="fill">[Tu teléfono]</span></div><div class="li">Licensed &amp; Insured</div></div></div>
+<script>
+(function(){var q=new URLSearchParams(location.search);['oficio','negocio','tel','web'].forEach(function(k){var v=q.get(k);if(v){try{localStorage.setItem(k,v)}catch(e){}}});
+function g(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}
+var m={negocio:g('negocio'),tel:g('tel'),web:g('web'),oficio:g('oficio')};
+document.querySelectorAll('[data-k]').forEach(function(el){var v=m[el.getAttribute('data-k')];if(v){el.textContent=v;el.classList.remove('fill');}});})();
+</script></body></html>
