@@ -133,14 +133,14 @@
 </head>
 <body>
 <div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada 5 de 14</span><a href="../mas-clientes">Leer todo</a></div></div>
-<main><div class="wrap"><p class="oficio-note" id="oficio-note" hidden>Ejemplos con tu oficio: <b id="oficio-txt"></b> · <a href="index.html#oficio">cambiar</a></p><h2 class="cap" id="regresan"><span class="capnum">5</span> Los clientes que ya te pagaron: el año dos vive en tu teléfono</h2>
+<main><div class="wrap"><h2 class="cap" id="regresan"><span class="capnum">5</span> Los clientes que ya te pagaron: el año dos vive en tu teléfono</h2>
 <p class="h2sub">El capítulo 3 es para arrancar. Este es para sostener: la gente que ya te conoce y ya te pagó.</p>
 <div class="bulb"><div class="big">59%</div><div class="txt">del trabajo nuevo viene de clientes que regresan, empatado con los referidos. Google Search: 20%. Nadie vende más barato que un cliente que ya te pagó una vez.<span class="src">Jobber, reporte de tendencias 2026 (1,050 dueños)</span></div></div>
 <h3>Sube tu lista de clientes viejos al sistema</h3>
 <p>Nombre y teléfono de cada persona a la que le hiciste un trabajo. La subes una vez en tu portal de Slate (la página de "contactos"). El sistema les pide la reseña que nunca les pediste, y durante un año les manda, con tu nombre, la oferta de referidos: "¿quién de tus conocidos necesita esto?". Tú no tocas nada.</p>
 <h3>El recordatorio de temporada, con tu oficio</h3>
 <p>Cada oficio tiene una fecha en la que la casa vuelve a necesitarte: canaletas y techos antes de las lluvias, el clima antes del calor, la pintura exterior antes del frío, el jardín en primavera. Un texto a tus clientes de hace un año, el mes antes:</p>
-<div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">Español</span><span class="cptext">Hola [Nombre], soy [tu nombre], el de [pintura]. Le hice [el trabajo] el año pasado. Se acerca [la temporada] y ando por su zona la semana que viene. Si quiere que le dé una revisada sin costo, dígame qué día le queda.</span></div>
+<div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">Español</span><span class="cptext">Hola [Nombre], soy [tu nombre], el de [tu oficio]. Le hice [el trabajo] el año pasado. Se acerca [la temporada] y ando por su zona la semana que viene. Si quiere que le dé una revisada sin costo, dígame qué día le queda.</span></div>
 <h3>El aniversario del trabajo</h3>
 <p>Doce meses después de terminar, un texto de tres renglones: "¿cómo sigue [el trabajo]? Cualquier detalle, me dice". No vende nada y por eso funciona: el que contesta "todo bien" es el mismo que te manda al vecino la semana siguiente.</p>
 <div class="warn"><b>Ojo con los textos en masa.</b> Un texto de promoción a una lista de clientes tiene reglas en Estados Unidos: consentimiento por escrito, solo de 8 am a 9 pm en su hora, baja por cualquier medio y número registrado con las telefónicas (desde 2025 bloquean el 100% de lo que no está registrado). Un texto tuyo, a una persona, desde tu teléfono, está bien. Una lista entera, no: eso lo manda el sistema, que ya cumple todo lo anterior.</div>
@@ -167,15 +167,6 @@ function ok(btn){
 </script>
 <script>
 (function(){
-  var q=new URLSearchParams(location.search);
-  var of=q.get('oficio')||localStorage.getItem('oficio')||'';
-  if(q.get('c')) localStorage.setItem('cid',q.get('c'));
-  if(of){ localStorage.setItem('oficio',of);
-    document.querySelectorAll('main, .cover').forEach(function(el){ el.innerHTML=el.innerHTML.replace(/\[pintura\]/g,of); });
-    var s=document.getElementById('oficio'); if(s){ s.value=of; }
-    var nt=document.getElementById('oficio-note'); if(nt){ document.getElementById('oficio-txt').textContent=of; nt.hidden=false; }
-  }
-  var s=document.getElementById('oficio'); if(s){ s.addEventListener('change',function(){ localStorage.setItem('oficio',s.value); location.reload(); }); }
 })();
 </script>
 </body></html>

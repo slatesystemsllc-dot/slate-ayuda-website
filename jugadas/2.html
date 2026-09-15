@@ -133,7 +133,7 @@
 </head>
 <body>
 <div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada 2 de 14</span><a href="../mas-clientes">Leer todo</a></div></div>
-<main><div class="wrap"><p class="oficio-note" id="oficio-note" hidden>Ejemplos con tu oficio: <b id="oficio-txt"></b> · <a href="index.html#oficio">cambiar</a></p><h2 class="cap" id="google"><span class="capnum">2</span> Tu perfil de Google: nosotros lo armamos, tú lo alimentas</h2>
+<main><div class="wrap"><h2 class="cap" id="google"><span class="capnum">2</span> Tu perfil de Google: nosotros lo armamos, tú lo alimentas</h2>
 <p class="h2sub">Cada letrero, cada vecino, cada etiqueta en Facebook manda a esa persona a buscarte en Google. El perfil (nombre, categoría, servicios, zona, fotos, posición en el mapa) lo cuidamos nosotros. Lo que solo tú puedes hacer son dos cosas.</p>
 <div class="bulb"><div class="big">74%</div><div class="txt">de la gente solo lee reseñas de los últimos tres meses. Las reseñas se echan a perder: por eso la petición es en cada trabajo, no una vez.<span class="src">BrightLocal, encuesta de consumidores 2026</span></div></div>
 <h3>1. La reseña se pide en persona, antes de subirte al camión</h3>
@@ -165,15 +165,6 @@ function ok(btn){
 </script>
 <script>
 (function(){
-  var q=new URLSearchParams(location.search);
-  var of=q.get('oficio')||localStorage.getItem('oficio')||'';
-  if(q.get('c')) localStorage.setItem('cid',q.get('c'));
-  if(of){ localStorage.setItem('oficio',of);
-    document.querySelectorAll('main, .cover').forEach(function(el){ el.innerHTML=el.innerHTML.replace(/\[pintura\]/g,of); });
-    var s=document.getElementById('oficio'); if(s){ s.value=of; }
-    var nt=document.getElementById('oficio-note'); if(nt){ document.getElementById('oficio-txt').textContent=of; nt.hidden=false; }
-  }
-  var s=document.getElementById('oficio'); if(s){ s.addEventListener('change',function(){ localStorage.setItem('oficio',s.value); location.reload(); }); }
 })();
 </script>
 </body></html>

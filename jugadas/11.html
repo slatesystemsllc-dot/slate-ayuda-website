@@ -133,7 +133,7 @@
 </head>
 <body>
 <div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada 11 de 14</span><a href="../mas-clientes">Leer todo</a></div></div>
-<main><div class="wrap"><p class="oficio-note" id="oficio-note" hidden>Ejemplos con tu oficio: <b id="oficio-txt"></b> · <a href="index.html#oficio">cambiar</a></p><h2 class="cap" id="paid"><span class="capnum">11</span> Cuando quieras pagar por clientes</h2>
+<main><div class="wrap"><h2 class="cap" id="paid"><span class="capnum">11</span> Cuando quieras pagar por clientes</h2>
 <p class="h2sub">Un día la máquina gratis se llena y quizás quieras comprar crecimiento. Dos párrafos honestos para que nadie te robe.</p>
 
 <p><b>La opción buena: los anuncios de Google que cobran por cliente potencial</b> (Local Services Ads). Pagas por una llamada real de un dueño de casa real, no por un clic: como <em>$39 por lead en electricidad, $51 en clima, $57 en plomería.</em> En un estudio de 888 contratistas, el 44% de esos leads agenda: sale como <em>$233 por cliente que paga</em>, con ticket promedio de $1,826. Ojo: Google pide licencia estatal, seguro de $1 millón y verificación de antecedentes, y está mudando este producto a su consola grande ahora mismo. Antes de meterte, pregúntanos: configurar bien el perfil es lo que decide qué leads te cobran.</p>
@@ -162,15 +162,6 @@ function ok(btn){
 </script>
 <script>
 (function(){
-  var q=new URLSearchParams(location.search);
-  var of=q.get('oficio')||localStorage.getItem('oficio')||'';
-  if(q.get('c')) localStorage.setItem('cid',q.get('c'));
-  if(of){ localStorage.setItem('oficio',of);
-    document.querySelectorAll('main, .cover').forEach(function(el){ el.innerHTML=el.innerHTML.replace(/\[pintura\]/g,of); });
-    var s=document.getElementById('oficio'); if(s){ s.value=of; }
-    var nt=document.getElementById('oficio-note'); if(nt){ document.getElementById('oficio-txt').textContent=of; nt.hidden=false; }
-  }
-  var s=document.getElementById('oficio'); if(s){ s.addEventListener('change',function(){ localStorage.setItem('oficio',s.value); location.reload(); }); }
 })();
 </script>
 </body></html>

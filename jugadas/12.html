@@ -133,7 +133,7 @@
 </head>
 <body>
 <div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada 12 de 14</span><a href="../mas-clientes">Leer todo</a></div></div>
-<main><div class="wrap"><p class="oficio-note" id="oficio-note" hidden>Ejemplos con tu oficio: <b id="oficio-txt"></b> · <a href="index.html#oficio">cambiar</a></p><h2 class="cap" id="presence"><span class="capnum">12</span> Paga con presencia, no con anuncios</h2>
+<main><div class="wrap"><h2 class="cap" id="presence"><span class="capnum">12</span> Paga con presencia, no con anuncios</h2>
 <p class="h2sub">No puedes ganarle a los grandes en Google con dinero. Sí puedes ser el único [oficio] con su nombre en 30 uniformes de niños y en el boletín de la iglesia 52 semanas al año. Advertencia honesta: esto compra CONFIANZA, no clientes de este mes. Júzgalo por temporadas. La mayoría renuncia al día 60, justo antes de que arranque.</p>
 
 <ul>
@@ -169,15 +169,6 @@ function ok(btn){
 </script>
 <script>
 (function(){
-  var q=new URLSearchParams(location.search);
-  var of=q.get('oficio')||localStorage.getItem('oficio')||'';
-  if(q.get('c')) localStorage.setItem('cid',q.get('c'));
-  if(of){ localStorage.setItem('oficio',of);
-    document.querySelectorAll('main, .cover').forEach(function(el){ el.innerHTML=el.innerHTML.replace(/\[pintura\]/g,of); });
-    var s=document.getElementById('oficio'); if(s){ s.value=of; }
-    var nt=document.getElementById('oficio-note'); if(nt){ document.getElementById('oficio-txt').textContent=of; nt.hidden=false; }
-  }
-  var s=document.getElementById('oficio'); if(s){ s.addEventListener('change',function(){ localStorage.setItem('oficio',s.value); location.reload(); }); }
 })();
 </script>
 </body></html>

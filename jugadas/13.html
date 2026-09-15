@@ -133,7 +133,7 @@
 </head>
 <body>
 <div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada 13 de 14</span><a href="../mas-clientes">Leer todo</a></div></div>
-<main><div class="wrap"><p class="oficio-note" id="oficio-note" hidden>Ejemplos con tu oficio: <b id="oficio-txt"></b> · <a href="index.html#oficio">cambiar</a></p><h2 class="cap" id="referral"><span class="capnum">13</span> Gana $97 al mes por recomendarnos</h2>
+<main><div class="wrap"><h2 class="cap" id="referral"><span class="capnum">13</span> Gana $97 al mes por recomendarnos</h2>
 <div class="win">
 <p><b>Conoces a otros dueños de negocio. Eso vale dinero real cada mes.</b> El programa de referidos de Slate paga <em>$97 cada mes por cada cliente activo que refieras.</em> Fijo, sin tope, pagado el día 1, directo a tu banco, mientras el cliente siga.</p>
 <p>Haz la cuenta: refiere 3 negocios y son $291 al mes de regreso. <em>Tu sistema prácticamente se paga solo.</em> Refiere 5 y te sobra dinero cada mes.</p>
@@ -162,15 +162,6 @@ function ok(btn){
 </script>
 <script>
 (function(){
-  var q=new URLSearchParams(location.search);
-  var of=q.get('oficio')||localStorage.getItem('oficio')||'';
-  if(q.get('c')) localStorage.setItem('cid',q.get('c'));
-  if(of){ localStorage.setItem('oficio',of);
-    document.querySelectorAll('main, .cover').forEach(function(el){ el.innerHTML=el.innerHTML.replace(/\[pintura\]/g,of); });
-    var s=document.getElementById('oficio'); if(s){ s.value=of; }
-    var nt=document.getElementById('oficio-note'); if(nt){ document.getElementById('oficio-txt').textContent=of; nt.hidden=false; }
-  }
-  var s=document.getElementById('oficio'); if(s){ s.addEventListener('change',function(){ localStorage.setItem('oficio',s.value); location.reload(); }); }
 })();
 </script>
 </body></html>

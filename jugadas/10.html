@@ -133,7 +133,7 @@
 </head>
 <body>
 <div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada 10 de 14</span><a href="../mas-clientes">Leer todo</a></div></div>
-<main><div class="wrap"><p class="oficio-note" id="oficio-note" hidden>Ejemplos con tu oficio: <b id="oficio-txt"></b> · <a href="index.html#oficio">cambiar</a></p><h2 class="cap" id="partners"><span class="capnum">10</span> Oficios socios: intercambia clientes, no los compres</h2>
+<main><div class="wrap"><h2 class="cap" id="partners"><span class="capnum">10</span> Oficios socios: intercambia clientes, no los compres</h2>
 <p class="h2sub">Otros oficios están parados dentro de la casa de tu cliente justo antes de que el cliente te necesite a TI. Las alianzas locales producen más clientes (25%) que las búsquedas de Google (20%) o los sitios que venden leads (16%). La regla de oro: mándale TÚ un cliente primero, y luego pide. Intercambio, no favor.</p>
 
 <p>Busca tu oficio. Cada tarjeta trae: socios y por qué ellos ven tus trabajos primero, una jugada que solo tu oficio puede hacer, y qué escribir en el buscador de los grupos (busca el SÍNTOMA, como escribe el dueño de casa, no el servicio). <em>Busca tu oficio abajo y tócalo para abrirlo. Están los oficios más comunes con tarjeta completa, y al final una caja con TODOS los demás. Más de 30 oficios: el tuyo está.</em></p>
@@ -311,15 +311,6 @@ function ok(btn){
 </script>
 <script>
 (function(){
-  var q=new URLSearchParams(location.search);
-  var of=q.get('oficio')||localStorage.getItem('oficio')||'';
-  if(q.get('c')) localStorage.setItem('cid',q.get('c'));
-  if(of){ localStorage.setItem('oficio',of);
-    document.querySelectorAll('main, .cover').forEach(function(el){ el.innerHTML=el.innerHTML.replace(/\[pintura\]/g,of); });
-    var s=document.getElementById('oficio'); if(s){ s.value=of; }
-    var nt=document.getElementById('oficio-note'); if(nt){ document.getElementById('oficio-txt').textContent=of; nt.hidden=false; }
-  }
-  var s=document.getElementById('oficio'); if(s){ s.addEventListener('change',function(){ localStorage.setItem('oficio',s.value); location.reload(); }); }
 })();
 </script>
 </body></html>

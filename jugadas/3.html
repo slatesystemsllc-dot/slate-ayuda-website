@@ -133,10 +133,10 @@
 </head>
 <body>
 <div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada 3 de 14</span><a href="../mas-clientes">Leer todo</a></div></div>
-<main><div class="wrap"><p class="oficio-note" id="oficio-note" hidden>Ejemplos con tu oficio: <b id="oficio-txt"></b> · <a href="index.html#oficio">cambiar</a></p><h2 class="cap" id="warm"><span class="capnum">3</span> Tus primeros 20 trabajos ya están en tu teléfono</h2>
+<main><div class="wrap"><h2 class="cap" id="warm"><span class="capnum">3</span> Tus primeros 20 trabajos ya están en tu teléfono</h2>
 <p class="h2sub">Así los sacas de tus contactos sin sentirte limosnero.</p>
 
-<p>Una idea lo cambia todo: <em>no estás pidiendo favores. Estás anunciando a qué te dedicas ahora.</em> Cuando el primo de alguien necesite [pintura], tú le hiciste el favor por ser fácil de encontrar.</p>
+<p>Una idea lo cambia todo: <em>no estás pidiendo favores. Estás anunciando a qué te dedicas ahora.</em> Cuando el primo de alguien necesite lo que tú haces, tú le hiciste el favor por ser fácil de encontrar.</p>
 
 <h3>La lista de 100 nombres (de toda la familia)</h3>
 <p>Una noche, teléfono en mano. Abre contactos, WhatsApp, amigos de Facebook. Escribe cada nombre en papel, en cuatro columnas: familia, excompañeros y exjefes, gente de la iglesia y la escuela, y todos los demás (tu barbero, tu mecánico, el del mostrador de refacciones).</p>
@@ -144,7 +144,7 @@
 
 <h3>El texto de anuncio</h3>
 <p>Mándalo a 10 nombres por día, uno por uno. Nunca en grupo. Es un anuncio, así que nadie puede decirle que no:</p>
-<div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">Español</span><span class="cptext">Hola [Nombre], soy [tu nombre]. Por fin abrí mi propio negocio de [pintura] aquí en [ciudad]. Si algún día necesitas [pintura], o escuchas de alguien que lo necesite, me encantaría la oportunidad. De cualquier forma, ¡qué gusto saludarte!</span></div>
+<div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">Español</span><span class="cptext">Hola [Nombre], soy [tu nombre]. Por fin abrí mi propio negocio de [tu oficio] aquí en [ciudad]. Si algún día necesitas [tu oficio], o escuchas de alguien que lo necesite, me encantaría la oportunidad. De cualquier forma, ¡qué gusto saludarte!</span></div>
 <div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">English</span><span class="cptext">Hey [Name], it's [your name]. I finally started my own [painting] business here in [town]. If you ever need [painting], or hear of somebody who does, I'd love the shot. Either way, good to hear from you.</span></div>
 <p>Y ahí le paras. Sin lista de precios. Sin párrafo de tu experiencia. De 100 envíos, espera 30 a 50 respuestas y 2 a 5 trabajos el primer mes. El premio grande llega después: 100 personas ya saben qué contestar cuando alguien pregunte "¿conoces a alguien?".</p>
 
@@ -181,15 +181,6 @@ function ok(btn){
 </script>
 <script>
 (function(){
-  var q=new URLSearchParams(location.search);
-  var of=q.get('oficio')||localStorage.getItem('oficio')||'';
-  if(q.get('c')) localStorage.setItem('cid',q.get('c'));
-  if(of){ localStorage.setItem('oficio',of);
-    document.querySelectorAll('main, .cover').forEach(function(el){ el.innerHTML=el.innerHTML.replace(/\[pintura\]/g,of); });
-    var s=document.getElementById('oficio'); if(s){ s.value=of; }
-    var nt=document.getElementById('oficio-note'); if(nt){ document.getElementById('oficio-txt').textContent=of; nt.hidden=false; }
-  }
-  var s=document.getElementById('oficio'); if(s){ s.addEventListener('change',function(){ localStorage.setItem('oficio',s.value); location.reload(); }); }
 })();
 </script>
 </body></html>

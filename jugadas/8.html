@@ -133,7 +133,7 @@
 </head>
 <body>
 <div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada 8 de 14</span><a href="../mas-clientes">Leer todo</a></div></div>
-<main><div class="wrap"><p class="oficio-note" id="oficio-note" hidden>Ejemplos con tu oficio: <b id="oficio-txt"></b> · <a href="index.html#oficio">cambiar</a></p><h2 class="cap" id="nextdoor"><span class="capnum">8</span> Nextdoor: que el vecino diga tu nombre</h2>
+<main><div class="wrap"><h2 class="cap" id="nextdoor"><span class="capnum">8</span> Nextdoor: que el vecino diga tu nombre</h2>
 <p class="h2sub">En Google, la gente busca y tú compites. En Nextdoor, un vecino pregunta "¿quién conoce un buen plomero?" y otro vecino contesta con tu nombre y tu teléfono. Ese lugar no se compra. Se gana, una recomendación a la vez.</p>
 
 <p>Así se ve un cliente de Nextdoor en la vida real, sacado de la página de un contratista de verdad: <em>"Neighborhood Remodeling Heroes 720-451-7487, pregunta por Heather. ¡Dan presupuestos gratis!"</em> Eso lo escribió EL VECINO, con todo y teléfono. Tú no escribes nada. Tu único trabajo es pedir.</p>
@@ -169,15 +169,6 @@ function ok(btn){
 </script>
 <script>
 (function(){
-  var q=new URLSearchParams(location.search);
-  var of=q.get('oficio')||localStorage.getItem('oficio')||'';
-  if(q.get('c')) localStorage.setItem('cid',q.get('c'));
-  if(of){ localStorage.setItem('oficio',of);
-    document.querySelectorAll('main, .cover').forEach(function(el){ el.innerHTML=el.innerHTML.replace(/\[pintura\]/g,of); });
-    var s=document.getElementById('oficio'); if(s){ s.value=of; }
-    var nt=document.getElementById('oficio-note'); if(nt){ document.getElementById('oficio-txt').textContent=of; nt.hidden=false; }
-  }
-  var s=document.getElementById('oficio'); if(s){ s.addEventListener('change',function(){ localStorage.setItem('oficio',s.value); location.reload(); }); }
 })();
 </script>
 </body></html>

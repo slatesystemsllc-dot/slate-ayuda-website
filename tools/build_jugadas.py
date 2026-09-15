@@ -62,15 +62,6 @@ EXTRA_CSS = """
 JS = """
 <script>
 (function(){
-  var q=new URLSearchParams(location.search);
-  var of=q.get('oficio')||localStorage.getItem('oficio')||'';
-  if(q.get('c')) localStorage.setItem('cid',q.get('c'));
-  if(of){ localStorage.setItem('oficio',of);
-    document.querySelectorAll('main, .cover').forEach(function(el){ el.innerHTML=el.innerHTML.replace(/\\[pintura\\]/g,of); });
-    var s=document.getElementById('oficio'); if(s){ s.value=of; }
-    var nt=document.getElementById('oficio-note'); if(nt){ document.getElementById('oficio-txt').textContent=of; nt.hidden=false; }
-  }
-  var s=document.getElementById('oficio'); if(s){ s.addEventListener('change',function(){ localStorage.setItem('oficio',s.value); location.reload(); }); }
 })();
 </script>
 """
@@ -83,7 +74,7 @@ def page(n, cid, title, seg):
     next_lbl = "Siguiente jugada →" if n < N else "Volver al inicio"
     return (head.replace("<title>", "<title>Jugada %d de %d: " % (n, N)).replace("</head>", EXTRA_CSS + "</head>")
             + '\n<div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada %d de %d</span><a href="../mas-clientes">Leer todo</a></div></div>\n' % (n, N)
-            + '<main><div class="wrap">' + '<p class="oficio-note" id="oficio-note" hidden>Ejemplos con tu oficio: <b id="oficio-txt"></b> · <a href="index.html#oficio">cambiar</a></p>' + seg
+            + '<main><div class="wrap">' + seg
             + '</div></main>\n<div class="jnav"><div class="wrap"><a class="jbtn" href="%s">← Anterior</a><a class="jbtn primary" href="%s">%s</a></div></div>\n' % (prev_href, next_href, next_lbl)
             + script + JS + "</body></html>\n")
 
@@ -93,7 +84,7 @@ for k, (cid, title, seg) in enumerate(chapters, 1):
 items = "".join('<li><a href="%d.html"><span class="n">%d</span>%s</a></li>' % (k, k, html.escape(t)) for k, (cid, t, _) in enumerate(chapters, 1))
 index = (head.replace("</head>", EXTRA_CSS + "</head>")
          + cover
-         + '<main><div class="wrap">' + onepager + sel
+         + '<main><div class="wrap">' + onepager
          + '<h2 class="cap" id="jugadas"><span class="capnum">→</span> Las jugadas, una por página</h2><p>Toca una. Cada página es una jugada completa con su guion para copiar. Al final, «Siguiente jugada».</p><ul class="jlist">%s</ul>' % (items)
          + '<p><a class="jbtn primary" href="1.html">Empezar por la jugada 1 →</a></p><p style="margin-top:10px"><a class="jbtn" href="../mas-clientes">Leer la guía completa en una sola página</a></p>'
          + '<details class="jsrc"><summary>Fuentes</summary>' + fuentes + '</details>'
