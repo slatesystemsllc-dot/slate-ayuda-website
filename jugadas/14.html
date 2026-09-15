@@ -101,6 +101,20 @@
   @media (max-width:600px){ .toc { columns:1; } .h2sub { margin-left:0; } }
   /* AUDIT-2026-09-15 + AUDIT-2026-09-15b + AUDIT-2026-09-15c: phone width, the cover cards wrap instead of overflowing */
   @media (max-width:520px){ .statrow{flex-wrap:wrap} .stat{flex:1 1 100%; min-width:0} .wrap{padding:0 16px} }
+
+  /* ACTION-CARDS-2026-09-15 */
+  .accion{background:#fff;border:2px solid var(--navy);border-radius:14px;padding:16px 18px;margin:18px 0 24px}
+  .accion .ar{display:grid;grid-template-columns:96px 1fr;gap:8px 12px;padding:8px 0;border-top:1px solid #e6e9ef;align-items:start}
+  .accion .ar:first-child{border-top:0;padding-top:0}
+  .accion .al{font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding-top:3px}
+  .accion .av{font-size:16px;line-height:1.45}
+  .accion .av b{font-weight:800}
+  .accion .asrc{display:block;font-size:12px;color:#5b6472;margin-top:4px}
+  .semana1{background:#fff;border:2px solid var(--orange);border-radius:14px;padding:16px 18px;margin:18px 0}
+  .semana1 h3{margin:0 0 8px}
+  .semana1 ol{margin:0;padding-left:20px}
+  .semana1 li{margin:6px 0}
+  @media (max-width:520px){ .accion .ar{grid-template-columns:1fr} .accion .al{padding-top:0} }
 </style>
 
 <style>
@@ -136,6 +150,8 @@
 <main><div class="wrap"><h2 class="cap" id="rhythm"><span class="capnum">14</span> El ritmo semanal, completo</h2>
 <p class="h2sub">La versión corta está en el Plan de 1 Página de arriba. Esta es la de detalle.</p>
 
+<div class="accion"><div class="ar"><div class="al">Qué haces</div><div class="av"><b>Cada trabajo: reseña, un nombre, 10 puertas, letrero, foto. Cada semana: una hora. Cada mes: la tienda y un socio.</b></div></div><div class="ar"><div class="al">Qué trae</div><div class="av">Nada de esto pide dinero. Pide 20 minutos por trabajo y una hora a la semana. Todo lo demás lo atrapa el sistema.<span class="asrc">Fuente: esta guía</span></div></div><div class="ar"><div class="al">Te toma</div><div class="av">20 minutos por trabajo, 1 hora por semana, 2 horas por mes.</div></div><div class="ar"><div class="al">Hoy</div><div class="av">imprime el Plan de 1 Página y pégalo en la camioneta.</div></div></div>
+<div class="accion"><div class="ar"><div class="al">Qué haces</div><div class="av"><b>Preséntanos a otro dueño de negocio. Te pagamos $97 al mes mientras él siga.</b></div></div><div class="ar"><div class="al">Qué trae</div><div class="av">Tres referidos son $291 al mes: tu sistema prácticamente se paga solo. Sin tope, pagado el día 1, directo a tu banco.<span class="asrc">Fuente: programa de referidos de Slate</span></div></div><div class="ar"><div class="al">Te toma</div><div class="av">Un mensaje.</div></div><div class="ar"><div class="al">Hoy</div><div class="av">pídenos tu enlace de referido y mándaselo al socio del capítulo 10 que más trabajo te pasa.</div></div></div>
 <h3>Cada trabajo terminado (20 minutos)</h3>
 <ul>
 <li><b>La reseña, explicada:</b> antes de subirte a la camioneta, dile al cliente EN PERSONA: "Le voy a mandar un textito con el enlace para dejarnos una reseña en Google. Me ayuda muchísimo". El sistema manda el enlace solo. Tu único trabajo es avisar de frente, para que el texto no le caiga frío. Un texto anunciado se contesta; un texto sorpresa se ignora.</li>

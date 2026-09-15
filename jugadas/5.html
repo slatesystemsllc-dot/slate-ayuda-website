@@ -101,6 +101,20 @@
   @media (max-width:600px){ .toc { columns:1; } .h2sub { margin-left:0; } }
   /* AUDIT-2026-09-15 + AUDIT-2026-09-15b + AUDIT-2026-09-15c: phone width, the cover cards wrap instead of overflowing */
   @media (max-width:520px){ .statrow{flex-wrap:wrap} .stat{flex:1 1 100%; min-width:0} .wrap{padding:0 16px} }
+
+  /* ACTION-CARDS-2026-09-15 */
+  .accion{background:#fff;border:2px solid var(--navy);border-radius:14px;padding:16px 18px;margin:18px 0 24px}
+  .accion .ar{display:grid;grid-template-columns:96px 1fr;gap:8px 12px;padding:8px 0;border-top:1px solid #e6e9ef;align-items:start}
+  .accion .ar:first-child{border-top:0;padding-top:0}
+  .accion .al{font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding-top:3px}
+  .accion .av{font-size:16px;line-height:1.45}
+  .accion .av b{font-weight:800}
+  .accion .asrc{display:block;font-size:12px;color:#5b6472;margin-top:4px}
+  .semana1{background:#fff;border:2px solid var(--orange);border-radius:14px;padding:16px 18px;margin:18px 0}
+  .semana1 h3{margin:0 0 8px}
+  .semana1 ol{margin:0;padding-left:20px}
+  .semana1 li{margin:6px 0}
+  @media (max-width:520px){ .accion .ar{grid-template-columns:1fr} .accion .al{padding-top:0} }
 </style>
 
 <style>
@@ -135,6 +149,7 @@
 <div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada 5 de 14</span><a href="../mas-clientes">Leer todo</a></div></div>
 <main><div class="wrap"><h2 class="cap" id="regresan"><span class="capnum">5</span> Los clientes que ya te pagaron: el año dos vive en tu teléfono</h2>
 <p class="h2sub">El capítulo 3 es para arrancar. Este es para sostener: la gente que ya te conoce y ya te pagó.</p>
+<div class="accion"><div class="ar"><div class="al">Qué haces</div><div class="av"><b>Sube tu lista de clientes viejos al sistema. Ellos son el año dos.</b></div></div><div class="ar"><div class="al">Qué trae</div><div class="av">Los clientes que regresan traen tanto trabajo como los referidos: 59% cada uno. Nadie vende más barato que alguien que ya te pagó.<span class="asrc">Fuente: Jobber 2026, 1,050 dueños</span></div></div><div class="ar"><div class="al">Te toma</div><div class="av">Una hora, una vez. Después el sistema les pide la reseña y les manda la cadena de referidos de un año.</div></div><div class="ar"><div class="al">Hoy</div><div class="av">junta nombre y teléfono de tus últimos 50 clientes y súbelos en tu portal de contactos.</div></div></div>
 <div class="bulb"><div class="big">59%</div><div class="txt">del trabajo nuevo viene de clientes que regresan, empatado con los referidos. Google Search: 20%. Nadie vende más barato que un cliente que ya te pagó una vez.<span class="src">Jobber, reporte de tendencias 2026 (1,050 dueños)</span></div></div>
 <h3>Sube tu lista de clientes viejos al sistema</h3>
 <p>Nombre y teléfono de cada persona a la que le hiciste un trabajo. La subes una vez en tu portal de Slate (la página de "contactos"). El sistema les pide la reseña que nunca les pediste, y durante un año les manda, con tu nombre, la oferta de referidos: "¿quién de tus conocidos necesita esto?". Tú no tocas nada.</p>

@@ -101,6 +101,20 @@
   @media (max-width:600px){ .toc { columns:1; } .h2sub { margin-left:0; } }
   /* AUDIT-2026-09-15 + AUDIT-2026-09-15b + AUDIT-2026-09-15c: phone width, the cover cards wrap instead of overflowing */
   @media (max-width:520px){ .statrow{flex-wrap:wrap} .stat{flex:1 1 100%; min-width:0} .wrap{padding:0 16px} }
+
+  /* ACTION-CARDS-2026-09-15 */
+  .accion{background:#fff;border:2px solid var(--navy);border-radius:14px;padding:16px 18px;margin:18px 0 24px}
+  .accion .ar{display:grid;grid-template-columns:96px 1fr;gap:8px 12px;padding:8px 0;border-top:1px solid #e6e9ef;align-items:start}
+  .accion .ar:first-child{border-top:0;padding-top:0}
+  .accion .al{font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding-top:3px}
+  .accion .av{font-size:16px;line-height:1.45}
+  .accion .av b{font-weight:800}
+  .accion .asrc{display:block;font-size:12px;color:#5b6472;margin-top:4px}
+  .semana1{background:#fff;border:2px solid var(--orange);border-radius:14px;padding:16px 18px;margin:18px 0}
+  .semana1 h3{margin:0 0 8px}
+  .semana1 ol{margin:0;padding-left:20px}
+  .semana1 li{margin:6px 0}
+  @media (max-width:520px){ .accion .ar{grid-template-columns:1fr} .accion .al{padding-top:0} }
 </style>
 
 <style>
@@ -136,6 +150,7 @@
 <main><div class="wrap"><h2 class="cap" id="feeders"><span class="capnum">9</span> La gente que reparte trabajos todo el día</h2>
 <p class="h2sub">Un dueño de casa te contrata una vez cada varios años. Esta gente coloca trabajos cada semana. Empieza por los tres primeros: no piden licencia extra y casi no piden dinero.</p>
 
+<div class="accion"><div class="ar"><div class="al">Qué haces</div><div class="av"><b>Una mañana fija en la tienda de materiales, la lista de permisos, y un PDF de papeles para administradores.</b></div></div><div class="ar"><div class="al">Qué trae</div><div class="av">El 25% de los dueños nombran redes y alianzas locales como fuente de trabajo, arriba del 20% de Google Search. Esta gente coloca trabajos cada semana, no cada tres años.<span class="asrc">Fuente: Jobber 2026</span></div></div><div class="ar"><div class="al">Te toma</div><div class="av">Dos horas al mes.</div></div><div class="ar"><div class="al">Hoy</div><div class="av">arma el PDF único (seguro con endoso, licencia, W-9, precios). Mañana: la misma tienda, la misma hora, con tarjetas.</div></div></div>
 <div class="tablewrap"><table>
 <tr><th>Fuente</th><th>La jugada</th><th>Costo</th></tr>
 <tr><td><b>1. El mostrador de materiales</b></td><td>Una tienda, la misma mañana cada semana. Apréndete los nombres. "Si llega un dueño de casa ahogado, dele mi tarjeta. Yo lo atiendo y lo regreso aquí a comprar el material". Tacos una vez al mes.</td><td>$20-40/mes</td></tr>

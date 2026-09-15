@@ -101,6 +101,20 @@
   @media (max-width:600px){ .toc { columns:1; } .h2sub { margin-left:0; } }
   /* AUDIT-2026-09-15 + AUDIT-2026-09-15b + AUDIT-2026-09-15c: phone width, the cover cards wrap instead of overflowing */
   @media (max-width:520px){ .statrow{flex-wrap:wrap} .stat{flex:1 1 100%; min-width:0} .wrap{padding:0 16px} }
+
+  /* ACTION-CARDS-2026-09-15 */
+  .accion{background:#fff;border:2px solid var(--navy);border-radius:14px;padding:16px 18px;margin:18px 0 24px}
+  .accion .ar{display:grid;grid-template-columns:96px 1fr;gap:8px 12px;padding:8px 0;border-top:1px solid #e6e9ef;align-items:start}
+  .accion .ar:first-child{border-top:0;padding-top:0}
+  .accion .al{font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding-top:3px}
+  .accion .av{font-size:16px;line-height:1.45}
+  .accion .av b{font-weight:800}
+  .accion .asrc{display:block;font-size:12px;color:#5b6472;margin-top:4px}
+  .semana1{background:#fff;border:2px solid var(--orange);border-radius:14px;padding:16px 18px;margin:18px 0}
+  .semana1 h3{margin:0 0 8px}
+  .semana1 ol{margin:0;padding-left:20px}
+  .semana1 li{margin:6px 0}
+  @media (max-width:520px){ .accion .ar{grid-template-columns:1fr} .accion .al{padding-top:0} }
 </style>
 
 <style>
@@ -136,6 +150,7 @@
 <main><div class="wrap"><h2 class="cap" id="paid"><span class="capnum">11</span> Cuando quieras pagar por clientes</h2>
 <p class="h2sub">Un día la máquina gratis se llena y quizás quieras comprar crecimiento. Dos párrafos honestos para que nadie te robe.</p>
 
+<div class="accion"><div class="ar"><div class="al">Qué haces</div><div class="av"><b>Si un día pagas, paga por llamada real (Local Services Ads), nunca por leads compartidos.</b></div></div><div class="ar"><div class="al">Qué trae</div><div class="av">En 888 contratistas, el 44% de los leads de Google agendan: sale a unos $233 por cliente que paga. Los sitios que venden leads los revenden a varios a la vez; la FTC multó a HomeAdvisor con hasta 7.2 millones por promesas falsas.<span class="asrc">Fuente: SearchLight 2026; FTC 2023</span></div></div><div class="ar"><div class="al">Te toma</div><div class="av">Nada hoy. Solo cuando la máquina gratis esté llena.</div></div><div class="ar"><div class="al">Hoy</div><div class="av">nada. Guarda esta página para el día que te sobre trabajo y quieras crecer.</div></div></div>
 <p><b>La opción buena: los anuncios de Google que cobran por cliente potencial</b> (Local Services Ads). Pagas por una llamada real de un dueño de casa real, no por un clic: como <em>$39 por lead en electricidad, $51 en clima, $57 en plomería.</em> En un estudio de 888 contratistas, el 44% de esos leads agenda: sale como <em>$233 por cliente que paga</em>, con ticket promedio de $1,826. Ojo: Google pide licencia estatal, seguro de $1 millón y verificación de antecedentes, y está mudando este producto a su consola grande ahora mismo. Antes de meterte, pregúntanos: configurar bien el perfil es lo que decide qué leads te cobran.</p>
 
 <div class="warn"><b>La opción mala: comprar leads de marketplaces</b> (Thumbtack, Angi, HomeAdvisor). El mismo lead se vende a varios a la vez: pagas por entrar a una carrera. Contratistas este mes: "cobran precios bien altos por leads menos que mediocres". Sobre reembolsos: "Tienes más chance de que te devuelva el dinero un adicto en Reno". Puente corto en un mes muerto, sí. Base del negocio, nunca.</div>

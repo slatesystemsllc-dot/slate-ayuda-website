@@ -101,6 +101,20 @@
   @media (max-width:600px){ .toc { columns:1; } .h2sub { margin-left:0; } }
   /* AUDIT-2026-09-15 + AUDIT-2026-09-15b + AUDIT-2026-09-15c: phone width, the cover cards wrap instead of overflowing */
   @media (max-width:520px){ .statrow{flex-wrap:wrap} .stat{flex:1 1 100%; min-width:0} .wrap{padding:0 16px} }
+
+  /* ACTION-CARDS-2026-09-15 */
+  .accion{background:#fff;border:2px solid var(--navy);border-radius:14px;padding:16px 18px;margin:18px 0 24px}
+  .accion .ar{display:grid;grid-template-columns:96px 1fr;gap:8px 12px;padding:8px 0;border-top:1px solid #e6e9ef;align-items:start}
+  .accion .ar:first-child{border-top:0;padding-top:0}
+  .accion .al{font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding-top:3px}
+  .accion .av{font-size:16px;line-height:1.45}
+  .accion .av b{font-weight:800}
+  .accion .asrc{display:block;font-size:12px;color:#5b6472;margin-top:4px}
+  .semana1{background:#fff;border:2px solid var(--orange);border-radius:14px;padding:16px 18px;margin:18px 0}
+  .semana1 h3{margin:0 0 8px}
+  .semana1 ol{margin:0;padding-left:20px}
+  .semana1 li{margin:6px 0}
+  @media (max-width:520px){ .accion .ar{grid-template-columns:1fr} .accion .al{padding-top:0} }
 </style>
 
 <style>
@@ -136,6 +150,7 @@
 <main><div class="wrap"><h2 class="cap" id="nextdoor"><span class="capnum">8</span> Nextdoor: que el vecino diga tu nombre</h2>
 <p class="h2sub">En Google, la gente busca y tú compites. En Nextdoor, un vecino pregunta "¿quién conoce un buen plomero?" y otro vecino contesta con tu nombre y tu teléfono. Ese lugar no se compra. Se gana, una recomendación a la vez.</p>
 
+<div class="accion"><div class="ar"><div class="al">Qué haces</div><div class="av"><b>Reclama tu página gratis y pide UNA recomendación por semana. Que te nombre el vecino, nunca tú.</b></div></div><div class="ar"><div class="al">Qué trae</div><div class="av">9 de cada 10 dicen que la recomendación de un vecino influye; el 41% contacta de inmediato cuando nota el problema. Diez recomendaciones en tu código postal te vuelven la respuesta de cajón.<span class="asrc">Fuente: Nextdoor, Home Maintenance Report 2026</span></div></div><div class="ar"><div class="al">Te toma</div><div class="av">15 minutos una vez, y un texto por semana.</div></div><div class="ar"><div class="al">Hoy</div><div class="av">busca tu negocio en Nextdoor, reclámalo (no lo dupliques) y súbele 6 fotos reales.</div></div></div>
 <p>Así se ve un cliente de Nextdoor en la vida real, sacado de la página de un contratista de verdad: <em>"Neighborhood Remodeling Heroes 720-451-7487, pregunta por Heather. ¡Dan presupuestos gratis!"</em> Eso lo escribió EL VECINO, con todo y teléfono. Tú no escribes nada. Tu único trabajo es pedir.</p>
 
 <div class="steps">

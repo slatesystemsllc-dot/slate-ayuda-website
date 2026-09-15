@@ -101,6 +101,20 @@
   @media (max-width:600px){ .toc { columns:1; } .h2sub { margin-left:0; } }
   /* AUDIT-2026-09-15 + AUDIT-2026-09-15b + AUDIT-2026-09-15c: phone width, the cover cards wrap instead of overflowing */
   @media (max-width:520px){ .statrow{flex-wrap:wrap} .stat{flex:1 1 100%; min-width:0} .wrap{padding:0 16px} }
+
+  /* ACTION-CARDS-2026-09-15 */
+  .accion{background:#fff;border:2px solid var(--navy);border-radius:14px;padding:16px 18px;margin:18px 0 24px}
+  .accion .ar{display:grid;grid-template-columns:96px 1fr;gap:8px 12px;padding:8px 0;border-top:1px solid #e6e9ef;align-items:start}
+  .accion .ar:first-child{border-top:0;padding-top:0}
+  .accion .al{font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding-top:3px}
+  .accion .av{font-size:16px;line-height:1.45}
+  .accion .av b{font-weight:800}
+  .accion .asrc{display:block;font-size:12px;color:#5b6472;margin-top:4px}
+  .semana1{background:#fff;border:2px solid var(--orange);border-radius:14px;padding:16px 18px;margin:18px 0}
+  .semana1 h3{margin:0 0 8px}
+  .semana1 ol{margin:0;padding-left:20px}
+  .semana1 li{margin:6px 0}
+  @media (max-width:520px){ .accion .ar{grid-template-columns:1fr} .accion .al{padding-top:0} }
 </style>
 
 <style>
@@ -136,6 +150,7 @@
 <main><div class="wrap"><h2 class="cap" id="job"><span class="capnum">4</span> Cada trabajo es un anuncio gratis</h2>
 <p class="h2sub">Las 10 a 40 casas que pueden VER tu trabajo son la mejor lista que vas a tener. Misma edad de casa, mismos problemas, y pueden preguntarle a tu cliente por ti.</p>
 
+<div class="accion"><div class="ar"><div class="al">Qué haces</div><div class="av"><b>En cada trabajo: letrero el día uno, las 10 puertas que lo ven, nota a mano en las que no abren.</b></div></div><div class="ar"><div class="al">Qué trae</div><div class="av">Sin estudio, con muchos testimonios que coinciden: un contratista vendió cerca de $100,000 en decks con 25 letreros de $550. La nota escrita a mano da como 1 de cada 8 llamadas de vuelta; el volante genérico, casi cero.<span class="asrc">Fuente: r/Contractor y r/sweatystartup, 2025-2026</span></div></div><div class="ar"><div class="al">Te toma</div><div class="av">20 minutos por trabajo terminado.</div></div><div class="ar"><div class="al">Hoy</div><div class="av">pide 20 letreros con estaca (unos $3 cada uno). El próximo trabajo, el letrero entra cuando das la mano.</div></div></div>
 <h3>El letrero entra el día UNO, no el último</h3>
 <p>Cuando des la mano para empezar el trabajo: "Mientras trabajamos, ¿puedo poner un letrero chico en el jardín? Les dice a los vecinos quién anda haciendo ruido y me ayuda a mantener el precio bajo". El letrero dice cuatro cosas, en grande: nombre del negocio, qué haces en 5 palabras, teléfono, "Licensed &amp; Insured". Costo real: <em>$2.45 a $3.20 por letrero</em> con la estaca. Los contratistas reportan como una llamada por cada 1 o 2 letreros. Un cliente potencial por menos de $5, junto al de $91 pagado.</p>
 <div class="warn"><b>Dónde es legal:</b> el jardín del cliente, con su sí. Nunca la banqueta, los camellones ni las esquinas públicas: esos los quitan y multan. Y retíralo a las 2 semanas extra. Un letrero decolorado 5 meses después grita "abandonado".</div>

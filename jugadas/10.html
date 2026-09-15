@@ -101,6 +101,20 @@
   @media (max-width:600px){ .toc { columns:1; } .h2sub { margin-left:0; } }
   /* AUDIT-2026-09-15 + AUDIT-2026-09-15b + AUDIT-2026-09-15c: phone width, the cover cards wrap instead of overflowing */
   @media (max-width:520px){ .statrow{flex-wrap:wrap} .stat{flex:1 1 100%; min-width:0} .wrap{padding:0 16px} }
+
+  /* ACTION-CARDS-2026-09-15 */
+  .accion{background:#fff;border:2px solid var(--navy);border-radius:14px;padding:16px 18px;margin:18px 0 24px}
+  .accion .ar{display:grid;grid-template-columns:96px 1fr;gap:8px 12px;padding:8px 0;border-top:1px solid #e6e9ef;align-items:start}
+  .accion .ar:first-child{border-top:0;padding-top:0}
+  .accion .al{font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding-top:3px}
+  .accion .av{font-size:16px;line-height:1.45}
+  .accion .av b{font-weight:800}
+  .accion .asrc{display:block;font-size:12px;color:#5b6472;margin-top:4px}
+  .semana1{background:#fff;border:2px solid var(--orange);border-radius:14px;padding:16px 18px;margin:18px 0}
+  .semana1 h3{margin:0 0 8px}
+  .semana1 ol{margin:0;padding-left:20px}
+  .semana1 li{margin:6px 0}
+  @media (max-width:520px){ .accion .ar{grid-template-columns:1fr} .accion .al{padding-top:0} }
 </style>
 
 <style>
@@ -136,6 +150,7 @@
 <main><div class="wrap"><h2 class="cap" id="partners"><span class="capnum">10</span> Oficios socios: intercambia clientes, no los compres</h2>
 <p class="h2sub">Otros oficios están parados dentro de la casa de tu cliente justo antes de que el cliente te necesite a TI. Las alianzas locales producen más clientes (25%) que las búsquedas de Google (20%) o los sitios que venden leads (16%). La regla de oro: mándale TÚ un cliente primero, y luego pide. Intercambio, no favor.</p>
 
+<div class="accion"><div class="ar"><div class="al">Qué haces</div><div class="av"><b>Mándale tú un cliente a un oficio socio primero. Luego pide.</b></div></div><div class="ar"><div class="al">Qué trae</div><div class="av">Las alianzas locales producen más clientes (25%) que Google (20%) y que los sitios que venden leads (16%). Y cada socio es un referido de Slate: $97 al mes para ti.<span class="asrc">Fuente: Jobber 2026; programa de referidos de Slate</span></div></div><div class="ar"><div class="al">Te toma</div><div class="av">Un cliente al mes a un socio, y avísale.</div></div><div class="ar"><div class="al">Hoy</div><div class="av">abre la tarjeta de tu oficio abajo y anota los tres socios que ya ven tus trabajos.</div></div></div>
 <p>Busca tu oficio. Cada tarjeta trae: socios y por qué ellos ven tus trabajos primero, una jugada que solo tu oficio puede hacer, y qué escribir en el buscador de los grupos (busca el SÍNTOMA, como escribe el dueño de casa, no el servicio). <em>Busca tu oficio abajo y tócalo para abrirlo. Están los oficios más comunes con tarjeta completa, y al final una caja con TODOS los demás. Más de 30 oficios: el tuyo está.</em></p>
 
 <details class="trade"><summary>🧤 Aislamiento (insulation)</summary><div class="tbody">

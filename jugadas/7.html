@@ -101,6 +101,20 @@
   @media (max-width:600px){ .toc { columns:1; } .h2sub { margin-left:0; } }
   /* AUDIT-2026-09-15 + AUDIT-2026-09-15b + AUDIT-2026-09-15c: phone width, the cover cards wrap instead of overflowing */
   @media (max-width:520px){ .statrow{flex-wrap:wrap} .stat{flex:1 1 100%; min-width:0} .wrap{padding:0 16px} }
+
+  /* ACTION-CARDS-2026-09-15 */
+  .accion{background:#fff;border:2px solid var(--navy);border-radius:14px;padding:16px 18px;margin:18px 0 24px}
+  .accion .ar{display:grid;grid-template-columns:96px 1fr;gap:8px 12px;padding:8px 0;border-top:1px solid #e6e9ef;align-items:start}
+  .accion .ar:first-child{border-top:0;padding-top:0}
+  .accion .al{font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding-top:3px}
+  .accion .av{font-size:16px;line-height:1.45}
+  .accion .av b{font-weight:800}
+  .accion .asrc{display:block;font-size:12px;color:#5b6472;margin-top:4px}
+  .semana1{background:#fff;border:2px solid var(--orange);border-radius:14px;padding:16px 18px;margin:18px 0}
+  .semana1 h3{margin:0 0 8px}
+  .semana1 ol{margin:0;padding-left:20px}
+  .semana1 li{margin:6px 0}
+  @media (max-width:520px){ .accion .ar{grid-template-columns:1fr} .accion .al{padding-top:0} }
 </style>
 
 <style>
@@ -136,6 +150,7 @@
 <main><div class="wrap"><h2 class="cap" id="facebook"><span class="capnum">7</span> Grupos de Facebook: gana el hilo</h2>
 <p class="h2sub">Facebook es el lugar #2 del país donde la gente pregunta "¿a quién me recomiendan?", solo detrás de Google. Pero el valor NO está en tu página de negocio: está en los comentarios de la publicación de un vecino.</p>
 
+<div class="accion"><div class="ar"><div class="al">Qué haces</div><div class="av"><b>Únete a 12 grupos de tu ciudad y contesta el hilo de «¿a quién me recomiendan?» dentro de la primera hora.</b></div></div><div class="ar"><div class="al">Qué trae</div><div class="av">El 32% de los dueños nombran Facebook como fuente de trabajo, arriba del 20% de Google Search. En una prueba con 466 negocios, el 95% no contestó en 5 minutos: llegar primero gana.<span class="asrc">Fuente: Jobber 2026; Valve+Meter</span></div></div><div class="ar"><div class="al">Te toma</div><div class="av">Una hora a la semana.</div></div><div class="ar"><div class="al">Hoy</div><div class="av">busca «[ciudad] Recommendations» y «Latinos en [ciudad]», únete a dos, prende las notificaciones.</div></div></div>
 <h3>Arma tu mapa: 12 grupos, no 50</h3>
 <p>En el buscador de Facebook escribe tu ciudad más una palabra a la vez, y filtra a Grupos. Únete solo a grupos con publicaciones de las últimas 24 horas, y solo 1 o 2 por día:</p>
 <div class="trade"><div class="fb"><b>Búsquedas para copiar y pegar:</b><br>
