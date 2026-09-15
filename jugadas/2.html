@@ -104,7 +104,15 @@
 </style>
 
 <style>
-  .jbar{position:sticky;top:0;z-index:9;background:var(--navy);color:#fff;padding:10px 0}
+  .jbar{position:sticky;top:0;z-index:9;background:var(--navy);color:#fff;padding:14px 0}
+  main .wrap > h2.cap{margin-top:26px}
+  main .wrap > .h2sub{margin-bottom:22px}
+  main .wrap h3{margin-top:28px}
+  .bulb{margin:18px 0 22px}
+  .script{margin:14px 0 18px}
+  .warn,.win,.slateline{margin:18px 0}
+  .oficio-note{margin:14px 0 0;font-size:14px;color:#5b6472}
+  .oficio-note a{color:var(--orange);font-weight:800}
   .jbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px}
   .jbar a{color:#fff;text-decoration:none;font-weight:800}
   .jprog{font-size:13px;color:var(--gold);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
@@ -125,7 +133,7 @@
 </head>
 <body>
 <div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada 2 de 14</span><a href="../mas-clientes">Leer todo</a></div></div>
-<main><div class="wrap"><p class="oficio">Tu oficio: <select id="oficio"><option value="">[pintura] (cámbialo)</option><option value="pintura">pintura</option><option value="poda de árboles">poda de árboles</option><option value="acarreo">acarreo</option><option value="limpieza de basura">limpieza de basura</option><option value="plomería">plomería</option><option value="techos">techos</option><option value="jardinería">jardinería</option><option value="limpieza">limpieza</option><option value="clima">clima</option><option value="electricidad">electricidad</option><option value="handyman">handyman</option><option value="pisos">pisos</option><option value="concreto">concreto</option><option value="cercas">cercas</option><option value="lavado a presión">lavado a presión</option><option value="control de plagas">control de plagas</option><option value="puertas de garaje">puertas de garaje</option><option value="remodelación">remodelación</option><option value="reparación de electrodomésticos">reparación de electrodomésticos</option><option value="cerrajería">cerrajería</option><option value="mudanzas">mudanzas</option><option value="detallado de autos">detallado de autos</option><option value="grúas">grúas</option><option value="limpieza de ventanas">limpieza de ventanas</option><option value="tablaroca">tablaroca</option><option value="mecánico móvil">mecánico móvil</option><option value="construcción">construcción</option><option value="aislamiento">aislamiento</option></select></p><h2 class="cap" id="google"><span class="capnum">2</span> Tu perfil de Google: nosotros lo armamos, tú lo alimentas</h2>
+<main><div class="wrap"><p class="oficio-note" id="oficio-note" hidden>Ejemplos con tu oficio: <b id="oficio-txt"></b> · <a href="index.html#oficio">cambiar</a></p><h2 class="cap" id="google"><span class="capnum">2</span> Tu perfil de Google: nosotros lo armamos, tú lo alimentas</h2>
 <p class="h2sub">Cada letrero, cada vecino, cada etiqueta en Facebook manda a esa persona a buscarte en Google. El perfil (nombre, categoría, servicios, zona, fotos, posición en el mapa) lo cuidamos nosotros. Lo que solo tú puedes hacer son dos cosas.</p>
 <div class="bulb"><div class="big">74%</div><div class="txt">de la gente solo lee reseñas de los últimos tres meses. Las reseñas se echan a perder: por eso la petición es en cada trabajo, no una vez.<span class="src">BrightLocal, encuesta de consumidores 2026</span></div></div>
 <h3>1. La reseña se pide en persona, antes de subirte al camión</h3>
@@ -135,8 +143,7 @@
 <h3>2. Contesta las reseñas, las buenas y las malas</h3>
 <p>El 89% de la gente espera que el dueño conteste, y el 80% es más propenso a contratar a un negocio que contesta todas. Dos renglones bastan: gracias por el nombre, y qué trabajo fue. A una mala, sin pelear: "Lamento que quedara así. Le llamo hoy para arreglarlo". Si prefieres, nos dices y las contestamos nosotros con tu voz.</p>
 <div class="slateline"><div class="dot">S</div><div><b>Lo que ya hace tu sistema de Slate:</b> el perfil bien armado, las fotos de tus trabajos, la posición en el mapa vigilada cada semana, y el enlace de reseña que sale solo después de cada trabajo. No tienes que tocar el perfil.</div></div>
-
-<p style="margin-top:22px"><a href="#" class="jbtn" data-done="google">Marcar como hecha</a></p></div></main>
+</div></main>
 <div class="jnav"><div class="wrap"><a class="jbtn" href="1.html">← Anterior</a><a class="jbtn primary" href="3.html">Siguiente jugada →</a></div></div>
 <script>
 function cp(btn){
@@ -164,12 +171,9 @@ function ok(btn){
   if(of){ localStorage.setItem('oficio',of);
     document.querySelectorAll('main, .cover').forEach(function(el){ el.innerHTML=el.innerHTML.replace(/\[pintura\]/g,of); });
     var s=document.getElementById('oficio'); if(s){ s.value=of; }
+    var nt=document.getElementById('oficio-note'); if(nt){ document.getElementById('oficio-txt').textContent=of; nt.hidden=false; }
   }
   var s=document.getElementById('oficio'); if(s){ s.addEventListener('change',function(){ localStorage.setItem('oficio',s.value); location.reload(); }); }
-  var done=JSON.parse(localStorage.getItem('jugadas_done')||'{}');
-  document.querySelectorAll('[data-done]').forEach(function(b){ var k=b.getAttribute('data-done'); if(done[k]){ b.classList.add('done'); b.textContent='Hecha ✓'; }
-    b.addEventListener('click',function(e){ e.preventDefault(); done[k]=!done[k]; localStorage.setItem('jugadas_done',JSON.stringify(done)); b.classList.toggle('done',!!done[k]); b.textContent=done[k]?'Hecha ✓':'Marcar como hecha'; }); });
-  document.querySelectorAll('[data-donemark]').forEach(function(el){ if(done[el.getAttribute('data-donemark')]) el.textContent='✓ hecha'; });
 })();
 </script>
 </body></html>

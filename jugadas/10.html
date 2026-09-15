@@ -104,7 +104,15 @@
 </style>
 
 <style>
-  .jbar{position:sticky;top:0;z-index:9;background:var(--navy);color:#fff;padding:10px 0}
+  .jbar{position:sticky;top:0;z-index:9;background:var(--navy);color:#fff;padding:14px 0}
+  main .wrap > h2.cap{margin-top:26px}
+  main .wrap > .h2sub{margin-bottom:22px}
+  main .wrap h3{margin-top:28px}
+  .bulb{margin:18px 0 22px}
+  .script{margin:14px 0 18px}
+  .warn,.win,.slateline{margin:18px 0}
+  .oficio-note{margin:14px 0 0;font-size:14px;color:#5b6472}
+  .oficio-note a{color:var(--orange);font-weight:800}
   .jbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px}
   .jbar a{color:#fff;text-decoration:none;font-weight:800}
   .jprog{font-size:13px;color:var(--gold);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
@@ -125,7 +133,7 @@
 </head>
 <body>
 <div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada 10 de 14</span><a href="../mas-clientes">Leer todo</a></div></div>
-<main><div class="wrap"><p class="oficio">Tu oficio: <select id="oficio"><option value="">[pintura] (cámbialo)</option><option value="pintura">pintura</option><option value="poda de árboles">poda de árboles</option><option value="acarreo">acarreo</option><option value="limpieza de basura">limpieza de basura</option><option value="plomería">plomería</option><option value="techos">techos</option><option value="jardinería">jardinería</option><option value="limpieza">limpieza</option><option value="clima">clima</option><option value="electricidad">electricidad</option><option value="handyman">handyman</option><option value="pisos">pisos</option><option value="concreto">concreto</option><option value="cercas">cercas</option><option value="lavado a presión">lavado a presión</option><option value="control de plagas">control de plagas</option><option value="puertas de garaje">puertas de garaje</option><option value="remodelación">remodelación</option><option value="reparación de electrodomésticos">reparación de electrodomésticos</option><option value="cerrajería">cerrajería</option><option value="mudanzas">mudanzas</option><option value="detallado de autos">detallado de autos</option><option value="grúas">grúas</option><option value="limpieza de ventanas">limpieza de ventanas</option><option value="tablaroca">tablaroca</option><option value="mecánico móvil">mecánico móvil</option><option value="construcción">construcción</option><option value="aislamiento">aislamiento</option></select></p><h2 class="cap" id="partners"><span class="capnum">10</span> Oficios socios: intercambia clientes, no los compres</h2>
+<main><div class="wrap"><p class="oficio-note" id="oficio-note" hidden>Ejemplos con tu oficio: <b id="oficio-txt"></b> · <a href="index.html#oficio">cambiar</a></p><h2 class="cap" id="partners"><span class="capnum">10</span> Oficios socios: intercambia clientes, no los compres</h2>
 <p class="h2sub">Otros oficios están parados dentro de la casa de tu cliente justo antes de que el cliente te necesite a TI. Las alianzas locales producen más clientes (25%) que las búsquedas de Google (20%) o los sitios que venden leads (16%). La regla de oro: mándale TÚ un cliente primero, y luego pide. Intercambio, no favor.</p>
 
 <p>Busca tu oficio. Cada tarjeta trae: socios y por qué ellos ven tus trabajos primero, una jugada que solo tu oficio puede hacer, y qué escribir en el buscador de los grupos (busca el SÍNTOMA, como escribe el dueño de casa, no el servicio). <em>Busca tu oficio abajo y tócalo para abrirlo. Están los oficios más comunes con tarjeta completa, y al final una caja con TODOS los demás. Más de 30 oficios: el tuyo está.</em></p>
@@ -281,8 +289,7 @@
 
 <div class="slateline"><div class="dot">S</div><div><b>La forma más fácil de darle valor a un socio:</b> preséntale el sistema que usas tú. Cada socio tuyo también necesita más llamadas, más reseñas y más trabajos. Y a ti Slate te paga <b>$97 al mes</b> por cada negocio que refieras y se quede (capítulo 11). El mismo apretón de manos que intercambia clientes puede pagar tu mensualidad.</div></div>
 
-
-<p style="margin-top:22px"><a href="#" class="jbtn" data-done="partners">Marcar como hecha</a></p></div></main>
+</div></main>
 <div class="jnav"><div class="wrap"><a class="jbtn" href="9.html">← Anterior</a><a class="jbtn primary" href="11.html">Siguiente jugada →</a></div></div>
 <script>
 function cp(btn){
@@ -310,12 +317,9 @@ function ok(btn){
   if(of){ localStorage.setItem('oficio',of);
     document.querySelectorAll('main, .cover').forEach(function(el){ el.innerHTML=el.innerHTML.replace(/\[pintura\]/g,of); });
     var s=document.getElementById('oficio'); if(s){ s.value=of; }
+    var nt=document.getElementById('oficio-note'); if(nt){ document.getElementById('oficio-txt').textContent=of; nt.hidden=false; }
   }
   var s=document.getElementById('oficio'); if(s){ s.addEventListener('change',function(){ localStorage.setItem('oficio',s.value); location.reload(); }); }
-  var done=JSON.parse(localStorage.getItem('jugadas_done')||'{}');
-  document.querySelectorAll('[data-done]').forEach(function(b){ var k=b.getAttribute('data-done'); if(done[k]){ b.classList.add('done'); b.textContent='Hecha ✓'; }
-    b.addEventListener('click',function(e){ e.preventDefault(); done[k]=!done[k]; localStorage.setItem('jugadas_done',JSON.stringify(done)); b.classList.toggle('done',!!done[k]); b.textContent=done[k]?'Hecha ✓':'Marcar como hecha'; }); });
-  document.querySelectorAll('[data-donemark]').forEach(function(el){ if(done[el.getAttribute('data-donemark')]) el.textContent='✓ hecha'; });
 })();
 </script>
 </body></html>

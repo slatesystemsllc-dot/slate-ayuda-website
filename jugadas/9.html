@@ -104,7 +104,15 @@
 </style>
 
 <style>
-  .jbar{position:sticky;top:0;z-index:9;background:var(--navy);color:#fff;padding:10px 0}
+  .jbar{position:sticky;top:0;z-index:9;background:var(--navy);color:#fff;padding:14px 0}
+  main .wrap > h2.cap{margin-top:26px}
+  main .wrap > .h2sub{margin-bottom:22px}
+  main .wrap h3{margin-top:28px}
+  .bulb{margin:18px 0 22px}
+  .script{margin:14px 0 18px}
+  .warn,.win,.slateline{margin:18px 0}
+  .oficio-note{margin:14px 0 0;font-size:14px;color:#5b6472}
+  .oficio-note a{color:var(--orange);font-weight:800}
   .jbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px}
   .jbar a{color:#fff;text-decoration:none;font-weight:800}
   .jprog{font-size:13px;color:var(--gold);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
@@ -125,7 +133,7 @@
 </head>
 <body>
 <div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada 9 de 14</span><a href="../mas-clientes">Leer todo</a></div></div>
-<main><div class="wrap"><p class="oficio">Tu oficio: <select id="oficio"><option value="">[pintura] (cámbialo)</option><option value="pintura">pintura</option><option value="poda de árboles">poda de árboles</option><option value="acarreo">acarreo</option><option value="limpieza de basura">limpieza de basura</option><option value="plomería">plomería</option><option value="techos">techos</option><option value="jardinería">jardinería</option><option value="limpieza">limpieza</option><option value="clima">clima</option><option value="electricidad">electricidad</option><option value="handyman">handyman</option><option value="pisos">pisos</option><option value="concreto">concreto</option><option value="cercas">cercas</option><option value="lavado a presión">lavado a presión</option><option value="control de plagas">control de plagas</option><option value="puertas de garaje">puertas de garaje</option><option value="remodelación">remodelación</option><option value="reparación de electrodomésticos">reparación de electrodomésticos</option><option value="cerrajería">cerrajería</option><option value="mudanzas">mudanzas</option><option value="detallado de autos">detallado de autos</option><option value="grúas">grúas</option><option value="limpieza de ventanas">limpieza de ventanas</option><option value="tablaroca">tablaroca</option><option value="mecánico móvil">mecánico móvil</option><option value="construcción">construcción</option><option value="aislamiento">aislamiento</option></select></p><h2 class="cap" id="feeders"><span class="capnum">9</span> La gente que reparte trabajos todo el día</h2>
+<main><div class="wrap"><p class="oficio-note" id="oficio-note" hidden>Ejemplos con tu oficio: <b id="oficio-txt"></b> · <a href="index.html#oficio">cambiar</a></p><h2 class="cap" id="feeders"><span class="capnum">9</span> La gente que reparte trabajos todo el día</h2>
 <p class="h2sub">Un dueño de casa te contrata una vez cada varios años. Esta gente coloca trabajos cada semana. Empieza por los tres primeros: no piden licencia extra y casi no piden dinero.</p>
 
 <div class="tablewrap"><table>
@@ -149,8 +157,7 @@
 <h3>Qué decirle, palabra por palabra</h3>
 <div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">Al agente de bienes raíces</span><span class="cptext">Hola, soy [Nombre], de [Negocio]. Hago [pintura] aquí en [ciudad]. No vengo a pedirle trabajo. Vengo a ofrecerle dos cosas que a usted le sirven en cada cierre. Uno: si me manda una casa que va a salir a la venta, yo la camino sin costo y le entrego por escrito, en veinticuatro horas, qué hay que arreglar antes de las fotos y qué no vale la pena tocar. Esa lista se la queda usted, la use conmigo o no. Dos: cuando un comprador suyo pregunte por [pintura], yo contesto el teléfono el mismo día y nunca lo dejo quedar mal. Nunca le voy a ofrecer dinero por recomendarme, porque la ley federal no lo permite. Lo único que le ofrezco es rapidez y que usted quede bien.</span></div>
 <div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">Al administrador de propiedades</span><span class="cptext">Hola, soy [Nombre], de [Negocio]. Hago [pintura] en [ciudad] y trabajo con propiedades de renta. Le mando hoy mismo un solo PDF con todo lo que su departamento de papeles necesita: el seguro con el endoso de asegurado adicional, la licencia, la W-9 y mi lista de precios. Y le hago una promesa concreta: usted me textea una salida de inquilino y yo la camino en veinticuatro horas y le mando el precio por escrito. Si le sirve, empezamos con una sola unidad para que me vea trabajar.</span></div>
-
-<p style="margin-top:22px"><a href="#" class="jbtn" data-done="feeders">Marcar como hecha</a></p></div></main>
+</div></main>
 <div class="jnav"><div class="wrap"><a class="jbtn" href="8.html">← Anterior</a><a class="jbtn primary" href="10.html">Siguiente jugada →</a></div></div>
 <script>
 function cp(btn){
@@ -178,12 +185,9 @@ function ok(btn){
   if(of){ localStorage.setItem('oficio',of);
     document.querySelectorAll('main, .cover').forEach(function(el){ el.innerHTML=el.innerHTML.replace(/\[pintura\]/g,of); });
     var s=document.getElementById('oficio'); if(s){ s.value=of; }
+    var nt=document.getElementById('oficio-note'); if(nt){ document.getElementById('oficio-txt').textContent=of; nt.hidden=false; }
   }
   var s=document.getElementById('oficio'); if(s){ s.addEventListener('change',function(){ localStorage.setItem('oficio',s.value); location.reload(); }); }
-  var done=JSON.parse(localStorage.getItem('jugadas_done')||'{}');
-  document.querySelectorAll('[data-done]').forEach(function(b){ var k=b.getAttribute('data-done'); if(done[k]){ b.classList.add('done'); b.textContent='Hecha ✓'; }
-    b.addEventListener('click',function(e){ e.preventDefault(); done[k]=!done[k]; localStorage.setItem('jugadas_done',JSON.stringify(done)); b.classList.toggle('done',!!done[k]); b.textContent=done[k]?'Hecha ✓':'Marcar como hecha'; }); });
-  document.querySelectorAll('[data-donemark]').forEach(function(el){ if(done[el.getAttribute('data-donemark')]) el.textContent='✓ hecha'; });
 })();
 </script>
 </body></html>
