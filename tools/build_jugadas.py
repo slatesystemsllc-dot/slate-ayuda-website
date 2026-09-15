@@ -127,7 +127,10 @@ def page(n, cid, title, seg):
             + script + PO_JS + JS + "</body></html>\n")
 
 for k, (cid, title, seg) in enumerate(chapters, 1):
-    open(os.path.join(OUT, "%d.html" % k), "w", encoding="utf-8").write(page(k, cid, title, seg))
+    html_k = page(k, cid, title, seg)
+    open(os.path.join(OUT, "%d.html" % k), "w", encoding="utf-8").write(html_k)
+    # SLUG-PAGES: the same page under its stable name (google.html, warm.html), so Alfred's links survive a reorder
+    open(os.path.join(OUT, "%s.html" % cid), "w", encoding="utf-8").write(html_k)
 
 items = "".join('<li><a href="%d.html"><span class="n">%d</span>%s</a></li>' % (k, k, html.escape(t)) for k, (cid, t, _) in enumerate(chapters, 1))
 index = (head.replace("</head>", EXTRA_CSS + "</head>")

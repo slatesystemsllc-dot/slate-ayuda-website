@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jugada 1 de 14: Más Trabajos Sin Pagar Publicidad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#152a45; --navy2:#1e3a5f; --orange:#ee7000; --ink:#1c2733; --sub:#5b6673; --line:#e5e9ee; --soft:#f5f7fa; --paper:#ffffff; --green:#0a7d43; --red:#b42318; --gold:#ffb066; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Inter',-apple-system,sans-serif; color:var(--ink); background:var(--paper); line-height:1.6; }
+  .wrap { max-width:840px; margin:0 auto; padding:0 22px; }
+
+  /* PORTADA */
+  .cover { background:linear-gradient(160deg, var(--navy) 0%, var(--navy2) 100%); color:#fff; padding:64px 0 56px; }
+  .chip { display:inline-block; font-size:13px; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); border:1px solid rgba(255,176,102,.45); border-radius:99px; padding:6px 14px; margin-bottom:22px; }
+  .cover h1 { font-size:clamp(34px, 6vw, 54px); font-weight:900; line-height:1.08; letter-spacing:-1px; }
+  .cover .sub { font-size:clamp(16px,2.5vw,19px); color:#c7d2e0; margin:16px 0 6px; max-width:640px; }
+  .cover .tag { color:var(--gold); font-weight:800; font-size:17px; margin:14px 0 26px; }
+  .statrow { display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; }
+  .stat { flex:1; min-width:180px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:14px; padding:16px 18px; }
+  .stat .n { font-size:30px; font-weight:900; color:var(--gold); }
+  .stat .t { font-size:13px; color:#c7d2e0; margin-top:4px; line-height:1.4; }
+  .alltrades { margin-top:26px; background:rgba(238,112,0,.14); border:1px solid rgba(238,112,0,.5); border-radius:12px; padding:12px 16px; font-size:14.5px; }
+
+  /* ONE PAGER */
+  .onepager { background:var(--soft); border-bottom:1px solid var(--line); padding:44px 0 40px; }
+  .op-eyebrow { color:var(--orange); font-weight:800; font-size:14px; letter-spacing:.18em; text-transform:uppercase; }
+  .onepager h2 { font-size:clamp(24px,4vw,32px); font-weight:900; color:var(--navy); margin:6px 0 4px; }
+  .onepager .opsub { color:var(--sub); font-size:15px; margin-bottom:20px; }
+  .opgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+  .opcard { background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px 18px; }
+  .opcard h3 { font-size:14px; font-weight:800; color:var(--orange); text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px; }
+  .opcard li { font-size:14px; margin:6px 0 6px 0; list-style:none; padding-left:24px; position:relative; }
+  .opcard li::before { content:"☐"; position:absolute; left:0; color:var(--orange); font-weight:800; }
+  .oprules { background:var(--navy); color:#fff; border-radius:14px; padding:16px 18px; margin-top:14px; font-size:15px; }
+  .oprules b { color:var(--gold); }
+
+  /* CUERPO */
+  main { padding:10px 0 80px; }
+  h2.cap { display:flex; align-items:center; gap:14px; font-size:clamp(21px,3.5vw,26px); font-weight:900; color:var(--navy); margin:58px 0 4px; letter-spacing:-0.3px; }
+  .capnum { flex:none; width:44px; height:44px; border-radius:12px; background:var(--orange); color:#fff; display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:900; }
+  .h2sub { color:var(--sub); font-size:15.5px; margin:6px 0 16px 58px; }
+  h3 { font-size:17px; font-weight:800; color:var(--navy); margin:26px 0 6px; }
+  p { margin:10px 0; font-size:15.5px; }
+  ul, ol { margin:10px 0 10px 22px; font-size:15.5px; }
+  li { margin:6px 0; }
+  em { font-style:normal; font-weight:700; color:var(--navy); }
+  .bulb { display:flex; gap:14px; align-items:flex-start; background:var(--navy); color:#fff; border-radius:14px; padding:18px 20px; margin:18px 0; }
+  .bulb .big { font-size:30px; font-weight:900; color:var(--gold); line-height:1.1; min-width:110px; }
+  .bulb .txt { font-size:14.5px; line-height:1.5; }
+  .bulb .src { display:block; color:#9fb0c4; font-size:12px; margin-top:5px; }
+  .script { background:var(--soft); border-left:4px solid var(--orange); border-radius:0 12px 12px 0; padding:12px 16px; margin:12px 0; font-size:14.5px; position:relative; }
+  .script .lang { font-size:11px; font-weight:800; color:var(--orange); text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:4px; }
+  .copybtn { position:absolute; top:10px; right:10px; border:1px solid var(--line); background:#fff; color:var(--navy); font-family:inherit; font-size:12px; font-weight:700; border-radius:8px; padding:5px 10px; cursor:pointer; }
+  .copybtn:active { background:var(--orange); color:#fff; }
+  .warn { background:#fdebe9; border:1px solid #f0b5ae; border-radius:12px; padding:14px 16px; margin:14px 0; font-size:14.5px; }
+  .warn b { color:var(--red); }
+  .win { background:#e9f5ee; border:1px solid #b9dfc8; border-radius:12px; padding:14px 16px; margin:14px 0; font-size:14.5px; }
+  .win b { color:var(--green); }
+  .slateline { display:flex; gap:10px; align-items:flex-start; background:#eef3fa; border:1px solid #cfdcee; border-radius:12px; padding:12px 15px; margin:16px 0; font-size:14px; }
+  .slateline .dot { flex:none; width:22px; height:22px; border-radius:6px; background:var(--navy); color:var(--gold); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:900; }
+  table { border-collapse:collapse; width:100%; margin:14px 0; font-size:14px; }
+  th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:var(--soft); color:var(--navy); }
+  .trade { border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin:14px 0; }
+  .trade h3 { margin-top:0; color:var(--orange); }
+  .trade .fb { background:var(--soft); border-radius:10px; padding:8px 12px; font-size:13.5px; margin-top:10px; }
+  .steps { counter-reset:paso; margin:14px 0; }
+  .step { display:flex; gap:12px; margin:10px 0; align-items:flex-start; }
+  .step .sn { flex:none; width:28px; height:28px; border-radius:50%; background:var(--navy); color:#fff; font-weight:800; font-size:14px; display:flex; align-items:center; justify-content:center; margin-top:2px; }
+  .step p { margin:0; font-size:15px; }
+  .srcs { color:var(--sub); font-size:12.5px; margin-top:44px; padding-top:16px; border-top:1px solid var(--line); }
+  .srcs li { margin:3px 0; font-size:12.5px; }
+  .toc { background:var(--soft); border-radius:14px; padding:16px 20px; margin:26px 0; font-size:14.5px; columns:2; column-gap:30px; }
+  .toc a { color:var(--navy); text-decoration:none; font-weight:700; }
+  .toc li { margin:4px 0; break-inside:avoid; list-style:none; }
+  .toc .tn { color:var(--orange); font-weight:900; margin-right:6px; }
+  .draft { background:#fff8eb; border:1px solid #f4d18b; border-radius:8px; padding:8px 14px; font-size:13px; color:#7a4d00; margin:20px 0; }
+  .finalcta { background:linear-gradient(160deg, var(--navy) 0%, var(--navy2) 100%); color:#fff; border-radius:16px; padding:26px 26px; margin-top:50px; }
+  .finalcta h2 { color:#fff; font-size:22px; font-weight:900; margin-bottom:8px; }
+  .finalcta p { color:#c7d2e0; font-size:15px; }
+  .finalcta b { color:var(--gold); }
+
+  .logo { width:150px; max-width:38vw; display:block; margin-bottom:22px; }
+  .logo-sm { width:110px; display:block; margin:0 0 12px; }
+  .tablewrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  details.trade { padding:0; }
+  details.trade summary { cursor:pointer; list-style:none; display:flex; align-items:center; gap:8px; font-weight:800; color:var(--orange); font-size:16.5px; padding:14px 18px; }
+  details.trade summary::-webkit-details-marker { display:none; }
+  details.trade summary::after { content:"+"; margin-left:auto; color:var(--sub); font-weight:800; font-size:18px; }
+  details.trade[open] summary::after { content:"–"; }
+  details.trade .tbody { padding:0 18px 16px; border-top:1px solid var(--line); padding-top:12px; }
+
+  details.tradegroup { border-color:var(--orange); background:#fff8f1; }
+  .minitrade { border-top:1px solid var(--line); padding:10px 0; font-size:14px; }
+  .minitrade:first-child { border-top:none; }
+  .minitrade b { color:var(--navy); font-size:14.5px; }
+  .minitrade .mtf { color:var(--sub); font-size:13px; }
+  @media (max-width:600px){ .toc { columns:1; } .h2sub { margin-left:0; } }
+  /* AUDIT-2026-09-15 + AUDIT-2026-09-15b + AUDIT-2026-09-15c: phone width, the cover cards wrap instead of overflowing */
+  @media (max-width:520px){ .statrow{flex-wrap:wrap} .stat{flex:1 1 100%; min-width:0} .wrap{padding:0 16px} }
+
+  /* ACTION-CARDS-2026-09-15 */
+  .accion{background:#fff;border:2px solid var(--navy);border-radius:14px;padding:16px 18px;margin:18px 0 24px}
+  .accion .ar{display:grid;grid-template-columns:96px 1fr;gap:8px 12px;padding:8px 0;border-top:1px solid #e6e9ef;align-items:start}
+  .accion .ar:first-child{border-top:0;padding-top:0}
+  .accion .al{font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding-top:3px}
+  .accion .av{font-size:16px;line-height:1.45}
+  .accion .av b{font-weight:800}
+  .accion .asrc{display:block;font-size:12px;color:#5b6472;margin-top:4px}
+  .semana1{background:#fff;border:2px solid var(--orange);border-radius:14px;padding:16px 18px;margin:18px 0}
+  .semana1 h3{margin:0 0 8px}
+  .semana1 ol{margin:0;padding-left:20px}
+  .semana1 li{margin:6px 0}
+  @media (max-width:520px){ .accion .ar{grid-template-columns:1fr} .accion .al{padding-top:0} }
+</style>
+
+<style>
+  .jbar{position:sticky;top:0;z-index:9;background:var(--navy);color:#fff;padding:14px 0}
+  main .wrap > h2.cap{margin-top:26px}
+  main .wrap > .h2sub{margin-bottom:22px}
+  main .wrap h3{margin-top:28px}
+  .bulb{margin:18px 0 22px}
+  .script{margin:14px 0 18px}
+  .warn,.win,.slateline{margin:18px 0}
+  .oficio-note{margin:14px 0 0;font-size:14px;color:#5b6472}
+  .oficio-note a{color:var(--orange);font-weight:800}
+  .jbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .jbar a{color:#fff;text-decoration:none;font-weight:800}
+  .jprog{font-size:13px;color:var(--gold);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+  .jnav{position:sticky;bottom:0;background:#fff;border-top:2px solid #e6e9ef;padding:12px 0;margin-top:28px}
+  .jnav .wrap{display:flex;gap:10px}
+  .jbtn{flex:1;display:block;text-align:center;padding:16px 12px;border-radius:12px;font-weight:900;font-size:17px;text-decoration:none;border:2px solid var(--navy);color:var(--navy);background:#fff}
+  .jbtn.primary{background:var(--navy);color:#fff}
+  .jbtn.done{background:#e9f7ee;border-color:#1f8a4c;color:#1f8a4c}
+  .jlist{list-style:none;padding:0;margin:18px 0}
+  .jlist li a{display:flex;align-items:center;gap:14px;padding:16px;margin:10px 0;border:2px solid #e6e9ef;border-radius:14px;text-decoration:none;color:var(--ink);font-weight:800;font-size:17px;background:#fff}
+  .jlist .n{width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;flex:none}
+  .jlist .ok{margin-left:auto;color:#1f8a4c;font-weight:900}
+  .oficio{margin:14px 0 0;font-size:15px}
+  .oficio select{font-size:16px;padding:8px 10px;border-radius:8px;border:2px solid #cfd6e0}
+  .jsrc{font-size:13px;color:#5b6472}
+  .jsrc summary{cursor:pointer;font-weight:800;color:var(--ink)}
+  .ruta{background:var(--navy);color:#fff;border-radius:14px;padding:18px 18px 8px;margin:18px 0}
+  .ruta h3{color:var(--gold);margin:0 0 6px;font-size:14px;letter-spacing:.12em;text-transform:uppercase}
+  .ruta .rt{font-size:20px;font-weight:900;margin:0 0 10px}
+  .ruta ol{margin:0 0 10px;padding-left:22px}
+  .ruta li{margin:6px 0}
+  .ruta a{color:#fff;font-weight:800}
+  .ruta .esp{background:rgba(255,255,255,.08);border-left:4px solid var(--orange);padding:10px 12px;border-radius:8px;margin:8px 0 12px;font-size:15px}
+  .ruta .esp b{color:var(--gold)}
+  .oficio-note{margin:14px 0 0;font-size:14px;color:#5b6472}
+  .imprimir{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 18px}
+  .imprimir a{flex:1 1 160px;text-align:center;padding:12px;border:2px solid var(--orange);border-radius:10px;color:var(--ink);font-weight:800;text-decoration:none;background:#fff}
+</style>
+</head>
+<body>
+<div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada 1 de 14</span><a href="../mas-clientes">Leer todo</a></div></div>
+<main><div class="wrap"><p class="oficio-note" id="oficio-note" hidden></p><h2 class="cap" id="base"><span class="capnum">1</span> La base lo decide todo</h2>
+<p class="h2sub">Por qué el sistema que ya tienes es el motor, y cada idea de esta guía es la gasolina.</p>
+
+<div class="accion"><div class="ar"><div class="al">Qué haces</div><div class="av"><b>Contesta. Y cuando no puedas, que el texto salga solo.</b></div></div><div class="ar"><div class="al">Qué trae</div><div class="av">Casi la mitad de las llamadas a negocios de servicio nunca las contesta una persona (48%). De las que sí, 38% son clientes reales y casi la mitad de esos agendan en esa misma llamada.<span class="asrc">Fuente: Invoca 2026, 70 millones de llamadas</span></div></div><div class="ar"><div class="al">Te toma</div><div class="av">Cero minutos. Tu sistema ya lo hace: el texto de llamada perdida sale en segundos.</div></div><div class="ar"><div class="al">Hoy</div><div class="av">Llama a tu propio número desde otro teléfono y no contestes. Mira llegar el texto. Así sabes qué recibe tu cliente.</div></div></div>
+<p>Así contrata un dueño de casa en la vida real, paso por paso, según la investigación:</p>
+<div class="steps">
+  <div class="step"><div class="sn">1</div><p>Primero le pregunta a la gente. <em>El 74% sigue la recomendación de un vecino, amigo o familiar.</em></p></div>
+  <div class="step"><div class="sn">2</div><p>Después te revisa en internet. <em>El 97% lee reseñas.</em> El 68% no usa un negocio con menos de 4 estrellas. El 47% no usa uno con menos de 20 reseñas.</p></div>
+  <div class="step"><div class="sn">3</div><p>Compara 3 negocios o menos y decide en menos de 30 minutos.</p></div>
+  <div class="step"><div class="sn">4</div><p>Luego llama. <em>Casi la mitad de las llamadas a negocios de servicio a domicilio (48%) nunca las contesta una persona.</em></p></div>
+  <div class="step"><div class="sn">5</div><p>Si no contestas, <em>el 82% llama a un competidor.</em> Solo el 42% deja mensaje de voz. Los demás desaparecen.</p></div>
+  <div class="step"><div class="sn">6</div><p>Y el reloj es cruel: contactar en 5 minutos en vez de 30 te hace <em>21 veces más probable</em> ganarte a ese cliente (estudio de 2007). El dato de hoy es más simple: el 55% de los clientes espera respuesta dentro de una hora, y solo el 20% de los dueños la da.</p></div>
+</div>
+
+<p>Ahora júntalo. Cada jugada de esta guía hace que alguien diga tu nombre o vea tu letrero. Esa persona luego revisa tu perfil de Google, lee tus reseñas, entra a tu página y llama. Si el perfil está flojo, las reseñas son pocas o la llamada suena y suena, la jugada murió y ni te enteraste.</p>
+
+<div class="slateline"><div class="dot">S</div><div><b>Aquí entra tu sistema de Slate.</b> La página profesional, el perfil de Google, el texto automático que contesta en segundos cuando estás arriba de una escalera, las reseñas que se piden solas y el seguimiento que no se olvida. Solo el 20% de tu competencia contesta dentro de la primera hora. Tu sistema contesta en segundos, siempre. Esta guía existe para meterle gente a esa máquina.</div></div>
+
+<p>Tus únicos tres trabajos: <em>contestar rápido cuando se necesita una persona, avisar de la reseña en persona al final de cada trabajo, y hacer las jugadas de esta guía.</em> La máquina hace el resto.</p>
+
+</div></main>
+<div class="jnav"><div class="wrap"><a class="jbtn" href="index.html">← Anterior</a><a class="jbtn primary" href="2.html">Siguiente jugada →</a></div></div>
+<script>
+function cp(btn){
+  var t = btn.parentElement.querySelector('.cptext').innerText;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(t).then(function(){ ok(btn); }, function(){ fallback(t, btn); });
+  } else { fallback(t, btn); }
+}
+function fallback(t, btn){
+  var ta = document.createElement('textarea');
+  ta.value = t; document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); ok(btn); } catch(e) {}
+  document.body.removeChild(ta);
+}
+function ok(btn){
+  var old = btn.innerText; btn.innerText = '¡Copiado!';
+  setTimeout(function(){ btn.innerText = old; }, 1600);
+}
+</script><script>window.POR_OFICIO={"default": {"orden": ["google", "warm", "job", "regresan", "facebook", "feeders", "partners", "nextdoor", "comunidad", "referral", "presence", "paid"]}, "pintura": {"orden": ["job", "google", "warm", "partners", "feeders", "regresan", "facebook"], "especial": "La caminata antes del listado: la pintura es el único oficio que cabe completo entre que la casa se vacía y sale a la venta. Pídele a cada agente que te deje caminar sus listados nuevos."}, "poda de árboles": {"orden": ["job", "google", "nextdoor", "warm", "regresan", "feeders", "facebook"], "especial": "Después de cada tormenta, la misma tarde: las 10 puertas de la calle con ramas caídas, con tu tarjeta. Nadie más pasa ese día."}, "acarreo": {"orden": ["feeders", "facebook", "google", "warm", "job", "regresan"], "especial": "Los inversionistas y flippers: cada casa que compran necesita vaciado completo, con prisa, y compran varias al año. La lista de permisos y los grupos de inversionistas son tu puerta."}, "limpieza de basura": {"orden": ["feeders", "facebook", "google", "warm", "job", "regresan"], "especial": "Los inversionistas y flippers: cada casa que compran necesita vaciado completo, con prisa, y compran varias al año."}, "plomería": {"orden": ["google", "regresan", "feeders", "warm", "job", "partners"], "especial": "La cámara de drenaje para agentes: tú ya tienes la cámara y nadie más ve dentro de la línea. Revisión gratis antes de cada venta, y el reporte lleva tu nombre."}, "techos": {"orden": ["job", "google", "feeders", "partners", "warm", "regresan"], "especial": "La carta del techo antes del listado: el tuyo es el único producto con vida restante que los bancos exigen por escrito. Ofrécela gratis a cada agente."}, "jardinería y paisajismo": {"orden": ["job", "regresan", "google", "nextdoor", "warm", "facebook"], "especial": "La estrella en tu propia ruta: eres el único oficio estacionado en la misma calle cada semana. Cada pasto terminado es un letrero que se mueve."}, "limpieza": {"orden": ["feeders", "regresan", "google", "warm", "facebook", "partners"], "especial": "El regalo de cierre: el agente regala una limpieza de entrada al comprador, cortesía tuya. Eres el único oficio que cabe en ese regalo."}, "climas y calefacción": {"orden": ["regresan", "google", "feeders", "warm", "job", "partners"], "especial": "La calcomanía de la placa: en cada servicio, lee la fecha de fábrica del equipo y pega tu calcomanía con tu teléfono. El próximo servicio te llama a ti."}, "instalaciones eléctricas": {"orden": ["feeders", "google", "regresan", "warm", "job", "partners"], "especial": "La cotización del reporte de inspección: los inspectores publican defectos eléctricos con fotos. Cotiza el PDF completo en 24 horas, precio cerrado."}, "handyman": {"orden": ["feeders", "google", "warm", "regresan", "job", "facebook"], "especial": "La lista de inspección por paquete: «todo lo marcado, en una visita, precio cerrado». Los oficios grandes no quieren esos trabajos chicos; tú sí."}, "pisos": {"orden": ["partners", "google", "job", "feeders", "warm", "regresan"], "especial": "El par pintor-pisero: véndanse juntos a los agentes como «casa lista en una semana». Dos oficios, una sola llamada."}, "concreto": {"orden": ["job", "google", "warm", "feeders", "partners", "regresan"], "especial": "La losa lleva al patio completo: en cada cochera o banqueta, deja cotizado el patio antes de irte."}, "cercas": {"orden": ["feeders", "job", "google", "warm", "partners", "regresan"], "especial": "La lista de permisos de alberca: son públicos, y cada permiso nuevo es una cerca obligada por ley en 60 a 120 días."}, "control de plagas": {"orden": ["feeders", "regresan", "google", "warm", "partners", "facebook"], "especial": "El contrato mensual con administradores de propiedades: decenas de unidades con servicio fijo. Una firma, ingreso todos los meses."}, "remodelación": {"orden": ["feeders", "partners", "google", "warm", "job", "regresan"], "especial": "El paquete «antes de vender»: baño y cocina superficial con fecha fija, vendido por agentes. El agente gana precio; tú ganas el trabajo sin cotizar contra tres."}, "construcción general": {"orden": ["partners", "feeders", "google", "job", "warm", "regresan"], "especial": "Cobra tu red en referidos: pídele a cada sub que uses una presentación al año con un cliente suyo. Eres el centro de la rueda."}, "aislamiento": {"orden": ["feeders", "partners", "google", "regresan", "warm", "job"], "especial": "La red Trade Ally de tu compañía de luz: gratis, te publica en su lista y en el nivel alto te manda sus clientes. Ningún otro oficio tiene una agencia pública reclutándole clientes."}};window.ID2N={"base": 1, "google": 2, "warm": 3, "job": 4, "regresan": 5, "comunidad": 6, "facebook": 7, "nextdoor": 8, "feeders": 9, "partners": 10, "paid": 11, "presence": 12, "referral": 13, "rhythm": 14};window.ID2T={"base": "La base lo decide todo", "google": "Tu perfil de Google: nosotros lo armamos, tú lo alimentas", "warm": "Tus primeros 20 trabajos ya están en tu teléfono", "job": "Cada trabajo es un anuncio gratis", "regresan": "Los clientes que ya te pagaron: el año dos vive en tu teléfono", "comunidad": "Iglesia, escuela y tus grupos de WhatsApp", "facebook": "Grupos de Facebook: gana el hilo", "nextdoor": "Nextdoor: que el vecino diga tu nombre", "feeders": "La gente que reparte trabajos todo el día", "partners": "Oficios socios: intercambia clientes, no los compres", "paid": "Cuando quieras pagar por clientes", "presence": "Paga con presencia, no con anuncios", "referral": "Gana $97 al mes por recomendarnos", "rhythm": "El ritmo semanal, completo"};</script>
+<script>
+(function(){
+  // PERSONAL-2026-09-15: the link brings the trade (?oficio=pintura). Nothing to click. No trade = the general guide.
+  var q=new URLSearchParams(location.search);
+  var of=(q.get('oficio')||'').trim().toLowerCase();
+  if(of){ try{localStorage.setItem('oficio',of);}catch(e){} } else { try{of=localStorage.getItem('oficio')||'';}catch(e){} }
+  ['negocio','tel','web'].forEach(function(k){ var v=q.get(k); if(v){ try{localStorage.setItem(k,v);}catch(e){} } });
+  function get(k){ try{return localStorage.getItem(k)||'';}catch(e){return '';} }
+  var PO=window.POR_OFICIO||{}, key='';
+  if(of){ Object.keys(PO).forEach(function(k){ if(!key && k!=='default' && (of.indexOf(k)>=0 || k.indexOf(of)>=0)) key=k; }); }
+  var conf = key ? PO[key] : null;
+  // fill the blanks that we know
+  var fills={'[tu oficio]': key||'', '[Negocio]': get('negocio'), '[tu teléfono]': get('tel'), '[tu página]': get('web')};
+  var main=document.querySelector('main'); 
+  if(main){ var h=main.innerHTML, changed=false; Object.keys(fills).forEach(function(k){ if(fills[k]){ h=h.split(k).join(fills[k]); changed=true; } }); if(changed) main.innerHTML=h; }
+  // the trade path on the landing
+  var slot=document.getElementById('ruta'); 
+  if(slot && conf){
+    var ids=(conf.orden||[]).slice(0,5), n=window.ID2N||{}, t=window.ID2T||{};
+    var html='<h3>Tu ruta</h3><div class="rt">Las jugadas de '+key+', en orden</div>';
+    if(conf.especial){ html+='<div class="esp"><b>Solo tu oficio puede hacer esto:</b> '+conf.especial+'</div>'; }
+    html+='<ol>'+ids.map(function(id){ return '<li><a href="'+n[id]+'.html">'+t[id]+'</a></li>'; }).join('')+'</ol>';
+    html+='<p style="font-size:13px;opacity:.85">Después de estas cinco, sigue con las demás. Todas están abajo.</p>';
+    slot.innerHTML=html; slot.hidden=false;
+  }
+  var nt=document.getElementById('oficio-note'); if(nt && key){ nt.textContent='Esta guía está en modo '+key+'.'; nt.hidden=false; }
+})();
+</script>
+</body></html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jugada 10 de 14: Más Trabajos Sin Pagar Publicidad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#152a45; --navy2:#1e3a5f; --orange:#ee7000; --ink:#1c2733; --sub:#5b6673; --line:#e5e9ee; --soft:#f5f7fa; --paper:#ffffff; --green:#0a7d43; --red:#b42318; --gold:#ffb066; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Inter',-apple-system,sans-serif; color:var(--ink); background:var(--paper); line-height:1.6; }
+  .wrap { max-width:840px; margin:0 auto; padding:0 22px; }
+
+  /* PORTADA */
+  .cover { background:linear-gradient(160deg, var(--navy) 0%, var(--navy2) 100%); color:#fff; padding:64px 0 56px; }
+  .chip { display:inline-block; font-size:13px; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); border:1px solid rgba(255,176,102,.45); border-radius:99px; padding:6px 14px; margin-bottom:22px; }
+  .cover h1 { font-size:clamp(34px, 6vw, 54px); font-weight:900; line-height:1.08; letter-spacing:-1px; }
+  .cover .sub { font-size:clamp(16px,2.5vw,19px); color:#c7d2e0; margin:16px 0 6px; max-width:640px; }
+  .cover .tag { color:var(--gold); font-weight:800; font-size:17px; margin:14px 0 26px; }
+  .statrow { display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; }
+  .stat { flex:1; min-width:180px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:14px; padding:16px 18px; }
+  .stat .n { font-size:30px; font-weight:900; color:var(--gold); }
+  .stat .t { font-size:13px; color:#c7d2e0; margin-top:4px; line-height:1.4; }
+  .alltrades { margin-top:26px; background:rgba(238,112,0,.14); border:1px solid rgba(238,112,0,.5); border-radius:12px; padding:12px 16px; font-size:14.5px; }
+
+  /* ONE PAGER */
+  .onepager { background:var(--soft); border-bottom:1px solid var(--line); padding:44px 0 40px; }
+  .op-eyebrow { color:var(--orange); font-weight:800; font-size:14px; letter-spacing:.18em; text-transform:uppercase; }
+  .onepager h2 { font-size:clamp(24px,4vw,32px); font-weight:900; color:var(--navy); margin:6px 0 4px; }
+  .onepager .opsub { color:var(--sub); font-size:15px; margin-bottom:20px; }
+  .opgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+  .opcard { background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px 18px; }
+  .opcard h3 { font-size:14px; font-weight:800; color:var(--orange); text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px; }
+  .opcard li { font-size:14px; margin:6px 0 6px 0; list-style:none; padding-left:24px; position:relative; }
+  .opcard li::before { content:"☐"; position:absolute; left:0; color:var(--orange); font-weight:800; }
+  .oprules { background:var(--navy); color:#fff; border-radius:14px; padding:16px 18px; margin-top:14px; font-size:15px; }
+  .oprules b { color:var(--gold); }
+
+  /* CUERPO */
+  main { padding:10px 0 80px; }
+  h2.cap { display:flex; align-items:center; gap:14px; font-size:clamp(21px,3.5vw,26px); font-weight:900; color:var(--navy); margin:58px 0 4px; letter-spacing:-0.3px; }
+  .capnum { flex:none; width:44px; height:44px; border-radius:12px; background:var(--orange); color:#fff; display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:900; }
+  .h2sub { color:var(--sub); font-size:15.5px; margin:6px 0 16px 58px; }
+  h3 { font-size:17px; font-weight:800; color:var(--navy); margin:26px 0 6px; }
+  p { margin:10px 0; font-size:15.5px; }
+  ul, ol { margin:10px 0 10px 22px; font-size:15.5px; }
+  li { margin:6px 0; }
+  em { font-style:normal; font-weight:700; color:var(--navy); }
+  .bulb { display:flex; gap:14px; align-items:flex-start; background:var(--navy); color:#fff; border-radius:14px; padding:18px 20px; margin:18px 0; }
+  .bulb .big { font-size:30px; font-weight:900; color:var(--gold); line-height:1.1; min-width:110px; }
+  .bulb .txt { font-size:14.5px; line-height:1.5; }
+  .bulb .src { display:block; color:#9fb0c4; font-size:12px; margin-top:5px; }
+  .script { background:var(--soft); border-left:4px solid var(--orange); border-radius:0 12px 12px 0; padding:12px 16px; margin:12px 0; font-size:14.5px; position:relative; }
+  .script .lang { font-size:11px; font-weight:800; color:var(--orange); text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:4px; }
+  .copybtn { position:absolute; top:10px; right:10px; border:1px solid var(--line); background:#fff; color:var(--navy); font-family:inherit; font-size:12px; font-weight:700; border-radius:8px; padding:5px 10px; cursor:pointer; }
+  .copybtn:active { background:var(--orange); color:#fff; }
+  .warn { background:#fdebe9; border:1px solid #f0b5ae; border-radius:12px; padding:14px 16px; margin:14px 0; font-size:14.5px; }
+  .warn b { color:var(--red); }
+  .win { background:#e9f5ee; border:1px solid #b9dfc8; border-radius:12px; padding:14px 16px; margin:14px 0; font-size:14.5px; }
+  .win b { color:var(--green); }
+  .slateline { display:flex; gap:10px; align-items:flex-start; background:#eef3fa; border:1px solid #cfdcee; border-radius:12px; padding:12px 15px; margin:16px 0; font-size:14px; }
+  .slateline .dot { flex:none; width:22px; height:22px; border-radius:6px; background:var(--navy); color:var(--gold); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:900; }
+  table { border-collapse:collapse; width:100%; margin:14px 0; font-size:14px; }
+  th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:var(--soft); color:var(--navy); }
+  .trade { border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin:14px 0; }
+  .trade h3 { margin-top:0; color:var(--orange); }
+  .trade .fb { background:var(--soft); border-radius:10px; padding:8px 12px; font-size:13.5px; margin-top:10px; }
+  .steps { counter-reset:paso; margin:14px 0; }
+  .step { display:flex; gap:12px; margin:10px 0; align-items:flex-start; }
+  .step .sn { flex:none; width:28px; height:28px; border-radius:50%; background:var(--navy); color:#fff; font-weight:800; font-size:14px; display:flex; align-items:center; justify-content:center; margin-top:2px; }
+  .step p { margin:0; font-size:15px; }
+  .srcs { color:var(--sub); font-size:12.5px; margin-top:44px; padding-top:16px; border-top:1px solid var(--line); }
+  .srcs li { margin:3px 0; font-size:12.5px; }
+  .toc { background:var(--soft); border-radius:14px; padding:16px 20px; margin:26px 0; font-size:14.5px; columns:2; column-gap:30px; }
+  .toc a { color:var(--navy); text-decoration:none; font-weight:700; }
+  .toc li { margin:4px 0; break-inside:avoid; list-style:none; }
+  .toc .tn { color:var(--orange); font-weight:900; margin-right:6px; }
+  .draft { background:#fff8eb; border:1px solid #f4d18b; border-radius:8px; padding:8px 14px; font-size:13px; color:#7a4d00; margin:20px 0; }
+  .finalcta { background:linear-gradient(160deg, var(--navy) 0%, var(--navy2) 100%); color:#fff; border-radius:16px; padding:26px 26px; margin-top:50px; }
+  .finalcta h2 { color:#fff; font-size:22px; font-weight:900; margin-bottom:8px; }
+  .finalcta p { color:#c7d2e0; font-size:15px; }
+  .finalcta b { color:var(--gold); }
+
+  .logo { width:150px; max-width:38vw; display:block; margin-bottom:22px; }
+  .logo-sm { width:110px; display:block; margin:0 0 12px; }
+  .tablewrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  details.trade { padding:0; }
+  details.trade summary { cursor:pointer; list-style:none; display:flex; align-items:center; gap:8px; font-weight:800; color:var(--orange); font-size:16.5px; padding:14px 18px; }
+  details.trade summary::-webkit-details-marker { display:none; }
+  details.trade summary::after { content:"+"; margin-left:auto; color:var(--sub); font-weight:800; font-size:18px; }
+  details.trade[open] summary::after { content:"–"; }
+  details.trade .tbody { padding:0 18px 16px; border-top:1px solid var(--line); padding-top:12px; }
+
+  details.tradegroup { border-color:var(--orange); background:#fff8f1; }
+  .minitrade { border-top:1px solid var(--line); padding:10px 0; font-size:14px; }
+  .minitrade:first-child { border-top:none; }
+  .minitrade b { color:var(--navy); font-size:14.5px; }
+  .minitrade .mtf { color:var(--sub); font-size:13px; }
+  @media (max-width:600px){ .toc { columns:1; } .h2sub { margin-left:0; } }
+  /* AUDIT-2026-09-15 + AUDIT-2026-09-15b + AUDIT-2026-09-15c: phone width, the cover cards wrap instead of overflowing */
+  @media (max-width:520px){ .statrow{flex-wrap:wrap} .stat{flex:1 1 100%; min-width:0} .wrap{padding:0 16px} }
+
+  /* ACTION-CARDS-2026-09-15 */
+  .accion{background:#fff;border:2px solid var(--navy);border-radius:14px;padding:16px 18px;margin:18px 0 24px}
+  .accion .ar{display:grid;grid-template-columns:96px 1fr;gap:8px 12px;padding:8px 0;border-top:1px solid #e6e9ef;align-items:start}
+  .accion .ar:first-child{border-top:0;padding-top:0}
+  .accion .al{font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding-top:3px}
+  .accion .av{font-size:16px;line-height:1.45}
+  .accion .av b{font-weight:800}
+  .accion .asrc{display:block;font-size:12px;color:#5b6472;margin-top:4px}
+  .semana1{background:#fff;border:2px solid var(--orange);border-radius:14px;padding:16px 18px;margin:18px 0}
+  .semana1 h3{margin:0 0 8px}
+  .semana1 ol{margin:0;padding-left:20px}
+  .semana1 li{margin:6px 0}
+  @media (max-width:520px){ .accion .ar{grid-template-columns:1fr} .accion .al{padding-top:0} }
+</style>
+
+<style>
+  .jbar{position:sticky;top:0;z-index:9;background:var(--navy);color:#fff;padding:14px 0}
+  main .wrap > h2.cap{margin-top:26px}
+  main .wrap > .h2sub{margin-bottom:22px}
+  main .wrap h3{margin-top:28px}
+  .bulb{margin:18px 0 22px}
+  .script{margin:14px 0 18px}
+  .warn,.win,.slateline{margin:18px 0}
+  .oficio-note{margin:14px 0 0;font-size:14px;color:#5b6472}
+  .oficio-note a{color:var(--orange);font-weight:800}
+  .jbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .jbar a{color:#fff;text-decoration:none;font-weight:800}
+  .jprog{font-size:13px;color:var(--gold);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+  .jnav{position:sticky;bottom:0;background:#fff;border-top:2px solid #e6e9ef;padding:12px 0;margin-top:28px}
+  .jnav .wrap{display:flex;gap:10px}
+  .jbtn{flex:1;display:block;text-align:center;padding:16px 12px;border-radius:12px;font-weight:900;font-size:17px;text-decoration:none;border:2px solid var(--navy);color:var(--navy);background:#fff}
+  .jbtn.primary{background:var(--navy);color:#fff}
+  .jbtn.done{background:#e9f7ee;border-color:#1f8a4c;color:#1f8a4c}
+  .jlist{list-style:none;padding:0;margin:18px 0}
+  .jlist li a{display:flex;align-items:center;gap:14px;padding:16px;margin:10px 0;border:2px solid #e6e9ef;border-radius:14px;text-decoration:none;color:var(--ink);font-weight:800;font-size:17px;background:#fff}
+  .jlist .n{width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;flex:none}
+  .jlist .ok{margin-left:auto;color:#1f8a4c;font-weight:900}
+  .oficio{margin:14px 0 0;font-size:15px}
+  .oficio select{font-size:16px;padding:8px 10px;border-radius:8px;border:2px solid #cfd6e0}
+  .jsrc{font-size:13px;color:#5b6472}
+  .jsrc summary{cursor:pointer;font-weight:800;color:var(--ink)}
+  .ruta{background:var(--navy);color:#fff;border-radius:14px;padding:18px 18px 8px;margin:18px 0}
+  .ruta h3{color:var(--gold);margin:0 0 6px;font-size:14px;letter-spacing:.12em;text-transform:uppercase}
+  .ruta .rt{font-size:20px;font-weight:900;margin:0 0 10px}
+  .ruta ol{margin:0 0 10px;padding-left:22px}
+  .ruta li{margin:6px 0}
+  .ruta a{color:#fff;font-weight:800}
+  .ruta .esp{background:rgba(255,255,255,.08);border-left:4px solid var(--orange);padding:10px 12px;border-radius:8px;margin:8px 0 12px;font-size:15px}
+  .ruta .esp b{color:var(--gold)}
+  .oficio-note{margin:14px 0 0;font-size:14px;color:#5b6472}
+  .imprimir{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 18px}
+  .imprimir a{flex:1 1 160px;text-align:center;padding:12px;border:2px solid var(--orange);border-radius:10px;color:var(--ink);font-weight:800;text-decoration:none;background:#fff}
+</style>
+</head>
+<body>
+<div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada 10 de 14</span><a href="../mas-clientes">Leer todo</a></div></div>
+<main><div class="wrap"><p class="oficio-note" id="oficio-note" hidden></p><h2 class="cap" id="partners"><span class="capnum">10</span> Oficios socios: intercambia clientes, no los compres</h2>
+<p class="h2sub">Otros oficios están parados dentro de la casa de tu cliente justo antes de que el cliente te necesite a TI. Las alianzas locales producen más clientes (25%) que las búsquedas de Google (20%) o los sitios que venden leads (16%). La regla de oro: mándale TÚ un cliente primero, y luego pide. Intercambio, no favor.</p>
+
+<div class="accion"><div class="ar"><div class="al">Qué haces</div><div class="av"><b>Mándale tú un cliente a un oficio socio primero. Luego pide.</b></div></div><div class="ar"><div class="al">Qué trae</div><div class="av">Las alianzas locales producen más clientes (25%) que Google (20%) y que los sitios que venden leads (16%). Y cada socio es un referido de Slate: $97 al mes para ti.<span class="asrc">Fuente: Jobber 2026; programa de referidos de Slate</span></div></div><div class="ar"><div class="al">Te toma</div><div class="av">Un cliente al mes a un socio, y avísale.</div></div><div class="ar"><div class="al">Hoy</div><div class="av">abre la tarjeta de tu oficio abajo y anota los tres socios que ya ven tus trabajos.</div></div></div>
+<p>Busca tu oficio. Cada tarjeta trae: socios y por qué ellos ven tus trabajos primero, una jugada que solo tu oficio puede hacer, y qué escribir en el buscador de los grupos (busca el SÍNTOMA, como escribe el dueño de casa, no el servicio). <em>Busca tu oficio abajo y tócalo para abrirlo. Están los oficios más comunes con tarjeta completa, y al final una caja con TODOS los demás. Más de 30 oficios: el tuyo está.</em></p>
+
+<details class="trade"><summary>🧤 Aislamiento (insulation)</summary><div class="tbody">
+<p><b>Socios:</b> clima/HVAC (viven en los áticos y les echan la culpa de cuartos que tu aislamiento arreglaría), techeros (ven el aislamiento empapado desde arriba), control de plagas (los roedores lo destrozan), remodeladores (las paredes abiertas se cierran en días).</p>
+<p><b>Jugada especial:</b> métete gratis a la red de contratistas aliados de tu compañía de luz y gas (Trade Ally). La utility te publica en su lista y, en el nivel alto, te manda SUS clientes. Ningún otro oficio tiene una agencia pública reclutándole clientes. Ojo: el crédito fiscal federal de aislamiento terminó en diciembre 2025; no lo anuncies para trabajos de 2026.</p>
+<div class="fb">Busca: "attic insulation" · "upstairs is always hot" · "high electric bill" · "aislamiento"</div>
+</div></details>
+
+<details class="trade"><summary>🎨 Pintura</summary><div class="tbody">
+<p><b>Socios:</b> agentes de bienes raíces (cada casa en venta necesita pintura antes de las fotos), administradores y HOAs (repintados en ciclo), instaladores de pisos (misma casa vacía), tablaroca y handyman (su reparación necesita tu pintura).</p>
+<p><b>Jugada especial:</b> la caminata antes del listado. La pintura es el único oficio que cabe completo entre que la casa se vacía y sale a la venta. Camina gratis 20 minutos cada casa nueva del agente: apuntas qué pintar para las fotos y qué no. Él se queda la lista; tú cotizaste parado adentro.</p>
+<div class="fb">Busca: "need a painter" · "painting kitchen cabinets" · "before we move in" · "necesito pintor"</div>
+</div></details>
+
+<details class="trade"><summary>🚧 Cercas</summary><div class="tbody">
+<p><b>Socios:</b> alberqueros (una alberca nueva EXIGE por ley una barrera de 4 pies, y ellos no hacen cercas), jardineros, constructores de terrazas, constructores de casas.</p>
+<p><b>Jugada especial:</b> la lista de permisos de alberca. Son públicos, y cada permiso nuevo es una cerca obligada por ley 60 a 120 días después. Sácala cada mes y úsala para acercarte a los ALBERQUEROS. Nunca cotices una cerca sin caminar la línea: los pleitos de linderos son la ruina de las cerqueras.</p>
+<div class="fb">Busca: "pool fence" · "new puppy" · "fence blew down" · "cerca" o "reja"</div>
+</div></details>
+
+<details class="trade"><summary>❄️ Clima (HVAC)</summary><div class="tbody">
+<p><b>Socios:</b> aislamiento (el "corre todo el día y no enfría" con equipo bueno es trabajo de ellos, y tú te quedas al cliente), electricistas (los minisplits piden panel), plomeros, inspectores (cada reporte dice la edad del sistema).</p>
+<p><b>Jugada especial:</b> la calcomanía de la placa. Tu equipo trae fecha de fábrica estampada. En cada servicio: lee la placa, pega una calcomanía con año de instalación y año probable de reemplazo, dilo UNA vez, y mételo a tu seguimiento. Estás agendando un trabajo de $6,000 a $12,000 con años de anticipación, gratis. Di el año y cállate.</p>
+<div class="fb">Busca: "AC not cooling" · "who do you use for AC" · "furnace quote" · "no enfría el aire"</div>
+</div></details>
+
+<details class="trade"><summary>🔧 Plomería</summary><div class="tbody">
+<p><b>Socios:</b> restauración de daños por agua (tú llegas primero al tubo roto, ellos a la inundación: el intercambio más parejo que existe), remodeladores de baños y cocinas, clima, agentes e inspectores.</p>
+<p><b>Jugada especial:</b> la cámara de drenaje para agentes. Tú ya tienes la cámara; nadie más ve dentro de la línea. Revisión gratis o barata en casas listadas de antes de 1980, con resultado por escrito. Muchas líneas viejas salen necesitando trabajo de cinco cifras, pagado con la venta. Tras dos gratis sin referido de vuelta, ese agente paga.</p>
+<div class="fb">Busca: "plumber recommendation" · "no hot water" · "sewer smell" · "necesito plomero"</div>
+</div></details>
+
+<details class="trade"><summary>⚡ Electricidad</summary><div class="tbody">
+<p><b>Socios:</b> clima (minisplits y paneles: la alianza clásica), instaladores solares y de cargadores de autos, plomeros, remodeladores.</p>
+<p><b>Jugada especial:</b> la cotización del reporte de inspección. Los inspectores publican un PDF con defectos eléctricos y fotos, en manos de un comprador con fecha de cierre. Ofrece a 5 inspectores: cotización por escrito en 24 horas desde el PDF. Lo chico firme; el panel "desde tanto, pendiente una revisión de 15 minutos".</p>
+<div class="fb">Busca: "electrician recommendation" · "breaker keeps tripping" · "EV charger install" · "necesito electricista"</div>
+</div></details>
+
+<details class="trade"><summary>🌱 Jardinería</summary><div class="tbody">
+<p><b>Socios:</b> cerqueros (la cerca entra y el patio queda destrozado), riego, poda de árboles (dejan tocones y pasto muerto), agentes (la fachada antes de las fotos).</p>
+<p><b>Jugada especial:</b> la estrella en tu propia ruta. Eres el único oficio estacionado en la misma calle cada semana. Cada pasto terminado: tarjeta a la izquierda, a la derecha y las tres de enfrente: "Ya cuidamos el jardín de su vecino. Venimos cada martes". Clientes en calles que ya manejas son casi pura ganancia.</p>
+<div class="fb">Busca: "lawn service" · "yard cleanup" · "landscaper recommendation" · "necesito jardinero"</div>
+</div></details>
+
+<details class="trade"><summary>🧽 Limpieza de casas</summary><div class="tbody">
+<p><b>Socios:</b> agentes (salida, listado y entrada: tres limpiezas pagadas en una venta), administradores y Airbnb (rotaciones para siempre), alfombras y ventanas (mismo cliente, cero traslape), post-construcción.</p>
+<p><b>Jugada especial:</b> el regalo de cierre. El agente regala una limpieza de entrada al comprador, cortesía tuya. Eres el único oficio donde regalar el primer trabajo es negocio obvio: 1 de cada 3 se vuelve cliente quincenal que paga el regalo en dos meses y se queda años. Una gratis por agente hasta que refiera.</p>
+<div class="fb">Busca: "house cleaner" · "move out cleaning" · "Airbnb cleaner" · "limpieza de casa"</div>
+</div></details>
+
+<details class="trade"><summary>🗑️ Junk removal (recolección de escombro y tiliches)</summary><div class="tbody">
+<p><b>Socios:</b> administradores de propiedades y caseros (cada salida de inquilino deja cosas que sacar: volumen repetido), agentes de bienes raíces y ventas de herencias (casas completas con fecha), empresas de mudanzas (lo que el cliente no se lleva, alguien lo saca), contratistas y remodeladores (escombro después de la demolición), limpieza (casas acumuladas: ellos limpian, tú sacas).</p>
+<p><b>Jugada especial:</b> los inversionistas y flippers. Cada casa que compran necesita vaciado completo, con prisa, y compran varias al año. Tres inversionistas activos te llenan el mes. Vive en los grupos "[Ciudad] Real Estate Investors" y responde rápido: para ellos la velocidad vale más que el precio.</p>
+<div class="fb">Busca: "junk removal" · "haul away" · "estate cleanout" · "who hauls trash" · "se recoge escombro"</div>
+</div></details>
+
+
+<details class="trade"><summary>🏠 Techos</summary><div class="tbody">
+<p><b>Socios:</b> canaletas (están en cada techo viendo tus tejas), empresas solares (no pueden poner paneles de 25 años sobre un techo de 15: ESTÁN OBLIGADOS a referir), agentes e inspectores (el techo es el asesino #1 de ventas), aislamiento.</p>
+<p><b>Jugada especial:</b> la carta del techo antes del listado. El tuyo es el único producto con vida restante que los bancos exigen por escrito. Inspección gratis en casas listadas más carta firmada de una página. Muchas cartas se vuelven reparaciones pagadas con la venta. Nunca prometas "el seguro lo cubre": en varios estados, negociar el reclamo por el dueño es ilegal.</p>
+<div class="fb">Busca: "roof leak" · "hail damage" · "shingles in the yard" · "gotera" o "techo"</div>
+</div></details>
+
+
+<details class="trade"><summary>👷 Contratista general</summary><div class="tbody">
+<p><b>Socios:</b> tus propios subcontratistas confiables (tú repartes trabajo toda la semana: cada sub te debe referidos), agentes e inspectores (cada reporte de inspección es una lista de remodelación), arquitectos y diseñadores, inversionistas y flippers.</p>
+<p><b>Jugada especial:</b> cobra tu red en referidos. Pídele a CADA sub que uses una presentación al año con un cliente suyo. Eres el centro del trueque del capítulo 8: úsalo.</p>
+<div class="fb">Busca: "general contractor recommendation" · "who did your addition" · "remodel quote" · "contratista"</div>
+</div></details>
+
+<details class="trade"><summary>🛠️ Remodelación</summary><div class="tbody">
+<p><b>Socios:</b> agentes de bienes raíces (remodelación antes de vender y después de comprar), diseñadores de interiores, plomeros y electricistas (oyen primero el sueño del baño nuevo), tiendas de cocinas y baños.</p>
+<p><b>Jugada especial:</b> el paquete "antes de vender": baño y cocina superficial con FECHA FIJA, vendido por agentes. El agente gana precio de venta; tú ganas volumen con fecha.</p>
+<div class="fb">Busca: "kitchen remodel" · "bathroom quote" · "we just bought a house" · "remodelación"</div>
+</div></details>
+
+<details class="trade"><summary>🛣️ Pavimento y asfalto</summary><div class="tbody">
+<p><b>Socios:</b> HOAs y administradores de propiedades (estacionamientos y calles privadas en ciclo fijo), constructores, jardineros, concreto (se pasan trabajo cuando el material no es el suyo).</p>
+<p><b>Jugada especial:</b> el contrato anual de sellado por comunidad. Toca la puerta del administrador del HOA con calendario y precio por pie cuadrado: una firma, trabajo repetido por años.</p>
+<div class="fb">Busca: "driveway paving" · "asphalt repair" · "potholes" · "pavimento"</div>
+</div></details>
+
+<details class="trade"><summary>🏗️ Constructores de casas</summary><div class="tbody">
+<p><b>Socios:</b> agentes de terrenos, prestamistas de construcción, arquitectos, y todos los subs de tu obra.</p>
+<p><b>Jugada especial:</b> la obra es tu vitrina por 6 meses. Letrero grande con tu nombre desde el día uno y una foto de avance por semana en los grupos locales. La gente compra al constructor que VIO construir.</p>
+<div class="fb">Busca: "custom home builder" · "build on my lot" · "constructor de casas"</div>
+</div></details>
+
+<details class="trade"><summary>🧱 Concreto</summary><div class="tbody">
+<p><b>Socios:</b> cerqueros (postes y losas), jardineros y hardscape, terrazas y albercas, contratistas generales.</p>
+<p><b>Jugada especial:</b> la losa lleva al patio completo. En cada cochera o banqueta, deja cotizado el patio o el firepit antes de irte: el cliente ya te vio trabajar y el equipo ya está ahí.</p>
+<div class="fb">Busca: "concrete driveway" · "patio quote" · "cracked sidewalk" · "concreto"</div>
+</div></details>
+
+<details class="trade"><summary>🪵 Pisos</summary><div class="tbody">
+<p><b>Socios:</b> pintores (misma casa vacía, con días de diferencia), remodeladores, agentes (pisos antes de las fotos), limpieza (después de tu instalación).</p>
+<p><b>Jugada especial:</b> el par pintor-pisero. Véndanse juntos a los agentes como "casa lista en una semana": dos oficios, una sola llamada, una sola fecha.</p>
+<div class="fb">Busca: "flooring install" · "LVP quote" · "carpet removal" · "pisos"</div>
+</div></details>
+
+<details class="trade"><summary>🐜 Control de plagas</summary><div class="tbody">
+<p><b>Socios:</b> aislamiento (los roedores destruyen el aislamiento: tú entras primero y refieres el reemplazo), techeros (entradas por el techo), jardineros (colonias en el patio), administradores de propiedades.</p>
+<p><b>Jugada especial:</b> el contrato mensual con administradores. Decenas de unidades con servicio fijo mensual: una firma, ingreso recurrente por años. Es el oficio con la renta más repetible de toda la lista.</p>
+<div class="fb">Busca: "exterminator" · "mice" o "roaches" · "termite inspection" · "fumigación"</div>
+</div></details>
+
+<details class="trade"><summary>🪟 Ventanas y puertas</summary><div class="tbody">
+<p><b>Socios:</b> pintores (pintan marcos y ven ventanas podridas), remodeladores, aislamiento y auditores de energía, agentes (las inspecciones marcan ventanas selladas o rotas).</p>
+<p><b>Jugada especial:</b> el recibo de luz como vendedor. Pide el recibo del verano y enseña el ahorro estimado con ventanas nuevas. Se vende con números, no con miedo.</p>
+<div class="fb">Busca: "window replacement" · "drafty windows" · "foggy glass" · "ventanas"</div>
+</div></details>
+
+<details class="trade"><summary>☀️ Solar</summary><div class="tbody">
+<p><b>Socios:</b> techeros (nadie pone paneles de 25 años sobre un techo de 15: el referido va y viene OBLIGADO), electricistas (panel y cargadores), clima (electrificación de la casa).</p>
+<p><b>Jugada especial:</b> el combo techo + paneles con tu techero socio: una visita, una cotización conjunta, un financiamiento. El cliente evita dos ventas separadas y ustedes se reparten un trabajo grande.</p>
+<div class="fb">Busca: "solar quote" · "electric bill high" · "paneles solares"</div>
+</div></details>
+
+<details class="trade"><summary>🪑 Terrazas y patios</summary><div class="tbody">
+<p><b>Socios:</b> cerqueros (mismo patio, mismo presupuesto), jardineros, concreto, alberqueros.</p>
+<p><b>Jugada especial:</b> el dibujo del patio completo. Cada terraza cotizada lleva un dibujo simple del patio terminado, con la cerca y el jardín de tus socios adentro. Tú cierras la terraza; el resto se reparte, y ellos te lo regresan.</p>
+<div class="fb">Busca: "deck builder" · "pergola" · "patio cover" · "terraza"</div>
+</div></details>
+
+<details class="trade"><summary>🔨 Handyman</summary><div class="tbody">
+<p><b>Socios:</b> agentes y administradores (la lista de pendientes de cada inspección es tu menú), limpieza (ven lo roto antes que nadie), y TODOS los oficios grandes: tú les mandas lo grande, ellos te sueltan lo chico.</p>
+<p><b>Jugada especial:</b> la lista de inspección por paquete. "Todo lo marcado, en una visita, precio cerrado." Los oficios grandes no quieren esos trabajos; quédatelos todos.</p>
+<div class="fb">Busca: "handyman recommendation" · "small jobs" · "honey do list" · "handyman"</div>
+</div></details>
+
+<details class="trade tradegroup"><summary>🧰 ¿No está tu oficio? Ábrelo: están TODOS los demás</summary><div class="tbody">
+<div class="minitrade"><b>🚪 Puertas de cochera</b><br>Socios: agentes e inspectores (la puerta sale en cada inspección), handyman, constructores. Jugada: el resorte roto es urgencia pura: contesta en minutos y gana. <span class="mtf">Busca: "garage door repair" · "spring broke" · "puerta de cochera"</span></div>
+<div class="minitrade"><b>🔌 Reparación de electrodomésticos</b><br>Socios: agentes de casas, administradores, tiendas de refacciones (el mostrador refiere), plomeros (lavadoras y lavavajillas). Jugada: el contrato con caseros: tarifa fija por visita para todas sus unidades. <span class="mtf">Busca: "appliance repair" · "washer not working" · "refrigerador no enfría"</span></div>
+<div class="minitrade"><b>🔑 Cerrajería</b><br>Socios: agentes (cambio de cerraduras en cada cierre: es rutina obligada), administradores (salidas de inquilinos), talleres mecánicos. Jugada: el paquete "cierre de compra": cambio completo de cerraduras a precio fijo, vendido via agentes. <span class="mtf">Busca: "locksmith" · "locked out" · "cerrajero"</span></div>
+<div class="minitrade"><b>🏊 Mantenimiento de albercas</b><br>Socios: alberqueros que construyen (tú mantienes lo que ellos entregan), agentes (la alberca verde mata ventas), jardineros. Jugada: la ruta por colonia: 10 albercas en las mismas calles = gasolina mínima; usa la jugada de la estrella del jardinero. <span class="mtf">Busca: "pool service" · "green pool" · "alberca verde"</span></div>
+<div class="minitrade"><b>🌧️ Canaletas</b><br>Socios: techeros (misma subida, mismo cliente: el par natural), lavado a presión, jardineros. Jugada: el combo con el techero: cada techo nuevo lleva canaletas cotizadas; tú le regresas cada canaleta podrida que delata un techo viejo. <span class="mtf">Busca: "gutter cleaning" · "gutters overflowing" · "canaletas"</span></div>
+<div class="minitrade"><b>💦 Lavado a presión</b><br>Socios: pintores (lavar antes de pintar es obligatorio: que te lo suelten), canaletas, agentes (fachada antes de fotos). Jugada: el antes-y-después es el rey del formato en video: una banqueta sucia limpiándose se comparte sola en los grupos. <span class="mtf">Busca: "pressure washing" · "driveway cleaning" · "lavado a presión"</span></div>
+<div class="minitrade"><b>🧼 Limpieza de alfombras</b><br>Socios: limpieza de casas (ellos no traen máquina: te sueltan todas), administradores (cada salida), pisos (tú limpias lo que no reemplazan). Jugada: el paquete de salida con administradores: alfombra + tarifa fija por unidad. <span class="mtf">Busca: "carpet cleaning" · "pet stains" · "lavado de alfombra"</span></div>
+<div class="minitrade"><b>🚽 Séptico y drenaje</b><br>Socios: plomeros (la cámara encuentra tu trabajo: el traspase más directo), inspectores (casas rurales), restauración. Jugada: el recordatorio de bombeo: cada tanque se bombea cada 3-5 años; apunta la fecha y el sistema te lo recuerda: cliente de por vida. <span class="mtf">Busca: "septic pumping" · "sewer backup" · "fosa séptica"</span></div>
+<div class="minitrade"><b>🌊 Restauración de daños de agua</b><br>Socios: plomeros (te llaman desde la fuga), techeros, aseguradoras via subcontrato, limpieza. Jugada: sé el teléfono que el plomero da en la emergencia: llega en 1 hora, siempre, y el plomero te vuelve su respuesta de cajón. <span class="mtf">Busca: "water damage" · "flooded" · "se inundó"</span></div>
+<div class="minitrade"><b>🪟 Lavado de ventanas</b><br>Socios: limpieza de casas, lavado a presión, agentes (fotos de listado). Jugada: la ruta comercial de vitrinas: negocios locales en fila pagan mensualidad chica y te dan presencia diaria en la calle. <span class="mtf">Busca: "window cleaning" · "hard water stains" · "lavado de ventanas"</span></div>
+<div class="minitrade"><b>🏠 Siding y fachadas</b><br>Socios: pintores (cuando pintar ya no alcanza, entra el siding: y al revés), techeros (granizo daña ambos), aseguradoras via restauración. Jugada: después de cada granizada, la calle entera tiene el mismo daño: la caminata de 10 puertas se vuelve de 40. <span class="mtf">Busca: "siding repair" · "hail damage siding" · "fachada"</span></div>
+<div class="minitrade"><b>🧱 Estuco</b><br>Socios: pintores (el estuco agrietado delata la repintada y viceversa), constructores, ventanas (el sellado se toca). Jugada: en mercados ES (CA, AZ, NV, TX, NM) casi todo el estuco lo trabaja gente que habla español: los grupos en español son tu cancha local. <span class="mtf">Busca: "stucco repair" · "cracks in stucco" · "estuco"</span></div>
+<div class="minitrade"><b>🚚 Mudanzas</b><br>Socios: agentes (cada cierre es una mudanza), junk removal (lo que no se llevan), limpieza (salida y entrada: el trío perfecto). Jugada: el trío de cierre con limpieza y junk removal: un solo paquete "casa lista" vendido via agentes; tres oficios, una llamada. <span class="mtf">Busca: "movers recommendation" · "moving help" · "mudanza"</span></div>
+<div class="minitrade"><b>🌳 Poda de árboles</b><br>Socios: jardineros (te refieren todo lo alto), techeros (ramas sobre el techo), seguros tras tormentas. Jugada: después de cada tormenta, sal con la motosierra y la cámara: el árbol caído del vecino es tu anuncio en los grupos ese mismo día. <span class="mtf">Busca: "tree removal" · "branch fell" · "poda de árboles"</span></div>
+<div class="minitrade"><b>🏗️ Reparación de cimientos</b><br>Socios: inspectores (el hallazgo que asusta al comprador), agentes (necesitan la carta que calma), plomeros (fugas bajo losa). Jugada: la segunda opinión gratis por escrito: media página que dice si es grave o cosmético; el agente te vuelve su héroe de cierres. <span class="mtf">Busca: "foundation repair" · "cracks in wall" · "cimientos"</span></div>
+<div class="minitrade"><b>🪞 Azulejo y piedra</b><br>Socios: remodeladores de baños y cocinas (tú eres su acabado), plomeros (regaderas), pisos. Jugada: las fotos venden este oficio más que ningún otro: el perfil de Google con 30 fotos de backsplash gana solo. <span class="mtf">Busca: "tile installer" · "shower remodel" · "azulejo"</span></div>
+<div class="minitrade"><b>🪚 Carpintería y framing</b><br>Socios: contratistas generales (tu cliente principal: usa la jugada de permisos), remodeladores, terrazas. Jugada: los closets y built-ins son la puerta residencial: chicos, con foto bonita, y el cliente te presume en su grupo. <span class="mtf">Busca: "carpenter" · "custom shelves" · "carpintero"</span></div>
+</div></details>
+
+
+<div class="slateline"><div class="dot">S</div><div><b>La forma más fácil de darle valor a un socio:</b> preséntale el sistema que usas tú. Cada socio tuyo también necesita más llamadas, más reseñas y más trabajos. Y a ti Slate te paga <b>$97 al mes</b> por cada negocio que refieras y se quede (capítulo 11). El mismo apretón de manos que intercambia clientes puede pagar tu mensualidad.</div></div>
+
+</div></main>
+<div class="jnav"><div class="wrap"><a class="jbtn" href="9.html">← Anterior</a><a class="jbtn primary" href="11.html">Siguiente jugada →</a></div></div>
+<script>
+function cp(btn){
+  var t = btn.parentElement.querySelector('.cptext').innerText;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(t).then(function(){ ok(btn); }, function(){ fallback(t, btn); });
+  } else { fallback(t, btn); }
+}
+function fallback(t, btn){
+  var ta = document.createElement('textarea');
+  ta.value = t; document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); ok(btn); } catch(e) {}
+  document.body.removeChild(ta);
+}
+function ok(btn){
+  var old = btn.innerText; btn.innerText = '¡Copiado!';
+  setTimeout(function(){ btn.innerText = old; }, 1600);
+}
+</script><script>window.POR_OFICIO={"default": {"orden": ["google", "warm", "job", "regresan", "facebook", "feeders", "partners", "nextdoor", "comunidad", "referral", "presence", "paid"]}, "pintura": {"orden": ["job", "google", "warm", "partners", "feeders", "regresan", "facebook"], "especial": "La caminata antes del listado: la pintura es el único oficio que cabe completo entre que la casa se vacía y sale a la venta. Pídele a cada agente que te deje caminar sus listados nuevos."}, "poda de árboles": {"orden": ["job", "google", "nextdoor", "warm", "regresan", "feeders", "facebook"], "especial": "Después de cada tormenta, la misma tarde: las 10 puertas de la calle con ramas caídas, con tu tarjeta. Nadie más pasa ese día."}, "acarreo": {"orden": ["feeders", "facebook", "google", "warm", "job", "regresan"], "especial": "Los inversionistas y flippers: cada casa que compran necesita vaciado completo, con prisa, y compran varias al año. La lista de permisos y los grupos de inversionistas son tu puerta."}, "limpieza de basura": {"orden": ["feeders", "facebook", "google", "warm", "job", "regresan"], "especial": "Los inversionistas y flippers: cada casa que compran necesita vaciado completo, con prisa, y compran varias al año."}, "plomería": {"orden": ["google", "regresan", "feeders", "warm", "job", "partners"], "especial": "La cámara de drenaje para agentes: tú ya tienes la cámara y nadie más ve dentro de la línea. Revisión gratis antes de cada venta, y el reporte lleva tu nombre."}, "techos": {"orden": ["job", "google", "feeders", "partners", "warm", "regresan"], "especial": "La carta del techo antes del listado: el tuyo es el único producto con vida restante que los bancos exigen por escrito. Ofrécela gratis a cada agente."}, "jardinería y paisajismo": {"orden": ["job", "regresan", "google", "nextdoor", "warm", "facebook"], "especial": "La estrella en tu propia ruta: eres el único oficio estacionado en la misma calle cada semana. Cada pasto terminado es un letrero que se mueve."}, "limpieza": {"orden": ["feeders", "regresan", "google", "warm", "facebook", "partners"], "especial": "El regalo de cierre: el agente regala una limpieza de entrada al comprador, cortesía tuya. Eres el único oficio que cabe en ese regalo."}, "climas y calefacción": {"orden": ["regresan", "google", "feeders", "warm", "job", "partners"], "especial": "La calcomanía de la placa: en cada servicio, lee la fecha de fábrica del equipo y pega tu calcomanía con tu teléfono. El próximo servicio te llama a ti."}, "instalaciones eléctricas": {"orden": ["feeders", "google", "regresan", "warm", "job", "partners"], "especial": "La cotización del reporte de inspección: los inspectores publican defectos eléctricos con fotos. Cotiza el PDF completo en 24 horas, precio cerrado."}, "handyman": {"orden": ["feeders", "google", "warm", "regresan", "job", "facebook"], "especial": "La lista de inspección por paquete: «todo lo marcado, en una visita, precio cerrado». Los oficios grandes no quieren esos trabajos chicos; tú sí."}, "pisos": {"orden": ["partners", "google", "job", "feeders", "warm", "regresan"], "especial": "El par pintor-pisero: véndanse juntos a los agentes como «casa lista en una semana». Dos oficios, una sola llamada."}, "concreto": {"orden": ["job", "google", "warm", "feeders", "partners", "regresan"], "especial": "La losa lleva al patio completo: en cada cochera o banqueta, deja cotizado el patio antes de irte."}, "cercas": {"orden": ["feeders", "job", "google", "warm", "partners", "regresan"], "especial": "La lista de permisos de alberca: son públicos, y cada permiso nuevo es una cerca obligada por ley en 60 a 120 días."}, "control de plagas": {"orden": ["feeders", "regresan", "google", "warm", "partners", "facebook"], "especial": "El contrato mensual con administradores de propiedades: decenas de unidades con servicio fijo. Una firma, ingreso todos los meses."}, "remodelación": {"orden": ["feeders", "partners", "google", "warm", "job", "regresan"], "especial": "El paquete «antes de vender»: baño y cocina superficial con fecha fija, vendido por agentes. El agente gana precio; tú ganas el trabajo sin cotizar contra tres."}, "construcción general": {"orden": ["partners", "feeders", "google", "job", "warm", "regresan"], "especial": "Cobra tu red en referidos: pídele a cada sub que uses una presentación al año con un cliente suyo. Eres el centro de la rueda."}, "aislamiento": {"orden": ["feeders", "partners", "google", "regresan", "warm", "job"], "especial": "La red Trade Ally de tu compañía de luz: gratis, te publica en su lista y en el nivel alto te manda sus clientes. Ningún otro oficio tiene una agencia pública reclutándole clientes."}};window.ID2N={"base": 1, "google": 2, "warm": 3, "job": 4, "regresan": 5, "comunidad": 6, "facebook": 7, "nextdoor": 8, "feeders": 9, "partners": 10, "paid": 11, "presence": 12, "referral": 13, "rhythm": 14};window.ID2T={"base": "La base lo decide todo", "google": "Tu perfil de Google: nosotros lo armamos, tú lo alimentas", "warm": "Tus primeros 20 trabajos ya están en tu teléfono", "job": "Cada trabajo es un anuncio gratis", "regresan": "Los clientes que ya te pagaron: el año dos vive en tu teléfono", "comunidad": "Iglesia, escuela y tus grupos de WhatsApp", "facebook": "Grupos de Facebook: gana el hilo", "nextdoor": "Nextdoor: que el vecino diga tu nombre", "feeders": "La gente que reparte trabajos todo el día", "partners": "Oficios socios: intercambia clientes, no los compres", "paid": "Cuando quieras pagar por clientes", "presence": "Paga con presencia, no con anuncios", "referral": "Gana $97 al mes por recomendarnos", "rhythm": "El ritmo semanal, completo"};</script>
+<script>
+(function(){
+  // PERSONAL-2026-09-15: the link brings the trade (?oficio=pintura). Nothing to click. No trade = the general guide.
+  var q=new URLSearchParams(location.search);
+  var of=(q.get('oficio')||'').trim().toLowerCase();
+  if(of){ try{localStorage.setItem('oficio',of);}catch(e){} } else { try{of=localStorage.getItem('oficio')||'';}catch(e){} }
+  ['negocio','tel','web'].forEach(function(k){ var v=q.get(k); if(v){ try{localStorage.setItem(k,v);}catch(e){} } });
+  function get(k){ try{return localStorage.getItem(k)||'';}catch(e){return '';} }
+  var PO=window.POR_OFICIO||{}, key='';
+  if(of){ Object.keys(PO).forEach(function(k){ if(!key && k!=='default' && (of.indexOf(k)>=0 || k.indexOf(of)>=0)) key=k; }); }
+  var conf = key ? PO[key] : null;
+  // fill the blanks that we know
+  var fills={'[tu oficio]': key||'', '[Negocio]': get('negocio'), '[tu teléfono]': get('tel'), '[tu página]': get('web')};
+  var main=document.querySelector('main'); 
+  if(main){ var h=main.innerHTML, changed=false; Object.keys(fills).forEach(function(k){ if(fills[k]){ h=h.split(k).join(fills[k]); changed=true; } }); if(changed) main.innerHTML=h; }
+  // the trade path on the landing
+  var slot=document.getElementById('ruta'); 
+  if(slot && conf){
+    var ids=(conf.orden||[]).slice(0,5), n=window.ID2N||{}, t=window.ID2T||{};
+    var html='<h3>Tu ruta</h3><div class="rt">Las jugadas de '+key+', en orden</div>';
+    if(conf.especial){ html+='<div class="esp"><b>Solo tu oficio puede hacer esto:</b> '+conf.especial+'</div>'; }
+    html+='<ol>'+ids.map(function(id){ return '<li><a href="'+n[id]+'.html">'+t[id]+'</a></li>'; }).join('')+'</ol>';
+    html+='<p style="font-size:13px;opacity:.85">Después de estas cinco, sigue con las demás. Todas están abajo.</p>';
+    slot.innerHTML=html; slot.hidden=false;
+  }
+  var nt=document.getElementById('oficio-note'); if(nt && key){ nt.textContent='Esta guía está en modo '+key+'.'; nt.hidden=false; }
+})();
+</script>
+</body></html>
