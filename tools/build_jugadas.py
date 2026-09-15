@@ -94,7 +94,7 @@ items = "".join('<li><a href="%d.html"><span class="n">%d</span>%s</a></li>' % (
 index = (head.replace("</head>", EXTRA_CSS + "</head>")
          + cover
          + '<main><div class="wrap">' + onepager + sel
-         + '<h2 class="cap" id="jugadas"><span class="capnum">→</span> Las %d jugadas, una por página</h2><p>Toca una. Cada página es una jugada completa con su guion para copiar. Al final, «Siguiente jugada». Marca las que ya hiciste.</p><ul class="jlist">%s</ul>' % (N, items)
+         + '<h2 class="cap" id="jugadas"><span class="capnum">→</span> Las jugadas, una por página</h2><p>Toca una. Cada página es una jugada completa con su guion para copiar. Al final, «Siguiente jugada».</p><ul class="jlist">%s</ul>' % (items)
          + '<p><a class="jbtn primary" href="1.html">Empezar por la jugada 1 →</a></p><p style="margin-top:10px"><a class="jbtn" href="../mas-clientes">Leer la guía completa en una sola página</a></p>'
          + '<details class="jsrc"><summary>Fuentes</summary>' + fuentes + '</details>'
          + '</div></main>' + script + JS + "</body></html>\n")
