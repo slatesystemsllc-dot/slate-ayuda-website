@@ -99,6 +99,8 @@
   .minitrade b { color:var(--navy); font-size:14.5px; }
   .minitrade .mtf { color:var(--sub); font-size:13px; }
   @media (max-width:600px){ .toc { columns:1; } .h2sub { margin-left:0; } }
+  /* AUDIT-2026-09-15: phone width, the cover cards wrap instead of overflowing */
+  @media (max-width:520px){ .statrow{flex-wrap:wrap} .stat{flex:1 1 100%; min-width:0} .wrap{padding:0 16px} }
 </style>
 </head>
 <body>
@@ -146,6 +148,8 @@
   </div>
   <div class="oprules"><b>Las 3 reglas de oro:</b> ① Contesta en minutos, no en horas: el que contesta primero gana. ② Nunca pidas un favor: anuncia lo que haces y pide UN nombre. ③ Cada trabajo terminado paga el siguiente: reseña + vecinos + letrero, siempre.</div>
 </div>
+
+<div class="win" id="hoy20"><b>Hoy, en 20 minutos, antes que todo lo demás:</b> abre tu perfil de Google y revisa dos cosas. Que el nombre del negocio sea exactamente el de tu LLC. Y que la categoría principal sea la misma que usan los tres negocios que salen arriba cuando buscas tu oficio más tu ciudad. Esas dos cosas son el factor número uno del ranking local, y las cambias en un minuto. El capítulo 2 te lleva paso a paso.</div>
 </section>
 
 <main>
@@ -155,17 +159,19 @@
 
 <div class="toc">
   <li><span class="tn">1</span><a href="#base">La base lo decide todo</a></li>
-  <li><span class="tn">2</span><a href="#warm">Tus primeros 20 trabajos ya están en tu teléfono</a></li>
-  <li><span class="tn">3</span><a href="#job">Cada trabajo es un anuncio gratis</a></li>
-  <li><span class="tn">4</span><a href="#comunidad">Iglesia, escuela y tus grupos de WhatsApp</a></li>
-  <li><span class="tn">5</span><a href="#facebook">Grupos de Facebook: gana el hilo</a></li>
-  <li><span class="tn">6</span><a href="#nextdoor">Nextdoor: que el vecino diga tu nombre</a></li>
-  <li><span class="tn">7</span><a href="#feeders">La gente que reparte trabajos todo el día</a></li>
-  <li><span class="tn">8</span><a href="#partners">Oficios socios: intercambia clientes</a></li>
-  <li><span class="tn">9</span><a href="#presence">Paga con presencia, no con anuncios</a></li>
-  <li><span class="tn">10</span><a href="#paid">Cuando quieras pagar por clientes</a></li>
-  <li><span class="tn">11</span><a href="#referral">Gana $97 al mes por recomendarnos</a></li>
-  <li><span class="tn">12</span><a href="#rhythm">El ritmo semanal, completo</a></li>
+  <li><span class="tn">2</span><a href="#google">Tu perfil de Google: el lugar donde aterrizan todas las jugadas</a></li>
+  <li><span class="tn">3</span><a href="#warm">Tus primeros 20 trabajos ya están en tu teléfono</a></li>
+  <li><span class="tn">4</span><a href="#job">Cada trabajo es un anuncio gratis</a></li>
+  <li><span class="tn">5</span><a href="#regresan">Los clientes que ya te pagaron: el año dos vive en tu teléfono</a></li>
+  <li><span class="tn">6</span><a href="#comunidad">Iglesia, escuela y tus grupos de WhatsApp</a></li>
+  <li><span class="tn">7</span><a href="#facebook">Grupos de Facebook: gana el hilo</a></li>
+  <li><span class="tn">8</span><a href="#nextdoor">Nextdoor: que el vecino diga tu nombre</a></li>
+  <li><span class="tn">9</span><a href="#feeders">La gente que reparte trabajos todo el día</a></li>
+  <li><span class="tn">10</span><a href="#partners">Oficios socios: intercambia clientes, no los compres</a></li>
+  <li><span class="tn">11</span><a href="#paid">Cuando quieras pagar por clientes</a></li>
+  <li><span class="tn">12</span><a href="#presence">Paga con presencia, no con anuncios</a></li>
+  <li><span class="tn">13</span><a href="#referral">Gana $97 al mes por recomendarnos</a></li>
+  <li><span class="tn">14</span><a href="#rhythm">El ritmo semanal, completo</a></li>
 </div>
 
 <h2 class="cap" id="base"><span class="capnum">1</span> La base lo decide todo</h2>
@@ -176,9 +182,9 @@
   <div class="step"><div class="sn">1</div><p>Primero le pregunta a la gente. <em>El 74% sigue la recomendación de un vecino, amigo o familiar.</em></p></div>
   <div class="step"><div class="sn">2</div><p>Después te revisa en internet. <em>El 97% lee reseñas.</em> El 68% no usa un negocio con menos de 4 estrellas. El 47% no usa uno con menos de 20 reseñas.</p></div>
   <div class="step"><div class="sn">3</div><p>Compara 3 negocios o menos y decide en menos de 30 minutos.</p></div>
-  <div class="step"><div class="sn">4</div><p>Luego llama. <em>Como 4 de cada 10 llamadas a negocios nunca llegan a una persona.</em></p></div>
+  <div class="step"><div class="sn">4</div><p>Luego llama. <em>Casi la mitad de las llamadas a negocios de servicio a domicilio (48%) nunca las contesta una persona.</em></p></div>
   <div class="step"><div class="sn">5</div><p>Si no contestas, <em>el 82% llama a un competidor.</em> Solo el 42% deja mensaje de voz. Los demás desaparecen.</p></div>
-  <div class="step"><div class="sn">6</div><p>Y el reloj es cruel: contactar en 5 minutos en vez de 30 te hace <em>21 veces más probable</em> ganarte a ese cliente.</p></div>
+  <div class="step"><div class="sn">6</div><p>Y el reloj es cruel: contactar en 5 minutos en vez de 30 te hace <em>21 veces más probable</em> ganarte a ese cliente (estudio de 2007). El dato de hoy es más simple: el 55% de los clientes espera respuesta dentro de una hora, y solo el 20% de los dueños la da.</p></div>
 </div>
 
 <p>Ahora júntalo. Cada jugada de esta guía hace que alguien diga tu nombre o vea tu letrero. Esa persona luego revisa tu perfil de Google, lee tus reseñas, entra a tu página y llama. Si el perfil está flojo, las reseñas son pocas o la llamada suena y suena, la jugada murió y ni te enteraste.</p>
@@ -187,7 +193,23 @@
 
 <p>Tus únicos tres trabajos: <em>contestar rápido cuando se necesita una persona, avisar de la reseña en persona al final de cada trabajo, y hacer las jugadas de esta guía.</em> La máquina hace el resto.</p>
 
-<h2 class="cap" id="warm"><span class="capnum">2</span> Tus primeros 20 trabajos ya están en tu teléfono</h2>
+<h2 class="cap" id="google"><span class="capnum">2</span> Tu perfil de Google: el lugar donde aterrizan todas las jugadas</h2>
+<p class="h2sub">Cada letrero, cada vecino, cada etiqueta en Facebook manda a esa persona a buscarte en Google. Cinco cosas que sí mueven el ranking, y dos que no.</p>
+<div class="bulb"><div class="big">74%</div><div class="txt">de la gente solo lee reseñas de los últimos tres meses. Las reseñas se echan a perder: por eso la petición es cada semana, no una vez.<span class="src">BrightLocal, encuesta de consumidores 2026</span></div></div>
+<h3>1. La categoría principal (1 minuto)</h3>
+<p>Es el factor número uno de todo el ranking local, por encima de qué tan cerca estás del que busca. Busca tu oficio más tu ciudad en Google Maps, mira qué categoría usan los tres que salen arriba, y pon exactamente esa como principal. "Contratista" en vez de "Pintor" te saca del mapa.</p>
+<h3>2. El nombre del negocio, igual que tu LLC (1 minuto)</h3>
+<p>Si el nombre del perfil no coincide con tu papel legal y Google te suspende, la recuperación puede tardar meses o no llegar. Nada de "Pintores Ramírez | Austin | Mejor precio". Solo el nombre.</p>
+<h3>3. Contesta TODAS las reseñas, las buenas y las malas</h3>
+<p>El 89% de la gente espera que el dueño conteste, y el 80% es más propenso a contratar a un negocio que contesta todas. Dos renglones bastan: gracias por el nombre, y qué trabajo fue. A una mala, sin pelear: "Lamento que quedara así. Le llamo hoy para arreglarlo".</p>
+<h3>4. La reseña se pide en persona, antes de subirte al camión</h3>
+<div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">Español, dilo en persona</span><span class="cptext">Me da mucho gusto que haya quedado contento. Le voy a mandar un mensajito de texto con un enlace para dejarnos una reseña en Google. Son treinta segundos y a un negocio como el mío le ayuda muchísimo. Si quiere, lo abrimos aquí mismo y yo le muestro dónde darle.</span></div>
+<p>El momento lo es todo: si no saca el teléfono mientras todavía estás ahí parado, casi nunca pasa después. Tu sistema manda el enlace solo; tu trabajo es avisar de frente.</p>
+<div class="warn"><b>Nunca ofrezcas descuento a cambio de una reseña.</b> Google lo prohíbe. Cuando lo detecta borra todas las reseñas de un jalón y puede marcar el perfil. Se pide, no se compra.</div>
+<h3>5. Servicios, zona y fotos reales</h3>
+<p>Llena la lista de servicios con lo que de verdad haces, marca tu zona de trabajo, y sube fotos de trabajos tuyos, no de catálogo. Las fotos no suben el ranking (eso es cuento de agencias), pero son lo primero que ve el dueño de casa antes de decidir a quién llamar.</p>
+<div class="slateline"><div class="dot">S</div><div><b>Tu sistema de Slate</b> vigila la posición de tu perfil en el mapa cada semana y te avisa cuando algo cambia. Los puntos 1 y 2 los cambias tú en un minuto; si no sabes dónde, mándanos un texto y lo hacemos contigo en la llamada.</div></div>
+<h2 class="cap" id="warm"><span class="capnum">3</span> Tus primeros 20 trabajos ya están en tu teléfono</h2>
 <p class="h2sub">Así los sacas de tus contactos sin sentirte limosnero.</p>
 
 <p>Una idea lo cambia todo: <em>no estás pidiendo favores. Estás anunciando a qué te dedicas ahora.</em> Cuando el primo de alguien necesite [pintura], tú le hiciste el favor por ser fácil de encontrar.</p>
@@ -213,7 +235,7 @@
 <h3>La llamada al exjefe</h3>
 <p>Cualquiera con quien trabajaste antes ya sabe que trabajas bien, que es lo más difícil de demostrar. Llama, no textees: "Me independicé. Si algún día tienes trabajo de sobra, algo muy chico, o algo fuera de tu zona, yo lo atiendo bien y nunca te brinco al cliente". Di esa última parte en voz alta: su miedo es que le robes clientes. Este suele ser el primer trabajo pagado de un negocio nuevo.</p>
 
-<h2 class="cap" id="job"><span class="capnum">3</span> Cada trabajo es un anuncio gratis</h2>
+<h2 class="cap" id="job"><span class="capnum">4</span> Cada trabajo es un anuncio gratis</h2>
 <p class="h2sub">Las 10 a 40 casas que pueden VER tu trabajo son la mejor lista que vas a tener. Misma edad de casa, mismos problemas, y pueden preguntarle a tu cliente por ti.</p>
 
 <h3>El letrero entra el día UNO, no el último</h3>
@@ -238,7 +260,18 @@
 
 <div class="slateline"><div class="dot">S</div><div>Todas estas jugadas producen LLAMADAS mientras tú estás en un techo o abajo de un lavabo. Por eso existen el texto automático de llamada perdida y el seguimiento: tú haces el letrero y el toquido; el sistema atrapa la llamada que no puedes contestar.</div></div>
 
-<h2 class="cap" id="comunidad"><span class="capnum">4</span> Iglesia, escuela y tus grupos de WhatsApp</h2>
+<h2 class="cap" id="regresan"><span class="capnum">5</span> Los clientes que ya te pagaron: el año dos vive en tu teléfono</h2>
+<p class="h2sub">El capítulo 3 es para arrancar. Este es para sostener: la gente que ya te conoce y ya te pagó.</p>
+<div class="bulb"><div class="big">59%</div><div class="txt">del trabajo nuevo viene de clientes que regresan, empatado con los referidos. Google Search: 20%. Nadie vende más barato que un cliente que ya te pagó una vez.<span class="src">Jobber, reporte de tendencias 2026 (1,050 dueños)</span></div></div>
+<h3>Sube tu lista de clientes viejos al sistema</h3>
+<p>Nombre y teléfono de cada persona a la que le hiciste un trabajo. La subes una vez en tu portal de Slate (la página de "contactos"). El sistema les pide la reseña que nunca les pediste, y durante un año les manda, con tu nombre, la oferta de referidos: "¿quién de tus conocidos necesita esto?". Tú no tocas nada.</p>
+<h3>El recordatorio de temporada, con tu oficio</h3>
+<p>Cada oficio tiene una fecha en la que la casa vuelve a necesitarte: canaletas y techos antes de las lluvias, el clima antes del calor, la pintura exterior antes del frío, el jardín en primavera. Un texto a tus clientes de hace un año, el mes antes:</p>
+<div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">Español</span><span class="cptext">Hola [Nombre], soy [tu nombre], el de [pintura]. Le hice [el trabajo] el año pasado. Se acerca [la temporada] y ando por su zona la semana que viene. Si quiere que le dé una revisada sin costo, dígame qué día le queda.</span></div>
+<h3>El aniversario del trabajo</h3>
+<p>Doce meses después de terminar, un texto de tres renglones: "¿cómo sigue [el trabajo]? Cualquier detalle, me dice". No vende nada y por eso funciona: el que contesta "todo bien" es el mismo que te manda al vecino la semana siguiente.</p>
+<div class="slateline"><div class="dot">S</div><div><b>Lo que ya hace tu sistema:</b> la reseña y la cadena de referidos de un año, solos, a cada cliente que agregas. El recordatorio de temporada lo mandas tú con el texto de arriba; dinos tu temporada y lo dejamos programado.</div></div>
+<h2 class="cap" id="comunidad"><span class="capnum">6</span> Iglesia, escuela y tus grupos de WhatsApp</h2>
 <p class="h2sub">Los lugares donde la gente ya te tiene confianza. El tono es "avisarle a mi comunidad", nunca "cerrar ventas".</p>
 
 <h3>Iglesia, cuatro domingos seguidos</h3>
@@ -259,7 +292,7 @@
 <p>Pedir permiso es lo que te separa del spam. Después UNA publicación: foto de antes y después, una línea de qué haces y dónde, y tu número. Una sola publicación aprobada en un grupo activo de 200 personas suele traer 5 a 20 mensajes en 48 horas.</p>
 <div class="warn"><b>Disciplina de precios:</b> los paisanos van a pedir "precio de amigo". Da un descuento chico y con nombre ($25 de descuento, no 40%), o entrenas a toda la red a esperar mitad de precio.</div>
 
-<h2 class="cap" id="facebook"><span class="capnum">5</span> Grupos de Facebook: gana el hilo</h2>
+<h2 class="cap" id="facebook"><span class="capnum">7</span> Grupos de Facebook: gana el hilo</h2>
 <p class="h2sub">Facebook es el lugar #2 del país donde la gente pregunta "¿a quién me recomiendan?", solo detrás de Google. Pero el valor NO está en tu página de negocio: está en los comentarios de la publicación de un vecino.</p>
 
 <h3>Arma tu mapa: 12 grupos, no 50</h3>
@@ -284,7 +317,7 @@
 
 <div class="warn"><b>Dos prohibiciones que te salvan la cuenta:</b> (1) NO publiques tu servicio en Facebook Marketplace: la política de Meta prohíbe servicios ahí, y a los contratistas les tumban los anuncios y les restringen la cuenta. Publica en GRUPOS de compra/venta, donde sí se vale. (2) No pegues el mismo anuncio en 6 grupos en una hora: las reglas de spam de Meta marcan lo repetitivo. El tope práctico que reporta la gente: unas 3 publicaciones de grupo por día.</div>
 
-<h2 class="cap" id="nextdoor"><span class="capnum">6</span> Nextdoor: que el vecino diga tu nombre</h2>
+<h2 class="cap" id="nextdoor"><span class="capnum">8</span> Nextdoor: que el vecino diga tu nombre</h2>
 <p class="h2sub">En Google, la gente busca y tú compites. En Nextdoor, un vecino pregunta "¿quién conoce un buen plomero?" y otro vecino contesta con tu nombre y tu teléfono. Ese lugar no se compra. Se gana, una recomendación a la vez.</p>
 
 <p>Así se ve un cliente de Nextdoor en la vida real, sacado de la página de un contratista de verdad: <em>"Neighborhood Remodeling Heroes 720-451-7487, pregunta por Heather. ¡Dan presupuestos gratis!"</em> Eso lo escribió EL VECINO, con todo y teléfono. Tú no escribes nada. Tu único trabajo es pedir.</p>
@@ -298,7 +331,7 @@
 </div>
 <p>Expectativa honesta: Nextdoor es un goteo que se vuelve muralla. Diez recomendaciones en tu código postal te vuelven, en silencio, la respuesta de cajón de esa zona.</p>
 
-<h2 class="cap" id="feeders"><span class="capnum">7</span> La gente que reparte trabajos todo el día</h2>
+<h2 class="cap" id="feeders"><span class="capnum">9</span> La gente que reparte trabajos todo el día</h2>
 <p class="h2sub">Un dueño de casa te contrata una vez cada varios años. Esta gente coloca trabajos cada semana. Empieza por los tres primeros: no piden licencia extra y casi no piden dinero.</p>
 
 <div class="tablewrap"><table>
@@ -316,7 +349,10 @@
 
 <p>Y el hábito que mantiene viva cada fuente: cierra el círculo. Texto 1, en la primera hora: "Recibido, le llamo ahorita, gracias". Texto 2, al terminar: "Listo en [dirección]. El cliente quedó contento. Gracias otra vez". Casi nadie lo hace. Es la diferencia entre un referido y un río.</p>
 
-<h2 class="cap" id="partners"><span class="capnum">8</span> Oficios socios: intercambia clientes, no los compres</h2>
+<h3>Qué decirle, palabra por palabra</h3>
+<div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">Al agente de bienes raíces</span><span class="cptext">Hola, soy [Nombre], de [Negocio]. Hago [pintura] aquí en [ciudad]. No vengo a pedirle trabajo. Vengo a ofrecerle dos cosas que a usted le sirven en cada cierre. Uno: si me manda una casa que va a salir a la venta, yo la camino sin costo y le entrego por escrito, en veinticuatro horas, qué hay que arreglar antes de las fotos y qué no vale la pena tocar. Esa lista se la queda usted, la use conmigo o no. Dos: cuando un comprador suyo pregunte por [pintura], yo contesto el teléfono el mismo día y nunca lo dejo quedar mal. Nunca le voy a ofrecer dinero por recomendarme, porque la ley federal no lo permite. Lo único que le ofrezco es rapidez y que usted quede bien.</span></div>
+<div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">Al administrador de propiedades</span><span class="cptext">Hola, soy [Nombre], de [Negocio]. Hago [pintura] en [ciudad] y trabajo con propiedades de renta. Le mando hoy mismo un solo PDF con todo lo que su departamento de papeles necesita: el seguro con el endoso de asegurado adicional, la licencia, la W-9 y mi lista de precios. Y le hago una promesa concreta: usted me textea una salida de inquilino y yo la camino en veinticuatro horas y le mando el precio por escrito. Si le sirve, empezamos con una sola unidad para que me vea trabajar.</span></div>
+<h2 class="cap" id="partners"><span class="capnum">10</span> Oficios socios: intercambia clientes, no los compres</h2>
 <p class="h2sub">Otros oficios están parados dentro de la casa de tu cliente justo antes de que el cliente te necesite a TI. Las alianzas locales producen más clientes (25%) que las búsquedas de Google (20%) o los sitios que venden leads (16%). La regla de oro: mándale TÚ un cliente primero, y luego pide. Intercambio, no favor.</p>
 
 <p>Busca tu oficio. Cada tarjeta trae: socios y por qué ellos ven tus trabajos primero, una jugada que solo tu oficio puede hacer, y qué escribir en el buscador de los grupos (busca el SÍNTOMA, como escribe el dueño de casa, no el servicio). <em>Busca tu oficio abajo y tócalo para abrirlo. Están los oficios más comunes con tarjeta completa, y al final una caja con TODOS los demás. Más de 30 oficios: el tuyo está.</em></p>
@@ -472,7 +508,14 @@
 
 <div class="slateline"><div class="dot">S</div><div><b>La forma más fácil de darle valor a un socio:</b> preséntale el sistema que usas tú. Cada socio tuyo también necesita más llamadas, más reseñas y más trabajos. Y a ti Slate te paga <b>$97 al mes</b> por cada negocio que refieras y se quede (capítulo 11). El mismo apretón de manos que intercambia clientes puede pagar tu mensualidad.</div></div>
 
-<h2 class="cap" id="presence"><span class="capnum">9</span> Paga con presencia, no con anuncios</h2>
+<h2 class="cap" id="paid"><span class="capnum">11</span> Cuando quieras pagar por clientes</h2>
+<p class="h2sub">Un día la máquina gratis se llena y quizás quieras comprar crecimiento. Dos párrafos honestos para que nadie te robe.</p>
+
+<p><b>La opción buena: los anuncios de Google que cobran por cliente potencial</b> (Local Services Ads). Pagas por una llamada real de un dueño de casa real, no por un clic: como <em>$39 por lead en electricidad, $51 en clima, $57 en plomería.</em> En un estudio de 888 contratistas, el 44% de esos leads agenda: sale como <em>$233 por cliente que paga</em>, con ticket promedio de $1,826. Ojo: Google pide licencia estatal, seguro de $1 millón y verificación de antecedentes, y está mudando este producto a su consola grande ahora mismo. Antes de meterte, pregúntanos: configurar bien el perfil es lo que decide qué leads te cobran.</p>
+
+<div class="warn"><b>La opción mala: comprar leads de marketplaces</b> (Thumbtack, Angi, HomeAdvisor). El mismo lead se vende a varios a la vez: pagas por entrar a una carrera. Contratistas este mes: "cobran precios bien altos por leads menos que mediocres". Sobre reembolsos: "Tienes más chance de que te devuelva el dinero un adicto en Reno". Puente corto en un mes muerto, sí. Base del negocio, nunca.</div>
+
+<h2 class="cap" id="presence"><span class="capnum">12</span> Paga con presencia, no con anuncios</h2>
 <p class="h2sub">No puedes ganarle a los grandes en Google con dinero. Sí puedes ser el único [oficio] con su nombre en 30 uniformes de niños y en el boletín de la iglesia 52 semanas al año. Advertencia honesta: esto compra CONFIANZA, no clientes de este mes. Júzgalo por temporadas. La mayoría renuncia al día 60, justo antes de que arranque.</p>
 
 <ul>
@@ -486,21 +529,14 @@
 </ul>
 <p>Regla de medición: cada canal con su frase gancho ("mencione el boletín", "papá de los Tigres"), y el que conteste pregunta "¿cómo supo de nosotros?". Revisa una vez al AÑO: mata el peor, duplica el mejor.</p>
 
-<h2 class="cap" id="paid"><span class="capnum">10</span> Cuando quieras pagar por clientes</h2>
-<p class="h2sub">Un día la máquina gratis se llena y quizás quieras comprar crecimiento. Dos párrafos honestos para que nadie te robe.</p>
-
-<p><b>La opción buena: los anuncios de Google que cobran por cliente potencial</b> (Local Services Ads). Pagas por una llamada real de un dueño de casa real, no por un clic: como <em>$39 por lead en electricidad, $51 en clima, $57 en plomería.</em> En un estudio de 888 contratistas, el 44% de esos leads agenda: sale como <em>$233 por cliente que paga</em>, con ticket promedio de $1,826. Ojo: Google pide licencia estatal, seguro de $1 millón y verificación de antecedentes, y está mudando este producto a su consola grande ahora mismo. Antes de meterte, pregúntanos: configurar bien el perfil es lo que decide qué leads te cobran.</p>
-
-<div class="warn"><b>La opción mala: comprar leads de marketplaces</b> (Thumbtack, Angi, HomeAdvisor). El mismo lead se vende a varios a la vez: pagas por entrar a una carrera. Contratistas este mes: "cobran precios bien altos por leads menos que mediocres". Sobre reembolsos: "Tienes más chance de que te devuelva el dinero un adicto en Reno". Puente corto en un mes muerto, sí. Base del negocio, nunca.</div>
-
-<h2 class="cap" id="referral"><span class="capnum">11</span> Gana $97 al mes por recomendarnos</h2>
+<h2 class="cap" id="referral"><span class="capnum">13</span> Gana $97 al mes por recomendarnos</h2>
 <div class="win">
 <p><b>Conoces a otros dueños de negocio. Eso vale dinero real cada mes.</b> El programa de referidos de Slate paga <em>$97 cada mes por cada cliente activo que refieras.</em> Fijo, sin tope, pagado el día 1, directo a tu banco, mientras el cliente siga.</p>
 <p>Haz la cuenta: refiere 3 negocios y son $291 al mes de regreso. <em>Tu sistema prácticamente se paga solo.</em> Refiere 5 y te sobra dinero cada mes.</p>
-<p>Y el capítulo 8 te acaba de armar la lista perfecta: tus oficios socios. Pídenos tu enlace de referido.</p>
+<p>Y el capítulo 10 te acaba de armar la lista perfecta: tus oficios socios. Pídenos tu enlace de referido.</p>
 </div>
 
-<h2 class="cap" id="rhythm"><span class="capnum">12</span> El ritmo semanal, completo</h2>
+<h2 class="cap" id="rhythm"><span class="capnum">14</span> El ritmo semanal, completo</h2>
 <p class="h2sub">La versión corta está en el Plan de 1 Página de arriba. Esta es la de detalle.</p>
 
 <h3>Cada trabajo terminado (20 minutos)</h3>
@@ -545,6 +581,7 @@
 <li>Valve+Meter, Speed to Lead (466 empresas con comprador secreto) · CFPB (RESPA) · NAR · Código de ética ASHI · Reglas estatales de ajustadores</li>
 <li>Sherwin-Williams STIR (diseñadores) · NetVendor y Lula (cumplimiento de proveedores) · ACHR News (patrocinios) · Tarifarios de ligas infantiles (Derby LL, Drexel Hill LL) · Estudio Schapiro Group (2,000 adultos) · Datos de BNI (autorreportados, y así etiquetados) · Foros Mike Holt</li>
 <li>Costos de letreros y volantes: A.G.E. Graphics, SignsDirect, DTD, PipelineOn, ThinkFlyers · Regla de buzones de USPS</li>
+<li>Whitespark Local Search Ranking Factors 2026 (categoría principal = factor #1) · Jobber 2026 (clientes que regresan 59%, respuesta en 1 hora 55% vs 20%) · BrightLocal 2026 (74% solo lee reseñas de 3 meses; 89% espera respuesta del dueño) · Invoca 2026 (48% de llamadas sin contestar, 70M llamadas) · Política de reseñas de Google (sin incentivos)</li>
 <li>Hilos reales en r/sweatystartup, r/Contractor, r/smallbusiness, r/localseo, r/Thumbtack, ContractorTalk, Mike Holt, LawnSite y X (ago 2026)</li>
 </ul>
 <p style="margin-top:10px">Hecho por Slate Systems, agosto 2026. Los números que no pudimos verificar en su fuente original se quedaron fuera a propósito, incluidos varios famosos.</p>

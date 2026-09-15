@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jugada 2 de 12: Más Trabajos Sin Pagar Publicidad</title>
+<title>Jugada 2 de 14: Más Trabajos Sin Pagar Publicidad</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -99,6 +99,8 @@
   .minitrade b { color:var(--navy); font-size:14.5px; }
   .minitrade .mtf { color:var(--sub); font-size:13px; }
   @media (max-width:600px){ .toc { columns:1; } .h2sub { margin-left:0; } }
+  /* AUDIT-2026-09-15: phone width, the cover cards wrap instead of overflowing */
+  @media (max-width:520px){ .statrow{flex-wrap:wrap} .stat{flex:1 1 100%; min-width:0} .wrap{padding:0 16px} }
 </style>
 
 <style>
@@ -122,35 +124,25 @@
 </style>
 </head>
 <body>
-<div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada 2 de 12</span><a href="../mas-clientes">Leer todo</a></div></div>
-<main><div class="wrap"><p class="oficio">Tu oficio: <select id="oficio"><option value="">[pintura] (cámbialo)</option><option value="pintura">pintura</option><option value="poda de árboles">poda de árboles</option><option value="acarreo">acarreo</option><option value="limpieza de basura">limpieza de basura</option><option value="plomería">plomería</option><option value="techos">techos</option><option value="jardinería">jardinería</option><option value="limpieza">limpieza</option><option value="clima">clima</option><option value="electricidad">electricidad</option><option value="handyman">handyman</option><option value="pisos">pisos</option><option value="concreto">concreto</option><option value="cercas">cercas</option><option value="lavado a presión">lavado a presión</option><option value="control de plagas">control de plagas</option><option value="puertas de garaje">puertas de garaje</option><option value="remodelación">remodelación</option><option value="reparación de electrodomésticos">reparación de electrodomésticos</option><option value="cerrajería">cerrajería</option><option value="mudanzas">mudanzas</option><option value="detallado de autos">detallado de autos</option><option value="grúas">grúas</option><option value="limpieza de ventanas">limpieza de ventanas</option><option value="tablaroca">tablaroca</option><option value="mecánico móvil">mecánico móvil</option><option value="construcción">construcción</option><option value="aislamiento">aislamiento</option></select></p><h2 class="cap" id="warm"><span class="capnum">2</span> Tus primeros 20 trabajos ya están en tu teléfono</h2>
-<p class="h2sub">Así los sacas de tus contactos sin sentirte limosnero.</p>
+<div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada 2 de 14</span><a href="../mas-clientes">Leer todo</a></div></div>
+<main><div class="wrap"><p class="oficio">Tu oficio: <select id="oficio"><option value="">[pintura] (cámbialo)</option><option value="pintura">pintura</option><option value="poda de árboles">poda de árboles</option><option value="acarreo">acarreo</option><option value="limpieza de basura">limpieza de basura</option><option value="plomería">plomería</option><option value="techos">techos</option><option value="jardinería">jardinería</option><option value="limpieza">limpieza</option><option value="clima">clima</option><option value="electricidad">electricidad</option><option value="handyman">handyman</option><option value="pisos">pisos</option><option value="concreto">concreto</option><option value="cercas">cercas</option><option value="lavado a presión">lavado a presión</option><option value="control de plagas">control de plagas</option><option value="puertas de garaje">puertas de garaje</option><option value="remodelación">remodelación</option><option value="reparación de electrodomésticos">reparación de electrodomésticos</option><option value="cerrajería">cerrajería</option><option value="mudanzas">mudanzas</option><option value="detallado de autos">detallado de autos</option><option value="grúas">grúas</option><option value="limpieza de ventanas">limpieza de ventanas</option><option value="tablaroca">tablaroca</option><option value="mecánico móvil">mecánico móvil</option><option value="construcción">construcción</option><option value="aislamiento">aislamiento</option></select></p><h2 class="cap" id="google"><span class="capnum">2</span> Tu perfil de Google: el lugar donde aterrizan todas las jugadas</h2>
+<p class="h2sub">Cada letrero, cada vecino, cada etiqueta en Facebook manda a esa persona a buscarte en Google. Cinco cosas que sí mueven el ranking, y dos que no.</p>
+<div class="bulb"><div class="big">74%</div><div class="txt">de la gente solo lee reseñas de los últimos tres meses. Las reseñas se echan a perder: por eso la petición es cada semana, no una vez.<span class="src">BrightLocal, encuesta de consumidores 2026</span></div></div>
+<h3>1. La categoría principal (1 minuto)</h3>
+<p>Es el factor número uno de todo el ranking local, por encima de qué tan cerca estás del que busca. Busca tu oficio más tu ciudad en Google Maps, mira qué categoría usan los tres que salen arriba, y pon exactamente esa como principal. "Contratista" en vez de "Pintor" te saca del mapa.</p>
+<h3>2. El nombre del negocio, igual que tu LLC (1 minuto)</h3>
+<p>Si el nombre del perfil no coincide con tu papel legal y Google te suspende, la recuperación puede tardar meses o no llegar. Nada de "Pintores Ramírez | Austin | Mejor precio". Solo el nombre.</p>
+<h3>3. Contesta TODAS las reseñas, las buenas y las malas</h3>
+<p>El 89% de la gente espera que el dueño conteste, y el 80% es más propenso a contratar a un negocio que contesta todas. Dos renglones bastan: gracias por el nombre, y qué trabajo fue. A una mala, sin pelear: "Lamento que quedara así. Le llamo hoy para arreglarlo".</p>
+<h3>4. La reseña se pide en persona, antes de subirte al camión</h3>
+<div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">Español, dilo en persona</span><span class="cptext">Me da mucho gusto que haya quedado contento. Le voy a mandar un mensajito de texto con un enlace para dejarnos una reseña en Google. Son treinta segundos y a un negocio como el mío le ayuda muchísimo. Si quiere, lo abrimos aquí mismo y yo le muestro dónde darle.</span></div>
+<p>El momento lo es todo: si no saca el teléfono mientras todavía estás ahí parado, casi nunca pasa después. Tu sistema manda el enlace solo; tu trabajo es avisar de frente.</p>
+<div class="warn"><b>Nunca ofrezcas descuento a cambio de una reseña.</b> Google lo prohíbe. Cuando lo detecta borra todas las reseñas de un jalón y puede marcar el perfil. Se pide, no se compra.</div>
+<h3>5. Servicios, zona y fotos reales</h3>
+<p>Llena la lista de servicios con lo que de verdad haces, marca tu zona de trabajo, y sube fotos de trabajos tuyos, no de catálogo. Las fotos no suben el ranking (eso es cuento de agencias), pero son lo primero que ve el dueño de casa antes de decidir a quién llamar.</p>
+<div class="slateline"><div class="dot">S</div><div><b>Tu sistema de Slate</b> vigila la posición de tu perfil en el mapa cada semana y te avisa cuando algo cambia. Los puntos 1 y 2 los cambias tú en un minuto; si no sabes dónde, mándanos un texto y lo hacemos contigo en la llamada.</div></div>
 
-<p>Una idea lo cambia todo: <em>no estás pidiendo favores. Estás anunciando a qué te dedicas ahora.</em> Cuando el primo de alguien necesite [pintura], tú le hiciste el favor por ser fácil de encontrar.</p>
-
-<h3>La lista de 100 nombres (de toda la familia)</h3>
-<p>Una noche, teléfono en mano. Abre contactos, WhatsApp, amigos de Facebook. Escribe cada nombre en papel, en cuatro columnas: familia, excompañeros y exjefes, gente de la iglesia y la escuela, y todos los demás (tu barbero, tu mecánico, el del mostrador de refacciones).</p>
-<p>Y no pares en TU teléfono: <em>la red de tu esposa cuenta doble</em> (sus comadres, su trabajo, su familia, su grupo de la escuela). Si tienes hijos grandes, sus amigos y los papás de sus amigos también tienen casa. La lista es de la familia, no solo tuya. No saltes a nadie porque "ella no necesita una cerca". Ella conoce a nueve personas que sí. La mayoría cree que conoce a 15 personas. En papel salen 120 a 300.</p>
-
-<h3>El texto de anuncio</h3>
-<p>Mándalo a 10 nombres por día, uno por uno. Nunca en grupo. Es un anuncio, así que nadie puede decirle que no:</p>
-<div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">Español</span><span class="cptext">Hola [Nombre], soy [tu nombre]. Por fin abrí mi propio negocio de [pintura] aquí en [ciudad]. Si algún día necesitas [pintura], o escuchas de alguien que lo necesite, me encantaría la oportunidad. De cualquier forma, ¡qué gusto saludarte!</span></div>
-<div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">English</span><span class="cptext">Hey [Name], it's [your name]. I finally started my own [painting] business here in [town]. If you ever need [painting], or hear of somebody who does, I'd love the shot. Either way, good to hear from you.</span></div>
-<p>Y ahí le paras. Sin lista de precios. Sin párrafo de tu experiencia. De 100 envíos, espera 30 a 50 respuestas y 2 a 5 trabajos el primer mes. El premio grande llega después: 100 personas ya saben qué contestar cuando alguien pregunte "¿conoces a alguien?".</p>
-
-<h3>La pregunta de UN nombre</h3>
-<p>Al final de cada buen trabajo, cuando el cliente diga que quedó bien, pide UN nombre, no "alguien":</p>
-<div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">Español, dilo en persona</span><span class="cptext">Me da mucho gusto que le haya encantado. ¿Quién es una persona que usted conozca que pueda necesitar este mismo trabajo?</span></div>
-<p>La palabra "quién" pone al cerebro a buscar. "¿Conoce a alguien?" recibe un no educado. Como 1 de cada 3 clientes contentos da un nombre real ahí mismo. Entrégale tres tarjetas: "quédese una y regale dos". Un cliente referido vale al menos <em>16% más</em> y dura más como cliente (estudio Wharton con 10,000 clientes).</p>
-
-<h3>Dale las gracias al que te mandó gente, en voz alta</h3>
-<p>El mismo día que se agende un trabajo referido, textea al que lo mandó: "Oye [Nombre], me llamó [persona] gracias a ti. Mil gracias, en serio". Cuando el trabajo se pague, algo concreto: tarjeta de regalo de $25 o $25 de descuento en su próximo servicio, y dile para qué es. El que recibe las gracias vuelve a mandar. El que no, nunca supo que funcionó.</p>
-
-<h3>La llamada al exjefe</h3>
-<p>Cualquiera con quien trabajaste antes ya sabe que trabajas bien, que es lo más difícil de demostrar. Llama, no textees: "Me independicé. Si algún día tienes trabajo de sobra, algo muy chico, o algo fuera de tu zona, yo lo atiendo bien y nunca te brinco al cliente". Di esa última parte en voz alta: su miedo es que le robes clientes. Este suele ser el primer trabajo pagado de un negocio nuevo.</p>
-
-
-<p style="margin-top:22px"><a href="#" class="jbtn" data-done="warm">Marcar como hecha</a></p></div></main>
+<p style="margin-top:22px"><a href="#" class="jbtn" data-done="google">Marcar como hecha</a></p></div></main>
 <div class="jnav"><div class="wrap"><a class="jbtn" href="1.html">← Anterior</a><a class="jbtn primary" href="3.html">Siguiente jugada →</a></div></div>
 <script>
 function cp(btn){
