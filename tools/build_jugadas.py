@@ -86,7 +86,9 @@ JS = """
   ['negocio','tel','web'].forEach(function(k){ var v=q.get(k); if(v){ try{localStorage.setItem(k,v);}catch(e){} } });
   function get(k){ try{return localStorage.getItem(k)||'';}catch(e){return '';} }
   var PO=window.POR_OFICIO||{}, key='';
-  if(of){ Object.keys(PO).forEach(function(k){ if(!key && k!=='default' && (of.indexOf(k)>=0 || k.indexOf(of)>=0)) key=k; }); }
+  function norm(v){ return String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim(); }
+  var ofn=norm(of);
+  if(ofn){ Object.keys(PO).forEach(function(k){ var kn=norm(k); if(!key && k!=='default' && (ofn.indexOf(kn)>=0 || kn.indexOf(ofn)>=0)) key=k; }); }
   var conf = key ? PO[key] : null;
   // fill the blanks that we know
   var fills={'[tu oficio]': key||'', '[Negocio]': get('negocio'), '[tu teléfono]': get('tel'), '[tu página]': get('web')};
