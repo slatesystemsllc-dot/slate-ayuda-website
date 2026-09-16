@@ -9,15 +9,15 @@ body{font-family:Inter,-apple-system,sans-serif;color:var(--ink);margin:0;backgr
 .hint{max-width:760px;margin:14px auto;padding:0 16px;font-size:15px;color:#5b6472}
 .sheet{margin:14px auto;max-width:420px;padding:0}
 /* door hanger 4.25 x 11 in: hole, navy head, photo, one line, orange phone */
-.dh{aspect-ratio:4.25/11;width:100%;background:#fff;display:grid;grid-template-rows:14% 14% 30% 24% 18%;box-shadow:0 6px 24px rgba(0,0,0,.14);overflow:hidden}
+.dh{aspect-ratio:4.25/11;width:100%;background:#fff;display:grid;grid-template-rows:16% 18% 40% 26%;box-shadow:0 6px 24px rgba(0,0,0,.14);overflow:hidden}
 .dh-hole{display:flex;align-items:center;justify-content:center}
 .dh-hole div{width:34%;aspect-ratio:1;border-radius:50%;border:2px dashed #cfd6e0}
 .dh-top{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 8%}
 .dh-top .n{font-size:clamp(16px,5vw,26px);font-weight:900;text-transform:uppercase;line-height:1.05}
 .dh-foto{margin:4% 7%;border:2px dashed #cfd6e0;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#9aa3b2;font-size:14px;text-align:center;padding:6px}
 .dh-msg{padding:0 8%;display:flex;flex-direction:column;justify-content:center;text-align:center}
-.dh-msg .l{font-size:clamp(13px,3.6vw,17px);line-height:1.35}
-.dh-msg .b{font-size:clamp(15px,4.2vw,20px);font-weight:900;color:var(--navy);margin-top:4%}
+.dh-msg .l{font-size:clamp(15px,4.4vw,21px);line-height:1.3}
+.dh-msg .b{font-size:clamp(17px,5vw,25px);font-weight:900;color:var(--navy);margin-top:5%}
 .dh-bot{background:var(--orange);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 6%}
 .dh-bot .t{font-size:clamp(22px,7.2vw,36px);font-weight:900;line-height:1}
 .dh-bot .w{font-size:clamp(10px,2.6vw,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.95;margin-top:4%;word-break:break-all}
@@ -30,13 +30,24 @@ body{font-family:Inter,-apple-system,sans-serif;color:var(--ink);margin:0;backgr
 <div class="sheet"><div class="dh">
 <div class="dh-hole"><div></div></div>
 <div class="dh-top"><div class="n"><span data-k="negocio" class="fill">Nombre del negocio</span></div></div>
-<div class="dh-foto">Foto del trabajo terminado<br>(la imprenta la pega aquí)</div>
-<div class="dh-msg"><div class="l">Acabamos de terminar un trabajo en esta calle, en la casa <span class="fill">[color]</span>.</div><div class="b">Revisión gratis del suyo esta semana.</div></div>
-<div class="dh-bot"><div class="t"><span data-k="tel" class="fill">(000) 000-0000</span></div><div class="w"><span data-k="oficio" class="fill">tu oficio</span> · Licensed &amp; Insured<br><span data-k="web" class="fill">tupagina.com</span></div></div>
+<div class="dh-msg"><div class="l">Acabamos de terminar un trabajo aquí en su calle.</div><div class="b">Revisión gratis del suyo esta semana.</div></div>
+<div class="dh-bot"><div class="t"><span data-k="tel" class="fill">(000) 000-0000</span></div><div class="w"><span data-k="oficio" class="fill">tu oficio</span><br><span data-k="web" class="fill">tupagina.com</span></div></div>
 </div></div>
 <script>
-(function(){var q=new URLSearchParams(location.search);['oficio','negocio','tel','web'].forEach(function(k){var v=q.get(k);if(v){try{localStorage.setItem(k,v)}catch(e){}}});
+(function(){
+// the client's data arrives on the link from his links page (GHL fills the custom values). '#' in a hex color starts the URL
+// fragment, so colors are read from search + hash together.
+var raw=(location.search||'')+(location.hash||'');
+function grab(k){var m=raw.match(new RegExp('[?&#]'+k+'=([^&#]*)'));return m?decodeURIComponent(m[1].replace(/\+/g,' ')):'';}
+var q={get:function(k){return grab(k);}};
+['oficio','negocio','tel','web'].forEach(function(k){var v=q.get(k);if(v){try{localStorage.setItem(k,v)}catch(e){}}});
+var hx=raw.match(/c1=%23?#?([0-9a-fA-F]{6})/); if(hx){try{localStorage.setItem('c1','#'+hx[1])}catch(e){}}
+var hy=raw.match(/c2=%23?#?([0-9a-fA-F]{6})/); if(hy){try{localStorage.setItem('c2','#'+hy[1])}catch(e){}}
 function g(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}
+function lum(h){var r=parseInt(h.substr(1,2),16),g2=parseInt(h.substr(3,2),16),b=parseInt(h.substr(5,2),16);return (0.299*r+0.587*g2+0.114*b)/255;}
+var c1=g('c1'),c2=g('c2');
+if(/^#[0-9a-fA-F]{6}$/.test(c1)&&lum(c1)<0.6){document.documentElement.style.setProperty('--navy',c1);}
+if(/^#[0-9a-fA-F]{6}$/.test(c2)&&lum(c2)<0.75&&c2.toLowerCase()!==c1.toLowerCase()){document.documentElement.style.setProperty('--orange',c2);}
 var m={negocio:g('negocio'),tel:g('tel'),web:g('web'),oficio:g('oficio')};
 document.querySelectorAll('[data-k]').forEach(function(el){var v=m[el.getAttribute('data-k')];if(v){el.textContent=v;el.classList.remove('fill');}});if(!m.negocio&&!m.tel){var h=document.getElementById('sin-datos');if(h)h.hidden=false;}})();
 </script></body></html>
