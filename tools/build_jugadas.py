@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SUPERSEDED 2026-09-15 by build_jugadas_v2.py (plays.json). Do NOT run: it overwrites jugadas/ with the long v1 pages.
+# LIVE builder again (2026-09-15 rollback). build_jugadas_v2.py + plays.json are a DRAFT, not live: Dan rejected the short version.
 # -*- coding: utf-8 -*-
 """build_jugadas.py: splits mas-clientes.html (the long leads guide) into a play-by-play site under jugadas/.
 Dan 2026-09-15: "too long, they won't read it... a website with an initial catching page, then links to sections,
