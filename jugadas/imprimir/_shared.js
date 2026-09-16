@@ -22,3 +22,10 @@ document.querySelectorAll('[data-logo]').forEach(function(box){var name=box.quer
   if(/^https?:\/\//i.test(logo)){var im=new Image();im.alt=m.negocio||'';im.onload=function(){box.classList.add('has-logo');box.insertBefore(im,box.firstChild);};im.src=logo;}});
 if(!m.negocio&&!m.tel){var h=document.getElementById('sin-datos');if(h)h.hidden=false;}
 })();
+
+// Screen sizing without cqw: some browsers showed the hanger text 3x too big (Dan, 2026-09-16). Size from the measured
+// width on screen; on paper the cqw rule takes over (inline style cleared before print, restored after).
+(function(){function fit(){document.querySelectorAll('[data-fit]').forEach(function(el){el.style.fontSize=(el.clientWidth*parseFloat(el.getAttribute('data-fit')))+'px';});}
+function clear(){document.querySelectorAll('[data-fit]').forEach(function(el){el.style.fontSize='';});}
+fit();window.addEventListener('resize',fit);window.addEventListener('beforeprint',clear);window.addEventListener('afterprint',fit);
+if(window.matchMedia){var mq=window.matchMedia('print');mq.addEventListener?mq.addEventListener('change',function(e){e.matches?clear():fit();}):mq.addListener(function(e){e.matches?clear():fit();});}})();
