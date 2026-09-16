@@ -193,7 +193,7 @@ for k, (cid, title, seg) in enumerate(chapters, 1):
 items = "".join('<li><a href="%d.html"><span class="n">%d</span>%s</a></li>' % (k, k, html.escape(t)) for k, (cid, t, _) in enumerate(chapters, 1))
 index = (head.replace("</head>", EXTRA_CSS + "</head>")
          + cover
-         + '<main><div class="wrap"><div class="ruta" id="ruta" hidden></div>'
+         + '<main><div class="wrap"><div class="ruta" id="ruta" hidden></div>' + (re.search(r'<div class="win" id="esta-semana">.*?</div>', onepager, re.S).group(0) if 'id="esta-semana"' in onepager else '')
          + '<h2 class="cap" id="jugadas"><span class="capnum">→</span> %s</h2><p>%s</p><ul class="jlist">%s</ul>' % (CFG["list_h"], CFG["list_p"], items)
          + '<p><a class="jbtn" href="14.html#semana1">%s</a></p>' % CFG["week"]
          + '<p><a class="jbtn primary" href="1.html">%s</a></p><p style="margin-top:10px"><a class="jbtn" href="%s">%s</a></p>' % (CFG["start"], CFG["long"], CFG["readlong"])
