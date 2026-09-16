@@ -51,8 +51,8 @@ function cp(b){var t=b.parentElement.querySelector('.tx').innerText;(navigator.c
   var raw=(location.search||'')+(location.hash||'');
   function grab(k){var m=raw.match(new RegExp('[?&#]'+k+'=([^&#]*)'));return m?decodeURIComponent(m[1].replace(/\\+/g,' ')):'';}
   ['oficio','negocio','tel','web'].forEach(function(k){var v=grab(k);if(v){try{localStorage.setItem(k,v)}catch(e){}}});
-  var hx=raw.match(/c1=%23?#?([0-9a-fA-F]{6})/);if(hx){try{localStorage.setItem('c1','#'+hx[1])}catch(e){}}
-  var hy=raw.match(/c2=%23?#?([0-9a-fA-F]{6})/);if(hy){try{localStorage.setItem('c2','#'+hy[1])}catch(e){}}
+  var hx=raw.match(/c1=(?:%23|#)?([0-9a-fA-F]{6})/);if(hx){try{localStorage.setItem('c1','#'+hx[1])}catch(e){}}
+  var hy=raw.match(/c2=(?:%23|#)?([0-9a-fA-F]{6})/);if(hy){try{localStorage.setItem('c2','#'+hy[1])}catch(e){}}
   function g(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}
   function norm(v){return String(v||'').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();}
   var of=norm(g('oficio')), PO=window.POR_OFICIO||{}, key='';

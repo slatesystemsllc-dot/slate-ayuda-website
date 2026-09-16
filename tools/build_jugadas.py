@@ -81,10 +81,16 @@ JS = """
 <script>
 (function(){
   // PERSONAL-2026-09-15: the link brings the trade (?oficio=pintura). Nothing to click. No trade = the general guide.
-  var q=new URLSearchParams(location.search);
-  var of=(q.get('oficio')||'').trim().toLowerCase();
+  // 2026-09-16: GHL writes the colors as '#0549AE', and '#' starts the URL fragment, so everything after c1= lands in
+  // location.hash (c2, logo, ciudad included). Read search + hash as one string; URLSearchParams alone lost them (Jorge's
+  // sign printed with Slate colors and no logo).
+  var raw=(location.search||'')+(location.hash||'');
+  function grab(k){ var m=raw.match(new RegExp('[?&#]'+k+'=([^&#]*)')); return m?decodeURIComponent(m[1].split('+').join(' ')):''; }
+  var of=grab('oficio').trim().toLowerCase();
   if(of){ try{localStorage.setItem('oficio',of);}catch(e){} } else { try{of=localStorage.getItem('oficio')||'';}catch(e){} }
-  ['negocio','tel','web'].forEach(function(k){ var v=q.get(k); if(v){ try{localStorage.setItem(k,v);}catch(e){} } });
+  ['negocio','tel','web','logo','ciudad'].forEach(function(k){ var v=grab(k); if(v){ try{localStorage.setItem(k,v);}catch(e){} } });
+  var hx=raw.match(/c1=(?:%23|#)?([0-9a-fA-F]{6})/); if(hx){ try{localStorage.setItem('c1','#'+hx[1]);}catch(e){} }
+  var hy=raw.match(/c2=(?:%23|#)?([0-9a-fA-F]{6})/); if(hy){ try{localStorage.setItem('c2','#'+hy[1]);}catch(e){} }
   function get(k){ try{return localStorage.getItem(k)||'';}catch(e){return '';} }
   var PO=window.POR_OFICIO||{}, key='';
   function norm(v){ return String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim(); }
@@ -125,7 +131,7 @@ def page(n, cid, title, seg):
     next_lbl = "Siguiente jugada →" if n < N else "Volver al inicio"
     return (head.replace("<title>", "<title>Jugada %d de %d: " % (n, N)).replace("</head>", EXTRA_CSS + "</head>")
             + '\n<div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada %d de %d</span><a href="../mas-clientes">Leer todo</a></div></div>\n' % (n, N)
-            + '<main><div class="wrap">' + '<p class="oficio-note" id="oficio-note" hidden></p>' + seg + PRINTS.get(cid, "")
+            + '<main><div class="wrap">' + '<p class="oficio-note" id="oficio-note" hidden></p>' + seg + PRINTS.get(cid, "") + (('<hr style="border:0;border-top:2px solid var(--line);margin:28px 0">' + onepager) if cid == "rhythm" else "")
             + '</div></main>\n<div class="jnav"><div class="wrap"><a class="jbtn" href="%s">← Anterior</a><a class="jbtn primary" href="%s">%s</a></div></div>\n' % (prev_href, next_href, next_lbl)
             + script + PO_JS + JS + "</body></html>\n")
 
@@ -138,8 +144,9 @@ for k, (cid, title, seg) in enumerate(chapters, 1):
 items = "".join('<li><a href="%d.html"><span class="n">%d</span>%s</a></li>' % (k, k, html.escape(t)) for k, (cid, t, _) in enumerate(chapters, 1))
 index = (head.replace("</head>", EXTRA_CSS + "</head>")
          + cover
-         + '<main><div class="wrap">' + onepager.replace('<div class="semana1"', '<div class="ruta" id="ruta" hidden></div>\n<div class="semana1"', 1)
+         + '<main><div class="wrap"><div class="ruta" id="ruta" hidden></div>'
          + '<h2 class="cap" id="jugadas"><span class="capnum">→</span> Las jugadas, una por página</h2><p>Toca una. Cada página es una jugada completa con su guion para copiar. Al final, «Siguiente jugada».</p><ul class="jlist">%s</ul>' % (items)
+         + '<p><a class="jbtn" href="14.html#semana1">¿Acabas de empezar? Tu primera semana, día por día →</a></p>'
          + '<p><a class="jbtn primary" href="1.html">Empezar por la jugada 1 →</a></p><p style="margin-top:10px"><a class="jbtn" href="../mas-clientes">Leer la guía completa en una sola página</a></p>'
          + '<details class="jsrc"><summary>Fuentes</summary>' + fuentes + '</details>'
          + '</div></main>' + script + PO_JS + JS + "</body></html>\n")

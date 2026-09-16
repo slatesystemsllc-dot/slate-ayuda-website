@@ -177,6 +177,7 @@
 
 <h3>Pide que te ETIQUETEN, no que te alaben</h3>
 <div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">Texto después de cada trabajo</span><span class="cptext">Si algún día ve a alguien en el grupo de [ciudad] pidiendo un [oficio], ¿me haría el favor de etiquetarnos? Así conseguimos casi todo nuestro trabajo.</span></div>
+<div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">English, text after each job</span><span class="cptext">If you ever see somebody in the [town] group asking for a [painter], would you mind tagging us? That's how we get almost all of our work.</span></div>
 <p>Un vecino etiquetándote vale por diez comentarios tuyos. Hoy solo <em>el 42% confía en las reseñas de internet tanto como en una recomendación personal</em> (bajó del 79% en 2020). Una etiqueta ES una recomendación personal.</p>
 
 <h3>La publicación que siempre funciona: antes y después</h3>
@@ -207,10 +208,16 @@ function ok(btn){
 <script>
 (function(){
   // PERSONAL-2026-09-15: the link brings the trade (?oficio=pintura). Nothing to click. No trade = the general guide.
-  var q=new URLSearchParams(location.search);
-  var of=(q.get('oficio')||'').trim().toLowerCase();
+  // 2026-09-16: GHL writes the colors as '#0549AE', and '#' starts the URL fragment, so everything after c1= lands in
+  // location.hash (c2, logo, ciudad included). Read search + hash as one string; URLSearchParams alone lost them (Jorge's
+  // sign printed with Slate colors and no logo).
+  var raw=(location.search||'')+(location.hash||'');
+  function grab(k){ var m=raw.match(new RegExp('[?&#]'+k+'=([^&#]*)')); return m?decodeURIComponent(m[1].split('+').join(' ')):''; }
+  var of=grab('oficio').trim().toLowerCase();
   if(of){ try{localStorage.setItem('oficio',of);}catch(e){} } else { try{of=localStorage.getItem('oficio')||'';}catch(e){} }
-  ['negocio','tel','web'].forEach(function(k){ var v=q.get(k); if(v){ try{localStorage.setItem(k,v);}catch(e){} } });
+  ['negocio','tel','web','logo','ciudad'].forEach(function(k){ var v=grab(k); if(v){ try{localStorage.setItem(k,v);}catch(e){} } });
+  var hx=raw.match(/c1=(?:%23|#)?([0-9a-fA-F]{6})/); if(hx){ try{localStorage.setItem('c1','#'+hx[1]);}catch(e){} }
+  var hy=raw.match(/c2=(?:%23|#)?([0-9a-fA-F]{6})/); if(hy){ try{localStorage.setItem('c2','#'+hy[1]);}catch(e){} }
   function get(k){ try{return localStorage.getItem(k)||'';}catch(e){return '';} }
   var PO=window.POR_OFICIO||{}, key='';
   function norm(v){ return String(v||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim(); }

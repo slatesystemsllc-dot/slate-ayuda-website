@@ -338,10 +338,16 @@ function ok(btn){
 <script>
 (function(){
   // PERSONAL-2026-09-15: the link brings the trade (?oficio=pintura). Nothing to click. No trade = the general guide.
-  var q=new URLSearchParams(location.search);
-  var of=(q.get('oficio')||'').trim().toLowerCase();
+  // 2026-09-16: GHL writes the colors as '#0549AE', and '#' starts the URL fragment, so everything after c1= lands in
+  // location.hash (c2, logo, ciudad included). Read search + hash as one string; URLSearchParams alone lost them (Jorge's
+  // sign printed with Slate colors and no logo).
+  var raw=(location.search||'')+(location.hash||'');
+  function grab(k){ var m=raw.match(new RegExp('[?&#]'+k+'=([^&#]*)')); return m?decodeURIComponent(m[1].split('+').join(' ')):''; }
+  var of=grab('oficio').trim().toLowerCase();
   if(of){ try{localStorage.setItem('oficio',of);}catch(e){} } else { try{of=localStorage.getItem('oficio')||'';}catch(e){} }
-  ['negocio','tel','web'].forEach(function(k){ var v=q.get(k); if(v){ try{localStorage.setItem(k,v);}catch(e){} } });
+  ['negocio','tel','web','logo','ciudad'].forEach(function(k){ var v=grab(k); if(v){ try{localStorage.setItem(k,v);}catch(e){} } });
+  var hx=raw.match(/c1=(?:%23|#)?([0-9a-fA-F]{6})/); if(hx){ try{localStorage.setItem('c1','#'+hx[1]);}catch(e){} }
+  var hy=raw.match(/c2=(?:%23|#)?([0-9a-fA-F]{6})/); if(hy){ try{localStorage.setItem('c2','#'+hy[1]);}catch(e){} }
   function get(k){ try{return localStorage.getItem(k)||'';}catch(e){return '';} }
   var PO=window.POR_OFICIO||{}, key='';
   function norm(v){ return String(v||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim(); }

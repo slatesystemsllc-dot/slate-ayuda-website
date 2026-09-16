@@ -164,6 +164,7 @@
 <div class="bulb"><div class="big">74%</div><div class="txt">de la gente solo lee reseñas de los últimos tres meses. Las reseñas se echan a perder: por eso la petición es en cada trabajo, no una vez.<span class="src">BrightLocal, encuesta de consumidores 2026</span></div></div>
 <h3>1. La reseña se pide en persona, antes de subirte al camión</h3>
 <div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">Español, dilo en persona</span><span class="cptext">Me da mucho gusto que haya quedado contento. Le voy a mandar un mensajito de texto con un enlace para dejarnos una reseña en Google. Son treinta segundos y a un negocio como el mío le ayuda muchísimo. Si quiere, lo abrimos aquí mismo y yo le muestro dónde darle.</span></div>
+<div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">English, say it in person</span><span class="cptext">I'm really glad you're happy with it. I'm going to send you a quick text with a link to leave us a Google review. It takes thirty seconds and it helps a small business like mine a lot. If you want, we can open it right here and I'll show you where to tap.</span></div>
 <p>El momento lo es todo: si no saca el teléfono mientras todavía estás ahí parado, casi nunca pasa después. Tu sistema manda el enlace solo; tu trabajo es avisar de frente.</p>
 <div class="warn"><b>Nunca ofrezcas descuento a cambio de una reseña.</b> Google lo prohíbe. Cuando lo detecta borra todas las reseñas de un jalón y puede marcar el perfil. Se pide, no se compra.</div>
 <h3>2. Todas las reseñas se contestan, y lo hace tu sistema</h3>
@@ -192,10 +193,16 @@ function ok(btn){
 <script>
 (function(){
   // PERSONAL-2026-09-15: the link brings the trade (?oficio=pintura). Nothing to click. No trade = the general guide.
-  var q=new URLSearchParams(location.search);
-  var of=(q.get('oficio')||'').trim().toLowerCase();
+  // 2026-09-16: GHL writes the colors as '#0549AE', and '#' starts the URL fragment, so everything after c1= lands in
+  // location.hash (c2, logo, ciudad included). Read search + hash as one string; URLSearchParams alone lost them (Jorge's
+  // sign printed with Slate colors and no logo).
+  var raw=(location.search||'')+(location.hash||'');
+  function grab(k){ var m=raw.match(new RegExp('[?&#]'+k+'=([^&#]*)')); return m?decodeURIComponent(m[1].split('+').join(' ')):''; }
+  var of=grab('oficio').trim().toLowerCase();
   if(of){ try{localStorage.setItem('oficio',of);}catch(e){} } else { try{of=localStorage.getItem('oficio')||'';}catch(e){} }
-  ['negocio','tel','web'].forEach(function(k){ var v=q.get(k); if(v){ try{localStorage.setItem(k,v);}catch(e){} } });
+  ['negocio','tel','web','logo','ciudad'].forEach(function(k){ var v=grab(k); if(v){ try{localStorage.setItem(k,v);}catch(e){} } });
+  var hx=raw.match(/c1=(?:%23|#)?([0-9a-fA-F]{6})/); if(hx){ try{localStorage.setItem('c1','#'+hx[1]);}catch(e){} }
+  var hy=raw.match(/c2=(?:%23|#)?([0-9a-fA-F]{6})/); if(hy){ try{localStorage.setItem('c2','#'+hy[1]);}catch(e){} }
   function get(k){ try{return localStorage.getItem(k)||'';}catch(e){return '';} }
   var PO=window.POR_OFICIO||{}, key='';
   function norm(v){ return String(v||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim(); }

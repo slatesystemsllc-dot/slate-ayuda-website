@@ -9,28 +9,28 @@ body{font-family:Inter,-apple-system,sans-serif;color:var(--ink);margin:0;backgr
 .hint{max-width:820px;margin:14px auto;padding:0 16px;font-size:15px;color:#5b6472}
 .sheet{margin:14px auto;max-width:820px}
 /* 24 x 18 in yard sign. Read from a moving car: one word, one number. */
-.sign{aspect-ratio:4/3;width:100%;background:#fff;border:3px solid var(--navy);position:relative;overflow:hidden;display:grid;grid-template-rows:27% 43% 30%;box-shadow:0 6px 24px rgba(0,0,0,.14)}
+.sign{container-type:inline-size;aspect-ratio:4/3;width:100%;background:#fff;border:3px solid var(--navy);position:relative;overflow:hidden;display:grid;grid-template-rows:27% 43% 30%;box-shadow:0 6px 24px rgba(0,0,0,.14)}
 .sg-top{display:flex;align-items:center;justify-content:center;padding:2% 6%;background:#fff}
-.sg-top .n{font-size:clamp(20px,4.4vw,46px);font-weight:900;text-transform:uppercase;text-align:center;line-height:1.05;color:var(--navy)}
+ .sg-top .n{font-size:5.2cqw;font-weight:900;text-transform:uppercase;text-align:center;line-height:1.05;color:var(--navy)}
 .sg-top img{height:88%;width:auto;max-width:80%;object-fit:contain;margin-top:-3%}
 .sg-top.has-logo .n{display:none}
 .sg-mid{background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 5%;position:relative}
-.sg-mid:before{content:"";position:absolute;left:0;right:0;top:-2.2vw;height:2.4vw;background:var(--navy);clip-path:polygon(0 100%,100% 0,100% 100%)}
-.sg-mid .s{font-size:clamp(34px,8.4vw,94px);font-weight:900;text-transform:uppercase;line-height:1;letter-spacing:-.01em}
-.sg-mid .g{margin-top:2%;display:inline-block;background:var(--orange);color:#fff;font-size:clamp(12px,2.3vw,25px);font-weight:900;text-transform:uppercase;letter-spacing:.12em;padding:.5% 3%;border-radius:999px}
+.sg-mid:before{content:"";position:absolute;left:0;right:0;top:-2.8cqw;height:3cqw;background:var(--navy);clip-path:polygon(0 100%,100% 0,100% 100%)}
+.sg-mid .s{font-size:11cqw;font-weight:900;text-transform:uppercase;line-height:1;letter-spacing:-.01em}
+.sg-mid .g{margin-top:2%;display:inline-block;background:var(--orange);color:#fff;font-size:3cqw;font-weight:900;text-transform:uppercase;letter-spacing:.12em;padding:.5% 3%;border-radius:999px}
 .sg-bot{background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;border-top:.6vw solid var(--orange)}
-.sg-bot .t{font-size:clamp(30px,8.2vw,90px);font-weight:900;line-height:1;color:var(--navy);letter-spacing:-.01em}
-.sg-bot .li{font-size:clamp(11px,2vw,22px);font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-top:1%}
+.sg-bot .t{font-size:10.5cqw;font-weight:900;line-height:1;color:var(--navy);letter-spacing:-.01em}
+.sg-bot .li{font-size:2.6cqw;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-top:1%}
 .sg-bot .li .sep{margin:0 .6em;opacity:.5}
 .fill{opacity:.45}
 @media print{.bar,.hint{display:none}.sheet{margin:0;max-width:none}.sign{box-shadow:none;border:0}@page{size:24in 18in;margin:0}}
 </style></head><body>
 <div class="bar"><a href="../4.html">← Volver a la jugada</a><button onclick="window.print()">Imprimir o guardar PDF</button></div>
-<div class="hint">Guárdalo en PDF y mándalo a la imprenta: letrero de 24 x 18 pulgadas (coroplast) con estaca de alambre, de 2 a 4 dólares cada uno. Pide 20. Si algo sale en gris claro, es un espacio que la imprenta te rellena.</div>
+<div class="hint">El letrero va en inglés: lo lee el vecino, no tú. Guárdalo en PDF y mándalo a la imprenta: letrero de 24 x 18 pulgadas (coroplast) con estaca de alambre, de 2 a 4 dólares cada uno. Pide 20. Si algo sale en gris claro, es un espacio que la imprenta te rellena.</div>
 <div class="hint" id="sin-datos" hidden style="background:#fff3e6;border-left:5px solid #ee7000;padding:12px 16px;border-radius:8px;color:#1a1f2b"><b>Esta hoja salió sin tus datos.</b> Ábrela desde el botón naranja de tu página de enlaces y sale con tu logo, tu nombre y tu teléfono.</div>
 <div class="sheet"><div class="sign">
-<div class="sg-top" data-logo><div class="n"><span data-k="negocio" class="fill">Nombre del negocio</span></div></div>
-<div class="sg-mid"><div class="s"><span data-k="oficio" class="fill">Tu oficio</span></div><div class="g">Presupuesto gratis</div></div>
-<div class="sg-bot"><div class="t"><span data-k="tel" class="fill">(000) 000-0000</span></div><div class="li"><span data-k="web" class="fill">tupagina.com</span><span class="sep" data-k="" >·</span><span data-k="ciudad" data-hide class="fill">Tu ciudad</span></div></div>
+<div class="sg-top" data-logo><div class="n"><span data-k="negocio" class="fill">Business name</span></div></div>
+<div class="sg-mid"><div class="s"><span data-k="oficio" class="fill">Your trade</span></div><div class="g">Free estimates</div></div>
+<div class="sg-bot"><div class="t"><span data-k="tel" class="fill">(000) 000-0000</span></div><div class="li"><span data-k="web" class="fill">yoursite.com</span><span class="sep" data-k="ciudad" data-hide data-prefix="· " class="fill">· Your city</span></div></div>
 </div></div>
 <script src="_shared.js"></script></body></html>

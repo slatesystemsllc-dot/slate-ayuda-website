@@ -168,6 +168,7 @@
 <h3>El recordatorio de temporada, con tu oficio</h3>
 <p>Cada oficio tiene una fecha en la que la casa vuelve a necesitarte: canaletas y techos antes de las lluvias, el clima antes del calor, la pintura exterior antes del frío, el jardín en primavera. Un texto a tus clientes de hace un año, el mes antes:</p>
 <div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">Español</span><span class="cptext">Hola [Nombre], soy [tu nombre], el de [tu oficio]. Le hice [el trabajo] el año pasado. Se acerca [la temporada] y ando por su zona la semana que viene. Si quiere que le dé una revisada sin costo, dígame qué día le queda.</span></div>
+<div class="script"><button class="copybtn" onclick="cp(this)">Copiar</button><span class="lang">English</span><span class="cptext">Hi [Name], it's [your name], the [painter]. I did [the job] for you last year. [Season] is coming and I'll be in your area next week. If you'd like a free check, tell me which day works.</span></div>
 <h3>El aniversario del trabajo</h3>
 <p>Doce meses después de terminar, un texto de tres renglones: "¿cómo sigue [el trabajo]? Cualquier detalle, me dice". No vende nada y por eso funciona: el que contesta "todo bien" es el mismo que te manda al vecino la semana siguiente.</p>
 <div class="warn"><b>Ojo con los textos en masa.</b> Un texto de promoción a una lista de clientes tiene reglas en Estados Unidos: consentimiento por escrito, solo de 8 am a 9 pm en su hora, baja por cualquier medio y número registrado con las telefónicas (desde 2025 bloquean el 100% de lo que no está registrado). Un texto tuyo, a una persona, desde tu teléfono, está bien. Una lista entera, no: eso lo manda el sistema, que ya cumple todo lo anterior.</div>
@@ -195,10 +196,16 @@ function ok(btn){
 <script>
 (function(){
   // PERSONAL-2026-09-15: the link brings the trade (?oficio=pintura). Nothing to click. No trade = the general guide.
-  var q=new URLSearchParams(location.search);
-  var of=(q.get('oficio')||'').trim().toLowerCase();
+  // 2026-09-16: GHL writes the colors as '#0549AE', and '#' starts the URL fragment, so everything after c1= lands in
+  // location.hash (c2, logo, ciudad included). Read search + hash as one string; URLSearchParams alone lost them (Jorge's
+  // sign printed with Slate colors and no logo).
+  var raw=(location.search||'')+(location.hash||'');
+  function grab(k){ var m=raw.match(new RegExp('[?&#]'+k+'=([^&#]*)')); return m?decodeURIComponent(m[1].split('+').join(' ')):''; }
+  var of=grab('oficio').trim().toLowerCase();
   if(of){ try{localStorage.setItem('oficio',of);}catch(e){} } else { try{of=localStorage.getItem('oficio')||'';}catch(e){} }
-  ['negocio','tel','web'].forEach(function(k){ var v=q.get(k); if(v){ try{localStorage.setItem(k,v);}catch(e){} } });
+  ['negocio','tel','web','logo','ciudad'].forEach(function(k){ var v=grab(k); if(v){ try{localStorage.setItem(k,v);}catch(e){} } });
+  var hx=raw.match(/c1=(?:%23|#)?([0-9a-fA-F]{6})/); if(hx){ try{localStorage.setItem('c1','#'+hx[1]);}catch(e){} }
+  var hy=raw.match(/c2=(?:%23|#)?([0-9a-fA-F]{6})/); if(hy){ try{localStorage.setItem('c2','#'+hy[1]);}catch(e){} }
   function get(k){ try{return localStorage.getItem(k)||'';}catch(e){return '';} }
   var PO=window.POR_OFICIO||{}, key='';
   function norm(v){ return String(v||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim(); }

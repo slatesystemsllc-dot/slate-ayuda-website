@@ -13,9 +13,9 @@ body{font-family:Inter,-apple-system,sans-serif;color:var(--ink);margin:0;backgr
 .card{width:360px;margin:0 auto;border:2px solid var(--navy);border-radius:10px;padding:22px;font-family:'Comic Sans MS','Segoe Print',cursive;font-size:18px;line-height:1.6}
 </style></head><body>
 <div class="bar"><a href="../4.html">← Volver a la jugada</a><button onclick="window.print()">Imprimir o guardar PDF</button></div>
-<div class="hint">Para las puertas que no abrieron. Escríbela con pluma azul, tres renglones, y engrápale la foto del trabajo. Esta hoja es la plantilla: cópiala a mano, no la imprimas.</div>
+<div class="hint">En inglés: la lee el vecino. Para las puertas que no abrieron. Escríbela con pluma azul, tres renglones, y engrápale la foto del trabajo. Esta hoja es la plantilla: cópiala a mano, no la imprimas.</div>
 <div class="hint" id="sin-datos" hidden style="background:#fff3e6;border-left:5px solid #ee7000;padding:12px 16px;border-radius:8px;color:#1a1f2b"><b>Esta hoja salió sin tus datos.</b> Ábrela desde el botón naranja de tu página de enlaces y sale con tu nombre y tu teléfono. Si la quieres así, la imprenta te rellena los espacios en gris.</div>
-<div class="sheet"><div class="card">Hola, soy <span class="fill">[tu nombre]</span>. Hicimos <span class="fill">[el trabajo]</span> en casa de su vecino, la casa <span class="fill">[color]</span>.<br>Si algún día quiere una revisión gratis: <span data-k="tel" class="fill">[tu teléfono]</span>.<br><span data-k="negocio" class="fill">[Nombre del negocio]</span></div><p style="margin-top:18px;font-size:14px;color:#5b6472">Dóblala en el marco de la puerta. Nadie más en esa calle escribe nada a mano.</p></div>
+<div class="sheet"><div class="card">Hi, I'm <span class="fill">[your name]</span>. We did <span class="fill">[the job]</span> at your neighbor's, the <span class="fill">[color]</span> house.<br>If you ever want a free check: <span data-k="tel" class="fill">[your phone]</span>.<br><span data-k="negocio" class="fill">[Business name]</span></div><p style="margin-top:18px;font-size:14px;color:#5b6472">Dóblala en el marco de la puerta. Nadie más en esa calle escribe nada a mano.</p></div>
 <script>
 (function(){
 // the client's data arrives on the link from his links page (GHL fills the custom values). '#' in a hex color starts the URL
@@ -24,8 +24,8 @@ var raw=(location.search||'')+(location.hash||'');
 function grab(k){var m=raw.match(new RegExp('[?&#]'+k+'=([^&#]*)'));return m?decodeURIComponent(m[1].replace(/\+/g,' ')):'';}
 var q={get:function(k){return grab(k);}};
 ['oficio','negocio','tel','web'].forEach(function(k){var v=q.get(k);if(v){try{localStorage.setItem(k,v)}catch(e){}}});
-var hx=raw.match(/c1=%23?#?([0-9a-fA-F]{6})/); if(hx){try{localStorage.setItem('c1','#'+hx[1])}catch(e){}}
-var hy=raw.match(/c2=%23?#?([0-9a-fA-F]{6})/); if(hy){try{localStorage.setItem('c2','#'+hy[1])}catch(e){}}
+var hx=raw.match(/c1=(?:%23|#)?([0-9a-fA-F]{6})/); if(hx){try{localStorage.setItem('c1','#'+hx[1])}catch(e){}}
+var hy=raw.match(/c2=(?:%23|#)?([0-9a-fA-F]{6})/); if(hy){try{localStorage.setItem('c2','#'+hy[1])}catch(e){}}
 function g(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}
 function lum(h){var r=parseInt(h.substr(1,2),16),g2=parseInt(h.substr(3,2),16),b=parseInt(h.substr(5,2),16);return (0.299*r+0.587*g2+0.114*b)/255;}
 var c1=g('c1'),c2=g('c2');

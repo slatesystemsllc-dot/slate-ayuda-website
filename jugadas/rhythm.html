@@ -192,6 +192,48 @@
 <p style="margin-top:10px"><b>Más llamadas. Más reseñas. Más trabajos.</b></p>
 </div>
 
+<hr style="border:0;border-top:2px solid var(--line);margin:28px 0"><section class="onepager">
+<div class="wrap">
+  <span class="op-eyebrow">Si solo lees una página, que sea esta</span>
+  <h2>El Plan de 1 Página</h2>
+  <p class="opsub">Todo el sistema cabe aquí. El resto de la guía explica cada casilla con guiones, precios y pruebas. Imprímela y pégala en la camioneta.</p>
+  <div class="opgrid">
+    <div class="opcard"><h3>🔧 Cada trabajo terminado</h3>
+      <li>Avisa de la reseña EN PERSONA y el sistema manda el enlace</li>
+      <li>Pide UN nombre: "¿quién más necesita esto?"</li>
+      <li>Toca las 10 puertas que VEN tu trabajo</li>
+      <li>Letrero 2 semanas más, con permiso</li>
+      <li>Foto de antes y después</li>
+      <li>¿Te lo mandó alguien? Dale las gracias HOY</li>
+    </div>
+    <div class="opcard"><h3>📅 Cada semana (1 hora)</h3>
+      <li>Contesta los hilos de "¿a quién me recomiendan?" en tus grupos</li>
+      <li>Texto de anuncio a 10 nombres de tu lista</li>
+      <li>Una publicación de antes y después</li>
+    </div>
+    <div class="opcard"><h3>🗓️ Cada mes</h3>
+      <li>Tu mañana de siempre en la tienda de materiales</li>
+      <li>La lista de permisos de tu oficio (cap. 9)</li>
+      <li>Mándale UN cliente a un oficio socio</li>
+    </div>
+  </div>
+  <div class="oprules"><b>Las 3 reglas de oro:</b> ① Contesta en minutos, no en horas: el que contesta primero gana. ② Nunca pidas un favor: anuncia lo que haces y pide UN nombre. ③ Cada trabajo terminado paga el siguiente: reseña + vecinos + letrero, siempre.</div>
+</div>
+
+<div class="win" id="hoy20"><b>Hoy, en 20 minutos, antes que todo lo demás:</b> teléfono en mano, escribe en papel los primeros 30 nombres de tu lista de 100 (capítulo 3) y mándale el texto de anuncio a los primeros 10. Mañana, otros 10. Tu perfil de Google ya lo tenemos cuidado nosotros; lo tuyo es que la gente diga tu nombre.</div>
+<div class="semana1" id="semana1"><h3>Si acabas de empezar: la primera semana, día por día</h3>
+<ol>
+<li><b>Día 1 (20 min):</b> contesta las reseñas que tienes sin responder. Llama a tu propio número y mira llegar el texto de llamada perdida.</li>
+<li><b>Día 2 (2 horas):</b> la lista de 100 nombres, en papel, con la familia. Texto de anuncio a los primeros 10.</li>
+<li><b>Día 3 (1 hora):</b> si todavía no mandaste tu lista de clientes contentos, elígelos desde tu teléfono en el enlace que te dimos. Con eso arranca tu campaña de reseñas.</li>
+<li><b>Día 4 (30 min):</b> únete a dos grupos de Facebook de tu ciudad y reclama tu página de Nextdoor. Diez textos más.</li>
+<li><b>Día 5 (30 min):</b> pide 20 letreros con estaca. Arma el PDF de papeles. Diez textos más.</li>
+<li><b>Día 6 (1 hora):</b> pídele permiso al admin de tu grupo de WhatsApp y publica UNA vez. Diez textos más.</li>
+<li><b>Día 7:</b> el primer trabajo terminado con la rutina completa: reseña de frente, un nombre, 10 puertas, letrero, foto.</li>
+</ol></div>
+
+</section>
+
 </div></main>
 <div class="jnav"><div class="wrap"><a class="jbtn" href="13.html">← Anterior</a><a class="jbtn primary" href="index.html">Volver al inicio</a></div></div>
 <script>
@@ -215,10 +257,16 @@ function ok(btn){
 <script>
 (function(){
   // PERSONAL-2026-09-15: the link brings the trade (?oficio=pintura). Nothing to click. No trade = the general guide.
-  var q=new URLSearchParams(location.search);
-  var of=(q.get('oficio')||'').trim().toLowerCase();
+  // 2026-09-16: GHL writes the colors as '#0549AE', and '#' starts the URL fragment, so everything after c1= lands in
+  // location.hash (c2, logo, ciudad included). Read search + hash as one string; URLSearchParams alone lost them (Jorge's
+  // sign printed with Slate colors and no logo).
+  var raw=(location.search||'')+(location.hash||'');
+  function grab(k){ var m=raw.match(new RegExp('[?&#]'+k+'=([^&#]*)')); return m?decodeURIComponent(m[1].split('+').join(' ')):''; }
+  var of=grab('oficio').trim().toLowerCase();
   if(of){ try{localStorage.setItem('oficio',of);}catch(e){} } else { try{of=localStorage.getItem('oficio')||'';}catch(e){} }
-  ['negocio','tel','web'].forEach(function(k){ var v=q.get(k); if(v){ try{localStorage.setItem(k,v);}catch(e){} } });
+  ['negocio','tel','web','logo','ciudad'].forEach(function(k){ var v=grab(k); if(v){ try{localStorage.setItem(k,v);}catch(e){} } });
+  var hx=raw.match(/c1=(?:%23|#)?([0-9a-fA-F]{6})/); if(hx){ try{localStorage.setItem('c1','#'+hx[1]);}catch(e){} }
+  var hy=raw.match(/c2=(?:%23|#)?([0-9a-fA-F]{6})/); if(hy){ try{localStorage.setItem('c2','#'+hy[1]);}catch(e){} }
   function get(k){ try{return localStorage.getItem(k)||'';}catch(e){return '';} }
   var PO=window.POR_OFICIO||{}, key='';
   function norm(v){ return String(v||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim(); }
