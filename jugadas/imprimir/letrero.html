@@ -2,20 +2,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#152a45;--orange:#ee7000;--ink:#1a1f2b}
-body{font-family:Inter,-apple-system,sans-serif;color:var(--ink);margin:0;background:#f4f6f9}
+body{font-family:Inter,-apple-system,sans-serif;color:var(--ink);margin:0;background:#e9edf3}
 .bar{background:var(--navy);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
 .bar a{color:#fff;font-weight:800;text-decoration:none}
 .bar button{background:var(--orange);color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:900;font-size:16px}
-.hint{max-width:760px;margin:14px auto;padding:0 16px;font-size:15px;color:#5b6472}
-.sheet{background:#fff;margin:14px auto;max-width:760px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
-.b{font-weight:900} .fill{border-bottom:2px solid #cfd6e0;min-width:120px;display:inline-block}
-@media print{.bar,.hint{display:none}.sheet{box-shadow:none;margin:0;max-width:none;padding:0}@page{margin:12mm}}
-.sign{border:6px solid var(--navy);border-radius:10px;padding:34px 22px;text-align:center}.sign .n{font-size:44px;font-weight:900;color:var(--navy);line-height:1.05}.sign .s{font-size:26px;font-weight:700;margin:14px 0}.sign .t{font-size:40px;font-weight:900;color:var(--orange);margin:10px 0}.sign .li{font-size:18px;font-weight:700;margin-top:14px}
+.hint{max-width:820px;margin:14px auto;padding:0 16px;font-size:15px;color:#5b6472}
+.sheet{margin:14px auto;max-width:820px;padding:0}
+/* the sign: 24 x 18 in, landscape, three bands, readable from the street */
+.sign{aspect-ratio:4/3;width:100%;background:#fff;border:3px solid var(--navy);display:grid;grid-template-rows:20% 46% 34%;box-shadow:0 6px 24px rgba(0,0,0,.14)}
+.sg-top{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;padding:0 5%}
+.sg-top .n{font-size:clamp(20px,4.2vw,44px);font-weight:900;letter-spacing:.02em;text-transform:uppercase;text-align:center;line-height:1.05}
+.sg-mid{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 6%;text-align:center}
+.sg-mid .s{font-size:clamp(26px,6.4vw,70px);font-weight:900;color:var(--navy);text-transform:uppercase;line-height:1.02;letter-spacing:-.01em}
+.sg-mid .g{margin-top:2.5%;font-size:clamp(14px,2.6vw,28px);font-weight:800;color:var(--orange);text-transform:uppercase;letter-spacing:.14em}
+.sg-bot{background:var(--orange);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.sg-bot .t{font-size:clamp(30px,8vw,88px);font-weight:900;letter-spacing:.01em;line-height:1}
+.sg-bot .li{font-size:clamp(11px,1.9vw,20px);font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.95;margin-top:1.5%}
+.fill{opacity:.55}
+@media print{.bar,.hint{display:none}.sheet{margin:0;max-width:none}.sign{box-shadow:none;border:0}@page{size:24in 18in;margin:0}}
 </style></head><body>
 <div class="bar"><a href="../4.html">← Volver a la jugada</a><button onclick="window.print()">Imprimir o guardar PDF</button></div>
-<div class="hint">Lleva esta hoja a la imprenta o a la papelería: letrero de 18 x 24 pulgadas con estaca, de 2 a 4 dólares cada uno. Pide 20. Lo que no sepas, lo escribes a mano en el lugar.</div>
-<div class="hint" id="sin-datos" hidden>Esta hoja sale con tu nombre y tu teléfono si la abres desde el botón de tu página de enlaces. Aquí salió en blanco: llena los espacios a mano o ábrela desde ahí.</div>
-<div class="sheet"><div class="sign"><div class="n"><span data-k="negocio" class="fill">[Nombre del negocio]</span></div><div class="s"><span data-k="oficio" class="fill">[Tu oficio en 5 palabras]</span></div><div class="t"><span data-k="tel" class="fill">[Tu teléfono]</span></div><div class="li">Licensed &amp; Insured</div></div></div>
+<div class="hint">Guárdalo en PDF y mándalo a la imprenta: letrero de 24 x 18 pulgadas (coroplast) con estaca de alambre, de 2 a 4 dólares cada uno. Pide 20. Si algo sale en gris claro, es un espacio que la imprenta te rellena.</div>
+<div class="hint" id="sin-datos" hidden style="background:#fff3e6;border-left:5px solid #ee7000;padding:12px 16px;border-radius:8px;color:#1a1f2b"><b>Esta hoja salió sin tus datos.</b> Ábrela desde el botón naranja de tu página de enlaces y sale con tu nombre y tu teléfono. Si la quieres así, la imprenta te rellena los espacios en gris.</div>
+<div class="sheet"><div class="sign">
+<div class="sg-top"><div class="n"><span data-k="negocio" class="fill">Nombre del negocio</span></div></div>
+<div class="sg-mid"><div class="s"><span data-k="oficio" class="fill">Tu oficio</span></div><div class="g">Presupuesto gratis</div></div>
+<div class="sg-bot"><div class="t"><span data-k="tel" class="fill">(000) 000-0000</span></div><div class="li">Licensed &amp; Insured</div></div>
+</div></div>
 <script>
 (function(){var q=new URLSearchParams(location.search);['oficio','negocio','tel','web'].forEach(function(k){var v=q.get(k);if(v){try{localStorage.setItem(k,v)}catch(e){}}});
 function g(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}

@@ -14,7 +14,7 @@ body{font-family:Inter,-apple-system,sans-serif;color:var(--ink);margin:0;backgr
 </style></head><body>
 <div class="bar"><a href="../4.html">← Volver a la jugada</a><button onclick="window.print()">Imprimir o guardar PDF</button></div>
 <div class="hint">Para las puertas que no abrieron. Escríbela con pluma azul, tres renglones, y engrápale la foto del trabajo. Esta hoja es la plantilla: cópiala a mano, no la imprimas.</div>
-<div class="hint" id="sin-datos" hidden>Esta hoja sale con tu nombre y tu teléfono si la abres desde el botón de tu página de enlaces. Aquí salió en blanco: llena los espacios a mano o ábrela desde ahí.</div>
+<div class="hint" id="sin-datos" hidden style="background:#fff3e6;border-left:5px solid #ee7000;padding:12px 16px;border-radius:8px;color:#1a1f2b"><b>Esta hoja salió sin tus datos.</b> Ábrela desde el botón naranja de tu página de enlaces y sale con tu nombre y tu teléfono. Si la quieres así, la imprenta te rellena los espacios en gris.</div>
 <div class="sheet"><div class="card">Hola, soy <span class="fill">[tu nombre]</span>. Hicimos <span class="fill">[el trabajo]</span> en casa de su vecino, la casa <span class="fill">[color]</span>.<br>Si algún día quiere una revisión gratis: <span data-k="tel" class="fill">[tu teléfono]</span>.<br><span data-k="negocio" class="fill">[Nombre del negocio]</span></div><p style="margin-top:18px;font-size:14px;color:#5b6472">Dóblala en el marco de la puerta. Nadie más en esa calle escribe nada a mano.</p></div>
 <script>
 (function(){var q=new URLSearchParams(location.search);['oficio','negocio','tel','web'].forEach(function(k){var v=q.get(k);if(v){try{localStorage.setItem(k,v)}catch(e){}}});

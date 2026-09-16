@@ -2,20 +2,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#152a45;--orange:#ee7000;--ink:#1a1f2b}
-body{font-family:Inter,-apple-system,sans-serif;color:var(--ink);margin:0;background:#f4f6f9}
+body{font-family:Inter,-apple-system,sans-serif;color:var(--ink);margin:0;background:#e9edf3}
 .bar{background:var(--navy);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
 .bar a{color:#fff;font-weight:800;text-decoration:none}
 .bar button{background:var(--orange);color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:900;font-size:16px}
 .hint{max-width:760px;margin:14px auto;padding:0 16px;font-size:15px;color:#5b6472}
-.sheet{background:#fff;margin:14px auto;max-width:760px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
-.b{font-weight:900} .fill{border-bottom:2px solid #cfd6e0;min-width:120px;display:inline-block}
-@media print{.bar,.hint{display:none}.sheet{box-shadow:none;margin:0;max-width:none;padding:0}@page{margin:12mm}}
-.dh{width:340px;margin:0 auto;border:2px dashed #cfd6e0;padding:22px;text-align:center}.dh .hole{width:70px;height:70px;border:2px solid #cfd6e0;border-radius:50%;margin:0 auto 18px}.dh .n{font-size:26px;font-weight:900;color:var(--navy)}.dh .l{font-size:16px;margin:14px 0;line-height:1.4}.dh .t{font-size:28px;font-weight:900;color:var(--orange)}.dh .foto{border:2px solid #cfd6e0;height:150px;display:flex;align-items:center;justify-content:center;color:#9aa3b2;margin:14px 0}
+.sheet{margin:14px auto;max-width:420px;padding:0}
+/* door hanger 4.25 x 11 in: hole, navy head, photo, one line, orange phone */
+.dh{aspect-ratio:4.25/11;width:100%;background:#fff;display:grid;grid-template-rows:14% 14% 30% 24% 18%;box-shadow:0 6px 24px rgba(0,0,0,.14);overflow:hidden}
+.dh-hole{display:flex;align-items:center;justify-content:center}
+.dh-hole div{width:34%;aspect-ratio:1;border-radius:50%;border:2px dashed #cfd6e0}
+.dh-top{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 8%}
+.dh-top .n{font-size:clamp(16px,5vw,26px);font-weight:900;text-transform:uppercase;line-height:1.05}
+.dh-foto{margin:4% 7%;border:2px dashed #cfd6e0;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#9aa3b2;font-size:14px;text-align:center;padding:6px}
+.dh-msg{padding:0 8%;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.dh-msg .l{font-size:clamp(13px,3.6vw,17px);line-height:1.35}
+.dh-msg .b{font-size:clamp(15px,4.2vw,20px);font-weight:900;color:var(--navy);margin-top:4%}
+.dh-bot{background:var(--orange);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 6%}
+.dh-bot .t{font-size:clamp(22px,7.2vw,36px);font-weight:900;line-height:1}
+.dh-bot .w{font-size:clamp(10px,2.6vw,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.95;margin-top:4%;word-break:break-all}
+.fill{opacity:.55}
+@media print{.bar,.hint{display:none}.sheet{margin:0;max-width:none}.dh{box-shadow:none}@page{size:4.25in 11in;margin:0}}
 </style></head><body>
 <div class="bar"><a href="../4.html">← Volver a la jugada</a><button onclick="window.print()">Imprimir o guardar PDF</button></div>
 <div class="hint">Volante de perilla (door hanger), un lado. 500 impresos cuestan de 75 a 125 dólares. Cuélgalos el mismo día en las 100 a 200 puertas alrededor del trabajo, con la camioneta todavía ahí. Nunca en el buzón.</div>
-<div class="hint" id="sin-datos" hidden>Esta hoja sale con tu nombre y tu teléfono si la abres desde el botón de tu página de enlaces. Aquí salió en blanco: llena los espacios a mano o ábrela desde ahí.</div>
-<div class="sheet"><div class="dh"><div class="hole"></div><div class="n"><span data-k="negocio" class="fill">[Nombre del negocio]</span></div><div class="foto">[Foto del trabajo terminado]</div><div class="l">Acabamos de terminar <span class="fill">[el trabajo]</span> en el <span class="fill">[número]</span> de esta calle.<br><b>Revisión gratis del suyo esta semana.</b></div><div class="t"><span data-k="tel" class="fill">[Tu teléfono]</span></div><div style="font-size:13px;margin-top:10px">Licensed &amp; Insured · <span data-k="web" class="fill">[tu página]</span></div></div></div>
+<div class="hint" id="sin-datos" hidden style="background:#fff3e6;border-left:5px solid #ee7000;padding:12px 16px;border-radius:8px;color:#1a1f2b"><b>Esta hoja salió sin tus datos.</b> Ábrela desde el botón naranja de tu página de enlaces y sale con tu nombre y tu teléfono. Si la quieres así, la imprenta te rellena los espacios en gris.</div>
+<div class="sheet"><div class="dh">
+<div class="dh-hole"><div></div></div>
+<div class="dh-top"><div class="n"><span data-k="negocio" class="fill">Nombre del negocio</span></div></div>
+<div class="dh-foto">Foto del trabajo terminado<br>(la imprenta la pega aquí)</div>
+<div class="dh-msg"><div class="l">Acabamos de terminar un trabajo en esta calle, en la casa <span class="fill">[color]</span>.</div><div class="b">Revisión gratis del suyo esta semana.</div></div>
+<div class="dh-bot"><div class="t"><span data-k="tel" class="fill">(000) 000-0000</span></div><div class="w"><span data-k="oficio" class="fill">tu oficio</span> · Licensed &amp; Insured<br><span data-k="web" class="fill">tupagina.com</span></div></div>
+</div></div>
 <script>
 (function(){var q=new URLSearchParams(location.search);['oficio','negocio','tel','web'].forEach(function(k){var v=q.get(k);if(v){try{localStorage.setItem(k,v)}catch(e){}}});
 function g(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}
