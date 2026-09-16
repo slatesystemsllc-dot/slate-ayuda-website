@@ -27,7 +27,15 @@ for k, r in list(have.items()):
     if k == ("", "") and not dry:
         req(T + "%d/" % r["id"], "DELETE"); print("  deleted empty default row", r["id"])
 extra = [k for k in have if k not in {(r["Oficio"], r["Jugada"]) for r in rows} and k != ("", "")]
-print("T.1100: %d POST, %d PATCH, %d same, %d rows not in source (left alone): %s" % (n_post, n_patch, n_same, len(extra), extra[:5]))
+# 2026-09-16: a play dropped from the source is switched OFF (Activo False, Orden 99), never left with its old order:
+# Alfred reads /root/state/jugadas-por-oficio.json by order and skips activo=false (projector line ~3248).
+n_off = 0
+for k in extra:
+    r = have[k]
+    if bool(r.get("Activo")) or int(r.get("Orden") or 0) != 99:
+        if not dry: req(T + "%d/?user_field_names=true" % r["id"], "PATCH", {"Activo": False, "Orden": 99})
+        n_off += 1
+print("T.1100: %d POST, %d PATCH, %d same, %d rows not in source (switched off: %d): %s" % (n_post, n_patch, n_same, len(extra), n_off, extra[:5]))
 if not dry:
     import os
     os.makedirs("/root/state", exist_ok=True)
