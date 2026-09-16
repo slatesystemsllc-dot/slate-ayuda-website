@@ -1,0 +1,415 @@
+{
+ "meta": {
+  "title": "Más Trabajos Sin Pagar Publicidad",
+  "sub": "Catorce jugadas para llenar tu semana de trabajo sin gastar en anuncios.",
+  "reglas": [
+   "Contesta rápido. Si no puedes contestar, el sistema contesta por ti en segundos.",
+   "Pide la reseña en persona, al terminar cada trabajo, antes de subirte al camión.",
+   "Haz una jugada al día. Veinte minutos valen más que cualquier anuncio."
+  ],
+  "semana1": [
+   "Día 1: contesta tus reseñas sin responder y prueba tu texto de llamada perdida.",
+   "Día 2: escribe la lista de 100 nombres y manda 10 textos.",
+   "Día 3: manda tu lista de clientes contentos desde el teléfono.",
+   "Día 4: únete a dos grupos de Facebook y reclama tu página de Nextdoor.",
+   "Día 5: pide 20 letreros con estaca y arma tu PDF de papeles.",
+   "Día 6: pide permiso al admin de tu grupo de WhatsApp y publica una vez.",
+   "Día 7: termina un trabajo con la rutina completa: reseña, nombre, puertas, letrero, foto."
+  ],
+  "hoy20": "Escribe en papel 30 nombres de tus contactos y manda el texto de anuncio a los primeros 10."
+ },
+ "plays": [
+  {
+   "id": "base",
+   "n": 1,
+   "titulo": "Contesta rápido, siempre",
+   "que": "Contestas el teléfono cuando puedes, y cuando no, tu sistema manda un texto en segundos.",
+   "por_que": "48 de cada 100 llamadas a negocios de servicio nunca las contesta una persona.",
+   "fuente": "Invoca 2026, 70 millones de llamadas",
+   "pasos": [
+    "Contesta cada llamada que puedas.",
+    "Llama a tu número desde otro teléfono.",
+    "Lee el texto que recibe tu cliente."
+   ],
+   "di_esto": null,
+   "hoy": "Llama a tu propio número desde otro teléfono y no contestes.",
+   "tiempo": "Nada, ya funciona",
+   "aviso": "Si el teléfono suena solo, el 82% de la gente llama a otro negocio.",
+   "slate": "El texto de llamada perdida sale solo, en segundos, sin que hagas nada.",
+   "imprimir": []
+  },
+  {
+   "id": "google",
+   "n": 2,
+   "titulo": "Tu Google: pide y contesta",
+   "que": "Avisas de la reseña en persona al terminar, y contestas cada reseña con dos renglones.",
+   "por_que": "El 74% de la gente solo lee reseñas de los últimos tres meses.",
+   "fuente": "BrightLocal 2026, 1,002 adultos",
+   "pasos": [
+    "Avisa la reseña antes de subirte al camión.",
+    "Contesta hoy las reseñas sin respuesta.",
+    "Escribe dos renglones: el nombre y el trabajo."
+   ],
+   "di_esto": {
+    "etiqueta": "Al terminar el trabajo",
+    "texto": "Me da mucho gusto que haya quedado contento. Le voy a mandar un mensaje con el enlace para dejarnos una reseña en Google. Son treinta segundos y a mi negocio le ayudan muchísimo."
+   },
+   "hoy": "Contesta hoy las reseñas que tienes sin responder.",
+   "tiempo": "30 segundos por trabajo",
+   "aviso": "Nunca ofrezcas descuento por una reseña: Google borra todas de un jalón.",
+   "slate": "Nosotros armamos y cuidamos el perfil, y el enlace de reseña sale solo.",
+   "imprimir": []
+  },
+  {
+   "id": "warm",
+   "n": 3,
+   "titulo": "Tus primeros 20 trabajos",
+   "que": "Avisas por texto, a 10 personas por día, que ya tienes tu propio negocio.",
+   "por_que": "El 59% del trabajo nuevo llega por gente que te recomienda.",
+   "fuente": "Jobber 2026, 1,050 dueños",
+   "pasos": [
+    "Escribe 100 nombres en papel, con toda tu familia.",
+    "Manda el texto a 10 nombres por día.",
+    "Nunca lo mandes en grupo, siempre uno por uno."
+   ],
+   "di_esto": {
+    "etiqueta": "El texto de anuncio",
+    "texto": "Hola [Nombre], soy [tu nombre]. Por fin abrí mi negocio de [tu oficio] aquí en [ciudad]. Si algún día necesitas [tu oficio], o sabes de alguien, me encantaría la oportunidad. ¡Qué gusto saludarte!"
+   },
+   "hoy": "Escribe 30 nombres en papel y manda el texto a los primeros 10.",
+   "tiempo": "10 minutos al día",
+   "aviso": "No pides un favor: avisas a qué te dedicas ahora.",
+   "slate": null,
+   "imprimir": [
+    "lista-100"
+   ]
+  },
+  {
+   "id": "job",
+   "n": 4,
+   "titulo": "Cada trabajo es un anuncio",
+   "que": "Al terminar dejas letrero, tocas las 10 puertas vecinas y dejas una nota a mano.",
+   "por_que": "La nota escrita a mano recibe una llamada de vuelta por cada 8 casas.",
+   "fuente": "Dueños en r/Contractor y r/sweatystartup, 2025 y 2026",
+   "pasos": [
+    "Pon el letrero el primer día, con permiso del cliente.",
+    "Toca 2 casas de cada lado y 3 de enfrente.",
+    "Deja la nota a mano donde nadie abrió."
+   ],
+   "di_esto": {
+    "etiqueta": "En la puerta del vecino",
+    "texto": "Hola, soy [Nombre]. Acabo de terminar [el techo] en la casa de su vecino, allí mismo. Ya que traigo las herramientas, con gusto le reviso el suyo sin costo. Le dejo mi tarjeta."
+   },
+   "hoy": "Pide 20 letreros con estaca, como $3 cada uno.",
+   "tiempo": "20 minutos por trabajo",
+   "aviso": "El letrero solo va en el jardín del cliente, nunca en la banqueta.",
+   "slate": "Estas jugadas producen llamadas mientras trabajas, y el sistema las atrapa.",
+   "imprimir": [
+    "letrero",
+    "colgante",
+    "tarjeta"
+   ]
+  },
+  {
+   "id": "regresan",
+   "n": 5,
+   "titulo": "Los que ya te pagaron",
+   "que": "Mandas tu lista de clientes viejos y metes cada cliente nuevo por tu formulario.",
+   "por_que": "59 de cada 100 dueños nombran a los clientes que regresan como su fuente de trabajo.",
+   "fuente": "Jobber 2026, 1,050 dueños",
+   "pasos": [
+    "Elige tus clientes contentos en el enlace que te dimos.",
+    "Nuestro equipo revisa la lista y pide las reseñas.",
+    "Mete cada cliente nuevo por tu formulario de marketing."
+   ],
+   "di_esto": {
+    "etiqueta": "Recordatorio de temporada",
+    "texto": "Hola [Nombre], soy [tu nombre], el de [tu oficio]. Le hice [el trabajo] el año pasado. Se acerca [la temporada] y ando por su zona. ¿Quiere que le dé una revisada sin costo?"
+   },
+   "hoy": "Manda tu lista de clientes contentos desde el teléfono.",
+   "tiempo": "Una hora, una sola vez",
+   "aviso": "Nunca mandes tú un texto de promoción a toda tu lista: eso lo manda el sistema.",
+   "slate": "Tu lista entra a la campaña de reseñas. Cada cliente nuevo que metes por el formulario entra a la cadena de referidos de un año.",
+   "imprimir": []
+  },
+  {
+   "id": "comunidad",
+   "n": 6,
+   "titulo": "Iglesia, escuela y WhatsApp",
+   "que": "Avisas una sola vez en cada lugar donde la gente ya te conoce.",
+   "por_que": "El 56% de los adultos hispanos en Estados Unidos usa WhatsApp.",
+   "fuente": "Pew Research Center, 2025",
+   "pasos": [
+    "Pide permiso al admin del grupo.",
+    "Publica una sola vez, con foto y tu número.",
+    "Pide una línea en el boletín de la parroquia."
+   ],
+   "di_esto": {
+    "etiqueta": "Al admin del grupo",
+    "texto": "¿Le molesta si comparto una sola vez que abrí mi negocio? No quiero llenar el grupo."
+   },
+   "hoy": "Escríbele al admin de tu grupo de WhatsApp más grande.",
+   "tiempo": "Una tarde, una vez",
+   "aviso": "Da un descuento chico y con nombre, como $25, nunca mitad de precio.",
+   "slate": null,
+   "imprimir": []
+  },
+  {
+   "id": "facebook",
+   "n": 7,
+   "titulo": "Gana el hilo en Facebook",
+   "que": "Contestas dentro de la primera hora a quien pregunta a quién le recomiendan.",
+   "por_que": "32 de cada 100 dueños dicen que Facebook les trae trabajo; Google Search, 20.",
+   "fuente": "Jobber 2026, 1,050 dueños",
+   "pasos": [
+    "Únete a 12 grupos de tu ciudad, no a 50.",
+    "Prende las notificaciones de tus 4 mejores grupos.",
+    "Contesta como vecino, con tu nombre y una revisión gratis."
+   ],
+   "di_esto": {
+    "etiqueta": "Texto después del trabajo",
+    "texto": "Si algún día ve a alguien en el grupo de [ciudad] pidiendo un [oficio], ¿me haría el favor de etiquetarnos? Así conseguimos casi todo nuestro trabajo."
+   },
+   "hoy": "Únete a dos grupos de tu ciudad y prende las notificaciones.",
+   "tiempo": "Una hora por semana",
+   "aviso": "No publiques tu servicio en Marketplace: Meta lo prohíbe y restringe la cuenta.",
+   "slate": null,
+   "imprimir": []
+  },
+  {
+   "id": "nextdoor",
+   "n": 8,
+   "titulo": "Que el vecino te nombre",
+   "que": "Reclamas tu página gratis y cada semana un cliente contento te recomienda ahí.",
+   "por_que": "9 de cada 10 personas dicen que la recomendación de un vecino les influye.",
+   "fuente": "Nextdoor, Home Maintenance Report 2026",
+   "pasos": [
+    "Busca tu negocio y reclama la página, no la dupliques.",
+    "Verifícate con tu licencia o tu seguro.",
+    "Pide una recomendación por semana, en mensaje aparte."
+   ],
+   "di_esto": {
+    "etiqueta": "Uno o dos días después",
+    "texto": "¿Me haría el favor de recomendarnos en Nextdoor? Son treinta segundos y así nos encuentran los vecinos."
+   },
+   "hoy": "Reclama tu página y súbele 6 fotos reales de tus trabajos.",
+   "tiempo": "15 minutos y un texto",
+   "aviso": "En los hilos, el que te nombra es tu cliente, nunca tú.",
+   "slate": null,
+   "imprimir": []
+  },
+  {
+   "id": "feeders",
+   "n": 9,
+   "titulo": "Quien reparte trabajo cada semana",
+   "que": "Te haces conocido con la gente que coloca trabajos todas las semanas.",
+   "por_que": "25 de cada 100 dueños dicen que las alianzas locales les traen trabajo; Google Search, 20.",
+   "fuente": "Jobber 2026, 1,050 dueños",
+   "pasos": [
+    "Ve a la misma tienda de materiales, la misma mañana.",
+    "Busca los permisos públicos de tu condado y llama.",
+    "Manda un PDF con seguro, licencia, W-9 y precios."
+   ],
+   "di_esto": {
+    "etiqueta": "Al administrador de propiedades",
+    "texto": "Le mando hoy un solo PDF con el seguro, la licencia, la W-9 y mis precios. Usted me textea una salida de inquilino y yo la camino en veinticuatro horas, con precio por escrito."
+   },
+   "hoy": "Arma tu hoja de papeles en un solo PDF.",
+   "tiempo": "Dos horas al mes",
+   "aviso": "Nunca dinero a un ajustador de seguros, a un inspector ni a un agente de bienes raíces.",
+   "slate": null,
+   "imprimir": [
+    "papeles"
+   ]
+  },
+  {
+   "id": "partners",
+   "n": 10,
+   "titulo": "Oficios socios: intercambia clientes",
+   "que": "Buscas los oficios que trabajan en la misma casa y les mandas tú un cliente primero.",
+   "por_que": "Las alianzas producen más clientes (25 de cada 100 dueños) que Google Search (20).",
+   "fuente": "Jobber 2026, 1,050 dueños",
+   "pasos": [
+    "Lee tu tarjeta de oficio, aquí arriba.",
+    "Apunta los tres socios que ven tus trabajos primero.",
+    "Mándale un cliente real y avísale por texto."
+   ],
+   "di_esto": null,
+   "hoy": "Abre la tarjeta de tu oficio y apunta tres socios.",
+   "tiempo": "Un cliente al mes",
+   "aviso": "Manda tú primero. Si solo pides, nadie te regresa la mano.",
+   "slate": "Preséntale a tu socio el sistema que usas: Slate te paga $97 al mes por cada uno que se queda.",
+   "imprimir": []
+  },
+  {
+   "id": "paid",
+   "n": 11,
+   "titulo": "Cuando quieras pagar por clientes",
+   "que": "Si algún día pagas por clientes, paga por llamada real en los anuncios de Google.",
+   "por_que": "En 888 contratistas, el 44% de los contactos que llegaron agendó: como $233 por cliente que paga.",
+   "fuente": "SearchLight Digital, 2026",
+   "pasos": [
+    "Espera hasta que te sobre trabajo.",
+    "Pregúntanos antes de prender los anuncios.",
+    "Nunca compres listas de clientes potenciales."
+   ],
+   "di_esto": null,
+   "hoy": "Nada. Guarda esta jugada para el día que te sobre trabajo.",
+   "tiempo": "Nada por ahora",
+   "aviso": "Los sitios que venden leads revenden el mismo a varios contratistas a la vez.",
+   "slate": null,
+   "imprimir": []
+  },
+  {
+   "id": "presence",
+   "n": 12,
+   "titulo": "Patrocina donde ya estás",
+   "que": "Pones tu nombre donde ya vas: el equipo de tu hijo o la barda del campo.",
+   "por_que": "Esto compra confianza, no clientes de este mes. Se juzga por temporadas.",
+   "fuente": "Testimonios de dueños, 2026",
+   "pasos": [
+    "Patrocina el equipo donde ya juega tu hijo.",
+    "Preséntate en persona dos veces al mes.",
+    "Revisa una vez al año: mata el peor, repite el mejor."
+   ],
+   "di_esto": null,
+   "hoy": "Pregunta cuánto cuesta tu nombre en la playera de la liga infantil.",
+   "tiempo": "Dos veces al mes",
+   "aviso": "La mayoría lo deja a los 60 días, justo antes de que empiece a servir.",
+   "slate": null,
+   "imprimir": []
+  },
+  {
+   "id": "referral",
+   "n": 13,
+   "titulo": "Gana $97 al mes",
+   "que": "Nos presentas a otro dueño de negocio y ganas dinero cada mes.",
+   "por_que": "Slate te paga $97 al mes por cada cliente activo que refieras.",
+   "fuente": "Programa de referidos de Slate, 2026",
+   "pasos": [
+    "Pídenos tu enlace de referido.",
+    "Mándalo al socio que más trabajo te pasa.",
+    "Cobra el día 1, directo a tu banco."
+   ],
+   "di_esto": null,
+   "hoy": "Pídenos tu enlace de referido.",
+   "tiempo": "Un mensaje",
+   "aviso": null,
+   "slate": "Sin tope: tres referidos son $291 al mes y tu sistema casi se paga solo.",
+   "imprimir": []
+  },
+  {
+   "id": "rhythm",
+   "n": 14,
+   "titulo": "El ritmo de cada semana",
+   "que": "Repites la misma rutina corta: en cada trabajo, cada semana y cada mes.",
+   "por_que": "Nada de esto cuesta dinero. Cuesta 20 minutos por trabajo y una hora por semana.",
+   "fuente": "Esta guía, 2026",
+   "pasos": [
+    "Cada trabajo: reseña, un nombre, 10 puertas, letrero y foto.",
+    "Cada semana: una hora en tus grupos y 10 textos.",
+    "Cada mes: la tienda de materiales y un cliente a un socio."
+   ],
+   "di_esto": null,
+   "hoy": "Guarda esta pantalla en tu teléfono y léela antes de cada trabajo.",
+   "tiempo": "20 minutos por trabajo",
+   "aviso": null,
+   "slate": "El sistema atrapa las llamadas, pide las reseñas y hace el seguimiento.",
+   "imprimir": []
+  }
+ ],
+ "oficios": {
+  "aislamiento": {
+   "socios": "El clima, los techeros, el control de plagas y los remodeladores ven tu trabajo antes que tú.",
+   "especial": "Métete gratis a la red de contratistas aliados de tu compañía de luz. Ellos te publican en su lista y te mandan sus clientes."
+  },
+  "pintura": {
+   "socios": "Los agentes de bienes raíces, los administradores, los piseros y el handyman ven tus trabajos primero.",
+   "especial": "La caminata antes del listado. Camina gratis cada casa nueva del agente y apunta qué pintar para las fotos. Él se queda la lista."
+  },
+  "cercas": {
+   "socios": "Los alberqueros, los jardineros, los constructores de terrazas y los constructores de casas.",
+   "especial": "La lista de permisos de alberca es pública. Cada alberca nueva exige una cerca por ley. Sácala cada mes y habla con los alberqueros."
+  },
+  "climas y calefacción": {
+   "socios": "El aislamiento, los electricistas, los plomeros y los inspectores de casas.",
+   "especial": "La calcomanía de la placa. Lee la fecha de fábrica del equipo, pega tu calcomanía con el año de reemplazo, dilo una vez y cállate."
+  },
+  "plomería": {
+   "socios": "La restauración de daños por agua, los remodeladores de baños, el clima, los agentes y los inspectores.",
+   "especial": "La cámara de drenaje para agentes. Nadie más ve dentro de la línea. Revisión barata en casas de antes de 1980, con resultado por escrito."
+  },
+  "instalaciones eléctricas": {
+   "socios": "El clima, los instaladores solares y de cargadores de autos, los plomeros y los remodeladores.",
+   "especial": "La cotización del reporte de inspección. Ofrece a cinco inspectores un precio por escrito en 24 horas, sacado de su PDF de defectos."
+  },
+  "jardinería y paisajismo": {
+   "socios": "Los cerqueros, el riego, la poda de árboles y los agentes de bienes raíces.",
+   "especial": "La estrella en tu propia ruta. Cada pasto terminado: tarjeta a la izquierda, a la derecha y las tres de enfrente. Clientes en calles que ya manejas."
+  },
+  "limpieza": {
+   "socios": "Los agentes, los administradores, Airbnb, las alfombras y las ventanas, y la obra terminada.",
+   "especial": "El regalo de cierre. El agente regala una limpieza de entrada al comprador, cortesía tuya. Una de cada tres se vuelve cliente quincenal."
+  },
+  "acarreo": {
+   "socios": "Los administradores y caseros, los agentes, las mudanzas, los remodeladores y la limpieza.",
+   "especial": "Los inversionistas y flippers. Cada casa que compran necesita vaciado completo, con prisa. Tres inversionistas activos te llenan el mes."
+  },
+  "techos": {
+   "socios": "Las canaletas, las empresas solares, los agentes, los inspectores y el aislamiento.",
+   "especial": "La carta del techo antes del listado. Inspección gratis en casas listadas, más una carta firmada de una página. Muchas se vuelven reparación pagada con la venta."
+  },
+  "construcción general": {
+   "socios": "Tus propios subcontratistas, los agentes, los inspectores, los arquitectos y los inversionistas.",
+   "especial": "Cobra tu red en referidos. Pídele a cada sub que uses una presentación al año con un cliente suyo. Tú repartes trabajo toda la semana."
+  },
+  "remodelación": {
+   "socios": "Los agentes, los diseñadores de interiores, los plomeros, los electricistas y las tiendas de cocinas.",
+   "especial": "El paquete antes de vender: baño y cocina por encima, con fecha fija, vendido por agentes. El agente gana precio; tú ganas volumen."
+  },
+  "pavimento y asfalto": {
+   "socios": "Las asociaciones de vecinos, los administradores, los constructores, los jardineros y el concreto.",
+   "especial": "El contrato anual de sellado por comunidad. Toca la puerta del administrador con calendario y precio por pie cuadrado: una firma, años de trabajo."
+  },
+  "constructores de casas": {
+   "socios": "Los agentes de terrenos, los prestamistas de construcción, los arquitectos y todos tus subs.",
+   "especial": "La obra es tu vitrina por seis meses. Letrero grande desde el día uno y una foto de avance por semana en los grupos locales."
+  },
+  "concreto": {
+   "socios": "Los cerqueros, los jardineros, las terrazas, los alberqueros y los contratistas generales.",
+   "especial": "La losa lleva al patio completo. En cada cochera, deja cotizado el patio antes de irte: el cliente ya te vio trabajar y el equipo está ahí."
+  },
+  "pisos": {
+   "socios": "Los pintores, los remodeladores, los agentes de bienes raíces y la limpieza.",
+   "especial": "El par pintor y pisero. Véndanse juntos a los agentes como casa lista en una semana: dos oficios, una llamada, una sola fecha."
+  },
+  "control de plagas": {
+   "socios": "El aislamiento, los techeros, los jardineros y los administradores de propiedades.",
+   "especial": "El contrato mensual con administradores. Decenas de unidades con servicio fijo cada mes: una firma, ingreso que se repite por años."
+  },
+  "ventanas y puertas": {
+   "socios": "Los pintores, los remodeladores, el aislamiento, los auditores de energía y los agentes.",
+   "especial": "El recibo de luz como vendedor. Pide el recibo del verano y enseña el ahorro con ventanas nuevas. Se vende con números, no con miedo."
+  },
+  "solar": {
+   "socios": "Los techeros, los electricistas y el clima.",
+   "especial": "El combo techo y paneles con tu techero socio: una visita, una cotización conjunta, un financiamiento. Se reparten un trabajo grande."
+  },
+  "terrazas y patios": {
+   "socios": "Los cerqueros, los jardineros, el concreto y los alberqueros.",
+   "especial": "El dibujo del patio completo. Cada terraza cotizada lleva un dibujo con la cerca y el jardín de tus socios adentro. Ellos te lo regresan."
+  },
+  "handyman": {
+   "socios": "Los agentes, los administradores, la limpieza y todos los oficios grandes.",
+   "especial": "La lista de inspección por paquete. Todo lo marcado, en una visita, precio cerrado. Los oficios grandes no quieren esos trabajos."
+  },
+  "poda de árboles": {
+   "socios": "Los jardineros, los techeros, los cercadores y los agentes de bienes raíces ven tus árboles primero.",
+   "especial": "Después de cada tormenta, la misma tarde: toca las 10 puertas de la calle con ramas caídas y deja tu tarjeta. Nadie más pasa ese día."
+  },
+  "limpieza de basura": {
+   "socios": "Los administradores y caseros, los agentes, las mudanzas, los remodeladores y la limpieza.",
+   "especial": "Los inversionistas y flippers. Cada casa que compran necesita vaciado completo, con prisa. Tres inversionistas activos te llenan el mes."
+  }
+ }
+}
