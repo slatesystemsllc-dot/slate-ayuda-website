@@ -2,14 +2,14 @@
  "_doc": "Per-trade play order for the guide (ayuda.slatesystems.io/jugadas). Keys = T.1090 oficio names (lowercase, accents). 'orden' = play ids in priority order (first 5 shown as 'Tus jugadas'); 'especial' = the trade's own play from the partner cards, shown on top. 'default' applies when the trade is unknown. Source: leads-guide-audit-2026-09-15/research.md section 1 (impact per owner hour) + the trade cards in chapter 10. Alfred reads this same file (mirrored to Baserow) to pick the weekly play. Edit here, then rebuild.",
  "default": {
   "orden": [
-   "google",
    "warm",
+   "google",
    "job",
-   "regresan",
    "facebook",
+   "regresan",
+   "nextdoor",
    "feeders",
    "partners",
-   "nextdoor",
    "comunidad",
    "referral",
    "presence",
@@ -18,13 +18,13 @@
  },
  "pintura": {
   "orden": [
+   "warm",
    "job",
    "google",
-   "warm",
-   "partners",
+   "facebook",
    "feeders",
-   "regresan",
-   "facebook"
+   "partners",
+   "regresan"
   ],
   "especial": "La caminata antes del listado: la pintura es el único oficio que cabe completo entre que la casa se vacía y sale a la venta. Pídele a cada agente que te deje caminar sus listados nuevos.",
   "especial_en": "The pre-listing walk: painting is the only trade that fits completely between the house going empty and going up for sale. Ask every agent to let you walk their new listings."
@@ -32,15 +32,15 @@
  "poda de árboles": {
   "orden": [
    "job",
+   "facebook",
    "google",
    "nextdoor",
    "warm",
-   "regresan",
-   "feeders",
-   "facebook"
+   "partners",
+   "feeders"
   ],
-  "especial": "Después de cada tormenta, la misma tarde: las 10 puertas de la calle con ramas caídas, con tu tarjeta. Nadie más pasa ese día.",
-  "especial_en": "After every storm, the same afternoon: the 10 doors on the street with branches down, with your card. Nobody else comes by that day."
+  "especial": "Después de la tormenta, la misma tarde: las 10 puertas de la calle con ramas caídas, con tu tarjeta, y la foto del árbol caído en los grupos de Facebook de tu ciudad. Nadie más pasa ese día.",
+  "especial_en": "After the storm, the same afternoon: the 10 doors on the street with branches down, with your card, and the photo of the fallen tree in your town's Facebook groups. Nobody else comes by that day."
  },
  "acarreo": {
   "orden": [
@@ -69,10 +69,11 @@
  "plomería": {
   "orden": [
    "google",
-   "regresan",
-   "feeders",
+   "facebook",
+   "nextdoor",
    "warm",
-   "job",
+   "feeders",
+   "regresan",
    "partners"
   ],
   "especial": "La cámara de drenaje para agentes: tú ya tienes la cámara y nadie más ve dentro de la línea. Revisión gratis antes de cada venta, y el reporte lleva tu nombre.",
@@ -81,11 +82,11 @@
  "techos": {
   "orden": [
    "job",
+   "facebook",
    "google",
-   "feeders",
    "partners",
-   "warm",
-   "regresan"
+   "feeders",
+   "warm"
   ],
   "especial": "La carta del techo antes del listado: el tuyo es el único producto con vida restante que los bancos exigen por escrito. Ofrécela gratis a cada agente.",
   "especial_en": "The roof letter before the listing: yours is the only product with remaining life that banks demand in writing. Offer it free to every agent."
@@ -104,12 +105,12 @@
  },
  "limpieza": {
   "orden": [
-   "feeders",
-   "regresan",
-   "google",
    "warm",
    "facebook",
-   "partners"
+   "regresan",
+   "nextdoor",
+   "feeders",
+   "google"
   ],
   "especial": "El regalo de cierre: el agente regala una limpieza de entrada al comprador, cortesía tuya. Eres el único oficio que cabe en ese regalo.",
   "especial_en": "The closing gift: the agent gives the buyer a move-in cleaning, courtesy of you. You are the only trade that fits in that gift."
@@ -140,12 +141,12 @@
  },
  "handyman": {
   "orden": [
-   "feeders",
-   "google",
+   "nextdoor",
+   "facebook",
    "warm",
+   "google",
    "regresan",
-   "job",
-   "facebook"
+   "feeders"
   ],
   "especial": "La lista de inspección por paquete: «todo lo marcado, en una visita, precio cerrado». Los oficios grandes no quieren esos trabajos chicos; tú sí.",
   "especial_en": "The inspection list as a package: everything marked, one visit, fixed price. The big trades do not want those small jobs; you do."

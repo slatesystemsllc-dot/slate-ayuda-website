@@ -68,7 +68,7 @@ if LANG == "en":
         if isinstance(_v, dict) and _v.get("especial_en"): _v["especial"] = _v["especial_en"]
 ID2N = {cid: k for k, (cid, _t, _s) in enumerate(chapters, 1)}
 ID2T = {cid: t for (cid, t, _s) in chapters}
-PO_JS = "<script>window.CFG=%s;window.T_EN=%s;</script>" % (json.dumps({k: CFG[k] for k in ("route_h","route_sub","route_esp","route_rest","note","fill_trade","fill_biz","fill_tel","fill_web")}, ensure_ascii=False), json.dumps(T_EN if LANG == "en" else {}, ensure_ascii=False)) + "<script>window.POR_OFICIO=%s;window.ID2N=%s;window.ID2T=%s;</script>" % (
+PO_JS = "<script>window.CFG=%s;window.T_EN=%s;</script>" % (json.dumps(dict({k: CFG[k] for k in ("route_h","route_sub","route_esp","route_rest","note","fill_trade","fill_biz","fill_tel","fill_web")}, lang=LANG), ensure_ascii=False), json.dumps(T_EN, ensure_ascii=False)) + "<script>window.POR_OFICIO=%s;window.ID2N=%s;window.ID2T=%s;</script>" % (
     json.dumps({k: v for k, v in POR_OFICIO.items() if not k.startswith("_")}, ensure_ascii=False), json.dumps(ID2N), json.dumps(ID2T, ensure_ascii=False))
 
 EXTRA_CSS = """
@@ -132,20 +132,35 @@ JS = """
   if(ofn){ Object.keys(PO).forEach(function(k){ var kn=norm(k); if(!key && k!=='default' && (ofn.indexOf(kn)>=0 || kn.indexOf(ofn)>=0)) key=k; }); }
   var conf = key ? PO[key] : null;
   // fill the blanks that we know
-  var fills={}; fills[CFG.fill_trade]=key?(T_EN[key]||key):''; fills[CFG.fill_biz]=get('negocio'); fills[CFG.fill_tel]=get('tel'); fills[CFG.fill_web]=get('web');
+  // 2026-09-16 audit: fill BOTH languages' tokens on both pages (each page carries scripts in the other language), plus the city.
+  var tradeES=key||'', tradeEN=key?(T_EN[key]||key):'', shown=(CFG.lang==='en')?tradeEN:tradeES;
+  var fills={'[tu oficio]':tradeES,'[your trade]':tradeEN,'[Negocio]':get('negocio'),'[Company]':get('negocio'),'[tu teléfono]':get('tel'),'[your phone]':get('tel'),'[tu página]':get('web'),'[your website]':get('web'),'[ciudad]':get('ciudad'),'[town]':get('ciudad'),'[Ciudad]':get('ciudad'),'[Town]':get('ciudad')};
   var main=document.querySelector('main'); 
   if(main){ var h=main.innerHTML, changed=false; Object.keys(fills).forEach(function(k){ if(fills[k]){ h=h.split(k).join(fills[k]); changed=true; } }); if(changed) main.innerHTML=h; }
   // the trade path on the landing
   var slot=document.getElementById('ruta'); 
   if(slot && conf){
     var ids=(conf.orden||[]).slice(0,5), n=window.ID2N||{}, t=window.ID2T||{};
-    var html='<h3>'+CFG.route_h+(T_EN[key]||key)+'</h3><div class="rt">'+CFG.route_sub+'</div>';
+    var who=get('negocio')?(get('negocio')+' ('+shown+')'+(get('ciudad')?', '+get('ciudad'):'')):shown;
+    var html='<h3>'+CFG.route_h+who+'</h3><div class="rt">'+CFG.route_sub+'</div>';
     html+='<ol>'+ids.map(function(id){ return '<li><a href="'+n[id]+'.html">'+t[id]+'</a></li>'; }).join('')+'</ol>';
     if(conf.especial){ html+='<div class="esp"><b>'+CFG.route_esp+'</b> '+conf.especial+'</div>'; }
     html+='<p style="font-size:13px;opacity:.85">'+CFG.route_rest+'</p>';
     slot.innerHTML=html; slot.hidden=false;
   }
-  var nt=document.getElementById('oficio-note'); if(nt && key){ nt.textContent=CFG.note+(T_EN[key]||key)+'.'; nt.hidden=false; }
+  var st=document.querySelector('a.jbtn.primary[href="1.html"]'); if(st && conf && (conf.orden||[]).length){ st.href=(window.ID2N||{})[conf.orden[0]]+'.html'; }
+  var nt=document.getElementById('oficio-note'); if(nt && key){ nt.textContent=CFG.note+shown+'.'; nt.hidden=false; }
+  // 2026-09-16 audit: "Siguiente" follows the client's trade order, then the rest by number.
+  var pid=window.PLAY_ID, N2=window.ID2N||{};
+  if(pid && conf && (conf.orden||[]).length){
+    var order=(conf.orden||[]).slice(); Object.keys(N2).sort(function(a,b){return N2[a]-N2[b];}).forEach(function(id){ if(order.indexOf(id)<0) order.push(id); });
+    var i=order.indexOf(pid), nav=document.querySelector('.jnav .wrap');
+    if(i>=0 && nav){ var a=nav.querySelectorAll('a'); if(i+1<order.length){ a[1].href=N2[order[i+1]]+'.html'; } if(i>0){ a[0].href=N2[order[i-1]]+'.html'; } }
+  }
+  // 2026-09-16 audit: on the partners play, the client's trade card opens and moves to the top of the list.
+  if(key){ var cards=document.querySelectorAll('details.trade'), hit=null;
+    cards.forEach(function(d){ var sm=norm(d.querySelector('summary')?d.querySelector('summary').textContent:''); if(!hit && (sm.indexOf(norm(key))>=0 || (T_EN[key] && sm.indexOf(norm(T_EN[key]))>=0))) hit=d; });
+    if(hit){ hit.open=true; hit.style.borderColor='var(--orange)'; hit.parentNode.insertBefore(hit, hit.parentNode.querySelector('details.trade')); hit.querySelector('summary').insertAdjacentHTML('beforeend',' <span style="color:var(--orange);font-weight:800">← '+(CFG.lang==='en'?'your trade':'tu oficio')+'</span>'); } }
 })();
 </script>
 """
@@ -167,7 +182,7 @@ def page(n, cid, title, seg):
             + '\n<div class="jbar"><div class="wrap"><a href="index.html">%s</a><span class="jprog">%s</span><a href="%s">%s</a></div></div>\n' % (CFG["home"], CFG["prog"] % (n, N), CFG["long"], CFG["readall"])
             + '<main><div class="wrap">' + '<p class="oficio-note" id="oficio-note" hidden></p>' + seg + PRINTS.get(cid, "") + (('<hr style="border:0;border-top:2px solid var(--line);margin:28px 0">' + onepager) if cid == "rhythm" else "")
             + '</div></main>\n<div class="jnav"><div class="wrap"><a class="jbtn" href="%s">%s</a><a class="jbtn primary" href="%s">%s</a></div></div>\n' % (prev_href, CFG["prev"], next_href, next_lbl)
-            + script + PO_JS + JS + "</body></html>\n")
+            + script + PO_JS + ('<script>window.PLAY_ID=%s;</script>' % json.dumps(cid)) + JS + "</body></html>\n")
 
 for k, (cid, title, seg) in enumerate(chapters, 1):
     html_k = page(k, cid, title, seg)

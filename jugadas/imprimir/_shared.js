@@ -15,7 +15,8 @@ var web=g('web').replace(/^https?:\/\//i,'').replace(/\/+$/,'');
 var EN={'pintura':'Painting','poda de arboles':'Tree service','acarreo':'Junk removal','limpieza de basura':'Junk removal','plomeria':'Plumbing','techos':'Roofing','jardineria y paisajismo':'Landscaping','limpieza':'Cleaning','climas y calefaccion':'HVAC','instalaciones electricas':'Electrical','handyman':'Handyman','pisos':'Flooring','concreto':'Concrete','cercas':'Fencing','control de plagas':'Pest control','remodelacion':'Remodeling','construccion general':'General contractor','aislamiento':'Insulation','pavimento y asfalto':'Paving','constructores de casas':'Home builder','ventanas y puertas':'Windows & doors','solar':'Solar','terrazas y patios':'Decks & patios'};
 function norm(v){return String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();}
 var ofn=norm(g('oficio')),ofEN='';Object.keys(EN).forEach(function(k){if(!ofEN&&(ofn.indexOf(k)>=0||k.indexOf(ofn)>=0)&&ofn)ofEN=EN[k];});
-var m={negocio:g('negocio'),tel:g('tel'),web:web,oficio:ofEN||g('oficio'),ciudad:g('ciudad')};
+var SV={'Painting':'Interior & exterior','Tree service':'Trimming, removal & cleanup','Junk removal':'Same-day haul away','Plumbing':'Repairs, drains & water heaters','Roofing':'Repairs & new roofs','Landscaping':'Lawns, yards & cleanups','Cleaning':'Homes, offices & move-outs','HVAC':'AC & heating repair','Electrical':'Repairs, panels & lighting','Handyman':'Repairs big & small','Flooring':'Install & refinish','Concrete':'Driveways, patios & slabs','Fencing':'Wood, chain link & vinyl','Pest control':'Ants, roaches & rodents','Remodeling':'Kitchens & bathrooms','General contractor':'Remodels & additions','Insulation':'Attic & wall insulation','Paving':'Driveways & sealcoating','Home builder':'Custom homes & additions','Windows & doors':'Install & replacement','Solar':'Panels & batteries','Decks & patios':'Build & repair'};
+var m={negocio:g('negocio'),tel:g('tel'),web:web,oficio:ofEN||g('oficio'),ciudad:g('ciudad'),servicio:ofEN?(SV[ofEN]||''):''};
 document.querySelectorAll('[data-k]').forEach(function(el){var v=m[el.getAttribute('data-k')];if(v){el.textContent=(el.getAttribute('data-prefix')||'')+v;el.classList.remove('fill');}else if(el.hasAttribute('data-hide')){el.hidden=true;}});
 var logo=g('logo');
 document.querySelectorAll('[data-logo]').forEach(function(box){var name=box.querySelector('[data-k="negocio"]');
@@ -29,3 +30,8 @@ if(!m.negocio&&!m.tel){var h=document.getElementById('sin-datos');if(h)h.hidden=
 function clear(){document.querySelectorAll('[data-fit]').forEach(function(el){el.style.fontSize='';});}
 fit();window.addEventListener('resize',fit);window.addEventListener('beforeprint',clear);window.addEventListener('afterprint',fit);
 if(window.matchMedia){var mq=window.matchMedia('print');mq.addEventListener?mq.addEventListener('change',function(e){e.matches?clear():fit();}):mq.addListener(function(e){e.matches?clear():fit();});}})();
+
+// QR to the client's site (qrcodejs from cdnjs). No site = no QR box.
+(function(){var web=(function(){try{return localStorage.getItem('web')||''}catch(e){return ''}})();document.querySelectorAll('[data-qr]').forEach(function(box){
+  if(!web||typeof QRCode==='undefined'){var p=box.parentNode;if(p)p.style.display='none';return;}
+  var url=/^https?:\/\//i.test(web)?web:'https://'+web;try{new QRCode(box,{text:url,width:256,height:256,correctLevel:QRCode.CorrectLevel.M});}catch(e){box.style.display='none';}});})();
