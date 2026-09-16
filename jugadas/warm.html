@@ -226,13 +226,13 @@ function ok(btn){
   var slot=document.getElementById('ruta'); 
   if(slot && conf){
     var ids=(conf.orden||[]).slice(0,5), n=window.ID2N||{}, t=window.ID2T||{};
-    var html='<h3>Tu ruta</h3><div class="rt">Las jugadas de '+key+', en orden</div>';
-    if(conf.especial){ html+='<div class="esp"><b>Solo tu oficio puede hacer esto:</b> '+conf.especial+'</div>'; }
+    var html='<h3>Para tu oficio: '+key+'</h3><div class="rt">Empieza por estas 5, en este orden</div>';
     html+='<ol>'+ids.map(function(id){ return '<li><a href="'+n[id]+'.html">'+t[id]+'</a></li>'; }).join('')+'</ol>';
-    html+='<p style="font-size:13px;opacity:.85">Después de estas cinco, sigue con las demás. Todas están abajo.</p>';
+    if(conf.especial){ html+='<div class="esp"><b>Lo que solo tu oficio puede hacer:</b> '+conf.especial+'</div>'; }
+    html+='<p style="font-size:13px;opacity:.85">Las demás jugadas están abajo. Todas sirven; estas cinco primero.</p>';
     slot.innerHTML=html; slot.hidden=false;
   }
-  var nt=document.getElementById('oficio-note'); if(nt && key){ nt.textContent='Esta guía está en modo '+key+'.'; nt.hidden=false; }
+  var nt=document.getElementById('oficio-note'); if(nt && key){ nt.textContent='Ejemplos para tu oficio: '+key+'.'; nt.hidden=false; }
 })();
 </script>
 </body></html>
