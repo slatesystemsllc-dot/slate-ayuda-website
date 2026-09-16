@@ -14,10 +14,11 @@ body{font-family:Inter,-apple-system,sans-serif;color:var(--ink);margin:0;backgr
 </style></head><body>
 <div class="bar"><a href="../4.html">← Volver a la jugada</a><button onclick="window.print()">Imprimir o guardar PDF</button></div>
 <div class="hint">Volante de perilla (door hanger), un lado. 500 impresos cuestan de 75 a 125 dólares. Cuélgalos el mismo día en las 100 a 200 puertas alrededor del trabajo, con la camioneta todavía ahí. Nunca en el buzón.</div>
+<div class="hint" id="sin-datos" hidden>Esta hoja sale con tu nombre y tu teléfono si la abres desde el botón de tu página de enlaces. Aquí salió en blanco: llena los espacios a mano o ábrela desde ahí.</div>
 <div class="sheet"><div class="dh"><div class="hole"></div><div class="n"><span data-k="negocio" class="fill">[Nombre del negocio]</span></div><div class="foto">[Foto del trabajo terminado]</div><div class="l">Acabamos de terminar <span class="fill">[el trabajo]</span> en el <span class="fill">[número]</span> de esta calle.<br><b>Revisión gratis del suyo esta semana.</b></div><div class="t"><span data-k="tel" class="fill">[Tu teléfono]</span></div><div style="font-size:13px;margin-top:10px">Licensed &amp; Insured · <span data-k="web" class="fill">[tu página]</span></div></div></div>
 <script>
 (function(){var q=new URLSearchParams(location.search);['oficio','negocio','tel','web'].forEach(function(k){var v=q.get(k);if(v){try{localStorage.setItem(k,v)}catch(e){}}});
 function g(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}
 var m={negocio:g('negocio'),tel:g('tel'),web:g('web'),oficio:g('oficio')};
-document.querySelectorAll('[data-k]').forEach(function(el){var v=m[el.getAttribute('data-k')];if(v){el.textContent=v;el.classList.remove('fill');}});})();
+document.querySelectorAll('[data-k]').forEach(function(el){var v=m[el.getAttribute('data-k')];if(v){el.textContent=v;el.classList.remove('fill');}});if(!m.negocio&&!m.tel){var h=document.getElementById('sin-datos');if(h)h.hidden=false;}})();
 </script></body></html>

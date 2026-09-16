@@ -14,10 +14,11 @@ body{font-family:Inter,-apple-system,sans-serif;color:var(--ink);margin:0;backgr
 </style></head><body>
 <div class="bar"><a href="../4.html">← Volver a la jugada</a><button onclick="window.print()">Imprimir o guardar PDF</button></div>
 <div class="hint">Lleva esta hoja a la imprenta o a la papelería: letrero de 18 x 24 pulgadas con estaca, de 2 a 4 dólares cada uno. Pide 20. Lo que no sepas, lo escribes a mano en el lugar.</div>
+<div class="hint" id="sin-datos" hidden>Esta hoja sale con tu nombre y tu teléfono si la abres desde el botón de tu página de enlaces. Aquí salió en blanco: llena los espacios a mano o ábrela desde ahí.</div>
 <div class="sheet"><div class="sign"><div class="n"><span data-k="negocio" class="fill">[Nombre del negocio]</span></div><div class="s"><span data-k="oficio" class="fill">[Tu oficio en 5 palabras]</span></div><div class="t"><span data-k="tel" class="fill">[Tu teléfono]</span></div><div class="li">Licensed &amp; Insured</div></div></div>
 <script>
 (function(){var q=new URLSearchParams(location.search);['oficio','negocio','tel','web'].forEach(function(k){var v=q.get(k);if(v){try{localStorage.setItem(k,v)}catch(e){}}});
 function g(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}
 var m={negocio:g('negocio'),tel:g('tel'),web:g('web'),oficio:g('oficio')};
-document.querySelectorAll('[data-k]').forEach(function(el){var v=m[el.getAttribute('data-k')];if(v){el.textContent=v;el.classList.remove('fill');}});})();
+document.querySelectorAll('[data-k]').forEach(function(el){var v=m[el.getAttribute('data-k')];if(v){el.textContent=v;el.classList.remove('fill');}});if(!m.negocio&&!m.tel){var h=document.getElementById('sin-datos');if(h)h.hidden=false;}})();
 </script></body></html>
