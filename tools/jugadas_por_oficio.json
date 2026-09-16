@@ -26,7 +26,8 @@
    "regresan",
    "facebook"
   ],
-  "especial": "La caminata antes del listado: la pintura es el único oficio que cabe completo entre que la casa se vacía y sale a la venta. Pídele a cada agente que te deje caminar sus listados nuevos."
+  "especial": "La caminata antes del listado: la pintura es el único oficio que cabe completo entre que la casa se vacía y sale a la venta. Pídele a cada agente que te deje caminar sus listados nuevos.",
+  "especial_en": "The pre-listing walk: painting is the only trade that fits completely between the house going empty and going up for sale. Ask every agent to let you walk their new listings."
  },
  "poda de árboles": {
   "orden": [
@@ -38,7 +39,8 @@
    "feeders",
    "facebook"
   ],
-  "especial": "Después de cada tormenta, la misma tarde: las 10 puertas de la calle con ramas caídas, con tu tarjeta. Nadie más pasa ese día."
+  "especial": "Después de cada tormenta, la misma tarde: las 10 puertas de la calle con ramas caídas, con tu tarjeta. Nadie más pasa ese día.",
+  "especial_en": "After every storm, the same afternoon: the 10 doors on the street with branches down, with your card. Nobody else comes by that day."
  },
  "acarreo": {
   "orden": [
@@ -49,7 +51,8 @@
    "job",
    "regresan"
   ],
-  "especial": "Los inversionistas y flippers: cada casa que compran necesita vaciado completo, con prisa, y compran varias al año. La lista de permisos y los grupos de inversionistas son tu puerta."
+  "especial": "Los inversionistas y flippers: cada casa que compran necesita vaciado completo, con prisa, y compran varias al año. La lista de permisos y los grupos de inversionistas son tu puerta.",
+  "especial_en": "Investors and flippers: every house they buy needs a full clean-out, in a hurry, and they buy several a year. The permit list and the investor groups are your door."
  },
  "limpieza de basura": {
   "orden": [
@@ -60,7 +63,8 @@
    "job",
    "regresan"
   ],
-  "especial": "Los inversionistas y flippers: cada casa que compran necesita vaciado completo, con prisa, y compran varias al año."
+  "especial": "Los inversionistas y flippers: cada casa que compran necesita vaciado completo, con prisa, y compran varias al año.",
+  "especial_en": "Investors and flippers: every house they buy needs a full clean-out, in a hurry, and they buy several a year."
  },
  "plomería": {
   "orden": [
@@ -71,7 +75,8 @@
    "job",
    "partners"
   ],
-  "especial": "La cámara de drenaje para agentes: tú ya tienes la cámara y nadie más ve dentro de la línea. Revisión gratis antes de cada venta, y el reporte lleva tu nombre."
+  "especial": "La cámara de drenaje para agentes: tú ya tienes la cámara y nadie más ve dentro de la línea. Revisión gratis antes de cada venta, y el reporte lleva tu nombre.",
+  "especial_en": "The sewer camera for agents: you already own the camera and nobody else sees inside the line. Free check before every sale, and the report carries your name."
  },
  "techos": {
   "orden": [
@@ -82,7 +87,8 @@
    "warm",
    "regresan"
   ],
-  "especial": "La carta del techo antes del listado: el tuyo es el único producto con vida restante que los bancos exigen por escrito. Ofrécela gratis a cada agente."
+  "especial": "La carta del techo antes del listado: el tuyo es el único producto con vida restante que los bancos exigen por escrito. Ofrécela gratis a cada agente.",
+  "especial_en": "The roof letter before the listing: yours is the only product with remaining life that banks demand in writing. Offer it free to every agent."
  },
  "jardinería y paisajismo": {
   "orden": [
@@ -93,7 +99,8 @@
    "warm",
    "facebook"
   ],
-  "especial": "La estrella en tu propia ruta: eres el único oficio estacionado en la misma calle cada semana. Cada pasto terminado es un letrero que se mueve."
+  "especial": "La estrella en tu propia ruta: eres el único oficio estacionado en la misma calle cada semana. Cada pasto terminado es un letrero que se mueve.",
+  "especial_en": "The star on your own route: you are the only trade parked on the same street every week. Every finished lawn is a sign that moves."
  },
  "limpieza": {
   "orden": [
@@ -104,7 +111,8 @@
    "facebook",
    "partners"
   ],
-  "especial": "El regalo de cierre: el agente regala una limpieza de entrada al comprador, cortesía tuya. Eres el único oficio que cabe en ese regalo."
+  "especial": "El regalo de cierre: el agente regala una limpieza de entrada al comprador, cortesía tuya. Eres el único oficio que cabe en ese regalo.",
+  "especial_en": "The closing gift: the agent gives the buyer a move-in cleaning, courtesy of you. You are the only trade that fits in that gift."
  },
  "climas y calefacción": {
   "orden": [
@@ -115,7 +123,8 @@
    "job",
    "partners"
   ],
-  "especial": "La calcomanía de la placa: en cada servicio, lee la fecha de fábrica del equipo y pega tu calcomanía con tu teléfono. El próximo servicio te llama a ti."
+  "especial": "La calcomanía de la placa: en cada servicio, lee la fecha de fábrica del equipo y pega tu calcomanía con tu teléfono. El próximo servicio te llama a ti.",
+  "especial_en": "The sticker on the nameplate: on every service call, read the unit's factory date and stick your sticker with your phone on it. The next service call goes to you."
  },
  "instalaciones eléctricas": {
   "orden": [
@@ -126,7 +135,8 @@
    "job",
    "partners"
   ],
-  "especial": "La cotización del reporte de inspección: los inspectores publican defectos eléctricos con fotos. Cotiza el PDF completo en 24 horas, precio cerrado."
+  "especial": "La cotización del reporte de inspección: los inspectores publican defectos eléctricos con fotos. Cotiza el PDF completo en 24 horas, precio cerrado.",
+  "especial_en": "The inspection-report quote: inspectors publish electrical defects with photos. Quote the whole PDF within 24 hours, fixed price."
  },
  "handyman": {
   "orden": [
@@ -137,7 +147,8 @@
    "job",
    "facebook"
   ],
-  "especial": "La lista de inspección por paquete: «todo lo marcado, en una visita, precio cerrado». Los oficios grandes no quieren esos trabajos chicos; tú sí."
+  "especial": "La lista de inspección por paquete: «todo lo marcado, en una visita, precio cerrado». Los oficios grandes no quieren esos trabajos chicos; tú sí.",
+  "especial_en": "The inspection list as a package: everything marked, one visit, fixed price. The big trades do not want those small jobs; you do."
  },
  "pisos": {
   "orden": [
@@ -148,7 +159,8 @@
    "warm",
    "regresan"
   ],
-  "especial": "El par pintor-pisero: véndanse juntos a los agentes como «casa lista en una semana». Dos oficios, una sola llamada."
+  "especial": "El par pintor-pisero: véndanse juntos a los agentes como «casa lista en una semana». Dos oficios, una sola llamada.",
+  "especial_en": "The painter-and-flooring pair: sell yourselves together to agents as house ready in one week. Two trades, one call."
  },
  "concreto": {
   "orden": [
@@ -159,7 +171,8 @@
    "partners",
    "regresan"
   ],
-  "especial": "La losa lleva al patio completo: en cada cochera o banqueta, deja cotizado el patio antes de irte."
+  "especial": "La losa lleva al patio completo: en cada cochera o banqueta, deja cotizado el patio antes de irte.",
+  "especial_en": "The slab leads to the whole patio: on every driveway or sidewalk, leave the patio quoted before you go."
  },
  "cercas": {
   "orden": [
@@ -170,7 +183,8 @@
    "partners",
    "regresan"
   ],
-  "especial": "La lista de permisos de alberca: son públicos, y cada permiso nuevo es una cerca obligada por ley en 60 a 120 días."
+  "especial": "La lista de permisos de alberca: son públicos, y cada permiso nuevo es una cerca obligada por ley en 60 a 120 días.",
+  "especial_en": "The pool permit list: it is public, and every new permit is a fence required by law within 60 to 120 days."
  },
  "control de plagas": {
   "orden": [
@@ -181,7 +195,8 @@
    "partners",
    "facebook"
   ],
-  "especial": "El contrato mensual con administradores de propiedades: decenas de unidades con servicio fijo. Una firma, ingreso todos los meses."
+  "especial": "El contrato mensual con administradores de propiedades: decenas de unidades con servicio fijo. Una firma, ingreso todos los meses.",
+  "especial_en": "The monthly contract with property managers: dozens of units on fixed service. One signature, income every month."
  },
  "remodelación": {
   "orden": [
@@ -192,7 +207,8 @@
    "job",
    "regresan"
   ],
-  "especial": "El paquete «antes de vender»: baño y cocina superficial con fecha fija, vendido por agentes. El agente gana precio; tú ganas el trabajo sin cotizar contra tres."
+  "especial": "El paquete «antes de vender»: baño y cocina superficial con fecha fija, vendido por agentes. El agente gana precio; tú ganas el trabajo sin cotizar contra tres.",
+  "especial_en": "The pre-sale package: surface bath and kitchen with a fixed date, sold by agents. The agent wins on price; you win the job without bidding against three."
  },
  "construcción general": {
   "orden": [
@@ -203,7 +219,8 @@
    "warm",
    "regresan"
   ],
-  "especial": "Cobra tu red en referidos: pídele a cada sub que uses una presentación al año con un cliente suyo. Eres el centro de la rueda."
+  "especial": "Cobra tu red en referidos: pídele a cada sub que uses una presentación al año con un cliente suyo. Eres el centro de la rueda.",
+  "especial_en": "Cash in your network for referrals: ask every sub you use for one introduction a year to a client of theirs. You are the hub of the wheel."
  },
  "aislamiento": {
   "orden": [
@@ -214,7 +231,8 @@
    "warm",
    "job"
   ],
-  "especial": "La red Trade Ally de tu compañía de luz: gratis, te publica en su lista y en el nivel alto te manda sus clientes. Ningún otro oficio tiene una agencia pública reclutándole clientes."
+  "especial": "La red Trade Ally de tu compañía de luz: gratis, te publica en su lista y en el nivel alto te manda sus clientes. Ningún otro oficio tiene una agencia pública reclutándole clientes.",
+  "especial_en": "Your utility's Trade Ally network: free, it lists you, and at the top tier it sends you its customers. No other trade has a public agency recruiting customers for it."
  },
  "_plays": {
   "base": {

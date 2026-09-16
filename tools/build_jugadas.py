@@ -7,8 +7,36 @@ and CLEAR buttons to go home or next". The long page stays as "Leer todo"; this 
 Usage: python3 tools/build_jugadas.py   (run from the repo root; writes jugadas/index.html + jugadas/<n>.html)"""
 import re, os, html, json
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = open(os.path.join(ROOT, "mas-clientes.html"), encoding="utf-8").read()
-OUT = os.path.join(ROOT, "jugadas"); os.makedirs(OUT, exist_ok=True)
+# BILINGUAL 2026-09-16 (Dan: "make the english version of this whole guide"). GUIDE_LANG=en builds the twin from the help
+# repo: same builder, same markup, English strings. Trade keys stay Spanish (company_trade carries the Spanish slug);
+# the EN pages show the English trade name from T_EN.
+LANG = os.environ.get("GUIDE_LANG", "es")
+CFG = {
+  "es": dict(src="mas-clientes.html", out="jugadas", root=ROOT, long="../mas-clientes", print_dir="imprimir",
+             title_pre="Jugada %d de %d: ", home="← Inicio", prog="Jugada %d de %d", readall="Leer todo",
+             prev="← Anterior", nxt="Siguiente jugada →", back_home="Volver al inicio",
+             route_h="Para tu oficio: ", route_sub="Empieza por estas 5, en este orden", route_esp="Lo que solo tu oficio puede hacer:",
+             route_rest="Las demás jugadas están abajo. Todas sirven; estas cinco primero.", note="Ejemplos para tu oficio: ",
+             print_h="Para imprimir, con tus datos", print_h2="Para imprimir", p_sign="Letrero de jardín", p_hang="Volante colgante",
+             p_card="Tarjeta a mano", p_list="La hoja de 100 nombres", p_docs="Tu hoja de papeles (una página)",
+             list_h="Las jugadas, una por página", list_p="Toca una. Cada página es una jugada completa con su guion para copiar. Al final, «Siguiente jugada».",
+             week="¿Acabas de empezar? Tu primera semana, día por día →", start="Empezar por la jugada 1 →", readlong="Leer la guía completa en una sola página",
+             sources="Fuentes", fill_trade="[tu oficio]", fill_biz="[Negocio]", fill_tel="[tu teléfono]", fill_web="[tu página]"),
+  "en": dict(src="more-jobs.html", out="plays", root=os.path.expanduser("~/slate-help-repo"), long="../more-jobs", print_dir="print",
+             title_pre="Play %d of %d: ", home="← Home", prog="Play %d of %d", readall="Read it all",
+             prev="← Previous", nxt="Next play →", back_home="Back to the start",
+             route_h="For your trade: ", route_sub="Start with these 5, in this order", route_esp="What only your trade can do:",
+             route_rest="The other plays are below. They all work; these five first.", note="Examples for your trade: ",
+             print_h="Print, with your data", print_h2="Print", p_sign="Yard sign", p_hang="Door hanger",
+             p_card="Handwritten card", p_list="The 100-name sheet", p_docs="Your paperwork sheet (one page)",
+             list_h="The plays, one per page", list_p="Tap one. Each page is a complete play with the script to copy. At the end, \u201cNext play\u201d.",
+             week="Just starting? Your first week, day by day →", start="Start with play 1 →", readlong="Read the whole guide on one page",
+             sources="Sources", fill_trade="[your trade]", fill_biz="[Company]", fill_tel="[your phone]", fill_web="[your website]"),
+}[LANG]
+ROOT = CFG["root"]
+SRC = open(os.path.join(ROOT, CFG["src"]), encoding="utf-8").read()
+OUT = os.path.join(ROOT, CFG["out"]); os.makedirs(OUT, exist_ok=True)
+T_EN = {"pintura":"painting","poda de árboles":"tree service","acarreo":"junk removal","limpieza de basura":"junk removal","plomería":"plumbing","techos":"roofing","jardinería y paisajismo":"landscaping","limpieza":"cleaning","climas y calefacción":"HVAC","instalaciones eléctricas":"electrical","handyman":"handyman","pisos":"flooring","concreto":"concrete","cercas":"fencing","control de plagas":"pest control","remodelación":"remodeling","construcción general":"general contracting","aislamiento":"insulation","pavimento y asfalto":"paving","constructores de casas":"home building","ventanas y puertas":"windows and doors","solar":"solar","terrazas y patios":"decks and patios"}
 
 head = SRC[:SRC.index("<body>") + len("<body>")]
 body = SRC[SRC.index("<body>") + len("<body>"):SRC.index("<script>")]
@@ -21,7 +49,7 @@ cover = re.sub(r'<div class="alltrades">.*?</div>\s*', '', cover, flags=re.S)
 onepager = body[onep_i:main_i]                          # the 1-page plan (before <main> in the source)
 main = body[main_i:]
 caps = [m.start() for m in re.finditer(r'<h2 class="cap" id="', main)]
-src_i = main.rfind("<div", 0, main.rindex("Fuentes"))
+src_i = main.rfind("<div", 0, main.rindex(CFG["sources"]))
 chapters = []
 for k, s in enumerate(caps):
     e = caps[k + 1] if k + 1 < len(caps) else src_i
@@ -34,10 +62,13 @@ fuentes = main[src_i:main.rindex("</main>")]
 script = SRC[SRC.index("<script>"):SRC.index("</script>") + len("</script>")]
 N = len(chapters)
 # PERSONAL-2026-09-15: per-trade order + special play, read from tools/jugadas_por_oficio.json (Alfred reads the same file)
-POR_OFICIO = json.load(open(os.path.join(ROOT, "tools", "jugadas_por_oficio.json"), encoding="utf-8"))
+POR_OFICIO = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "tools", "jugadas_por_oficio.json"), encoding="utf-8"))
+if LANG == "en":
+    for _k, _v in POR_OFICIO.items():
+        if isinstance(_v, dict) and _v.get("especial_en"): _v["especial"] = _v["especial_en"]
 ID2N = {cid: k for k, (cid, _t, _s) in enumerate(chapters, 1)}
 ID2T = {cid: t for (cid, t, _s) in chapters}
-PO_JS = "<script>window.POR_OFICIO=%s;window.ID2N=%s;window.ID2T=%s;</script>" % (
+PO_JS = "<script>window.CFG=%s;window.T_EN=%s;</script>" % (json.dumps({k: CFG[k] for k in ("route_h","route_sub","route_esp","route_rest","note","fill_trade","fill_biz","fill_tel","fill_web")}, ensure_ascii=False), json.dumps(T_EN if LANG == "en" else {}, ensure_ascii=False)) + "<script>window.POR_OFICIO=%s;window.ID2N=%s;window.ID2T=%s;</script>" % (
     json.dumps({k: v for k, v in POR_OFICIO.items() if not k.startswith("_")}, ensure_ascii=False), json.dumps(ID2N), json.dumps(ID2T, ensure_ascii=False))
 
 EXTRA_CSS = """
@@ -101,20 +132,20 @@ JS = """
   if(ofn){ Object.keys(PO).forEach(function(k){ var kn=norm(k); if(!key && k!=='default' && (ofn.indexOf(kn)>=0 || kn.indexOf(ofn)>=0)) key=k; }); }
   var conf = key ? PO[key] : null;
   // fill the blanks that we know
-  var fills={'[tu oficio]': key||'', '[Negocio]': get('negocio'), '[tu teléfono]': get('tel'), '[tu página]': get('web')};
+  var fills={}; fills[CFG.fill_trade]=key?(T_EN[key]||key):''; fills[CFG.fill_biz]=get('negocio'); fills[CFG.fill_tel]=get('tel'); fills[CFG.fill_web]=get('web');
   var main=document.querySelector('main'); 
   if(main){ var h=main.innerHTML, changed=false; Object.keys(fills).forEach(function(k){ if(fills[k]){ h=h.split(k).join(fills[k]); changed=true; } }); if(changed) main.innerHTML=h; }
   // the trade path on the landing
   var slot=document.getElementById('ruta'); 
   if(slot && conf){
     var ids=(conf.orden||[]).slice(0,5), n=window.ID2N||{}, t=window.ID2T||{};
-    var html='<h3>Para tu oficio: '+key+'</h3><div class="rt">Empieza por estas 5, en este orden</div>';
+    var html='<h3>'+CFG.route_h+(T_EN[key]||key)+'</h3><div class="rt">'+CFG.route_sub+'</div>';
     html+='<ol>'+ids.map(function(id){ return '<li><a href="'+n[id]+'.html">'+t[id]+'</a></li>'; }).join('')+'</ol>';
-    if(conf.especial){ html+='<div class="esp"><b>Lo que solo tu oficio puede hacer:</b> '+conf.especial+'</div>'; }
-    html+='<p style="font-size:13px;opacity:.85">Las demás jugadas están abajo. Todas sirven; estas cinco primero.</p>';
+    if(conf.especial){ html+='<div class="esp"><b>'+CFG.route_esp+'</b> '+conf.especial+'</div>'; }
+    html+='<p style="font-size:13px;opacity:.85">'+CFG.route_rest+'</p>';
     slot.innerHTML=html; slot.hidden=false;
   }
-  var nt=document.getElementById('oficio-note'); if(nt && key){ nt.textContent='Ejemplos para tu oficio: '+key+'.'; nt.hidden=false; }
+  var nt=document.getElementById('oficio-note'); if(nt && key){ nt.textContent=CFG.note+(T_EN[key]||key)+'.'; nt.hidden=false; }
 })();
 </script>
 """
@@ -122,20 +153,20 @@ OFICIOS = ["pintura","poda de árboles","acarreo","limpieza de basura","plomerí
 sel = '<p class="oficio">Los ejemplos dicen [pintura]. Pon tu oficio y se cambia en todas las jugadas: <select id="oficio"><option value="">[pintura] (cámbialo)</option>' + "".join('<option value="%s">%s</option>' % (o, o) for o in OFICIOS) + "</select></p>"
 
 PRINTS = {
-    "job": '<h3>Para imprimir, con tus datos</h3><div class="imprimir"><a href="imprimir/letrero.html">Letrero de jardín</a><a href="imprimir/colgante.html">Volante colgante</a><a href="imprimir/tarjeta.html">Tarjeta a mano</a></div>',
-    "warm": '<h3>Para imprimir</h3><div class="imprimir"><a href="imprimir/lista-100.html">La hoja de 100 nombres</a></div>',
-    "feeders": '<h3>Para imprimir, con tus datos</h3><div class="imprimir"><a href="imprimir/papeles.html">Tu hoja de papeles (una página)</a></div>',
+    "job": '<h3>%(print_h)s</h3><div class="imprimir"><a href="%(print_dir)s/letrero.html">%(p_sign)s</a><a href="%(print_dir)s/colgante.html">%(p_hang)s</a><a href="%(print_dir)s/tarjeta.html">%(p_card)s</a></div>' % CFG,
+    "warm": '<h3>%(print_h2)s</h3><div class="imprimir"><a href="%(print_dir)s/lista-100.html">%(p_list)s</a></div>' % CFG,
+    "feeders": '<h3>%(print_h)s</h3><div class="imprimir"><a href="%(print_dir)s/papeles.html">%(p_docs)s</a></div>' % CFG,
 }
 
 
 def page(n, cid, title, seg):
     prev_href = "%d.html" % (n - 1) if n > 1 else "index.html"
     next_href = "%d.html" % (n + 1) if n < N else "index.html"
-    next_lbl = "Siguiente jugada →" if n < N else "Volver al inicio"
-    return (head.replace("<title>", "<title>Jugada %d de %d: " % (n, N)).replace("</head>", EXTRA_CSS + "</head>")
-            + '\n<div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Jugada %d de %d</span><a href="../mas-clientes">Leer todo</a></div></div>\n' % (n, N)
+    next_lbl = CFG["nxt"] if n < N else CFG["back_home"]
+    return (head.replace("<title>", "<title>" + CFG["title_pre"] % (n, N)).replace("</head>", EXTRA_CSS + "</head>")
+            + '\n<div class="jbar"><div class="wrap"><a href="index.html">%s</a><span class="jprog">%s</span><a href="%s">%s</a></div></div>\n' % (CFG["home"], CFG["prog"] % (n, N), CFG["long"], CFG["readall"])
             + '<main><div class="wrap">' + '<p class="oficio-note" id="oficio-note" hidden></p>' + seg + PRINTS.get(cid, "") + (('<hr style="border:0;border-top:2px solid var(--line);margin:28px 0">' + onepager) if cid == "rhythm" else "")
-            + '</div></main>\n<div class="jnav"><div class="wrap"><a class="jbtn" href="%s">← Anterior</a><a class="jbtn primary" href="%s">%s</a></div></div>\n' % (prev_href, next_href, next_lbl)
+            + '</div></main>\n<div class="jnav"><div class="wrap"><a class="jbtn" href="%s">%s</a><a class="jbtn primary" href="%s">%s</a></div></div>\n' % (prev_href, CFG["prev"], next_href, next_lbl)
             + script + PO_JS + JS + "</body></html>\n")
 
 for k, (cid, title, seg) in enumerate(chapters, 1):
@@ -148,12 +179,12 @@ items = "".join('<li><a href="%d.html"><span class="n">%d</span>%s</a></li>' % (
 index = (head.replace("</head>", EXTRA_CSS + "</head>")
          + cover
          + '<main><div class="wrap"><div class="ruta" id="ruta" hidden></div>'
-         + '<h2 class="cap" id="jugadas"><span class="capnum">→</span> Las jugadas, una por página</h2><p>Toca una. Cada página es una jugada completa con su guion para copiar. Al final, «Siguiente jugada».</p><ul class="jlist">%s</ul>' % (items)
-         + '<p><a class="jbtn" href="14.html#semana1">¿Acabas de empezar? Tu primera semana, día por día →</a></p>'
-         + '<p><a class="jbtn primary" href="1.html">Empezar por la jugada 1 →</a></p><p style="margin-top:10px"><a class="jbtn" href="../mas-clientes">Leer la guía completa en una sola página</a></p>'
-         + '<details class="jsrc"><summary>Fuentes</summary>' + fuentes + '</details>'
+         + '<h2 class="cap" id="jugadas"><span class="capnum">→</span> %s</h2><p>%s</p><ul class="jlist">%s</ul>' % (CFG["list_h"], CFG["list_p"], items)
+         + '<p><a class="jbtn" href="14.html#semana1">%s</a></p>' % CFG["week"]
+         + '<p><a class="jbtn primary" href="1.html">%s</a></p><p style="margin-top:10px"><a class="jbtn" href="%s">%s</a></p>' % (CFG["start"], CFG["long"], CFG["readlong"])
+         + '<details class="jsrc"><summary>%s</summary>' % CFG["sources"] + fuentes + '</details>'
          + '</div></main>' + script + PO_JS + JS + "</body></html>\n")
 open(os.path.join(OUT, "index.html"), "w", encoding="utf-8").write(index)
-print("jugadas/: index + %d pages" % N)
+print("%s/: index + %d pages" % (CFG["out"], N))
 for k, (cid, t, seg) in enumerate(chapters, 1):
     print("  %2d %-10s %5d chars  %s" % (k, cid, len(seg), t))
