@@ -15,6 +15,9 @@ body = SRC[SRC.index("<body>") + len("<body>"):SRC.index("<script>")]
 main_i = body.index("<main>")
 onep_i = body.index('<section class="onepager">')
 cover = body[:onep_i]                                   # the cover (stats, chips)
+# 2026-09-16 Dan: the front page read like a Frankenstein. The play index keeps title, one line, the three numbers.
+cover = re.sub(r'<p class="tag">.*?</p>\s*', '', cover, flags=re.S)
+cover = re.sub(r'<div class="alltrades">.*?</div>\s*', '', cover, flags=re.S)
 onepager = body[onep_i:main_i]                          # the 1-page plan (before <main> in the source)
 main = body[main_i:]
 caps = [m.start() for m in re.finditer(r'<h2 class="cap" id="', main)]
