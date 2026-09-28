@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- BORRADOR 2026-09-28. Página sin enlace en el menú: solo se manda a clientes que Slate eligió para cobrar con tarjeta. Plan interno: wiki product/invoicing.html (propuesta en ~/slate-ghl/proposals/). -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <title>Cobrar con tarjeta - Slate Systems Ayuda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .faq-list { max-width: 760px; margin: 0 auto; display: grid; gap: 0.75rem; }
+    .faq-card { background: #fff; border: 1px solid var(--medium-gray); border-radius: 12px; overflow: hidden; transition: border-color 0.15s; }
+    .faq-card:hover { border-color: var(--orange); }
+    .faq-q-rich { padding: 1rem 1.25rem; font-weight: 700; font-size: 1rem; color: var(--text-dark); cursor: pointer; position: relative; padding-right: 2.75rem; }
+    .faq-q-rich::after { content: '+'; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: var(--orange); font-weight: 700; line-height: 1; }
+    .faq-card.open .faq-q-rich::after { content: '\2212'; }
+    .faq-a-rich { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; padding: 0 1.25rem; }
+    .faq-card.open .faq-a-rich { max-height: 1200px; padding: 0 1.25rem 1rem; }
+    .faq-a-rich p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin: 0 0 0.75rem; }
+    .faq-a-rich p:last-child { margin-bottom: 0; }
+    .faq-a-rich a { color: var(--orange); font-weight: 600; }
+    .three-lines { display: grid; gap: 0.75rem; margin: 1rem 0; }
+    .three-lines .line { display: flex; gap: 0.9rem; align-items: flex-start; background: var(--light-gray); border: 1px solid var(--medium-gray); border-radius: var(--radius-md); padding: 0.9rem 1rem; }
+    .three-lines .num { flex: 0 0 2rem; height: 2rem; border-radius: 50%; background: var(--orange); color: var(--white); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .three-lines p { margin: 0; }
+    .ignore-box { background: #fff7ed; border: 1px solid #fed7aa; border-radius: var(--radius-md); padding: 0.9rem 1rem; margin: 1rem 0; }
+    .ignore-box p { margin: 0; }
+    .fee-table { width: 100%; max-width: 620px; border-collapse: collapse; margin: 1rem 0; font-size: 0.97rem; }
+    .fee-table th, .fee-table td { text-align: left; padding: 0.65rem 0.8rem; border-bottom: 1px solid var(--medium-gray); }
+    .fee-table th { background: var(--light-gray); font-weight: 700; }
+    .fee-table td:last-child { font-weight: 700; width: 40%; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
+        <span>Slate Systems</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="empezar">Empezar</a></li>
+        <li><a href="resenas">Reseñas</a></li>
+        <li><a href="google">Google</a></li>
+        <li><a href="mis-enlaces">Mis Enlaces</a></li>
+        <li><a href="tu-app">Tu App</a></li>
+        <li><a href="presupuestos" class="active">Presupuestos</a></li>
+        <li><a href="clientes">Clientes</a></li>
+        <li><a href="tu-sitio-web">Tu Sitio Web</a></li>
+        <li><a href="referidos">Referidos</a></li>
+        <li><a href="jugadas/">Más Trabajos</a></li>
+        <li><a href="estafas">Estafas</a></li>
+        <li><a href="faq">FAQ</a></li>
+        <li><a href="contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Cobrar con tarjeta</h1>
+      <p>Tus clientes te pagan con tarjeta desde el presupuesto o desde un texto. El dinero llega a tu banco. Lo probamos contigo y lo montamos juntos en una llamada de 20 a 30 minutos. Incluido en tu plan, sin costo extra de Slate.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Todo en 3 líneas -->
+      <div class="content-section">
+        <h2>Cómo funciona, en 3 líneas</h2>
+        <div class="three-lines">
+          <div class="line"><div class="num">1</div><p><strong>Conectas tu propia cuenta de Stripe, una sola vez.</strong> Stripe es la empresa que cobra las tarjetas por ti, como una terminal. La cuenta está a tu nombre y paga a tu banco.</p></div>
+          <div class="line"><div class="num">2</div><p><strong>Mandas el presupuesto o un cobro por texto, como ya lo haces.</strong> El cliente abre el enlace y paga con tarjeta, Apple Pay o Google Pay.</p></div>
+          <div class="line"><div class="num">3</div><p><strong>Stripe manda el dinero a tu banco.</strong> El primer pago tarda de 7 a 14 días. Después, unos 2 días hábiles.</p></div>
+        </div>
+        <div class="benefit-box">
+          <p><strong>Bueno saberlo:</strong> la cuenta de Stripe es tuya. Slate nunca tiene tu contraseña, nunca toca tu dinero y no se queda con nada de lo que cobras.</p>
+        </div>
+      </div>
+
+      <!-- Qué tener a la mano -->
+      <div class="content-section" id="listo">
+        <h2>Ten esto a la mano antes de la llamada</h2>
+        <p>Juntarlo toma unos 2 minutos. Con esto la llamada sale en una sola vez.</p>
+        <ul class="icon-list">
+          <li><strong>El EIN de tu negocio</strong> (o tu Seguro Social si trabajas a tu nombre).</li>
+          <li><strong>La dirección de tu negocio.</strong></li>
+          <li><strong>Tu banco:</strong> número de ruta (routing) y número de cuenta, donde quieres recibir el dinero.</li>
+          <li><strong>Tu licencia de conducir</strong> o tu ID.</li>
+          <li><strong>Tu celular en la mano.</strong> Stripe te puede mandar un código o pedir una foto.</li>
+          <li><strong>El correo de tu negocio.</strong> Ahí te escribe Stripe.</li>
+        </ul>
+        <div class="ignore-box">
+          <p><strong>¿Por qué lo haces tú?</strong> Las reglas de los bancos piden que la cuenta de cobro esté a nombre del dueño del negocio. Nosotros no podemos poner nuestros datos. Tú escribes los tuyos y nosotros te guiamos en cada pantalla.</p>
+        </div>
+      </div>
+
+      <!-- La llamada paso a paso -->
+      <div class="content-section" id="llamada">
+        <h2>La llamada, paso a paso</h2>
+        <p>Lo hacemos juntos, en tu cuenta. Tú escribes tus datos. Nosotros te decimos dónde va cada uno.</p>
+        <ol class="steps">
+          <li><strong>Abrimos tu cuenta</strong> en <strong>Pagos (Payments) &gt; Integraciones (Integrations) &gt; Stripe &gt; Conectar (Connect)</strong>. Se abre la página de Stripe.</li>
+          <li><strong>Creas tu cuenta de Stripe</strong> con el correo de tu negocio y una contraseña que solo tú sabes. Si ya tienes Stripe, entras con esa cuenta.</li>
+          <li><strong>Escribes los datos del negocio:</strong> nombre legal, EIN, dirección, a qué te dedicas y tu sitio web.</li>
+          <li><strong>Escribes tus datos:</strong> nombre, fecha de nacimiento, dirección de tu casa y los últimos 4 números de tu Seguro Social.</li>
+          <li><strong>Escribes tu banco:</strong> número de ruta y número de cuenta.</li>
+          <li><strong>Si Stripe lo pide,</strong> tomas una foto de tu licencia y una selfie con tu celular. Unos 2 a 5 minutos.</li>
+          <li><strong>Aceptas la conexión.</strong> Stripe te regresa a tu cuenta y queda conectado.</li>
+          <li><strong>Prueba de $1:</strong> te mandamos un cobro de $1 a tu celular. Lo pagas con tu tarjeta y te lo devolvemos en ese momento. Así ves lo mismo que verá tu cliente.</li>
+        </ol>
+        <div class="benefit-box">
+          <p><strong>Consejo:</strong> cuando Stripe pregunte a qué te dedicas, escribe tu oficio real, con palabras simples. Por ejemplo: "Pintura de casas, interior y exterior". Una descripción clara evita revisiones y retrasos.</p>
+        </div>
+      </div>
+
+      <!-- Cómo cobras -->
+      <div class="content-section" id="cobrar">
+        <h2>Cómo cobras después</h2>
+        <p>Hay dos formas. Te enseñamos las dos en la llamada.</p>
+        <div class="three-lines">
+          <div class="line"><div class="num">1</div><p><strong>En el presupuesto.</strong> Haces el presupuesto igual que siempre (mira <a href="presupuestos">Presupuestos</a>). En el Paso 4, en <strong>Configuración del pago</strong>, enciende <strong>Habilitar el pago directo</strong>. El cliente acepta y paga en la misma pantalla.</p></div>
+          <div class="line"><div class="num">2</div><p><strong>Por texto.</strong> En la conversación con tu cliente, mandas un enlace de pago con el monto. Él lo abre y paga. Sirve para el pago final cuando terminas el trabajo.</p></div>
+        </div>
+        <div class="ignore-box">
+          <p><strong>Anticipo:</strong> si pides uno, que sea chico, del 25 al 30%. Cobrar el 100% por adelantado hace que Stripe revise tu cuenta y puede detener tu dinero.</p>
+        </div>
+      </div>
+
+      <!-- Lo que ve el cliente -->
+      <div class="content-section" id="cliente">
+        <h2>Lo que ve tu cliente</h2>
+        <ol class="steps">
+          <li>Le llega un texto o un correo con un enlace.</li>
+          <li>Abre una página con tu logo, tu nombre y el monto.</li>
+          <li>Paga con tarjeta, Apple Pay o Google Pay. No necesita ninguna app ni crear una cuenta.</li>
+          <li>Recibe su recibo por correo. En el estado de cuenta de su tarjeta sale el nombre de tu negocio.</li>
+        </ol>
+      </div>
+
+      <!-- Lo que cuesta -->
+      <div class="content-section" id="costo">
+        <h2>Lo que cuesta, en palabras simples</h2>
+        <table class="fee-table">
+          <tr><th>Quién</th><th>Cuánto</th></tr>
+          <tr><td>Slate</td><td>$0. Incluido en tu plan.</td></tr>
+          <tr><td>Tu app</td><td>$0 por cobro.</td></tr>
+          <tr><td>Stripe, por cada pago con tarjeta</td><td>2.9% + 30¢</td></tr>
+          <tr><td>Stripe, si un cliente reclama el cobro con su banco</td><td>$15</td></tr>
+        </table>
+        <div class="benefit-box">
+          <p><strong>Ejemplo:</strong> un trabajo de $1,000 pagado con tarjeta. Stripe se queda con $29.30. A tu banco llegan $970.70. Sin mensualidad, sin contrato con Stripe: solo pagas cuando cobras.</p>
+        </div>
+      </div>
+
+      <!-- Cuándo llega el dinero -->
+      <div class="content-section" id="dinero">
+        <h2>Cuándo llega tu dinero</h2>
+        <ul class="icon-list">
+          <li><strong>El primer pago tarda de 7 a 14 días.</strong> Es normal: Stripe revisa las cuentas nuevas una vez.</li>
+          <li><strong>Después, unos 2 días hábiles</strong> por cada pago.</li>
+          <li><strong>Ves todo en Stripe:</strong> en dashboard.stripe.com o en la app de Stripe, con tu usuario.</li>
+        </ul>
+        <div class="ignore-box">
+          <p><strong>Importante:</strong> la primera vez, no lo uses en un trabajo donde necesitas el dinero esa misma semana. Cobra así un trabajo normal primero.</p>
+        </div>
+      </div>
+
+      <!-- Si Stripe pide más -->
+      <div class="content-section" id="stripe-pide">
+        <h2>Si Stripe te pide más información</h2>
+        <p>A veces Stripe manda un correo pidiendo un papel, una foto o una explicación. Pasa, y no es malo.</p>
+        <ol class="steps">
+          <li><strong>Contesta el mismo día.</strong> Mientras no contestas, Stripe puede detener tus pagos.</li>
+          <li><strong>Entra tú mismo:</strong> escribe dashboard.stripe.com en tu navegador, o abre la app de Stripe. No entres por el enlace de un texto.</li>
+          <li><strong>Busca el aviso arriba en la pantalla</strong> y sube lo que pide.</li>
+          <li><strong>¿No entiendes lo que pide?</strong> Escríbenos con una foto de la pantalla y lo vemos contigo.</li>
+        </ol>
+        <div class="ignore-box">
+          <p><strong>Cuidado con estafas:</strong> Stripe nunca te pide tu contraseña ni un código por texto o por teléfono. Nosotros tampoco. Mira <a href="estafas">Estafas</a>.</p>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section" id="faq">
+        <h2>Preguntas que nos hacen</h2>
+        <div class="faq-list">
+          <div class="faq-card open">
+            <div class="faq-q-rich">¿Esto cuesta extra?</div>
+            <div class="faq-a-rich"><p>De Slate, no. Está incluido en tu plan. Solo pagas la comisión de Stripe en cada pago con tarjeta (2.9% + 30¢).</p></div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q-rich">¿Pueden hacer la cuenta de Stripe por mí?</div>
+            <div class="faq-a-rich"><p>No. La cuenta tiene que estar a tu nombre, con tus datos y tu banco. Nosotros te guiamos en la llamada, pantalla por pantalla. Tú escribes y tú guardas la contraseña.</p></div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q-rich">Ya tengo Stripe. ¿Sirve?</div>
+            <div class="faq-a-rich"><p>Sí. En el paso 2 entras con tu cuenta de Stripe y la conectamos. No hay que abrir otra.</p></div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q-rich">¿Dónde está mi dinero?</div>
+            <div class="faq-a-rich"><p>En Stripe. Entra a dashboard.stripe.com o a la app de Stripe y mira "Pagos" y "Transferencias". Stripe decide cuándo manda el dinero a tu banco. Si algo no cuadra, escríbenos y lo leemos juntos.</p></div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q-rich">Un cliente pide que le devuelva el dinero. ¿Qué hago?</div>
+            <div class="faq-a-rich"><p>Escríbenos y hacemos la devolución contigo. Si el cliente reclama con su banco en vez de hablar contigo, se llama disputa: Stripe cobra $15 y te pide pruebas. Tus mejores pruebas son el presupuesto aceptado, fotos del trabajo y los textos con el cliente.</p></div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q-rich">¿Hay algo más barato para trabajos grandes?</div>
+            <div class="faq-a-rich"><p>Sí. El pago desde la cuenta de banco del cliente (ACH) cuesta 0.8%, con un máximo de $5. En un trabajo de $4,000 pagas $5 en vez de $116.30. Pregúntanos y lo activamos.</p></div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q-rich">¿Cambia algo con mis reseñas?</div>
+            <div class="faq-a-rich"><p>No. Sigues pidiendo la reseña cuando terminas el trabajo, con <a href="resenas">Pedir una Reseña</a>, igual que siempre. A todos tus clientes por igual, paguen como paguen.</p></div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q-rich">¿Puedo dejar de usarlo?</div>
+            <div class="faq-a-rich"><p>Sí, cuando quieras. Escríbenos. Tus presupuestos siguen funcionando igual, y tu cuenta de Stripe sigue siendo tuya.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-success" style="margin-top:1.5rem;">
+        <strong>¿Listo para la llamada?</strong> Escríbenos y la agendamos. Trae la lista de arriba. <a href="contacto">Contactar soporte &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Recordatorio de la única tarea -->
+  <section class="section section-alt">
+    <div class="container" style="text-align: center;">
+      <p style="margin: 0 0 1rem; font-weight: 600; font-size: 1.05rem;">Tu única tarea: después de cada cliente feliz, <strong>Pedir una Reseña</strong>.</p>
+      <a href="resenas" class="btn btn-primary">Pedir una Reseña &rarr;</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
+          <span>Slate Systems</span>
+        </div>
+        <div class="footer-links">
+          <a href="empezar">Empezar</a>
+          <a href="faq">FAQ</a>
+          <a href="contacto">Contactar Soporte</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>¿Necesitas ayuda? Escríbenos al <strong>+1 (831) 226-7831</strong> o email hello@slatesystems.io</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+    document.querySelectorAll('.faq-card').forEach(function(card){
+      card.querySelector('.faq-q-rich').addEventListener('click', function(){ card.classList.toggle('open'); });
+    });
+  </script>
+<script src="/js/chat-widget.js" defer></script>
+</body>
+</html>
