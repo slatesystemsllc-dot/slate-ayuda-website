@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Capítulo 6 de 9: Tu guía de Turbo</title>
+<title>Capítulo 6 de 12: Tu guía de Turbo</title>
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -170,15 +170,55 @@
   main .wrap .semana1 h3{margin-top:0}
   @media (max-width:520px){ .cover{padding:32px 0 28px} .cover .logo{width:96px;margin-bottom:14px} .chip{margin-bottom:14px} }
 </style>
+<style>
+  /* R7B-2026-09-29: 30-day timeline, habits, heads-ups, sample report */
+  .tl{list-style:none;margin:18px 0;padding:0 0 0 6px}
+  .tl li{position:relative;padding:0 0 18px 30px;margin:0;border-left:3px solid var(--line)}
+  .tl li:last-child{border-left-color:transparent;padding-bottom:0}
+  .tl li::before{content:"";position:absolute;left:-10px;top:3px;width:17px;height:17px;border-radius:50%;background:#fff;border:3px solid var(--navy)}
+  .tl li:last-child::before{background:var(--orange);border-color:var(--orange)}
+  .tl .when{display:block;font-weight:900;color:var(--orange);font-size:14px;letter-spacing:.04em}
+  .tl .what{font-size:15.5px}
+  .tl li:last-child .what{font-weight:800;color:var(--navy)}
+  .habit{border:2px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+  .habit h3{margin:0 0 4px;font-size:16.5px}
+  .habit p{margin:4px 0;font-size:15px}
+  .habit .hs{display:block;font-size:13.5px;color:var(--sub);margin-top:6px}
+  .nochip,.estchip,.exchip{display:inline-block;font-size:12px;font-weight:800;border-radius:99px;padding:2px 9px;vertical-align:1px;white-space:nowrap}
+  .nochip{background:var(--soft);color:var(--sub);border:1px solid var(--line)}
+  .estchip{background:#fff4e6;color:#8a4a00;border:1px solid #f4c98f}
+  .exchip{background:#e9f5ee;color:var(--green);border:1px solid #b9dfc8}
+  .weekly{background:var(--navy);color:#fff;border-radius:12px;padding:14px 16px;margin:10px 0 18px;font-size:15px}
+  .weekly .nochip{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)}
+  .aviso{border-left:4px solid var(--orange);background:#fff8f1;border-radius:0 12px 12px 0;padding:12px 16px;margin:12px 0;font-size:15px}
+  .aviso b{color:var(--navy)}
+  .aviso a{color:var(--navy);font-weight:800}
+  .ejemplo{background:#fff8eb;border:2px dashed #f4c98f;border-radius:12px;padding:10px 14px;margin:14px 0;font-size:14px;color:#7a4d00}
+  .rtop{border:2px solid var(--navy);border-radius:14px;padding:6px 16px;margin:14px 0}
+  .rtop h3{margin:10px 0 2px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}
+  .rnum{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding:10px 0;border-top:1px solid var(--line)}
+  .rtop h3 + .rnum{border-top:0}
+  .rnum .rl{flex:1 1 100%;font-size:13.5px;color:var(--sub);font-weight:700}
+  .rnum .rv{font-size:22px;font-weight:900;color:var(--navy);line-height:1.2}
+  .rnum .rn{flex:1 1 100%;font-size:13px;color:var(--sub)}
+  .rwhy{list-style:none;margin:10px 0;padding:0}
+  .rwhy li{border-top:1px solid var(--line);padding:10px 0;margin:0;font-size:15px}
+  .rwhy li b{display:block;color:var(--navy)}
+  .rwhy .n{display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;font-weight:800;align-items:center;justify-content:center;margin-right:6px;vertical-align:1px}
+</style>
 </head>
 <body>
-<div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Capítulo 6 de 9</span><a href="tel:+18312267831">Llámanos</a></div></div>
-<main><div class="wrap"><h2 class="cap"><span class="capnum">6</span> Google y tu sistema Slate</h2>
-<p class="h2sub">Tu sistema Slate cuida cada lead de Google.</p>
-<p class="scene">Estás manejando y no contestas. Tu sistema le escribe al cliente en segundos.</p>
-<p>Cada llamada entra por tu número de Slate y suena en tu celular y en la app a la vez. Contestas tú, en vivo, y aprietas 1 para tomarla. Tus textos a clientes salen en inglés.</p>
-<div class="win"><b>Ya funciona:</b> el lead en tu app, la reseña y el seguimiento de 1 año. Una llamada de prueba prende el texto de llamada perdida.</div>
-<p><em>Avisarle a Google cada trabajo que agendas</em> queda armado, y lo probamos en la prueba de 10 llamadas antes de salir al aire. <em>En camino:</em> los mensajes de Google y el seguimiento de cotizaciones.</p>
+<div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Capítulo 6 de 12</span><a href="tel:+18312267831">Llámanos</a></div></div>
+<main><div class="wrap"><h2 class="cap"><span class="capnum">6</span> Tu parte</h2>
+<p class="h2sub">Cuatro hábitos y tu marca de cada semana.</p>
+<p class="scene">Suena el teléfono y estás en un ático. Contestas en 10 segundos, das día y hora, y el trabajo es tuyo.</p>
+<div class="habit"><h3>1. Contesta en vivo</h3><p>Contesta cada llamada de Google en horario. Si no puedes, nuestro texto le responde en segundos.</p><span class="hs">Esta semana: <span class="nochip">sin dato</span> · buena marca: 90% de las llamadas contestadas</span></div>
+<div class="habit"><h3>2. 3 preguntas antes del precio</h3><p>Antes de dar un precio pregunta: ¿qué pasa?, ¿en qué código postal? y ¿para cuándo lo necesita?</p><span class="hs">Esta semana: <span class="nochip">sin dato</span></span></div>
+<div class="habit"><h3>3. Ofrece 2 horarios</h3><p>Ofrece dos horarios concretos (por ejemplo, hoy a las 3 o mañana a las 9). Nunca «le llamo después».</p><span class="hs">Esta semana: <span class="nochip">sin dato</span></span></div>
+<div class="habit"><h3>4. Avísanos cuando se agenda</h3><p>Cuando agendes un trabajo de Google, avísanos. Así Google aprende qué clientes son buenos para ti.</p><span class="hs">Esta semana: <span class="nochip">sin dato</span></span></div>
+<p>Cada semana te mandamos esta línea:</p><div class="weekly">Tu parte esta semana: <span class="nochip">sin dato</span> contestadas en vivo; <span class="nochip">sin dato</span> avisadas; 3 preguntas y 2 horarios: <span class="nochip">sin dato</span>.</div>
+<p><em>Cuando terminas un trabajo, lo agregas al formulario de reseñas</em> y el sistema le pide la reseña 1 a 2 horas después. Dile: «Te va a llegar un mensaje. ¿Me ayudas con una reseña?».</p>
+<div class="win"><b>Más reseñas, lead más barato:</b> te faltan unas 17 de cinco estrellas para pasar de 4.5 a 4.7. Tu meta: una por trabajo terminado. Solo con el anuncio son 3 a 5 trabajos al mes, o sea 3 a 5 reseñas al mes, parejas. Nunca en tandas: Google frena a quien sube de golpe.</div>
 </div></main>
 <div class="jnav"><div class="wrap"><a class="jbtn" href="5.html">← Anterior</a><a class="jbtn primary" href="7.html">Siguiente →</a></div></div>
 </body>
