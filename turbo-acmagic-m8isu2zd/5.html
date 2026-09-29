@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Capítulo 5 de 9: Tu guía de Turbo</title>
+<title>Capítulo 5 de 12: Tu guía de Turbo</title>
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -170,14 +170,51 @@
   main .wrap .semana1 h3{margin-top:0}
   @media (max-width:520px){ .cover{padding:32px 0 28px} .cover .logo{width:96px;margin-bottom:14px} .chip{margin-bottom:14px} }
 </style>
+<style>
+  /* R7B-2026-09-29: 30-day timeline, habits, heads-ups, sample report */
+  .tl{list-style:none;margin:18px 0;padding:0 0 0 6px}
+  .tl li{position:relative;padding:0 0 18px 30px;margin:0;border-left:3px solid var(--line)}
+  .tl li:last-child{border-left-color:transparent;padding-bottom:0}
+  .tl li::before{content:"";position:absolute;left:-10px;top:3px;width:17px;height:17px;border-radius:50%;background:#fff;border:3px solid var(--navy)}
+  .tl li:last-child::before{background:var(--orange);border-color:var(--orange)}
+  .tl .when{display:block;font-weight:900;color:var(--orange);font-size:14px;letter-spacing:.04em}
+  .tl .what{font-size:15.5px}
+  .tl li:last-child .what{font-weight:800;color:var(--navy)}
+  .habit{border:2px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+  .habit h3{margin:0 0 4px;font-size:16.5px}
+  .habit p{margin:4px 0;font-size:15px}
+  .habit .hs{display:block;font-size:13.5px;color:var(--sub);margin-top:6px}
+  .nochip,.estchip,.exchip{display:inline-block;font-size:12px;font-weight:800;border-radius:99px;padding:2px 9px;vertical-align:1px;white-space:nowrap}
+  .nochip{background:var(--soft);color:var(--sub);border:1px solid var(--line)}
+  .estchip{background:#fff4e6;color:#8a4a00;border:1px solid #f4c98f}
+  .exchip{background:#e9f5ee;color:var(--green);border:1px solid #b9dfc8}
+  .weekly{background:var(--navy);color:#fff;border-radius:12px;padding:14px 16px;margin:10px 0 18px;font-size:15px}
+  .weekly .nochip{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)}
+  .aviso{border-left:4px solid var(--orange);background:#fff8f1;border-radius:0 12px 12px 0;padding:12px 16px;margin:12px 0;font-size:15px}
+  .aviso b{color:var(--navy)}
+  .aviso a{color:var(--navy);font-weight:800}
+  .ejemplo{background:#fff8eb;border:2px dashed #f4c98f;border-radius:12px;padding:10px 14px;margin:14px 0;font-size:14px;color:#7a4d00}
+  .rtop{border:2px solid var(--navy);border-radius:14px;padding:6px 16px;margin:14px 0}
+  .rtop h3{margin:10px 0 2px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}
+  .rnum{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding:10px 0;border-top:1px solid var(--line)}
+  .rtop h3 + .rnum{border-top:0}
+  .rnum .rl{flex:1 1 100%;font-size:13.5px;color:var(--sub);font-weight:700}
+  .rnum .rv{font-size:22px;font-weight:900;color:var(--navy);line-height:1.2}
+  .rnum .rn{flex:1 1 100%;font-size:13px;color:var(--sub)}
+  .rwhy{list-style:none;margin:10px 0;padding:0}
+  .rwhy li{border-top:1px solid var(--line);padding:10px 0;margin:0;font-size:15px}
+  .rwhy li b{display:block;color:var(--navy)}
+  .rwhy .n{display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;font-weight:800;align-items:center;justify-content:center;margin-right:6px;vertical-align:1px}
+</style>
 </head>
 <body>
-<div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Capítulo 5 de 9</span><a href="tel:+18312267831">Llámanos</a></div></div>
-<main><div class="wrap"><h2 class="cap"><span class="capnum">5</span> Tu parte</h2>
-<p class="h2sub">Cuatro hábitos que llenan tu agenda.</p>
-<p class="scene">Suena el teléfono y estás en un ático. Contestas en 10 segundos, das día y hora, y el trabajo es tuyo.</p>
-<div class="steps"><div class="step"><div class="sn">1</div><p><em>Contesta en menos de 20 segundos: Google lo premia.</em></p></div><div class="step"><div class="sn">2</div><p><em>Agenda en la primera llamada y márcalo en tu app.</em> Da día y hora antes de colgar.</p></div><div class="step"><div class="sn">3</div><p><em>Sigue cada cotización</em> a los 2 días y a la semana.</p></div><div class="step"><div class="sn">4</div><p><em>Cuando terminas un trabajo, lo agregas al formulario de reseñas</em> y el sistema le pide la reseña 1 a 2 horas después. Dile: «Te va a llegar un mensaje. ¿Me ayudas con una reseña?».</p></div></div>
-<div class="win"><b>Más reseñas, lead más barato:</b> te faltan unas 17 de cinco estrellas para pasar de 4.5 a 4.7. Tu meta: una por trabajo terminado. Solo con el anuncio son 3 a 5 trabajos al mes, o sea 3 a 5 reseñas al mes, parejas. Nunca en tandas: Google frena a quien sube de golpe.</div>
+<div class="jbar"><div class="wrap"><a href="index.html">← Inicio</a><span class="jprog">Capítulo 5 de 12</span><a href="tel:+18312267831">Llámanos</a></div></div>
+<main><div class="wrap"><h2 class="cap"><span class="capnum">5</span> Qué esperar cada mes</h2>
+<p class="h2sub">Lo que esperamos, mes a mes.</p>
+<p class="scene">Pasan tus primeros 60 días al aire y tu teléfono suena más seguido.</p>
+<div class="tablewrap"><table><tr><td><b>Anuncio</b></td><td>$25 a $30 al día ($760 a $910 al mes)</td></tr><tr><td><b>Cada lead</b></td><td>$70 a $83</td></tr><tr><td><b>Leads al mes</b></td><td>4 a 9 los primeros 60 días al aire. Después, 9 a 13.</td></tr><tr><td><b>Trabajos al mes</b></td><td>3 a 5 desde el día 60</td></tr></table></div>
+<p>¿Más llamadas? Google sugiere unos $100 al día; tú decides. Es nuestro cálculo, no una promesa.</p>
+<p>A los 60 a 90 días al aire medimos. Cada mes ves 3 números: <em>leads, trabajos cerrados y costo por trabajo.</em></p>
 </div></main>
 <div class="jnav"><div class="wrap"><a class="jbtn" href="4.html">← Anterior</a><a class="jbtn primary" href="6.html">Siguiente →</a></div></div>
 </body>
