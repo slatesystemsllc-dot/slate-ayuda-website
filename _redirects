@@ -46,3 +46,9 @@
 # Facturas renamed to Presupuestos (2026-08-22, estimates only)
 /facturas        /presupuestos   301
 /facturas.html   /presupuestos   301
+
+# row 1848 (Dan 2026-10-26): the Facebook play left the guide; play 14 became 13
+/jugadas/facebook       /jugadas/        301
+/jugadas/facebook.html  /jugadas/        301
+/jugadas/14             /jugadas/rhythm  301
+/jugadas/14.html        /jugadas/rhythm  301

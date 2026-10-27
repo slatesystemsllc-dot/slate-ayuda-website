@@ -69,7 +69,7 @@ if LANG == "en":
 ID2N = {cid: k for k, (cid, _t, _s) in enumerate(chapters, 1)}
 ID2T = {cid: t for (cid, t, _s) in chapters}
 PO_JS = "<script>window.CFG=%s;window.T_EN=%s;</script>" % (json.dumps(dict({k: CFG[k] for k in ("route_h","route_sub","route_esp","route_rest","note","fill_trade","fill_biz","fill_tel","fill_web")}, lang=LANG), ensure_ascii=False), json.dumps(T_EN, ensure_ascii=False)) + "<script>window.POR_OFICIO=%s;window.ID2N=%s;window.ID2T=%s;</script>" % (
-    json.dumps({k: v for k, v in POR_OFICIO.items() if not k.startswith("_")}, ensure_ascii=False), json.dumps(ID2N), json.dumps(ID2T, ensure_ascii=False))
+    json.dumps({k: dict(v, orden=[j for j in v.get("orden", []) if j in ID2N]) for k, v in POR_OFICIO.items() if not k.startswith("_")}, ensure_ascii=False), json.dumps(ID2N), json.dumps(ID2T, ensure_ascii=False))
 
 EXTRA_CSS = """
 <style>
@@ -200,7 +200,7 @@ index = (head.replace("</head>", EXTRA_CSS + "</head>")
          + cover
          + '<main><div class="wrap"><div class="ruta" id="ruta" hidden></div>' + (re.search(r'<div class="win" id="esta-semana">.*?</div>', onepager, re.S).group(0) if 'id="esta-semana"' in onepager else '')
          + '<h2 class="cap" id="jugadas"><span class="capnum">→</span> %s</h2><p>%s</p><ul class="jlist">%s</ul>' % (CFG["list_h"], CFG["list_p"], items)
-         + '<p><a class="jbtn" href="14.html#semana1">%s</a></p>' % CFG["week"]
+         + '<p><a class="jbtn" href="rhythm.html#semana1">%s</a></p>' % CFG["week"]
          + '<p><a class="jbtn primary" href="1.html">%s</a></p><p style="margin-top:10px"><a class="jbtn" href="%s">%s</a></p>' % (CFG["start"], CFG["long"], CFG["readlong"])
          + '<details class="jsrc"><summary>%s</summary>' % CFG["sources"] + fuentes + '</details>'
          + '</div></main>' + script + PO_JS + JS + "</body></html>\n")

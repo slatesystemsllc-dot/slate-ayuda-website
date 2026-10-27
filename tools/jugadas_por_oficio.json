@@ -1,5 +1,5 @@
 {
- "_doc": "Per-trade play order for the guide (ayuda.slatesystems.io/jugadas). Keys = T.1090 oficio names (lowercase, accents). 'orden' = play ids in priority order (first 5 shown as 'Tus jugadas'); 'especial' = the trade's own play from the partner cards, shown on top. 'default' applies when the trade is unknown. Source: leads-guide-audit-2026-09-15/research.md section 1 (impact per owner hour) + the trade cards in chapter 10. Alfred reads this same file (mirrored to Baserow) to pick the weekly play. Edit here, then rebuild.",
+ "_doc": "Per-trade play order for the guide (ayuda.slatesystems.io/jugadas). Keys = T.1090 oficio names (lowercase, accents). 'orden' = play ids in priority order (first 5 shown as 'Tus jugadas'); 'especial' = the trade's own play from the partner cards, shown on top. 'default' applies when the trade is unknown. Source: leads-guide-audit-2026-09-15/research.md section 1 (impact per owner hour) + the trade cards in chapter 10. Alfred reads this same file (mirrored to Baserow) to pick the weekly play. Edit here, then rebuild. '_inactivas' = play ids kept in the orders but switched off (Activo False in T.1100, activo false in the VPS file); row 1848, 2026-10-26: facebook, the slot for each client's own Facebook guide.",
  "default": {
   "orden": [
    "warm",
@@ -39,8 +39,8 @@
    "partners",
    "feeders"
   ],
-  "especial": "Después de la tormenta, la misma tarde: las 10 puertas de la calle con ramas caídas, con tu tarjeta, y la foto del árbol caído en los grupos de Facebook de tu ciudad. Nadie más pasa ese día.",
-  "especial_en": "After the storm, the same afternoon: the 10 doors on the street with branches down, with your card, and the photo of the fallen tree in your town's Facebook groups. Nobody else comes by that day."
+  "especial": "Después de la tormenta, la misma tarde: las 10 puertas de la calle con ramas caídas, con tu tarjeta. Nadie más pasa ese día.",
+  "especial_en": "After the storm, the same afternoon: the 10 doors on the street with branches down, with your card. Nobody else comes by that day."
  },
  "acarreo": {
   "orden": [
@@ -51,8 +51,8 @@
    "job",
    "regresan"
   ],
-  "especial": "Los inversionistas y flippers: cada casa que compran necesita vaciado completo, con prisa, y compran varias al año. La lista de permisos y los grupos de inversionistas son tu puerta.",
-  "especial_en": "Investors and flippers: every house they buy needs a full clean-out, in a hurry, and they buy several a year. The permit list and the investor groups are your door."
+  "especial": "Los inversionistas y flippers: cada casa que compran necesita vaciado completo, con prisa, y compran varias al año. La lista de permisos es tu puerta.",
+  "especial_en": "Investors and flippers: every house they buy needs a full clean-out, in a hurry, and they buy several a year. The permit list is your door."
  },
  "limpieza de basura": {
   "orden": [
@@ -321,5 +321,8 @@
    "sms_en": "Guide play: every job, 20 minutes: review face to face, one name, 10 doors, sign, photo. Every week, one hour."
   }
  },
- "_url": "https://ayuda.slatesystems.io/jugadas/"
+ "_url": "https://ayuda.slatesystems.io/jugadas/",
+ "_inactivas": [
+  "facebook"
+ ]
 }

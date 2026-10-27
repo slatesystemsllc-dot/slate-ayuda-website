@@ -10,6 +10,7 @@ def slug_of(v):
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 d = json.load(open(os.path.join(ROOT, "tools", "jugadas_por_oficio.json"), encoding="utf-8"))
 plays, url = d["_plays"], d["_url"]
+off = set(d.get("_inactivas") or [])   # row 1848: kept in the orders, switched off
 rows, flat = [], {"_source": "slate-ayuda-website tools/jugadas_por_oficio.json", "_url": url, "oficios": {}}
 for oficio, conf in d.items():
     if oficio.startswith("_"): continue
@@ -20,9 +21,9 @@ for oficio, conf in d.items():
     for i, slug in enumerate(conf["orden"], 1):
         p = plays[slug]
         rows.append({"Oficio": oficio, "Orden": i, "Jugada": slug, "Titulo ES": p["es"], "Titulo EN": p["en"],
-                     "Linea SMS ES": p["sms_es"], "Linea SMS EN": p["sms_en"], "Activo": True, "Especial": ""})
+                     "Linea SMS ES": p["sms_es"], "Linea SMS EN": p["sms_en"], "Activo": slug not in off, "Especial": ""})
         lst.append({"orden": i, "jugada": slug, "titulo_es": p["es"], "titulo_en": p["en"], "sms_es": p["sms_es"], "sms_en": p["sms_en"],
-                    "url": "%s%s?oficio=%s" % (url, slug, slug_of(oficio)) if oficio != "default" else "%s%s" % (url, slug), "activo": True})
+                    "url": "%s%s?oficio=%s" % (url, slug, slug_of(oficio)) if oficio != "default" else "%s%s" % (url, slug), "activo": slug not in off})
     flat["oficios"][oficio] = {"especial": conf.get("especial", ""), "jugadas": lst}
 dry = "--dry" in sys.argv
 print("rows", len(rows), "oficios", len(flat["oficios"]), "DRY" if dry else "")
