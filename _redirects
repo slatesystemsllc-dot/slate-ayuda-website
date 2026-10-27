@@ -48,5 +48,10 @@
 /facturas.html   /presupuestos   301
 
 # row 1848 (Dan 2026-10-26): play 14 became 13. The Facebook play is gone, no redirect (Dan 2026-10-27, row 1890)
+# row 1890 (2026-10-27 12:15 CST): Cloudflare Pages keeps serving a deleted page from an old deploy for up to 7 days,
+# so the old Facebook play still opened. These lines send it to the help home (not the guide), same as the .html link.
+/jugadas/facebook        /   301
+/jugadas/facebook/       /   301
+/jugadas/facebook.html   /   301
 /jugadas/14             /jugadas/rhythm  301
 /jugadas/14.html        /jugadas/rhythm  301
