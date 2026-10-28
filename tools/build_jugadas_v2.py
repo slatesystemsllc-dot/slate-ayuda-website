@@ -78,7 +78,7 @@ def page(p):
     b += '<h1>%s</h1>' % E(p["titulo"])
     b += '<div class="k">Qué haces</div><p class="que">%s</p>' % E(p["que"])
     b += '<div class="k">Por qué</div><div class="por"><div class="n">%s</div><span class="f">Fuente: %s</span></div>' % (E(p["por_que"]), E(p["fuente"]))
-    if p["id"] == "partners": b += '<div class="por" id="oficio-card" style="margin-top:14px"><div class="k" style="margin:0 0 6px">Tu tarjeta de oficio</div><p style="margin:0">Abre esta guía desde el botón naranja de tu página de enlaces y aquí aparece tu oficio, con sus socios.</p></div>'
+    if p["id"] == "partners": b += '<div class="por" id="oficio-card" style="margin-top:14px"><div class="k" style="margin:0 0 6px">Tu tarjeta de oficio</div><p style="margin:0">Abre esta guía desde el botón naranja de tu página Enlaces y aquí aparece tu oficio, con sus socios.</p></div>'
     b += '<div class="k">Cómo</div><ol class="pasos">%s</ol>' % "".join("<li>%s</li>" % E(s) for s in p["pasos"])
     if p.get("di_esto"):
         b += '<div class="k">Di esto</div><div class="di"><button onclick="cp(this)">Copiar</button><div class="et">%s</div><div class="tx">%s</div></div>' % (E(p["di_esto"]["etiqueta"]), E(p["di_esto"]["texto"]))
