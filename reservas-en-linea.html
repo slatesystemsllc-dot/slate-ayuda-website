@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <title>Reservas en línea - Slate Systems Ayuda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .faq-list { max-width: 760px; margin: 0 auto; display: grid; gap: 0.75rem; }
+    .faq-card { background: #fff; border: 1px solid var(--medium-gray); border-radius: 12px; overflow: hidden; transition: border-color 0.15s; }
+    .faq-card:hover { border-color: var(--orange); }
+    .faq-q-rich { padding: 1rem 1.25rem; font-weight: 700; font-size: 1rem; color: var(--text-dark); cursor: pointer; position: relative; padding-right: 2.75rem; }
+    .faq-q-rich::after { content: '+'; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: var(--orange); font-weight: 700; line-height: 1; }
+    .faq-card.open .faq-q-rich::after { content: '\2212'; }
+    .faq-a-rich { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; padding: 0 1.25rem; }
+    .faq-card.open .faq-a-rich { max-height: 1200px; padding: 0 1.25rem 1rem; }
+    .faq-a-rich p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin: 0 0 0.75rem; }
+    .faq-a-rich p:last-child { margin-bottom: 0; }
+    .faq-a-rich a { color: var(--orange); font-weight: 600; }
+    .three-lines { display: grid; gap: 0.75rem; margin: 1rem 0; }
+    .three-lines .line { display: flex; gap: 0.9rem; align-items: flex-start; background: var(--light-gray); border: 1px solid var(--medium-gray); border-radius: var(--radius-md); padding: 0.9rem 1rem; }
+    .three-lines .num { flex: 0 0 2rem; height: 2rem; border-radius: 50%; background: var(--orange); color: var(--white); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .three-lines p { margin: 0; }
+    .app-shot{max-width:300px;width:100%;border-radius:16px;box-shadow:0 6px 24px rgba(15,30,52,.14);border:1px solid #e2e8f0;display:block;margin:1rem auto;}
+    .shot-row{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:flex-start;justify-content:center;}
+    .shot-row .txt{flex:1;min-width:240px;}
+    .shot-pair{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+    .shot-pair > div{max-width:300px;}
+    .shot-pair .app-shot{margin:.5rem auto;}
+    .shot-cap{text-align:center;font-size:0.92rem;color:var(--text-muted);margin:0 0 0.5rem;}
+    .ignore-box{background:#fff7ed;border:1px solid #fed7aa;border-radius:var(--radius-md);padding:0.9rem 1rem;margin:1rem 0;}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
+        <span>Slate Systems</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="empezar">Empezar</a></li>
+        <li><a href="resenas">Reseñas</a></li>
+        <li><a href="google">Google</a></li>
+        <li><a href="mis-enlaces">Enlaces</a></li>
+        <li><a href="tu-app">Tu App</a></li>
+        <li><a href="presupuestos">Presupuestos</a></li>
+        <li><a href="clientes">Clientes</a></li>
+        <li><a href="tu-sitio-web">Tu Sitio Web</a></li>
+        <li><a href="referidos">Referidos</a></li>
+        <li><a href="jugadas/">Más Trabajos</a></li>
+        <li><a href="estafas">Estafas</a></li>
+        <li><a href="faq">FAQ</a></li>
+        <li><a href="contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Reservas en línea</h1>
+      <p>Tus clientes agendan su visita de presupuesto en tu sitio, de día o de noche, sin llamarte. Les llega la confirmación y un recordatorio. A ti te llega un texto con cada visita nueva. $47 al mes, sin contrato. Gratis en cualquier paquete (3, 6 o 12 meses).</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="content-section">
+        <h2>Cómo funciona, en 3 líneas</h2>
+        <div class="three-lines">
+          <div class="line"><div class="num">1</div><p><strong>Tu cliente toca «Book a Visit» en tu sitio.</strong> Se abre tu calendario ahí mismo, en tu sitio. Escoge el día y la hora que tú tienes libres.</p></div>
+          <div class="line"><div class="num">2</div><p><strong>Le llega la confirmación al momento.</strong> Un texto y un correo con la fecha y la hora. Un día antes, un recordatorio para que conteste SÍ.</p></div>
+          <div class="line"><div class="num">3</div><p><strong>A ti te llega un texto con cada visita nueva.</strong> La ves en tu app, en Calendario. Después de la hora de la visita, te preguntamos si llegó.</p></div>
+        </div>
+        <div class="benefit-box">
+          <p><strong>Bueno saberlo:</strong> el calendario solo ofrece las horas que tú nos diste. Si cambian tus horas o tus días libres, avísanos y lo cambiamos el mismo día.</p>
+        </div>
+      </div>
+
+      <div class="content-section" id="enlace">
+        <h2>Tu enlace para agendar</h2>
+        <p>Además del botón, tienes un enlace que abre tu calendario directo: tu sitio con <strong>?book</strong> al final. Por ejemplo: <code>tusitio.com/?book</code>. Ponlo en tu perfil de Google, en Facebook, en Instagram o mándalo por texto. Todo es tu dominio, nunca el nuestro.</p>
+        <p>Si te llama alguien y no contestas, tu texto automático también lleva el enlace para que agende solo.</p>
+      </div>
+
+      <div class="content-section" id="tu-parte">
+        <h2>Lo único que te toca</h2>
+        <ol class="steps">
+          <li><strong>Ve a la visita.</strong> Está en tu app, en Calendario, con el nombre y el teléfono del cliente.</li>
+          <li><strong>Después de la visita, contesta el texto que te llega:</strong> ¿llegó o no llegó? Si no llegó, le mandamos un texto para que escoja otra hora.</li>
+          <li><strong>Si algo cambia en tus horas, avísanos.</strong> Así nunca te agendan cuando no puedes.</li>
+        </ol>
+      </div>
+
+      <div class="content-section" id="anticipo">
+        <h2>¿Quieres cobrar un anticipo al agendar?</h2>
+        <p>Se puede si también tienes <a href="cobrar-con-tarjeta">Cobra con Tarjeta</a>. Tu cliente paga un anticipo chico con tarjeta para apartar su visita. Pídenoslo y lo activamos.</p>
+      </div>
+
+      <div class="content-section" id="faq">
+        <h2>Preguntas que nos hacen</h2>
+        <div class="faq-list">
+          <div class="faq-card">
+            <div class="faq-q-rich">¿Cuánto cuesta?</div>
+            <div class="faq-a-rich"><p>$47 al mes, sin contrato. Si tienes el paquete de 3, 6 o 12 meses, va incluido.</p></div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q-rich">¿Y si el cliente quiere cambiar la hora?</div>
+            <div class="faq-a-rich"><p>Su texto de confirmación trae un enlace para cambiarla él mismo. Cuando la cambia, le llega la nueva hora y a ti te llega el aviso.</p></div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q-rich">¿Me pueden agendar dos visitas a la misma hora?</div>
+            <div class="faq-a-rich"><p>No. El calendario cierra una hora en cuanto se agenda. Si tienes más de un equipo, dinos cuántos y abrimos más lugares.</p></div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q-rich">Ya tengo el Asistente 24/7. ¿Es lo mismo?</div>
+            <div class="faq-a-rich"><p>No. El Asistente agenda platicando por texto. Reservas en línea es el botón en tu sitio, la confirmación, el recordatorio y el aviso de «¿llegó?». Los dos llenan el mismo calendario.</p></div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q-rich">¿Puedo dejar de usarlo?</div>
+            <div class="faq-a-rich"><p>Sí, cuando quieras. Escríbenos y quitamos los $47 desde el siguiente mes. Las visitas que ya tienes agendadas se quedan.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-success" style="margin-top:1.5rem;">
+        <strong>¿Lo quieres?</strong> Escríbenos y lo dejamos listo con tus horas reales. <a href="contacto">Contactar soporte &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Recordatorio de la única tarea -->
+  <section class="section section-alt">
+    <div class="container" style="text-align: center;">
+      <p style="margin: 0 0 1rem; font-weight: 600; font-size: 1.05rem;">Tu única tarea: después de cada cliente feliz, <strong>Pedir una Reseña</strong>.</p>
+      <a href="resenas" class="btn btn-primary">Pedir una Reseña &rarr;</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo.svg" alt="Slate Systems" onerror="this.style.display='none'">
+          <span>Slate Systems</span>
+        </div>
+        <div class="footer-links">
+          <a href="empezar">Empezar</a>
+          <a href="faq">FAQ</a>
+          <a href="contacto">Contactar Soporte</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>¿Necesitas ayuda? Escríbenos al <strong>+1 (831) 226-7831</strong> o email hello@slatesystems.io</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+    document.querySelectorAll('.faq-card').forEach(function(card){
+      card.querySelector('.faq-q-rich').addEventListener('click', function(){ card.classList.toggle('open'); });
+    });
+  </script>
+<script src="/js/chat-widget.js" defer></script>
+</body>
+</html>
